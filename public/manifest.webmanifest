@@ -1,0 +1,10 @@
+{
+  "name": "Ohel · אוהל",
+  "short_name": "Ohel",
+  "description": "An open tent for the Bible: read, map and talk it through together.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0614",
+  "theme_color": "#0b0614",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
