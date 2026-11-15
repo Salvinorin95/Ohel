@@ -13,6 +13,7 @@ The name comes from Abraham's tent, which was open on all four sides so anyone c
   - **⚡ Quiz**: 56 bilingual questions. Everyone in the room answers together, there are bonus points when two or more people get it right, and the quiz ends early once everyone has answered.
 - **Reader**: the whole Tanakh from Sefaria, in Hebrew, English, or both side by side. Vowels and cantillation can be switched on or off, and the ketiv/qere readings are shown. Each chapter lists the places it mentions on the map.
 - **Map**: 3D satellite imagery and terrain (MapLibre with Esri imagery and AWS terrain tiles) with 59 places. Each place is marked as identified, traditional or debated, and comes with a short story and the chapters where it appears.
+  - **Place pages**: every place has a deep page in Hebrew and English: the setting, the peoples who lived there, who ruled it (with that realm's borders drawn on the map), population estimates, archaeology, photos of the site, finds and art (Wikimedia Commons, each with its author and license), a timeline, and every chapter that mentions it. Disputed identifications say so.
 - **Points, levels and badges**: Seed → Sprout → Root → Branch → Tree → Forest → Light. There are 16 badges and a weekly leaderboard. Points come from reading a chapter, exploring the map, talking, answering quizzes, helpful answers and lights.
 - **Easy to go in and out**: you join with a name and a color. A key lets you come back on another device. Step out or delete yourself anytime.
 
@@ -44,6 +45,8 @@ npm test           # moderation tests (72)
 node scripts/e2e.mjs http://localhost:5173   # two people chat, ask, light, report, quiz (26 checks)
 OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:5173   # admin tools (23 checks)
 node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
+npm run places     # check content/places/*.json and build public/data/places (image credits from Commons; --offline reuses the last lookup)
+node --max-old-space-size=4096 scripts/build-realms.mjs <cliopatria.geojson>   # realm borders → public/data/realms.json
 ```
 
 Link previews: pages go through the Worker (`run_worker_first`), which writes a title, description and `og:image` per room, place and chapter, so links shared on WhatsApp look right. Visits are counted with Cloudflare Web Analytics (no cookies); the beacon is added only on the real host, from `ANALYTICS_TOKEN` in `wrangler.jsonc`.
@@ -56,9 +59,10 @@ Deploy to Cloudflare Workers with `npm run deploy` (builds, then `wrangler deplo
 shared/   books (Tanakh), places (map), game (points/levels/badges), protocol (types)
 worker/   index.ts (routes + Sefaria proxy with edge cache), hub.ts (the Durable Object),
           moderation.ts, quiz.ts
-src/      React app: views/Home, Room, Reader, MapView, Profile; components; i18n.ts
+src/      React app: views/Home, Room, Reader, MapView, PlacePage, Profile; components; i18n.ts
+content/  places/<id>.json: the place pages (how to write one: content/places/README.md)
 ```
 
 ## Credits
 
-Text: [Sefaria](https://www.sefaria.org). Hebrew: Miqra according to the Masorah (CC BY-SA). English: JPS (CC BY-NC). Imagery © Esri, Maxar, Earthstar Geographics. Terrain: Mapzen / AWS Open Data. Fonts: Rubik and Frank Ruhl Libre.
+Text: [Sefaria](https://www.sefaria.org). Hebrew: Miqra according to the Masorah (CC BY-SA). English: JPS (CC BY-NC). Imagery © Esri, Maxar, Earthstar Geographics. Terrain: Mapzen / AWS Open Data. Fonts: Rubik and Frank Ruhl Libre. Place photos: Wikimedia Commons (author and license on each). Realm borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) from the Seshat databank (CC BY 4.0), simplified.

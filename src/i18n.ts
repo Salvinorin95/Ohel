@@ -209,6 +209,27 @@ const S = {
   by: { en: "by", he: "מאת" },
   refresh: { en: "Refresh", he: "רענון" },
   yourId: { en: "Your ID", he: "המזהה שלך" },
+  // place pages
+  moreAbout: { en: "More about this place", he: "עוד על המקום" },
+  pp_today: { en: "The place today", he: "המקום היום" },
+  pp_setting: { en: "The place and its surroundings", he: "המקום והסביבה" },
+  pp_peoples: { en: "Who lived here", he: "מי חי כאן" },
+  pp_rulers: { en: "Who ruled here", he: "מי שלט כאן" },
+  pp_showRealm: { en: "Show its territory on the map", he: "להראות את השטח על המפה" },
+  pp_population: { en: "How many people lived here", he: "כמה אנשים חיו כאן" },
+  pp_archaeology: { en: "Archaeology", he: "ארכיאולוגיה" },
+  pp_art: { en: "The story in art", he: "הסיפור באמנות" },
+  pp_mentions: { en: "Where the Bible mentions it", he: "איפה המקום מוזכר בתנ״ך" },
+  pp_timeline: { en: "Timeline", he: "ציר זמן" },
+  pp_related: { en: "Connected places", he: "מקומות קשורים" },
+  pp_more: { en: "Read more", he: "לקריאה נוספת" },
+  pp_imageSource: { en: "image source", he: "מקור התמונה" },
+  pp_imagesNote: {
+    en: "Images from Wikimedia Commons; tap one for its author and license. Numbers about the ancient world are estimates.",
+    he: "התמונות מוויקישיתוף; לחיצה על תמונה מציגה את היוצר והרישיון. מספרים על העולם העתיק הם הערכות.",
+  },
+  realmBorders: { en: "borders around", he: "הגבולות בערך בשנת" },
+  realmSource: { en: "approximate, from Cliopatria (Seshat)", he: "בקירוב, לפי Cliopatria (Seshat)" },
 } as const;
 
 export type Key = keyof typeof S;

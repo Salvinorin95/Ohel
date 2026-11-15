@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "places": "node --experimental-strip-types scripts/build-places.ts",
     "typegen": "wrangler types worker/worker-configuration.d.ts"
   },
   "dependencies": {

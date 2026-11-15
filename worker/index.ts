@@ -61,6 +61,7 @@ async function chapterText(req: Request, ctx: ExecutionContext) {
 interface Meta {
   title: string;
   description: string;
+  image?: { url: string; width?: number; height?: number };
 }
 
 const HOME: Meta = {
@@ -86,7 +87,18 @@ async function metaFor(url: URL, env: Env): Promise<Meta> {
   }
   if (p[0] === "map" && p[1]) {
     const place = findPlace(p[1]);
-    if (place) return { title: `${place.he} · ${place.en} · על המפה באוהל`, description: clip(place.story.he, 180) };
+    if (place) {
+      const meta: Meta = { title: `${place.he} · ${place.en} · על המפה באוהל`, description: clip(place.story.he, 180) };
+      // A place with a deep page shares its own photo and summary.
+      const res = await env.ASSETS.fetch(new Request(`${url.origin}/data/places/${place.id}.json`));
+      if (res.ok && (res.headers.get("content-type") ?? "").includes("json")) {
+        const d = (await res.json()) as { he?: { summary?: string }; images?: { kind: string; thumb?: string; width?: number; height?: number }[] };
+        if (d.he?.summary) meta.description = clip(d.he.summary, 200);
+        const cover = d.images?.find((i) => i.kind === "site" && i.thumb) ?? d.images?.find((i) => i.thumb);
+        if (cover?.thumb) meta.image = { url: cover.thumb, width: cover.width, height: cover.height };
+      }
+      return meta;
+    }
     return { title: "המפה · The map · אוהל", description: HOME.description };
   }
   if (p[0] === "map") return { title: "מקומות התנ״ך על מפת לוויין · אוהל", description: "הר הגלבוע, עמק האלה, הכרמל ועוד 56 מקומות, בתלת־ממד. Bible places on a 3D satellite map." };
@@ -114,10 +126,11 @@ function withMeta(res: Response, m: Meta, url: URL, env: Env) {
     ["property", "og:title", m.title],
     ["property", "og:description", m.description],
     ["property", "og:url", `${url.origin}${url.pathname}`],
-    ["property", "og:image", `${url.origin}/og.jpg`],
-    ["property", "og:image:width", "1200"],
-    ["property", "og:image:height", "630"],
-    ["property", "og:image:alt", "אוהל · Ohel"],
+    ["property", "og:image", m.image?.url ?? `${url.origin}/og.jpg`],
+    ...((m.image ? (m.image.width && m.image.height ? [String(m.image.width), String(m.image.height)] : []) : ["1200", "630"]).flatMap((v, i) => [
+      ["property", i ? "og:image:height" : "og:image:width", v] as [string, string, string],
+    ])),
+    ["property", "og:image:alt", m.image ? m.title : "אוהל · Ohel"],
     ["property", "og:locale", "he_IL"],
     ["property", "og:locale:alternate", "en_US"],
     ["name", "twitter:card", "summary_large_image"],

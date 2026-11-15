@@ -7,7 +7,7 @@
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
     // Pages go through the Worker so each link gets its own preview (title, picture); files go straight out.
-    "run_worker_first": ["/*", "!/assets/*", "!/icon.svg", "!/og.jpg", "!/manifest.webmanifest"]
+    "run_worker_first": ["/*", "!/assets/*", "!/icon.svg", "!/og.jpg", "!/manifest.webmanifest", "!/data/*"]
   },
   "vars": {
     // Cloudflare Web Analytics (no cookies). Empty = no beacon.

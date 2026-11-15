@@ -1,0 +1,156 @@
+{
+  "id": "tekoa",
+  "he": {
+    "summary": "תקוע הייתה עיירה של יהודה על שפת מדבר יהודה, דרומית לבית לחם. ממנה בא הנביא עמוס, ״אשר היה בנקדים מתקוע״, ומשם הביא יואב את האשה החכמה ששכנעה את דוד להחזיר את אבשלום. מאות שנים אחר כך ישבו נזירים במערות נחל תקוע, והשם נשמר עד היום בכפר הערבי תקוע שליד החורבה.",
+    "setting": "חורבת תקוע שוכנת על גבעה בגובה של כ־825 מטר, כ־16 ק״מ דרומית לירושלים וכ־8 ק״מ דרומית לבית לחם, והרודיון מתנשא כ־4 ק״מ צפונה־מזרחה ממנה. המקום יושב בדיוק על הקו שבין אדמות המזרע והזיתים של הר יהודה ממערב לבין ״מדבר תקוע״ ממזרח, שיורד בגבעות חשופות אל ים המלח. הגשם יורד בחורף בלבד, ומזרחה הוא מתמעט במהירות, ולכן חיו כאן מגידול צאן ומחקלאות קטנה. נחל תקוע (ואדי ח׳ריטון) חוצב קניון עמוק עם מערות. היום עומדים במקום שרידי כנסייה ביזנטית, בורות מים וחורבות מימי הביניים בין עצי זית.",
+    "peoples": [
+      {
+        "name": "בני יהודה בתקופת המקרא",
+        "text": "בתקופת הברזל הייתה תקוע עיירה של שבט יהודה. דברי הימים מונה את ״אשחור אבי תקוע״ בין צאצאי יהודה, ובין גיבורי דוד היה עירא בן עקש התקועי. תושביה היו רועי צאן ואיכרים, ועמוס מתאר את עצמו כ״בוקר ובולס שקמים״. כיוון שעצי שקמה אינם גדלים בגובה כזה, יש המשערים שעבד גם בשפלה או בבקעה, ויש, כמו גרי רנדסבורג, שמציעים שתקוע של עמוס היא כפר אחר בגליל."
+      },
+      {
+        "name": "שבי ציון",
+        "text": "בימי שלטון פרס חזרו אנשי תקוע להתיישב בעיירה, שהייתה אז חלק מפחוות יהוד. בספר נחמיה הם בונים שני קטעים של חומת ירושלים, אבל הכתוב מציין ש״אדיריהם לא הביאו צוארם בעבודת אדניהם״. גם בימי החשמונאים נזכר ״מדבר תקוע״ כמקום מסתור, ובימי מרד בר כוכבא מוזכרים אנשי תקוע במכתביו."
+      },
+      {
+        "name": "נזירים וכפריים ביזנטיים",
+        "text": "במאות ה־4 עד ה־7 לספירה התמלא האזור נזירים. חריטון הקדוש ייסד בסביבות 345 את לאורת סוכה, ״הלאורה הישנה״, בצוקי נחל תקוע, ובכפר עצמו נבנתה כנסייה עם אגן טבילה. מסורת מן המאה ה־4 ראתה בקבר שבכפר את קבר עמוס, ובמאה ה־6 עמדה מעליו קפלה. כאן חיו נוצרים דוברי יוונית וארמית."
+      },
+      {
+        "name": "כפריים בימי הביניים ובתקופה העות׳מאנית",
+        "text": "בימי הצלבנים נקרא הכפר ״קזל טקואה״, ובו חיו נוצרים ומוסלמים. הגאוגרף יאקות כתב ב־1225 שתקוע ידועה בדבש שלה. במפקד העות׳מאני של 1526 נרשמו בה 82 משפחות, 55 מהן נוצריות, ובמאה ה־18 עברו הנוצרים לבית לחם. הכפר הערבי תקוע, שליד החורבה, שומר עד היום על השם הקדום."
+      }
+    ],
+    "population": "איש לא ספר את תושבי תקוע המקראית, והמקום נחפר רק מעט, כך שגודלה אינו ידוע. עיירות כפריות ביהודה מסוג זה מנו בדרך כלל כמה מאות ועד אלף איש בערך, אבל זו הערכה כללית בלבד. לשם השוואה, ירושלים הסמוכה גדלה עד סביבות 700 לפנה״ס ל־8,000 עד 25,000 תושבים לפי ההערכות השונות. נתון ממשי ראשון בא מאוחר: במפקד העות׳מאני של 1526 נרשמו בכפר 82 משפחות, כלומר אולי 400 עד 500 נפש.",
+    "archaeology": [
+      {
+        "title": "קברים וטביעות חותם מימי בית ראשון",
+        "text": "באתר נערכו רק חפירות קטנות: מרטין הייקסן (1968), ג׳ון ג׳. דייוויס (1970) וסייף א־דין חדאד (1981). דייוויס חפר את קבר 302, מערת קבורה חצובה באורך של כ־7.7 מטר ובה שמונה כוכים, ששימשה מסוף המאה ה־8 ועד תחילת המאה ה־6 לפנה״ס. נמצאה גם ידית קנקן עם חותם ״למלך״ מסוף המאה ה־8, מאותו סוג שנמצא בלכיש ובערים אחרות של חזקיהו."
+      },
+      {
+        "title": "הכנסייה הביזנטית ואגן הטבילה",
+        "text": "בסקר ובחפירה חלקית ב־1968 נחשפה כנסייה בצורת בזיליקה, כ־25 על 17 מטר, עם רצפת פסיפס, ולצדה קפלה קטנה בעלת אפסיס. כנראה הייתה חלק ממתחם נזירי. בקרבתה נמצא אגן טבילה מתומן, מגולף מגוש אחד של אבן גיר אדמדמה ומעוטר בצלבים ובשושנים, שתיאר כבר החוקר הצרפתי ויקטור גרן ב־1863. במערות קבורה סמוכות נמצאו נרות ביזנטיים מעוטרים בצלב."
+      },
+      {
+        "title": "המנזרים בנחל תקוע",
+        "text": "בקניון נחל תקוע, מדרום־מזרח לעיירה, ייסד חריטון בסביבות 345 לספירה את לאורת סוכה, מן המנזרים הראשונים במדבר יהודה. הנזירים הרחיבו מערות טבעיות בצוקים לתאי מגורים, ומערתו של חריטון עצמו תלויה גבוה בצוק. אחרי הכיבוש המוסלמי הועברו לכאן, לפי המסורת, עצמותיו, והמקום נקרא מנזר חריטון. בשתי מערות בנחל נמצאו גם שרידים מימי מרד בר כוכבא."
+      },
+      {
+        "title": "המבצר הצלבני",
+        "text": "בשולי התל עומדים שרידי מבנה מרובע מימי הצלבנים, אחוזה מבוצרת או מצודה קטנה, שמידותיה בערך 41 על 48 על 60 מטר. קירותיו עבים מ־2 מטרים, ותעלה חצובה בסלע הגנה עליו. ב־1138 נמסר הכפר לקנונים של כנסיית הקבר, והמבנה מעיד על השליטה הצלבנית בשולי המדבר."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Tekoa was a Judahite town on the edge of the Judean Desert, south of Bethlehem. The prophet Amos came from here, “among the herdsmen of Tekoa,” and Joab fetched from here the wise woman who persuaded David to bring Absalom home. Centuries later monks settled in the caves of the Tekoa canyon, and the name survives in the village of Tuqu’ beside the ruins.",
+    "setting": "Khirbet Tekoa sits on a hill about 825 m high, some 16 km south of Jerusalem and 8 km south of Bethlehem, with Herodium rising about 4 km to the northeast. It lies right on the line between the grain fields and olive groves of the Judean hills to the west and the “wilderness of Tekoa” to the east, bare hills falling toward the Dead Sea. Rain comes only in winter and fades quickly eastward, so people lived from flocks and small farms. The Tekoa stream (Wadi Khureitun) cuts a deep canyon full of caves. Today the hilltop holds the remains of a Byzantine church, cisterns and medieval ruins among olive trees.",
+    "peoples": [
+      {
+        "name": "Judahites of the biblical era",
+        "text": "In the Iron Age Tekoa was a town of the tribe of Judah. Chronicles lists “Ashhur the father of Tekoa” among Judah’s descendants, and one of David’s warriors was Ira son of Ikkesh the Tekoite. Its people were shepherds and farmers; Amos calls himself a herdsman and a tender of sycamore figs. Since sycamores do not grow this high, some think he also worked in the lowlands, while others, such as Gary Rendsburg, suggest Amos’s Tekoa was a different village in Galilee."
+      },
+      {
+        "name": "Returnees from exile",
+        "text": "Under Persian rule people of Tekoa resettled the town, then part of the province of Yehud. In Nehemiah they build two sections of Jerusalem’s wall, though the text notes that their nobles would not put their necks to the work. The “wilderness of Tekoa” appears again as a refuge in Maccabean times, and Tekoans are mentioned in Bar Kokhba’s letters."
+      },
+      {
+        "name": "Byzantine monks and villagers",
+        "text": "From the 4th to the 7th century CE the area filled with monks. Saint Chariton founded the Lavra of Souka, the “Old Lavra,” in the cliffs of the Tekoa canyon around 345, and the village itself had a church with a baptismal font. A tradition from the 4th century identified a tomb in the village as that of Amos, and by the 6th century a chapel stood over it. Greek- and Aramaic-speaking Christians lived here."
+      },
+      {
+        "name": "Medieval and Ottoman villagers",
+        "text": "The Crusaders called the village Casal Techue, and both Christians and Muslims lived there. The geographer Yaqut wrote in 1225 that Tekoa was known for its honey. The Ottoman census of 1526 recorded 82 families, 55 of them Christian, and in the 18th century the Christians moved to Bethlehem. The Arab village of Tuqu’, next to the ruins, still carries the ancient name."
+      }
+    ],
+    "population": "Nobody counted biblical Tekoa, and the site has seen only small excavations, so its size is unknown. Country towns like it in Judah usually held a few hundred to perhaps a thousand people, but that is only a general estimate. For comparison, nearby Jerusalem grew by about 700 BCE to some 8,000–25,000 people, depending on the estimate. The first real figure comes much later: the Ottoman census of 1526 recorded 82 households in the village, perhaps 400–500 people.",
+    "archaeology": [
+      {
+        "title": "Tombs and royal stamps of the First Temple period",
+        "text": "The site has seen only small excavations: Martin Heicksen (1968), John J. Davis (1970) and Sayf al-Din Haddad (1981). Davis dug Tomb 302, a rock-cut burial cave about 7.7 m long with eight burial niches, used from the late 8th to the early 6th century BCE. A storage-jar handle stamped “belonging to the king” (lmlk) from the late 8th century was also found, the same type known from Lachish and other towns of Hezekiah’s Judah."
+      },
+      {
+        "title": "The Byzantine church and its font",
+        "text": "A survey and partial dig in 1968 exposed a basilica-style church, about 25 by 17 m, with a mosaic floor and a small apsed chapel beside it, probably part of a monastic complex. Nearby stood an octagonal baptismal font carved from a single block of reddish limestone and decorated with crosses and rosettes, already described by the French explorer Victor Guérin in 1863. Burial caves close by held Byzantine oil lamps marked with crosses."
+      },
+      {
+        "title": "The monasteries of the Tekoa canyon",
+        "text": "In the canyon southeast of the town, Chariton founded the Lavra of Souka around 345 CE, one of the first monasteries of the Judean Desert. Monks enlarged natural caves in the cliffs into cells, and Chariton’s own cave hangs high in the rock face. After the Muslim conquest his bones were reportedly brought here, and the place became known as the monastery of Chariton. Two caves in the canyon also held remains from the Bar Kokhba revolt."
+      },
+      {
+        "title": "The Crusader stronghold",
+        "text": "At the edge of the mound stand the remains of a four-sided Crusader building, a fortified manor or small castle measuring roughly 41 by 48 by 60 m. Its walls are more than 2 m thick, and a rock-cut ditch protected it. In 1138 the village was given to the canons of the Church of the Holy Sepulchre, and the building shows Crusader control on the desert’s edge."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "united",
+      "name": { "he": "דוד המלך (לפי המסופר)", "en": "King David (as the Bible tells it)" },
+      "period": { "he": "בערך 1000–930 לפנה״ס", "en": "c. 1000–930 BCE" },
+      "note": { "he": "סיפור האשה החכמה מתקוע מתרחש בחצר דוד; היקף ממלכתו שנוי במחלוקת.", "en": "The story of the wise woman of Tekoa is set at David’s court; the size of his kingdom is debated." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "מלכי יהודה", "en": "Kings of Judah" },
+      "period": { "he": "בערך 930–586 לפנה״ס", "en": "c. 930–586 BCE" },
+      "note": { "he": "לפי דברי הימים רחבעם ביצר את תקוע, ויהושפט יצא ממנה לקרב.", "en": "Chronicles says Rehoboam fortified Tekoa and Jehoshaphat marched out by it." }
+    },
+    {
+      "realm": "babylonia",
+      "name": { "he": "מלכי בבל", "en": "Kings of Babylon" },
+      "period": { "he": "586–539 לפנה״ס", "en": "586–539 BCE" },
+      "note": { "he": "אחרי חורבן ירושלים נעשה האזור חלק מן האימפריה הבבלית.", "en": "After Jerusalem fell, the area became part of the Babylonian empire." }
+    },
+    {
+      "realm": "persia",
+      "name": { "he": "פחוות יהוד תחת פרס", "en": "The province of Yehud under Persia" },
+      "period": { "he": "539–332 לפנה״ס", "en": "539–332 BCE" },
+      "note": { "he": "אנשי תקוע השתתפו בבניית חומת ירושלים בימי נחמיה.", "en": "Tekoa’s people helped rebuild Jerusalem’s wall in Nehemiah’s time." }
+    },
+    {
+      "realm": null,
+      "name": { "he": "האימפריה הביזנטית", "en": "The Byzantine Empire" },
+      "period": { "he": "המאות ה־4 עד ה־7 לספירה", "en": "4th–7th centuries CE" },
+      "note": { "he": "תקוע וסביבתה נעשו מרכז של כנסיות ומנזרים.", "en": "Tekoa and its canyon became a centre of churches and monasteries." }
+    }
+  ],
+  "timeline": [
+    { "year": -1000, "text": { "he": "בערך 1000 לפנה״ס (לפי המסופר): יואב מביא מתקוע אשה חכמה אל דוד.", "en": "c. 1000 BCE (as told): Joab brings a wise woman from Tekoa to David." } },
+    { "year": -925, "text": { "he": "בערך 925 לפנה״ס: לפי דברי הימים, רחבעם מבצר את תקוע.", "en": "c. 925 BCE: according to Chronicles, Rehoboam fortifies Tekoa." } },
+    { "year": -760, "text": { "he": "בערך 760 לפנה״ס: עמוס, רועה מתקוע, מתנבא בבית אל.", "en": "c. 760 BCE: Amos, a herdsman of Tekoa, prophesies at Bethel." } },
+    { "year": -700, "text": { "he": "בערך 700 לפנה״ס: קנקני ״למלך״ מגיעים לתקוע, וקבר 302 בשימוש.", "en": "c. 700 BCE: royal “lmlk” jars reach Tekoa, and Tomb 302 is in use." } },
+    { "year": -445, "text": { "he": "בערך 445 לפנה״ס: אנשי תקוע בונים קטעים מחומת ירושלים בימי נחמיה.", "en": "c. 445 BCE: men of Tekoa rebuild sections of Jerusalem’s wall under Nehemiah." } },
+    { "year": 345, "text": { "he": "בערך 345 לספירה: חריטון מייסד את לאורת סוכה בנחל תקוע.", "en": "c. 345 CE: Chariton founds the Lavra of Souka in the Tekoa canyon." } },
+    { "year": 1225, "text": { "he": "1225: יאקות כותב שתקוע ידועה בדבש שלה.", "en": "1225: Yaqut writes that Tekoa is known for its honey." } },
+    { "year": 1526, "text": { "he": "1526: במפקד העות׳מאני נרשמות בתקוע 82 משפחות, 55 מהן נוצריות.", "en": "1526: the Ottoman census records 82 families in Tekoa, 55 of them Christian." } }
+  ],
+  "mentions": [
+    { "ref": "II Samuel 14:2", "note": { "he": "יואב שולח לתקוע ומביא משם אשה חכמה, שתשכנע את דוד להשיב את אבשלום.", "en": "Joab sends to Tekoa for a wise woman to persuade David to bring back Absalom." } },
+    { "ref": "II Samuel 23:26", "note": { "he": "עירא בן עקש התקועי, מגיבורי דוד.", "en": "Ira son of Ikkesh the Tekoite, one of David’s warriors." } },
+    { "ref": "Jeremiah 6:1", "note": { "he": "״ובתקוע תקעו שופר״: ירמיהו מזהיר מפני אויב מן הצפון, במשחק מילים על שם העיר.", "en": "“Blow the shofar in Tekoa”: Jeremiah warns of a foe from the north, punning on the town’s name." } },
+    { "ref": "Amos 1:1", "note": { "he": "״דברי עמוס אשר היה בנקדים מתקוע״, שנתיים לפני הרעש.", "en": "The words of Amos, one of the herdsmen of Tekoa, two years before the earthquake." } },
+    { "ref": "Nehemiah 3:5", "note": { "he": "התקועים מחזקים את החומה, אבל אדיריהם אינם משתתפים בעבודה.", "en": "The Tekoites repair the wall, but their nobles will not join the work." } },
+    { "ref": "Nehemiah 3:27", "note": { "he": "התקועים מחזקים קטע שני, מול המגדל הגדול.", "en": "The Tekoites repair a second section, opposite the great tower." } },
+    { "ref": "I Chronicles 2:24", "note": { "he": "״אשחור אבי תקוע״ ברשימת צאצאי יהודה.", "en": "“Ashhur the father of Tekoa” in the genealogy of Judah." } },
+    { "ref": "I Chronicles 11:28", "note": { "he": "עירא בן עקש התקועי שוב, ברשימת גיבורי דוד.", "en": "Ira son of Ikkesh the Tekoite again, in the list of David’s warriors." } },
+    { "ref": "II Chronicles 11:6", "note": { "he": "רחבעם בונה את בית לחם, עיטם ותקוע לערי מבצר.", "en": "Rehoboam builds up Bethlehem, Etam and Tekoa as fortified towns." } },
+    { "ref": "II Chronicles 20:20", "note": { "he": "צבא יהושפט יוצא אל מדבר תקוע: ״האמינו בה׳ אלהיכם ותאמנו״.", "en": "Jehoshaphat’s army goes out to the wilderness of Tekoa: “Believe in the LORD and you will stand firm.”" } }
+  ],
+  "images": [
+    { "file": "File:Tell Tekoa.jpg", "kind": "site", "caption": { "he": "חורבת תקוע בין עצי הזית", "en": "Khirbet Tekoa among olive trees" } },
+    { "file": "File:Nahal Tekoa (34548666452).jpg", "kind": "site", "caption": { "he": "נחל תקוע ומדבר תקוע ממזרח לעיירה", "en": "The Tekoa canyon and the wilderness east of the town" } },
+    { "file": "File:Haritons-Cave-262.jpg", "kind": "site", "caption": { "he": "צוקי נחל תקוע ליד מערת חריטון", "en": "The cliffs of the Tekoa canyon near Chariton’s cave" } },
+    { "file": "File:Southern Palestine. Wilderness of Tekoah LOC matpc.00086.jpg", "kind": "site", "caption": { "he": "״מדבר תקוע״, צילום מתחילת המאה ה־20 (אוסף המושבה האמריקנית)", "en": "The wilderness of Tekoa, early 20th-century photograph (American Colony collection)" } },
+    { "file": "File:Opening of augmented water source in Jaamri Country at Ain Hamda, S.E. of Bethlehem. Byzantine baptismal font at Takoa, Mr. W.R. McGeagh, Mr. Sommerville & Mr. Faraj LOC matpc.20464.jpg", "kind": "artifact", "caption": { "he": "אגן הטבילה הביזנטי המתומן בתקוע, צילום משנות ה־30 או ה־40", "en": "The octagonal Byzantine baptismal font at Tekoa, photographed in the 1930s or 1940s" } },
+    { "file": "File:136.The Prophet Amos.jpg", "kind": "art", "caption": { "he": "הנביא עמוס, גוסטב דורה, 1866", "en": "The prophet Amos, Gustave Doré, 1866" } },
+    { "file": "File:Wijze vrouw uit Tekoa in gesprek met David, RP-P-OB-45.338.jpg", "kind": "art", "caption": { "he": "האשה החכמה מתקוע לפני דוד, תחריט של קספר לויקן, 1708", "en": "The wise woman of Tekoa before David, etching by Caspar Luyken, 1708" } }
+  ],
+  "wiki": { "he": "תקוע (יישוב מקראי)", "en": "Tuqu'" },
+  "related": ["bethlehem", "cityofdavid", "bethel", "eingedi", "hebron", "lachish"],
+  "sources": [
+    { "title": "Tuqu’ (Wikipedia), sections on ancient Tekoa", "url": "https://en.wikipedia.org/wiki/Tuqu%27" },
+    { "title": "Tekoa (BiblePlaces.com)", "url": "https://www.bibleplaces.com/tekoa/" },
+    { "title": "Wadi Khureitun (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Wadi_Khureitun" },
+    { "title": "Chariton the Confessor (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Chariton_the_Confessor" }
+  ]
+}

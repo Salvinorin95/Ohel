@@ -53,7 +53,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         items: [
           "Cloudflare מארחת את האוהל וסופרת ביקורים (Cloudflare Web Analytics) בלי עוגיות ובלי לעקוב אחריך בין אתרים.",
           "הטקסטים מגיעים מספריא דרך השרת שלנו, כך שספריא לא רואה אותך.",
-          "תמונות המפה נטענות ישירות מ־Esri (לוויין) ומ־Amazon (תבליט), ולכן הן רואות את כתובת האינטרנט שלך, כמו כל אתר.",
+          "תמונות המפה נטענות ישירות מ־Esri (לוויין) ומ־Amazon (תבליט), ותמונות המקומות מוויקישיתוף (Wikimedia), ולכן הם רואים את כתובת האינטרנט שלך, כמו כל אתר.",
           "המפתח, השפה והגדרות הקריאה נשמרים אצלך בדפדפן, כדי שלא תצטרכו להיכנס מחדש בכל פעם.",
         ],
       },
@@ -68,6 +68,8 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         items: [
           "הטקסטים: ספריא. הרישיון של כל גרסה מופיע מתחת לטקסט.",
           "לוויין: Esri, Maxar, Earthstar Geographics. תבליט: Mapzen ו־AWS Open Data.",
+          "תמונות המקומות: ויקישיתוף. היוצר והרישיון של כל תמונה מופיעים כשלוחצים עליה.",
+          "גבולות הממלכות והאימפריות: Cliopatria של מאגר Seshat (CC BY 4.0), בפישוט ובקירוב.",
           "גופנים: Frank Ruhl Libre ו־Rubik (SIL Open Font License).",
         ],
       },
@@ -115,7 +117,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         items: [
           "Cloudflare hosts Ohel and counts visits (Cloudflare Web Analytics) without cookies and without following you around the web.",
           "Bible texts come from Sefaria through our server, so Sefaria doesn't see you.",
-          "Map images load straight from Esri (satellite) and Amazon (terrain), so they see your internet address, like any website does.",
+          "Map images load straight from Esri (satellite) and Amazon (terrain), and place photos from Wikimedia Commons, so they see your internet address, like any website does.",
           "Your key, language and reading settings are saved in your own browser, so you don't have to sign in every time.",
         ],
       },
@@ -130,6 +132,8 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         items: [
           "Texts: Sefaria. Each version's license appears under the text.",
           "Satellite: Esri, Maxar, Earthstar Geographics. Terrain: Mapzen and AWS Open Data.",
+          "Place photos: Wikimedia Commons. Each image's author and license show when you tap it.",
+          "Borders of kingdoms and empires: Cliopatria from the Seshat Global History Databank (CC BY 4.0), simplified and approximate.",
           "Fonts: Frank Ruhl Libre and Rubik (SIL Open Font License).",
         ],
       },

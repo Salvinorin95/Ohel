@@ -1,0 +1,159 @@
+{
+  "id": "bethshemesh",
+  "he": {
+    "summary": "עיר גבול בעמק שורק, במקום שבו הרי יהודה פוגשים את ארץ הפלשתים. לפי שמואל א פרק ו, לכאן הביאו שתי פרות את ארון הברית בחזרה מארץ פלשתים, בזמן שאנשי העיר קצרו חיטים בעמק. החפירות בתל מספרות סיפור של עיר קטנה שחיה על קו התפר בין עמים.",
+    "setting": "תל בית שמש שוכן בעמק שורק, ממש צפון־מערבית לעיר בית שמש של היום ולצד כביש 38. כאן העמק הצר יוצא מן ההרים ומתרחב לכיוון מישור החוף, ולכן העיר שמרה על אחת הדרכים העיקריות מן החוף אל ירושלים. עקרון הפלשתית שוכנת כ־12 ק״מ מערבה, תמנה כ־7 ק״מ, וצרעה, עירו של שמשון, כ־2.5 ק״מ צפונה. קריית יערים, שאליה הועבר הארון, נמצאת כ־13 ק״מ צפונית־מזרחית. העמק פורה, ובקיץ עדיין קוצרים בו חיטה כמו בסיפור. היום רואים על התל קירות חפורים, את המאגר התת־קרקעי ואת שכונות העיר המודרנית ברקע.",
+    "peoples": [
+      {
+        "name": "הכנענים",
+        "text": "השם בית שמש פירושו ״בית השמש״, כנראה על שם אלת השמש הכנענית. כבר במאה ה־17 לפנה״ס הייתה כאן עיר מבוצרת עם שער גדול. בתקופת הברונזה המאוחרת עמד בה ארמון, ונמצאו בו כלי חרס מכרתים וקפריסין וחרפושית של אמנחותפ השלישי מלך מצרים. במחסן אחד נשמרו עשרות אלפי זרעים של דגנים, קטניות ופירות."
+      },
+      {
+        "name": "תושבי כפר הגבול",
+        "text": "במאות ה־12 וה־11 לפנה״ס הייתה בית שמש כפר לא מבוצר, במרחק קצר מערי הפלשתים. מבין יותר מ־6,000 עצמות בעלי חיים מהתקופה הזו כמעט לא נמצאו עצמות חזיר, אף שבערי הפלשתים חזיר היה כחמישית מהבשר. החופרים מציעים שהתושבים, כנענים או ישראלים, נמנעו מחזיר כדי להבדיל את עצמם מן השכנים. אי אפשר לקבוע בוודאות לאיזה עם השתייכו."
+      },
+      {
+        "name": "הפלשתים",
+        "text": "הפלשתים ישבו במישור החוף, בעקרון, גת ותמנה, ולחצו מזרחה אל עמק שורק. במאה ה־11 לפנה״ס נחרב בבית שמש מתחם פולחן, ושרידיו שימשו אחר כך כדירים לבהמות. החופרים משערים שהפלשתים השתלטו כאן לזמן קצר. לפי דברי הימים הם כבשו את העיר שוב בימי אחז, בערך 735 לפנה״ס."
+      },
+      {
+        "name": "אנשי ממלכת יהודה",
+        "text": "במאה העשירית לפנה״ס הפכה בית שמש למרכז מינהלי מבוצר של יהודה, עם מבני ציבור ומאגר מים גדול. המקרא מונה אותה בין ערי הכוהנים, והיא שמרה על הגבול מול עקרון. במאה השמינית הייתה מרכז לייצור שמן זית, ונמצאו בה טביעות חותם ״למלך״ על קנקנים. סנחריב החריב אותה ב־701 לפנה״ס. על התל עצמו היישוב לא התאושש, אבל חפירות הצלה במדרון המזרחי חשפו יישוב יהודאי פעיל מן המאה השביעית, עם בתי בד רבים."
+      }
+    ],
+    "population": "התל קטן, כשלושה הקטרים בלבד. לפי כלל האצבע המקובל של 200–250 נפש להקטר בנוי, גרו בו בשיאו כנראה 600–750 איש, אולי פחות בתקופות שבהן היה כפר. בסוף המאה השמינית ובמאה השביעית לפנה״ס התפשטו מבנים ובתי בד גם אל המדרון שמחוץ לתל, ולכן האוכלוסייה באזור הייתה כנראה גדולה יותר. לשם השוואה, בעיר בית שמש של היום גרו ב־2024 כ־177 אלף איש, פי מאתיים ויותר מן העיר המקראית.",
+    "archaeology": [
+      {
+        "title": "שלוש משלחות במאה שנה",
+        "text": "רובינסון זיהה את המקום עם בית שמש בשנות ה־30 של המאה ה־19, לפי שם החורבה עין שמס. בשנים 1911–1913 חפר כאן דנקן מקנזי מטעם הקרן הבריטית לחקר ארץ ישראל, ובשנים 1928–1933 אליהו גרנט מקולג' הוורפורד. מ־1990 חופרים במקום שלמה בונימוביץ וצבי לדרמן, תחילה מטעם אוניברסיטת בר־אילן ואוניברסיטת בן־גוריון ואחר כך מטעם אוניברסיטת תל אביב. חלק מממצאי החפירות הישנות שמורים במוזיאון פן בפילדלפיה."
+      },
+      {
+        "title": "המאגר התת־קרקעי",
+        "text": "במאה העשירית לפנה״ס חצבו תושבי העיר מאגר מים תת־קרקעי בצורת צלב, שהכיל כ־800 מטרים מעוקבים של מי גשם שהוזרמו אליו בתעלות. המאגר מעיד על שלטון מאורגן שהשקיע בעיר הגבול. במאה השביעית ניסו לחדש את השימוש בו, ואחר כך נאטם. בסמוך נמצא גם בית מלאכה לברזל מהמאה התשיעית, מן הקדומים בארץ."
+      },
+      {
+        "title": "חורבן במאה השמינית",
+        "text": "העיר המבוצרת נחרבה באלימות במחצית הראשונה של המאה השמינית לפנה״ס. מחקר ארכיאומגנטי תמך בתאריך הזה, ורבים קושרים את החורבן לקרב שבו יהואש מלך ישראל ניצח את אמציהו מלך יהודה ״בבית שמש אשר ליהודה״. העיר שנבנתה אחריה כבר לא הייתה מבוצרת, ונחרבה ב־701 לפנה״ס במסע סנחריב."
+      },
+      {
+        "title": "כתובות וחותם",
+        "text": "גרנט מצא חרס מהמאה ה־12 לפנה״ס בכתב כנעני קדום, ועליו השם ״חנן״. אותו שם מופיע גם על לוח משחק מסוף המאה העשירית. ב־2012 הוצג חותם עגול קטן מהמאה ה־12 לפנה״ס שמתואר בו אדם מול אריה. החופרים לא טוענים שזה שמשון, אבל לדבריהם הוא מראה שסיפורים על גיבור שנאבק באריה סופרו באזור באותה תקופה."
+      }
+    ]
+  },
+  "en": {
+    "summary": "A border town in the Sorek Valley, where the Judean hills meet the land of the Philistines. In 1 Samuel 6, two cows pulled the Ark of the Covenant here on its way back from Philistia while the townspeople were reaping wheat in the valley. Excavations on the mound tell the story of a small town living on the seam between peoples.",
+    "setting": "Tel Beth-shemesh lies in the Sorek Valley, just northwest of the modern city of Beit Shemesh beside Highway 38. Here the narrow valley leaves the hills and opens toward the coastal plain, so the town guarded one of the main roads from the coast to Jerusalem. Philistine Ekron is about 12 km to the west, Timnah about 7 km, and Zorah, Samson's town, about 2.5 km north. Kiriath-jearim, where the Ark went next, is about 13 km to the northeast. The valley is fertile, and wheat is still harvested here in summer, as in the story. On the mound today you can see excavated walls, the underground reservoir and the modern city behind.",
+    "peoples": [
+      {
+        "name": "Canaanites",
+        "text": "The name means \"house of the sun\", probably after the Canaanite sun goddess. Already in the 17th century BCE there was a fortified town here with a large gate. In the Late Bronze Age it had a palace, with pottery from Crete and Cyprus and a scarab of the Egyptian king Amenhotep III. One storeroom held tens of thousands of seeds of grain, pulses and fruit."
+      },
+      {
+        "name": "The border villagers",
+        "text": "In the 12th and 11th centuries BCE Beth-shemesh was an unwalled village a short walk from the Philistine cities. Among more than 6,000 animal bones from this period almost no pig bones turned up, though pork made up about a fifth of the meat in Philistine towns. The excavators suggest the villagers, Canaanite or Israelite, shunned pork to set themselves apart from their neighbours. Who exactly they were cannot be settled."
+      },
+      {
+        "name": "Philistines",
+        "text": "The Philistines lived on the coastal plain, at Ekron, Gath and Timnah, and pushed east into the Sorek Valley. In the 11th century BCE a sacred compound at Beth-shemesh was destroyed and its ruins were used as animal pens. The excavators think the Philistines took control here for a time. According to Chronicles they captured the town again in the days of Ahaz, around 735 BCE."
+      },
+      {
+        "name": "Judahites",
+        "text": "In the 10th century BCE Beth-shemesh became a fortified administrative centre of Judah, with public buildings and a large water reservoir. The Bible lists it as a priestly town, and it guarded the border facing Ekron. In the 8th century it produced olive oil, and jar handles stamped \"belonging to the king\" were found here. Sennacherib destroyed it in 701 BCE. The mound itself never recovered, but salvage digs on the eastern slope have revealed a busy 7th-century Judahite settlement with many oil presses."
+      }
+    ],
+    "population": "The mound is small, only about three hectares. At the common rule of thumb of 200–250 people per built-up hectare, it probably held 600–750 people at its height, and fewer when it was a village. In the late 8th and 7th centuries BCE buildings and oil presses also spread onto the slope beyond the mound, so the wider area held more. For comparison, the modern city of Beit Shemesh had about 177,000 residents in 2024, more than two hundred times the biblical town.",
+    "archaeology": [
+      {
+        "title": "Three expeditions in a century",
+        "text": "Edward Robinson identified the site with Beth-shemesh in the 1830s from the name of the ruin, Ain Shams. Duncan Mackenzie dug here in 1911–1913 for the Palestine Exploration Fund, and Elihu Grant of Haverford College in 1928–1933. Since 1990 Shlomo Bunimovitz and Zvi Lederman have led excavations, first for Bar-Ilan and Ben-Gurion universities and later for Tel Aviv University. Some finds from the early digs are in the Penn Museum in Philadelphia."
+      },
+      {
+        "title": "The underground reservoir",
+        "text": "In the 10th century BCE the townspeople cut a cross-shaped underground reservoir that held about 800 cubic metres of rainwater, fed by channels. It shows an organised government investing in this border town. In the 7th century someone tried to bring it back into use, and then it was sealed. Nearby was a 9th-century ironworking shop, one of the earliest in the land."
+      },
+      {
+        "title": "Destruction in the 8th century",
+        "text": "The fortified town was violently destroyed in the first half of the 8th century BCE. An archaeomagnetic study supports that date, and many link the destruction to the battle in which Jehoash of Israel defeated Amaziah of Judah \"at Beth-shemesh, which belongs to Judah\". The town built afterwards had no walls and was destroyed in 701 BCE during Sennacherib's campaign."
+      },
+      {
+        "title": "Inscriptions and a seal",
+        "text": "Grant found a 12th-century BCE sherd in early Canaanite script bearing the name Hanan, and the same name appears on a game board from the late 10th century. In 2012 the excavators presented a small round seal from the 12th century BCE showing a man facing a lion. They do not claim it shows Samson, but say it suggests that stories of a lion-fighting hero were told in the area at the time."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": { "he": "מצרים, דרך מלכים כנעניים מקומיים", "en": "Egypt, through local Canaanite rulers" },
+      "period": { "he": "בערך 1500–1150 לפנה״ס", "en": "c. 1500–1150 BCE" },
+      "note": { "he": "בית שמש הכנענית, עם ארמונה, הייתה חלק מכנען שתחת שלטון מצרים.", "en": "Canaanite Beth-shemesh, with its palace, was part of Egyptian-ruled Canaan." }
+    },
+    {
+      "realm": "philistia",
+      "name": { "he": "ערי הפלשתים", "en": "The Philistine cities" },
+      "period": { "he": "המאה ה־11 לפנה״ס, אולי לזמן קצר; ושוב בערך 735 לפנה״ס", "en": "11th century BCE, perhaps briefly; again c. 735 BCE" },
+      "note": { "he": "החופרים משערים שהפלשתים השתלטו על העיר במאה ה־11; דברי הימים מספרים שכבשו אותה בימי אחז.", "en": "The excavators think the Philistines took the town in the 11th century; Chronicles says they captured it in Ahaz's reign." }
+    },
+    {
+      "realm": "united",
+      "name": { "he": "הממלכה המאוחדת (לפי המקרא)", "en": "The United Monarchy (as the Bible tells it)" },
+      "period": { "he": "בערך 1000–930 לפנה״ס", "en": "c. 1000–930 BCE" },
+      "note": { "he": "בית שמש מופיעה בנציבות של שלמה; אם המרכז המבוצר נבנה בימיו או אחריו, שנוי במחלוקת.", "en": "Beth-shemesh appears in Solomon's district list; whether its fortified centre was built in his day or later is debated." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "מלכי יהודה", "en": "The kings of Judah" },
+      "period": { "he": "בערך 930–701 לפנה״ס, ושוב לזמן קצר במאה השביעית", "en": "c. 930–701 BCE, and briefly again in the 7th century" },
+      "note": { "he": "עיר גבול וכוהנים של יהודה מול עקרון; כאן ניצח יהואש מלך ישראל את אמציהו.", "en": "Judah's priestly border town facing Ekron; here Jehoash of Israel defeated Amaziah." }
+    },
+    {
+      "realm": "assyria",
+      "name": { "he": "סנחריב מלך אשור", "en": "Sennacherib of Assyria" },
+      "period": { "he": "701 לפנה״ס", "en": "701 BCE" },
+      "note": { "he": "מסע סנחריב החריב את העיר, והיא לא התאוששה עוד.", "en": "Sennacherib's campaign destroyed the town, and it never really recovered." }
+    }
+  ],
+  "timeline": [
+    { "year": -1650, "text": { "he": "עיר כנענית מבוצרת עם שער גדול (בערך)", "en": "A fortified Canaanite town with a large gate (approximate)" } },
+    { "year": -1360, "text": { "he": "ארמון כנעני וקשרי מסחר עם כרתים, קפריסין ומצרים (בערך)", "en": "A Canaanite palace with trade links to Crete, Cyprus and Egypt (approximate)" } },
+    { "year": -1050, "text": { "he": "כפר גבול ללא חזיר; מתחם הפולחן נחרב (בערך)", "en": "A border village without pork; its sacred compound is destroyed (approximate)" } },
+    { "year": -950, "text": { "he": "יהודה מבצרת את העיר וחוצבת את המאגר (בערך)", "en": "Judah fortifies the town and cuts the reservoir (approximate)" } },
+    { "year": -790, "text": { "he": "יהואש מלך ישראל מנצח את אמציהו בבית שמש (בערך)", "en": "Jehoash of Israel defeats Amaziah at Beth-shemesh (approximate)" } },
+    { "year": -701, "text": { "he": "סנחריב מחריב את בית שמש", "en": "Sennacherib destroys Beth-shemesh" } },
+    { "year": 1911, "text": { "he": "דנקן מקנזי מתחיל לחפור בתל", "en": "Duncan Mackenzie begins excavating the mound" } },
+    { "year": 1990, "text": { "he": "בונימוביץ ולדרמן מחדשים את החפירות", "en": "Bunimovitz and Lederman renew the excavations" } }
+  ],
+  "mentions": [
+    { "ref": "Joshua 15:10", "note": { "he": "גבול יהודה ״וירד בית שמש ועבר תמנה״.", "en": "Judah's border goes down to Beth-shemesh and on to Timnah." } },
+    { "ref": "Joshua 21:16", "note": { "he": "בית שמש ומגרשה ניתנות לכוהנים.", "en": "Beth-shemesh and its pastures are given to the priests." } },
+    { "ref": "I Samuel 6:9", "note": { "he": "המבחן של הפלשתים: אם הארון יעלה בדרך גבולו בית שמש.", "en": "The Philistines' test: will the Ark go up the road to Beth-shemesh?" } },
+    { "ref": "I Samuel 6:12", "note": { "he": "הפרות הולכות ישר בדרך בית שמש, ״הלך וגעו״.", "en": "The cows go straight along the road to Beth-shemesh, lowing as they go." } },
+    { "ref": "I Samuel 6:13", "note": { "he": "אנשי בית שמש קוצרים חיטים בעמק ושמחים לראות את הארון.", "en": "The people of Beth-shemesh, reaping wheat in the valley, rejoice to see the Ark." } },
+    { "ref": "I Samuel 6:14", "note": { "he": "העגלה עוצרת בשדה יהושע בית השמשי, ליד אבן גדולה.", "en": "The cart stops in the field of Joshua of Beth-shemesh, by a great stone." } },
+    { "ref": "I Samuel 6:19", "note": { "he": "אנשי בית שמש נענשים כי הביטו בארון.", "en": "The people of Beth-shemesh are struck because they looked into the Ark." } },
+    { "ref": "I Kings 4:9", "note": { "he": "בית שמש בנציבות של בן דקר בימי שלמה.", "en": "Beth-shemesh in Ben-deker's district under Solomon." } },
+    { "ref": "II Kings 14:11", "note": { "he": "יהואש ואמציהו נפגשים בקרב ״בבית שמש אשר ליהודה״.", "en": "Jehoash and Amaziah face each other at Beth-shemesh, which belongs to Judah." } },
+    { "ref": "II Kings 14:13", "note": { "he": "יהואש לוכד את אמציהו בבית שמש ופורץ את חומת ירושלים.", "en": "Jehoash captures Amaziah at Beth-shemesh and breaches Jerusalem's wall." } },
+    { "ref": "II Chronicles 25:21", "note": { "he": "סיפור הקרב בין יואש לאמציהו בדברי הימים.", "en": "Chronicles retells the battle between Joash and Amaziah." } },
+    { "ref": "II Chronicles 28:18", "note": { "he": "הפלשתים כובשים את בית שמש, איילון ושוכו בימי אחז.", "en": "The Philistines capture Beth-shemesh, Aijalon and Socho in Ahaz's day." } }
+  ],
+  "images": [
+    { "file": "File:Mb gate tbs.png", "kind": "site", "caption": { "he": "שער העיר מתקופת הברונזה התיכונה בתל בית שמש", "en": "The Middle Bronze Age city gate at Tel Beth-shemesh" } },
+    { "file": "File:Tel-Beit-Shemesh-V3-155.jpg", "kind": "site", "caption": { "he": "תל בית שמש היום", "en": "Tel Beth-shemesh today" } },
+    { "file": "File:Modern bet shemesh.png", "kind": "site", "caption": { "he": "העיר בית שמש של היום, במבט מן התל", "en": "The modern city of Beit Shemesh seen from the mound" } },
+    { "file": "File:Penn Museum Beth Shemesh 1.jpg", "kind": "artifact", "caption": { "he": "צלמיות חרס מבית שמש, תקופת הברונזה המאוחרת, 1400–1200 לפנה״ס (מוזיאון פן)", "en": "Clay figurines from Beth-shemesh, Late Bronze Age, 1400–1200 BCE (Penn Museum)" } },
+    { "file": "File:Ceramic Judean pillar-based figurine Beth Shemesh Iron II 800-586 BCE Penn Museum 02.jpg", "kind": "artifact", "caption": { "he": "צלמית עמוד יהודאית מבית שמש, 800–586 לפנה״ס (מוזיאון פן)", "en": "Judahite pillar figurine from Beth-shemesh, 800–586 BCE (Penn Museum)" } },
+    { "file": "File:070.The Ark Is Returned to Beth-shemesh.jpg", "kind": "art", "caption": { "he": "הארון חוזר לבית שמש, גוסטב דורה, 1866", "en": "The Ark is returned to Beth-shemesh, Gustave Doré, 1866" } },
+    { "file": "File:DuraSyn-WB4-Ark and Temple of Dagon.jpg", "kind": "art", "caption": { "he": "הארון יוצא מארץ פלשתים על עגלה, ציור קיר בבית הכנסת בדורה אירופוס, המאה השלישית לספירה", "en": "The Ark leaves Philistia on an ox cart, wall painting in the Dura-Europos synagogue, 3rd century CE" } }
+  ],
+  "wiki": { "he": "תל בית שמש", "en": "Tel Beit Shemesh" },
+  "related": ["kiriathjearim", "zorah", "ashdod", "gath", "aijalon", "elah"],
+  "sources": [
+    { "title": "Tel Beit Shemesh (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tel_Beit_Shemesh" },
+    { "title": "Beth-Shemesh, New Encyclopedia of Archaeological Excavations in the Holy Land (BAS Library)", "url": "https://library.biblicalarchaeology.org/book/the-new-encyclopedia-of-archaeological-excavations-in-the-holy-land/beth-shemesh/" },
+    { "title": "Ancient desecrated temple sheds light on power struggles at Tel Beth-Shemesh, Tel Aviv University", "url": "https://english.tau.ac.il/node/1019" },
+    { "title": "Beit Shemesh (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Beit_Shemesh" },
+    { "title": "I Samuel 6 (Sefaria)", "url": "https://www.sefaria.org/I_Samuel.6" }
+  ]
+}

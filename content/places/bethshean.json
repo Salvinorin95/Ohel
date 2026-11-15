@@ -1,0 +1,388 @@
+{
+  "id": "bethshean",
+  "he": {
+    "summary": "בית שאן היא אחת הערים העתיקות והחשובות בארץ: תל גבוה בצומת שבו עמק חרוד פוגש את בקעת הירדן. במשך כשלוש מאות שנה ישבו בה מושלים וחיילים מצריים, ולפי שמואל א, על חומתה תקעו הפלשתים את גופות שאול ובניו אחרי הקרב בגלבוע. בתקופה הרומית והביזנטית צמחה למרגלות התל סקיתופוליס, אחת הערים הגדולות בארץ.",
+    "setting": "בית שאן שוכנת בעמק בית שאן, כ־120 מטר מתחת לפני הים, במקום שבו עמק חרוד יורד מזרחה אל בקעת הירדן. הדרך הגדולה מחוף הים דרך עמק יזרעאל אל הירדן, הגלעד ודמשק עברה כאן, ולכן מי ששלט בתל שלט בצומת. נחל חרוד ונחל עמל זורמים לרגליו, ומעיינות רבים משקים את העמק החם והפורה. האקלים חם מאוד בקיץ ומתון בחורף. הגלבוע מתנשא כ־7 ק״מ ממערב. היום התל (תל אל־חוסן) עומד בלב הגן הלאומי בית שאן, ולמרגלותיו נפרשים התיאטרון הרומי, הרחובות המעוטרים בעמודים והמרחצאות של סקיתופוליס. מסביב העיר המודרנית בית שאן.",
+    "peoples": [
+      {
+        "name": "הכנענים",
+        "text": "התל מיושב כמעט ברציפות מסוף התקופה הנאוליתית, לפני כשבעת אלפים שנה. בתקופת הברונזה הייתה כאן עיר כנענית עם מקדשים זה על גבי זה. אחת המצבות שנמצאו בהם מוקדשת לאל ״מכל״, אל מקומי של העיר. גם אחרי שהמצרים עזבו, במאה ה־11 לפנה״ס, המשיכו כנענים לחיות כאן, וספר שופטים מספר שבני מנשה לא הצליחו לגרש אותם."
+      },
+      {
+        "name": "המצרים",
+        "text": "תחותמס השלישי כבש את העיר במאה ה־15 לפנה״ס, ומאז, במשך כשלוש מאות שנה, הייתה בית שאן מרכז הממשל המצרי באזור. ישבו בה מושל, פקידים וחיל מצב. הם הקימו מצבות ניצחון של סתי הראשון ורעמסס השני, פסל של רעמסס השלישי, ובתים בסגנון מצרי עם תנורים וציורי קיר. השלטון המצרי הסתיים בחורבן אלים לא יאוחר מ־1127 לפנה״ס בערך."
+      },
+      {
+        "name": "בני ישראל",
+        "text": "לפי ספר מלכים, בימי שלמה הייתה בית שאן במחוז של בענא בן אחילוד, אף שההיסטוריונים חלוקים על מידת הדיוק של הרשימה. במאה התשיעית והשמינית לפנה״ס הייתה עיר של ממלכת ישראל, בלי חומה, ובה בתים בני ארבעה חדרים. ב־732 לפנה״ס שרף אותה צבא אשור של תגלת פלאסר השלישי, ואחר כך המקום כמעט נעזב עד התקופה ההלניסטית."
+      },
+      {
+        "name": "יוונים, רומאים וביזנטים",
+        "text": "במאה השלישית לפנה״ס קמה כאן עיר יוונית בשם ניסה־סקיתופוליס. ברומא היא הפכה לעיר המובילה של ה״דקאפוליס״, ברית עשר הערים, והיחידה מהן שממערב לירדן. במאה השישית לספירה, בשיאה, אולי גרו בה כ־40,000 נוצרים, יהודים ושומרונים, והיא שימשה בירת המחוז ״פלשתינה השנייה״. רעידת האדמה של 749 לספירה הפילה את רוב העיר."
+      }
+    ],
+    "population": "התל עצמו גדול, כ־4 הקטאר, אבל לפי החופר עמיחי מזר העיר שעל פסגתו, מתקופת הברונזה התיכונה ועד תקופת הברזל, כנראה לא עלתה על כ־14 דונם. לפי ההערכה המקובלת של 25–40 איש לדונם, היו בה אולי 350–550 תושבים (הערכה בלבד), ובתקופה המצרית חלק מהם היו חיילים ופקידים. כלומר, ״העיר״ שעל חומתה נתלו גופות שאול הייתה קטנה, אבל חשובה בגלל מיקומה. סקיתופוליס הביזנטית, לעומת זאת, הגיעה במאה השישית לכ־40,000 תושבים (הערכה), אחת הערים הגדולות בארץ. בבית שאן של היום גרים כ־20,000 איש.",
+    "archaeology": [
+      {
+        "title": "שמונה־עשרה ערים בתל אחד",
+        "text": "משלחת מוזיאון אוניברסיטת פנסילבניה, בהנהלת קלרנס פישר, אלן רו וג׳ראלד פיצג׳רלד, חפרה כאן בעשר עונות בין 1921 ל־1933, עד הסלע. האוניברסיטה העברית חזרה לחפור ב־1983 (יגאל ידין ושולמית גבע), ובשנים 1989–1996 בהנהלת עמיחי מזר. נחשפו לא פחות משמונה־עשרה שכבות יישוב, מסוף התקופה הנאוליתית ועד ימי הביניים."
+      },
+      {
+        "title": "עיר חיל מצב מצרית",
+        "text": "בתל נמצא האוסף החשוב ביותר של מונומנטים מצריים בארץ ישראל: שתי מצבות של סתי הראשון ומצבה של רעמסס השני, כולן מבזלת מקומית, ופסל בגודל טבעי של רעמסס השלישי. הראשונה שבמצבות סתי מספרת על דיכוי מרד של ערים סמוכות, והשנייה מזכירה את ה״עפירו״. נחשף גם ״בניין 1500״, בית המושל המצרי. חלק מהממצאים במוזיאון רוקפלר בירושלים וחלק במוזיאון פן בפילדלפיה."
+      },
+      {
+        "title": "מקדשים, מכל וארונות קבורה",
+        "text": "החופרים הראשונים מצאו שישה מקדשים כנעניים זה על גבי זה, עם כלי פולחן מעוטרים בנחשים. משם מגיעים תבליט הבזלת של אריה ולביאה (או כלב), מהמאה ה־14 לפנה״ס, והמצבה לאל מכל. בבית הקברות הסמוך נמצאו יותר מ־50 ארונות קבורה מחרס בצורת אדם, רובם מהמאות ה־13 וה־12 לפנה״ס. חוקרים בעבר ייחסו חלק מהם לפלשתים או ל״גויי הים״ ששירתו את מצרים, והשאלה עדיין שנויה במחלוקת."
+      },
+      {
+        "title": "בימי שאול: כנענים, לא פלשתים",
+        "text": "בשכבה מהמאה ה־11 לפנה״ס, ימי שאול לפי הכרונולוגיה המקראית, נמצאו ממצאים כנעניים בלבד וזוג מקדשים שבחצרם עוד עמדו המצבות המצריות. יש שקשרו אותם ל״בית עשתרות״ שבו שמו הפלשתים את כלי שאול. אבל לא נמצא כאן שום סימן ליישוב פלשתי. מזר מסיק שהסיפור משקף לכל היותר פשיטה פלשתית קצרה, ולא שליטה ממושכת בעמק."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Beth-shean is one of the oldest and most important cities in the land: a high mound where the Harod Valley meets the Jordan Valley. For about three centuries Egyptian governors and soldiers lived here, and according to I Samuel the Philistines fastened the bodies of Saul and his sons to its wall after the battle on Gilboa. In Roman and Byzantine times the great city of Scythopolis grew up at the foot of the mound.",
+    "setting": "Beth-shean lies in the Beth-shean Valley, about 120 meters below sea level, where the Harod Valley drops east into the Jordan Valley. The great road from the coast through the Jezreel Valley to the Jordan, Gilead and Damascus passed here, so whoever held the mound held the crossroads. The Harod and Amal streams flow at its foot, and many springs water the hot, fertile valley. Summers are very hot and winters mild. Mount Gilboa rises about 7 km to the west. Today the mound (Tell el-Husn) stands in the heart of Beit She'an National Park, with the Roman theater, colonnaded streets and baths of Scythopolis spread out below it, and the modern town all around.",
+    "peoples": [
+      {
+        "name": "The Canaanites",
+        "text": "The mound was lived on almost continuously from the end of the Neolithic, some 7,000 years ago. In the Bronze Age a Canaanite city stood here, with temples built one on top of another. One stela found in them is dedicated to Mekal, the city's local god. Even after the Egyptians left, in the 11th century BCE, Canaanites went on living here, and the Book of Judges says the tribe of Manasseh could not drive them out."
+      },
+      {
+        "name": "The Egyptians",
+        "text": "Thutmose III conquered the city in the 15th century BCE, and for roughly three hundred years Beth-shean was the center of Egyptian rule in the region. A governor, officials and a garrison lived here. They set up victory stelae of Seti I and Ramesses II and a statue of Ramesses III, and built Egyptian-style houses with ovens and wall paintings. Egyptian rule ended in a violent destruction no later than about 1127 BCE."
+      },
+      {
+        "name": "The Israelites",
+        "text": "According to Kings, in Solomon's day Beth-shean was in the district of Baana son of Ahilud, though historians debate how accurate that list is. In the 9th and 8th centuries BCE it was an unwalled town of the Kingdom of Israel with four-room houses. In 732 BCE the Assyrian army of Tiglath-pileser III burned it, and afterward the site was almost abandoned until Hellenistic times."
+      },
+      {
+        "name": "Greeks, Romans and Byzantines",
+        "text": "In the 3rd century BCE a Greek city named Nysa-Scythopolis arose here. Under Rome it became the leading city of the Decapolis, the league of ten cities, and the only one west of the Jordan. At its height in the 6th century CE perhaps 40,000 Christians, Jews and Samaritans lived here, and it was capital of the province of Palaestina Secunda. The earthquake of 749 CE brought most of the city down."
+      }
+    ],
+    "population": "The mound is about 4 hectares, but according to its excavator Amihai Mazar the town on its summit, from the Middle Bronze Age to the Iron Age, probably covered no more than about 14 dunams (1.4 hectares). At the usual 25–40 people per dunam, that means perhaps 350–550 people, some of them Egyptian soldiers and officials (an estimate only). So the \"city\" on whose wall Saul's body hung was small, but its location made it matter. Byzantine Scythopolis reached about 40,000 people in the 6th century (an estimate), one of the largest cities in the land. About 20,000 people live in Beit She'an today.",
+    "archaeology": [
+      {
+        "title": "Eighteen cities in one mound",
+        "text": "An expedition of the University of Pennsylvania Museum, led by Clarence Fisher, Alan Rowe and Gerald FitzGerald, dug here for ten seasons between 1921 and 1933, all the way to bedrock. The Hebrew University returned in 1983 (Yigael Yadin and Shulamit Geva), and from 1989 to 1996 under Amihai Mazar. They found no fewer than eighteen layers of settlement, from the end of the Neolithic to the Middle Ages."
+      },
+      {
+        "title": "An Egyptian garrison town",
+        "text": "The mound produced the most important group of Egyptian monuments found in the land: two stelae of Seti I and one of Ramesses II, all of local basalt, and a life-size statue of Ramesses III. The first of Seti's stelae tells of crushing a revolt by nearby towns; the second mentions the \"Apiru.\" The excavators also uncovered \"Building 1500,\" the Egyptian governor's residence. Some finds are in the Rockefeller Museum in Jerusalem, others in the Penn Museum in Philadelphia."
+      },
+      {
+        "title": "Temples, Mekal and clay coffins",
+        "text": "The first excavators found six Canaanite temples one above another, with cult stands decorated with snakes. From them come the basalt relief of a lion and a lioness (or a dog), of the 14th century BCE, and the stela of the god Mekal. In the nearby cemetery more than 50 human-shaped clay coffins were found, mostly from the 13th and 12th centuries BCE. Earlier scholars linked some of them to Philistines or other Sea Peoples serving Egypt; the question is still debated."
+      },
+      {
+        "title": "In Saul's time: Canaanites, not Philistines",
+        "text": "The 11th-century BCE layer, Saul's time by the biblical chronology, held only Canaanite finds and a pair of temples whose courtyard still displayed the old Egyptian stelae. Some have linked them with the \"house of Ashtaroth\" where the Philistines put Saul's armor. Yet no sign of a Philistine settlement was found. Mazar concludes that the story reflects at most a brief Philistine raid, not lasting control of the valley."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": {
+        "he": "מצרים, הממלכה החדשה",
+        "en": "Egypt, New Kingdom"
+      },
+      "period": {
+        "he": "בערך 1450–1130 לפנה״ס",
+        "en": "c. 1450–1130 BCE"
+      },
+      "note": {
+        "he": "בית שאן הייתה מרכז הממשל המצרי בצפון הארץ, עם מושל וחיל מצב.",
+        "en": "Beth-shean was the seat of Egyptian rule in the north, with a governor and garrison."
+      }
+    },
+    {
+      "realm": "united",
+      "name": {
+        "he": "הממלכה המאוחדת (לפי המקרא)",
+        "en": "United Monarchy (by the biblical account)"
+      },
+      "period": {
+        "he": "בערך 1000–930 לפנה״ס",
+        "en": "c. 1000–930 BCE"
+      },
+      "note": {
+        "he": "מלכים א ד מונה את בית שאן במחוז של בענא; היקף הממלכה שנוי במחלוקת.",
+        "en": "I Kings 4 lists Beth-shean in Baana's district; the kingdom's extent is debated."
+      }
+    },
+    {
+      "realm": "israel",
+      "name": {
+        "he": "ממלכת ישראל",
+        "en": "Kingdom of Israel"
+      },
+      "period": {
+        "he": "בערך 930–732 לפנה״ס",
+        "en": "c. 930–732 BCE"
+      },
+      "note": {
+        "he": "עיר פתוחה של הממלכה הצפונית, עד שאשור שרפה אותה.",
+        "en": "An unwalled town of the northern kingdom until Assyria burned it."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Neo-Assyrian Empire"
+      },
+      "period": {
+        "he": "732–בערך 630 לפנה״ס",
+        "en": "732–c. 630 BCE"
+      },
+      "note": {
+        "he": "אחרי החורבן נותרו כאן רק שרידי יישוב דלים.",
+        "en": "After the destruction only a sparse settlement remained."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "רומא וביזנטיון (סקיתופוליס)",
+        "en": "Rome and Byzantium (Scythopolis)"
+      },
+      "period": {
+        "he": "63 לפנה״ס–636 לספירה",
+        "en": "63 BCE–636 CE"
+      },
+      "note": {
+        "he": "העיר המובילה של הדקאפוליס, ואחר כך בירת פלשתינה השנייה.",
+        "en": "Leading city of the Decapolis, later capital of Palaestina Secunda."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -1450,
+      "text": {
+        "he": "בערך 1450 לפנה״ס: תחותמס השלישי כובש את בית שאן, והיא הופכת למרכז מצרי.",
+        "en": "c. 1450 BCE: Thutmose III conquers Beth-shean, which becomes an Egyptian center."
+      }
+    },
+    {
+      "year": -1294,
+      "text": {
+        "he": "בערך 1294 לפנה״ס: סתי הראשון מציב כאן מצבות ניצחון.",
+        "en": "c. 1294 BCE: Seti I sets up victory stelae here."
+      }
+    },
+    {
+      "year": -1130,
+      "text": {
+        "he": "בערך 1130 לפנה״ס: חיל המצב המצרי נחרב והשלטון המצרי מסתיים.",
+        "en": "c. 1130 BCE: The Egyptian garrison is destroyed and Egyptian rule ends."
+      }
+    },
+    {
+      "year": -1010,
+      "text": {
+        "he": "בערך 1010 לפנה״ס (מסורתי): גופות שאול ובניו נתקעות על חומת בית שאן.",
+        "en": "c. 1010 BCE (traditional): The bodies of Saul and his sons are fastened to the wall."
+      }
+    },
+    {
+      "year": -732,
+      "text": {
+        "he": "732 לפנה״ס: צבא תגלת פלאסר השלישי שורף את העיר.",
+        "en": "732 BCE: Tiglath-pileser III's army burns the town."
+      }
+    },
+    {
+      "year": -63,
+      "text": {
+        "he": "63 לפנה״ס: פומפיוס כובש את הארץ, וסקיתופוליס נבנית מחדש כעיר בדקאפוליס.",
+        "en": "63 BCE: Pompey conquers the region, and Scythopolis is rebuilt as a Decapolis city."
+      }
+    },
+    {
+      "year": 749,
+      "text": {
+        "he": "749 לספירה: רעידת אדמה הורסת את העיר.",
+        "en": "749 CE: An earthquake destroys the city."
+      }
+    },
+    {
+      "year": 1921,
+      "text": {
+        "he": "1921–1933: חפירות מוזיאון אוניברסיטת פנסילבניה חושפות את המונומנטים המצריים.",
+        "en": "1921–1933: The University of Pennsylvania Museum digs up the Egyptian monuments."
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Joshua 17:11",
+      "note": {
+        "he": "בית שאן ובנותיה בין ערי מנשה בתוך יששכר ואשר.",
+        "en": "Beth-shean and its villages among Manasseh's towns in Issachar and Asher."
+      }
+    },
+    {
+      "ref": "Joshua 17:16",
+      "note": {
+        "he": "לכנענים בבית שאן ובעמק יזרעאל יש ״רכב ברזל״.",
+        "en": "The Canaanites of Beth-shean and the Jezreel Valley have \"iron chariots.\""
+      }
+    },
+    {
+      "ref": "Judges 1:27",
+      "note": {
+        "he": "מנשה לא הוריש את בית שאן, והכנעני ממשיך לשבת בה.",
+        "en": "Manasseh does not drive out Beth-shean; the Canaanites stay."
+      }
+    },
+    {
+      "ref": "I Samuel 31:10",
+      "note": {
+        "he": "כלי שאול בבית עשתרות, וגופתו ״תקעו בחומת בית שן״.",
+        "en": "Saul's armor in the house of Ashtaroth, his body fastened to the wall of Beth-shan."
+      }
+    },
+    {
+      "ref": "I Samuel 31:12",
+      "note": {
+        "he": "אנשי יבש גלעד הולכים כל הלילה ומורידים את הגופות מהחומה.",
+        "en": "The men of Jabesh-gilead walk all night and take the bodies down from the wall."
+      }
+    },
+    {
+      "ref": "II Samuel 21:12",
+      "note": {
+        "he": "דוד לוקח את עצמות שאול ויהונתן מבעלי יבש, שגנבו אותן ״מרחב בית שן״.",
+        "en": "David takes the bones of Saul and Jonathan, stolen \"from the square of Beth-shan.\""
+      }
+    },
+    {
+      "ref": "I Kings 4:12",
+      "note": {
+        "he": "בית שאן במחוז של בענא בן אחילוד בימי שלמה.",
+        "en": "Beth-shean in Baana son of Ahilud's district under Solomon."
+      }
+    },
+    {
+      "ref": "I Chronicles 7:29",
+      "note": {
+        "he": "בית שאן ובנותיה בין ערי בני מנשה.",
+        "en": "Beth-shean and its villages among the towns of Manasseh."
+      }
+    },
+    {
+      "ref": "I Chronicles 10:10",
+      "note": {
+        "he": "בגרסת דברי הימים ראש שאול נתקע ״בית דגון״, בלי לנקוב בשם העיר.",
+        "en": "In Chronicles Saul's head is fastened in the temple of Dagon; the city is not named."
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Tel Bet She'an IL WV.JPG",
+      "kind": "site",
+      "caption": {
+        "he": "הרחוב הראשי של סקיתופוליס ומעליו תל בית שאן, 2010",
+        "en": "The main street of Scythopolis with Tel Beth-shean above, 2010"
+      }
+    },
+    {
+      "file": "File:View from Tel Bet She'an.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "סקיתופוליס כפי שהיא נראית מראש התל: התיאטרון, רחוב פלדיוס והאגורה, 2018",
+        "en": "Scythopolis seen from the top of the mound: theater, Palladius Street and agora, 2018"
+      }
+    },
+    {
+      "file": "File:Air films (1937). Beisan mound LOC matpc.17062.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "תל בית שאן מן האוויר, אוסף מטסון, 1937",
+        "en": "The Beth-shean mound from the air, Matson Collection, 1937"
+      }
+    },
+    {
+      "file": "File:Beisan steles as excavated, 1923.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "מצבות סתי הראשון ורעמסס השני ביום חשיפתן, 1923",
+        "en": "The stelae of Seti I and Ramesses II as they were found, 1923"
+      }
+    },
+    {
+      "file": "File:Rockefeller-Museum-Jerusalem-1688-Beit-Shean-stela-of-Seti-I-1294bce.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "מצבת סתי הראשון מבית שאן, בערך 1294 לפנה״ס, מוזיאון רוקפלר",
+        "en": "Stela of Seti I from Beth-shean, c. 1294 BCE, Rockefeller Museum"
+      }
+    },
+    {
+      "file": "File:Basalt triumphal stela of Ramesses II excavated at Beth Shean, 1290-1224 BCE (19th Dynasty) Egypt Penn Museum.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "מצבת הניצחון של רעמסס השני מבית שאן, המאה ה־13 לפנה״ס, מוזיאון פן",
+        "en": "Victory stela of Ramesses II from Beth-shean, 13th century BCE, Penn Museum"
+      }
+    },
+    {
+      "file": "File:Canaanite relief in basat depicting a lion and a lioness at play, 14th century BC, from Beit She'an, Israel Museum, Jerusalem (27523165515).jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "תבליט בזלת כנעני של אריה ולביאה, המאה ה־14 לפנה״ס, מוזיאון ישראל",
+        "en": "Canaanite basalt relief of a lion and lioness, 14th century BCE, Israel Museum"
+      }
+    },
+    {
+      "file": "File:Rembrandt - The Bodies of Saul and his Sons taken down from the Wall of Beth-Shan, D.1978.PG.187.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "גופות שאול ובניו מורדות מחומת בית שאן, רישום המיוחס לרמברנדט, המאה ה־17",
+        "en": "The bodies of Saul and his sons taken down from the wall of Beth-shan, drawing attributed to Rembrandt, 17th century"
+      }
+    },
+    {
+      "file": "File:Lot van de nakomelingen van Saul, Lichamen van Saul en Jonatan, Volkstelling in opdracht van David, David heeft de ke, RP-P-2015-10-120.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "גופות שאול ויהונתן בין סצנות מחיי דוד, תחריט הולנדי, 1575, הרייקסמוזיאום",
+        "en": "The bodies of Saul and Jonathan among scenes from David's life, Dutch print, 1575, Rijksmuseum"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "העיר העתיקה של בית שאן",
+    "en": "Beit She'an"
+  },
+  "related": [
+    "gilboa",
+    "jabesh",
+    "harod",
+    "jezreel",
+    "megiddo"
+  ],
+  "sources": [
+    {
+      "title": "A. Mazar, Tel Beth-Shean excavation project: Introduction (Hebrew University)",
+      "url": "https://sites.google.com/view/tel-beth-shean/introduction"
+    },
+    {
+      "title": "F. W. James, \"Beth Shan,\" Expedition Magazine 3.2 (Penn Museum, 1961)",
+      "url": "https://www.penn.museum/sites/expedition/?p=185"
+    },
+    {
+      "title": "Beit She'an, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Beit_She%27an"
+    },
+    {
+      "title": "Biblical Archaeology Society, endnote on population density (25–40 people per dunam)",
+      "url": "https://library.biblicalarchaeology.org/endnote/endnote-4-israel-in-exile/"
+    }
+  ]
+}

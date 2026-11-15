@@ -497,3 +497,76 @@ select option { background: #1a0d33; }
 .mod-who { display: flex; gap: 10px; align-items: flex-start; }
 .mod-line { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .mod-body { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.55; }
+
+/* ── place pages ─────────────────────────────────────────────────────── */
+.place-card.has-img { padding-top: 0; }
+.place-card-img { display: block; width: calc(100% + 36px); margin: 0 -18px 12px; height: 120px; object-fit: cover; border-radius: 22px 22px 0 0; cursor: pointer; mask-image: linear-gradient(#000 60%, transparent); }
+
+.place-page {
+  position: absolute; inset-block: 0; inset-inline-end: 0; width: min(560px, 100%); z-index: 8; overflow-y: auto; overscroll-behavior: contain;
+  background: rgba(13, 6, 28, 0.94); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-inline-start: 1px solid var(--line); box-shadow: 0 0 80px rgba(0, 0, 0, 0.6); animation: slideIn 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+}
+@keyframes slideIn { from { opacity: 0; transform: translateX(calc(var(--slide, 1) * 40px)); } to { opacity: 1; transform: none; } }
+[dir="rtl"] .place-page { --slide: -1; }
+.pp-hero { position: relative; min-height: 120px; display: flex; align-items: flex-end; padding: 22px 20px 16px; background: linear-gradient(135deg, rgba(255, 94, 207, 0.25), rgba(34, 211, 238, 0.18)); }
+.pp-hero.has-img { min-height: 250px; }
+.pp-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pp-hero.has-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 30%, rgba(13, 6, 28, 0.96)); }
+.pp-hero-text { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.pp-hero h2 { font-family: var(--scripture); font-size: 2.3rem; line-height: 1.1; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7); }
+.pp-other { color: #e9ddff; font-size: 0.95rem; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8); }
+.pp-x { position: absolute; top: 12px; inset-inline-end: 12px; z-index: 2; background: rgba(0, 0, 0, 0.45); }
+.pp-pad { padding: 20px; }
+.pp-body { padding: 6px 20px 40px; display: flex; flex-direction: column; gap: 6px; }
+.pp-body section { padding: 14px 0 6px; border-top: 1px solid var(--line); }
+.pp-body h3 { font-size: 1.08rem; margin-bottom: 10px; }
+.pp-body h4 { font-size: 0.98rem; color: #f5d0fe; margin-bottom: 4px; }
+.pp-body p { line-height: 1.75; margin: 0 0 10px; color: #ece4ff; }
+.pp-summary { font-size: 1.08rem; line-height: 1.75; padding-top: 12px; }
+.pp-item + .pp-item { margin-top: 10px; }
+.pp-gallery { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 6px 0 4px; }
+.pp-gallery figure { flex: none; width: 210px; margin: 0; scroll-snap-align: start; cursor: zoom-in; }
+.pp-gallery.wide figure { width: 280px; }
+.pp-gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 14px; display: block; background: rgba(255, 255, 255, 0.05); transition: transform 0.25s; }
+.pp-gallery.wide img { height: 190px; }
+.pp-gallery figure:hover img { transform: scale(1.02); }
+.pp-gallery figcaption { font-size: 0.78rem; color: var(--muted); line-height: 1.4; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pp-rulers { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.pp-rulers li { border-radius: 14px; padding: 12px 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-inline-start: 4px solid var(--realm); }
+.pp-rulers p { margin: 4px 0 8px; }
+.pp-ruler-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px; }
+.pp-mentions { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pp-mentions li { display: flex; gap: 10px; align-items: baseline; line-height: 1.5; }
+.pp-mentions .chip { flex: none; }
+.pp-timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.pp-timeline::before { content: ""; position: absolute; inset-block: 6px; inset-inline-start: 5px; width: 2px; background: linear-gradient(var(--pink), var(--cyan)); opacity: 0.6; }
+.pp-timeline li { position: relative; padding-inline-start: 24px; padding-bottom: 12px; display: flex; flex-direction: column; line-height: 1.5; }
+.pp-timeline li::before { content: ""; position: absolute; inset-inline-start: 0; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px rgba(253, 224, 71, 0.7); }
+.pp-timeline b { color: #fde68a; font-size: 0.88rem; }
+.pp-sources ul { margin: 0 0 10px; padding-inline-start: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+.pp-sources a { color: var(--cyan); font-size: 0.9rem; overflow-wrap: anywhere; }
+
+.lightbox { position: fixed; inset: 0; z-index: 60; background: rgba(5, 2, 12, 0.92); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 50px 16px 20px; animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity: 0; } }
+.lightbox img { max-width: 100%; max-height: calc(100% - 110px); object-fit: contain; border-radius: 12px; box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7); }
+.lightbox-cap { max-width: 760px; text-align: center; }
+.lightbox-cap p { margin: 0 0 4px; line-height: 1.5; }
+.lightbox-cap a { color: var(--cyan); }
+.lightbox-x { position: absolute; top: 12px; inset-inline-end: 12px; }
+
+.realm-chip {
+  position: absolute; top: 60px; left: 50%; transform: translateX(-50%); z-index: 7; display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px 8px 14px; border-radius: 18px; background: var(--glass-strong); max-width: calc(100% - 24px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+.realm-chip > div { display: flex; flex-direction: column; min-width: 0; }
+.realm-chip b { font-size: 0.95rem; }
+.realm-swatch { width: 14px; height: 14px; border-radius: 4px; flex: none; background: var(--realm); box-shadow: 0 0 12px var(--realm); }
+.mapwrap.embedded .realm-chip { top: 104px; }
+@media (max-width: 979px) { .mapwrap.embedded .realm-chip { top: 58px; } }
+@media (max-width: 600px) {
+  /* Phones: the realm needs the whole map, so the place card steps aside (the chip's ↩ button brings the place back). */
+  .mapwrap.has-realm .place-card { display: none; }
+  .realm-chip { width: calc(100% - 24px); flex-wrap: wrap; row-gap: 6px; }
+  .realm-chip > div { flex: 1 1 60%; }
+}

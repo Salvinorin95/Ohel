@@ -1,0 +1,160 @@
+{
+  "id": "arad",
+  "he": {
+    "summary": "תל ערד שבצפון הנגב הוא שני אתרים בתל אחד: עיר מבוצרת גדולה מתקופת הברונזה הקדומה, ומעליה מצודה של ממלכת יהודה. במקרא נזכר ״מלך ערד הכנעני״ שנלחם בישראל בדרכם במדבר, ובמצודה נחשף המקדש היחיד מימי ממלכת יהודה שנמצא עד היום, לצד מכתבים בעברית מימיה האחרונים של הממלכה.",
+    "setting": "תל ערד מתנשא בבקעת ערד שבצפון הנגב, כ־10 ק״מ מערבית לעיר ערד של היום, כ־25 ק״מ ממערב לים המלח וכ־27 ק״מ ממזרח לבאר שבע. זהו אזור ספר צחיח למחצה: הגשם מועט ויורד רק בחורף, הבקעה מוריקה לכמה שבועות ואז מצהיבה שוב. אין כאן מעיין, ולכן התושבים חיו ממי גשמים שנאספו בשקע במרכז העיר ובהמשך בבורות ובבאר. דרך עתיקה עברה כאן ממזרח למערב, מבאר שבע אל ים המלח ומשם לאדום. כיום התל הוא גן לאומי: למטה טבעת החומה ובתי העיר הכנענית, ולמעלה המצודה הישראלית ששוחזרה בחלקה.",
+    "peoples": [
+      {
+        "name": "תושבי העיר בתקופת הברונזה הקדומה",
+        "text": "בסביבות 3000 לפנה״ס קמה כאן עיר מוקפת חומה, מהגדולות בדרום הארץ בזמנה. תושביה, אבות־אבותיהם של הכנענים, גרו ב״בית הערדי״: חדר מגורים מלבני ששקוע מעט באדמה, עם עמוד עץ באמצע וחצר מוקפת. הם גידלו דגנים וצאן, אגרו מי גשמים במאגר ציבורי וסחרו עם מצרים, כפי שמעידים כלי חרס מצריים. בסביבות 2650 לפנה״ס העיר ננטשה, אולי בגלל אקלים יבש יותר."
+      },
+      {
+        "name": "שבטי הנגב: הקיני והירחמאלי",
+        "text": "ספר שופטים מספר שבני הקיני, צאצאי חותן משה, ישבו ״בנגב ערד״ לצד שבט יהודה. רשימת המסע של פרעה שישק מזכירה ״ערד של בית ירחם״, ויש המזהים זאת עם הירחמאלי, עוד שבט מן הנגב. אלה היו כנראה רועים ואנשי ספר ששלטו בבארות ובדרכים, ונטמעו עם הזמן ביהודה."
+      },
+      {
+        "name": "חיל המצב של ממלכת יהודה",
+        "text": "במאות ה־9 עד ה־6 לפנה״ס ישבו במצודה פקידים וחיילים של מלכי יהודה. החרסים הכתובים מגלים את אלישיב בן אשיהו, האחראי על המחסנים, שחילק לחם, יין ושמן, גם ל״כתיים״, שכירי חרב יוונים כנראה מקפריסין ומאיי הים האגאי. הם כתבו עברית בכתב העברי הקדום, והתלוננו על איום מצד אדום. מחקר של כתבי היד מצא לפחות שנים־עשר כותבים שונים."
+      },
+      {
+        "name": "חילות מצב מאוחרים",
+        "text": "גם אחרי חורבן יהודה נשאר התל עמדת שמירה על דרך המדבר. בימי הפרסים ישב כאן מבצר קטן, ועל חרסים בארמית נרשמו מנות תבואה. אחריו באו מצודות הלניסטיות ורומיות, עד המאה ה־2 לספירה, ובראשית התקופה המוסלמית הוסבה המצודה לתחנת דרכים לשיירות. מאוחר יותר קברו כאן בדואים את מתיהם."
+      }
+    ],
+    "population": "אין מפקד, ולכן כל המספרים הם הערכות. העיר מתקופת הברונזה הקדומה השתרעה על כ־10 הקטאר (כ־100 דונם), והערכה מקובלת מדברת על כ־2,500 תושבים. זו הייתה עיר נכבדה בארץ בזמנה, אף שערים במסופוטמיה כמו אורוך היו גדולות ממנה פי כמה. הכפר שקם על הגבעה במאה ה־10 לפנה״ס מנה אולי 80–100 איש ב־20–25 בתים. המצודה של יהודה, כ־50 על 55 מטר בלבד, החזיקה כנראה כמה עשרות חיילים ופקידים, בזמן שבירושלים חיו אז אולי 10,000–25,000 איש.",
+    "archaeology": [
+      {
+        "title": "עיר מוקפת חומה מתקופת הברונזה הקדומה",
+        "text": "רות עמירן חפרה את העיר התחתונה ב־18 עונות, בין 1962 ל־1984. נחשפה חומה באורך כ־1,200 מטר ובעובי כ־2.4 מטר, עם מגדלים חצי־עגולים ומלבניים ושערים, וגם רחובות ושכונות שלמות של ״בתים ערדיים״. דגם חרס קטן של בית כזה, מן השנים 3000–2650 לפנה״ס בערך, מוצג במוזיאון ישראל בירושלים. העיר היא אחת הדוגמאות השלמות ביותר לעיר מן התקופה בארץ."
+      },
+      {
+        "title": "המצודה על הגבעה",
+        "text": "יוחנן אהרוני מאוניברסיטת תל אביב חפר את התל העליון משנת 1962. על חורבות כפר קטן נבנו שש מצודות זו על גבי זו, מן המאה ה־9 עד ראשית המאה ה־6 לפנה״ס, ובמרכזן מאגר מים חצוב וטייח בעומק כ־10 מטר. מועד המצודה הראשונה שנוי במחלוקת: אהרוני ייחס אותה לימי שלמה, ורוב החוקרים כיום מאחרים אותה למאה ה־9 לפנה״ס."
+      },
+      {
+        "title": "המקדש של ערד",
+        "text": "בפינת המצודה נמצא מקדש: חצר עם מזבח מאבני שדה בגודל 5 על 5 אמות, אולם, ובקצהו ״קודש הקודשים״, שאליו עלו במדרגות. בפתחו עמדו שני מזבחות קטורת מאבן, ובפנים מצבה (אבן זקופה), ואולי גם שנייה. בשלב מסוים המקדש פורק, והמזבחות והמצבות הונחו על צידם ונקברו. זאב הרצוג מתארך את פעילותו לאמצע ולסוף המאה ה־8 לפנה״ס; יש הקושרים את ביטולו לרפורמה של חזקיהו, ויש המפקפקים בכך. המקור שמור במוזיאון ישראל."
+      },
+      {
+        "title": "מה הקטירו על המזבחות",
+        "text": "בשנת 2020 פרסמו ערן אריה, ברוך רוזן ודבורי נמדר ניתוח כימי של השאריות על שני המזבחות. על המזבח הגדול נמצאו שרידי לבונה מעורבת בשומן בעלי חיים, ועל הקטן שרידי קנאביס מעורב בגללים, כדי שיבער לאט. הלבונה הגיעה מדרום ערב, ולכן היא עדות גם לקשרי מסחר רחוקים. החוקרים משערים שהקנאביס שימש לעורר התעלות בטקס, פרשנות שעדיין נדונה."
+      },
+      {
+        "title": "מכתבי ערד",
+        "text": "בתל נמצאו כ־200 חרסים כתובים (אוסטרקונים) בכמה שפות, ומהם יותר ממאה בעברית, רובם מסביבות 600 לפנה״ס. בחדר אחד בחומה נמצא ״ארכיון אלישיב״, 18 מכתבים שנשלחו אליו, וגם חותמות הנושאות את שמו. מכתב 24 מזהיר מפני פלישת אדום, ומכתב 18 מזכיר את ״בית יהוה״, ורבים מזהים אותו עם המקדש בירושלים. אלה מן העדויות הכתובות החשובות ביותר מימי ירמיהו."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Tel Arad, in the northern Negev, is two sites in one: a large walled city of the Early Bronze Age and, on the hill above it, a fortress of the kingdom of Judah. The Bible remembers “the Canaanite, the king of Arad,” who fought Israel in the wilderness, and the fortress held the only Judahite temple ever excavated, along with Hebrew letters from the kingdom’s last years.",
+    "setting": "Tel Arad rises from the Arad Plain in the northern Negev, about 10 km west of the modern town of Arad, some 25 km west of the Dead Sea and about 27 km east of Beersheba. It is semi-arid border country: scant winter rain turns the plain green for a few weeks before it bakes brown. With no spring, people lived on rainwater, gathered in a hollow at the city’s heart and later in deep cisterns and a well. An old road ran past here from Beersheba toward the Dead Sea and Edom. Today the site is a national park, with the ring wall and houses of the Bronze Age city below and the partly restored Judahite fortress on the hill.",
+    "peoples": [
+      {
+        "name": "The Early Bronze Age townspeople",
+        "text": "Around 3000 BCE a walled city rose here, one of the largest in the south of the land in its day. Its people, forerunners of the later Canaanites, lived in “Arad houses”: a rectangular room sunk slightly into the ground, with a wooden post in the middle and a walled yard. They grew grain, herded sheep and goats, stored rainwater in a public reservoir and traded with Egypt, as Egyptian pottery shows. Around 2650 BCE the city was abandoned, perhaps as the climate grew drier."
+      },
+      {
+        "name": "Clans of the Negev: Kenites and Jerahmeelites",
+        "text": "Judges says the Kenites, descendants of Moses’ father-in-law, settled “in the Negev of Arad” beside the tribe of Judah. Pharaoh Shishak’s list of conquered places names an “Arad of the house of YRHM,” which some link to the Jerahmeelites, another Negev clan. These were probably herders and frontier people who controlled wells and tracks, and in time they merged into Judah."
+      },
+      {
+        "name": "The garrison of Judah",
+        "text": "From the 9th to the 6th century BCE, officials and soldiers of Judah’s kings manned the fortress. The inscribed potsherds introduce Eliashib son of Eshiyahu, the storekeeper, who handed out bread, wine and oil, including to the “Kittim,” Greek mercenaries probably from Cyprus and the Aegean. They wrote Hebrew in the old Hebrew script and worried about raids from Edom. A study of the handwriting found at least twelve different writers."
+      },
+      {
+        "name": "Later garrisons",
+        "text": "Even after Judah fell, the hill stayed a lookout over the desert road. Under the Persians a small fort stood here, and Aramaic notes on potsherds record grain rations. Hellenistic and Roman forts followed into the 2nd century CE, and in the early Islamic period the old fort became a waystation for caravans. Much later, Bedouin buried their dead on the mound."
+      }
+    ],
+    "population": "No census survives, so all figures are estimates. The Early Bronze city covered about 10 hectares (25 acres), and a common estimate puts it at around 2,500 people: a sizable town for its time, though Mesopotamian cities such as Uruk were many times larger. The 10th-century BCE village on the hill had perhaps 80–100 people in 20–25 houses. The Judahite fortress, only about 50 by 55 meters, probably held a few dozen soldiers and officials, while Jerusalem then had perhaps 10,000–25,000 people.",
+    "archaeology": [
+      {
+        "title": "A walled Early Bronze Age city",
+        "text": "Ruth Amiran excavated the lower city in 18 seasons between 1962 and 1984. She uncovered a wall about 1,200 meters long and 2.4 meters thick, with half-round and square towers and gates, plus streets and whole neighborhoods of “Arad houses.” A small pottery model of such a house, from about 3000–2650 BCE, is displayed at the Israel Museum in Jerusalem. Arad is one of the best-preserved towns of its age in the region."
+      },
+      {
+        "title": "The fortress on the hill",
+        "text": "Yohanan Aharoni of Tel Aviv University dug the upper mound from 1962. Over the remains of a small village, six fortresses were built one on top of another, from the 9th to the early 6th century BCE, with a plastered rock-cut reservoir about 10 meters deep at their center. The date of the first fortress is disputed: Aharoni credited it to Solomon, while most scholars now place it in the 9th century BCE."
+      },
+      {
+        "title": "The temple of Arad",
+        "text": "In one corner of the fortress stood a temple: a courtyard with an altar of fieldstones 5 by 5 cubits, a hall, and a raised “holy of holies” reached by steps. Two stone incense altars flanked its entrance, and inside stood a standing stone, perhaps two. At some point the temple was taken apart and the altars and stones laid on their sides and buried. Ze’ev Herzog dates its use to the mid-to-late 8th century BCE; some link its end to Hezekiah’s reform, others doubt it. The originals are in the Israel Museum."
+      },
+      {
+        "title": "What burned on the altars",
+        "text": "In 2020 Eran Arie, Baruch Rosen and Dvory Namdar published a chemical study of residues on the two altars. The larger one held frankincense mixed with animal fat; the smaller one held cannabis mixed with dung so it would smolder slowly. Frankincense came from South Arabia, so it also points to long-distance trade. The authors suggest the cannabis was used to bring on a heightened state during worship, a reading still being discussed."
+      },
+      {
+        "title": "The Arad letters",
+        "text": "About 200 inscribed potsherds (ostraca) in several languages were found, more than 100 of them in Hebrew, most from around 600 BCE. A room in the wall held the “Eliashib archive,” 18 letters sent to him, along with seals bearing his name. Letter 24 warns of an attack from Edom, and letter 18 mentions “the house of YHWH,” which many scholars take to mean the Temple in Jerusalem. They are among the most important written witnesses to Jeremiah’s time."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": null,
+      "name": { "he": "עיר־מדינה מתקופת הברונזה הקדומה", "en": "An Early Bronze Age city-state" },
+      "period": { "he": "בערך 3000–2650 לפנה״ס", "en": "c. 3000–2650 BCE" },
+      "note": { "he": "עיר מבוצרת ועצמאית, מהגדולות בדרום הארץ, שסחרה עם מצרים.", "en": "An independent walled town, one of the largest in the south, that traded with Egypt." }
+    },
+    {
+      "realm": "united",
+      "name": { "he": "הממלכה המאוחדת (שנוי במחלוקת)", "en": "United Monarchy (disputed)" },
+      "period": { "he": "המאה ה־10 לפנה״ס", "en": "10th century BCE" },
+      "note": { "he": "על הגבעה ישב אז כפר קטן; אהרוני ייחס את המצודה הראשונה לשלמה, אבל רוב החוקרים מאחרים אותה.", "en": "A small village stood on the hill; Aharoni credited the first fortress to Solomon, but most scholars date it later." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "ממלכת יהודה", "en": "Kingdom of Judah" },
+      "period": { "he": "המאה ה־9 עד 586 לפנה״ס בערך", "en": "9th century to c. 586 BCE" },
+      "note": { "he": "מצודת מלוכה ששמרה על גבול הדרום ועל הדרכים לאדום.", "en": "A royal fortress guarding the southern border and the roads to Edom." }
+    },
+    {
+      "realm": "persia",
+      "name": { "he": "האימפריה הפרסית", "en": "Persian Empire" },
+      "period": { "he": "בערך 539–332 לפנה״ס", "en": "c. 539–332 BCE" },
+      "note": { "he": "מבצר קטן; חרסים בארמית מתעדים חלוקת תבואה.", "en": "A small fort; Aramaic potsherds record grain rations." }
+    },
+    {
+      "realm": null,
+      "name": { "he": "ממלכות הלניסטיות ורומא", "en": "Hellenistic kingdoms and Rome" },
+      "period": { "he": "בערך 300 לפנה״ס עד המאה ה־2 לספירה", "en": "c. 300 BCE to the 2nd century CE" },
+      "note": { "he": "מצודות קטנות על הגבעה העתיקה צפו אל דרך המדבר.", "en": "Small forts on the old hilltop watched the desert road." }
+    }
+  ],
+  "timeline": [
+    { "year": -4000, "text": { "he": "כפר פתוח ראשון למרגלות הגבעה (התקופה הכלקוליתית).", "en": "A first open village at the foot of the hill (Chalcolithic period)." } },
+    { "year": -3000, "text": { "he": "עיר מוקפת חומה של כ־10 הקטאר קמה במקום.", "en": "A walled city of about 10 hectares rises here." } },
+    { "year": -2650, "text": { "he": "העיר ננטשת; הגבעה נותרת ריקה כמעט 1,700 שנה.", "en": "The city is abandoned; the hill stays empty for some 1,700 years." } },
+    { "year": -925, "text": { "he": "פרעה שישק מונה את ״ערד״ ברשימת המקומות שכבש.", "en": "Pharaoh Shishak lists “Arad” among the places he conquered." } },
+    { "year": -850, "text": { "he": "בערך: המצודה הראשונה של יהודה נבנית על הגבעה (התאריך שנוי במחלוקת).", "en": "Around this time Judah builds the first fortress on the hill (date disputed)." } },
+    { "year": -715, "text": { "he": "בערך: המקדש במצודה מפורק והמזבחות נקברים.", "en": "Around this time the fortress temple is dismantled and its altars buried." } },
+    { "year": -600, "text": { "he": "בערך: מכתבי ארכיון אלישיב, עם אזהרות מפני אדום.", "en": "Around this time the Eliashib letters are written, with warnings about Edom." } },
+    { "year": -586, "text": { "he": "בערך: המצודה של יהודה נחרבת, בתקופת חורבן הממלכה.", "en": "Around this time Judah’s fortress is destroyed, as the kingdom falls." } }
+  ],
+  "mentions": [
+    { "ref": "Numbers 21:1", "note": { "he": "מלך ערד, ״ישב הנגב״, נלחם בישראל בדרך האתרים.", "en": "The king of Arad, “who dwelt in the Negev,” attacks Israel on the way of Atharim." } },
+    { "ref": "Numbers 33:40", "note": { "he": "ברשימת המסעות: מלך ערד שומע על בוא בני ישראל.", "en": "In the list of journeys: the king of Arad hears that Israel is coming." } },
+    { "ref": "Joshua 12:14", "note": { "he": "מלך ערד ברשימת המלכים שהוכו בימי יהושע.", "en": "The king of Arad in the list of kings defeated under Joshua." } },
+    { "ref": "Judges 1:16", "note": { "he": "בני הקיני, צאצאי חותן משה, מתיישבים ״בנגב ערד״.", "en": "The Kenites, kin of Moses’ father-in-law, settle “in the Negev of Arad.”" } }
+  ],
+  "images": [
+    { "file": "File:Street in the Early Bronze Age City of Arad (19474373780).jpg", "kind": "site", "caption": { "he": "רחוב בעיר מתקופת הברונזה הקדומה, ומעליו המצודה של יהודה", "en": "A street in the Early Bronze Age city, with Judah’s fortress above" } },
+    { "file": "File:Tel Arad 280321 02 Lower City.jpg", "kind": "site", "caption": { "he": "העיר התחתונה של ערד ובקעת ערד", "en": "Arad’s lower city and the Arad Plain" } },
+    { "file": "File:Gates of the Israelite Fortress at Arad (19474255218).jpg", "kind": "site", "caption": { "he": "שער המצודה הישראלית בתל ערד", "en": "The gate of the Israelite fortress at Tel Arad" } },
+    { "file": "File:Holy of Holies in the Israelite Sanctuary at Tel Arad (19655258782).jpg", "kind": "site", "caption": { "he": "קודש הקודשים במקדש ערד, העתק במקום, עם שני מזבחות ומצבה", "en": "The holy of holies of the Arad temple, a replica on site, with two altars and a standing stone" } },
+    { "file": "File:Holy of Holies from the sanctuary at Arad.jpg", "kind": "artifact", "caption": { "he": "קודש הקודשים המקורי של ערד, המאה ה־8 לפנה״ס, מוזיאון ישראל", "en": "The original holy of holies from Arad, 8th century BCE, Israel Museum" } },
+    { "file": "File:Letter, Arad, 6th Century BC, Ink on Pottery, Earliest Reference to Solomon's Temple (42499943804).jpg", "kind": "artifact", "caption": { "he": "מכתב 18 מערד, שמזכיר את ״בית יהוה״, בסביבות 600 לפנה״ס", "en": "Arad letter 18, which mentions “the house of YHWH,” c. 600 BCE" } },
+    { "file": "File:The Arad House.JPG", "kind": "artifact", "caption": { "he": "דגם חרס של ״בית ערדי״, בערך 3000–2650 לפנה״ס", "en": "Pottery model of an “Arad house,” c. 3000–2650 BCE" } },
+    { "file": "File:Tissot The Brazen Serpent.jpg", "kind": "art", "caption": { "he": "נחש הנחושת, מאותו פרק של המלחמה במלך ערד (במדבר כא), ג׳יימס טיסו, בערך 1900", "en": "The bronze serpent, from the same chapter as the battle with the king of Arad (Numbers 21), James Tissot, c. 1900" } },
+    { "file": "File:Tel-arad-citadel-reconstruction.JPG", "kind": "map", "caption": { "he": "שחזור משוער של מצודת ערד", "en": "A reconstruction drawing of the Arad fortress" } }
+  ],
+  "wiki": { "he": "תל ערד", "en": "Tel Arad" },
+  "related": ["beersheba", "hebron", "kadesh", "lachish"],
+  "sources": [
+    { "title": "Tel Arad (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tel_Arad" },
+    { "title": "Ancient Arad (Jewish Virtual Library)", "url": "https://www.jewishvirtuallibrary.org/ancient-arad" },
+    { "title": "Arad ostraca (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Arad_ostraca" },
+    { "title": "Cannabis and frankincense at the Judahite shrine of Arad (ScienceDaily, 2020)", "url": "https://www.sciencedaily.com/releases/2020/05/200529093125.htm" }
+  ]
+}

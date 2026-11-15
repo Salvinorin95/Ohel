@@ -1,0 +1,151 @@
+{
+  "id": "aijalon",
+  "he": {
+    "summary": "עמק פורה ורחב בצפון השפלה, בדרך העולה ממישור החוף אל ירושלים. כאן, לפי ספר יהושע, נאמר ״שמש בגבעון דום וירח בעמק אילון״, ובמשך אלפי שנים עברו בו צבאות, שיירות ועולי רגל. העיר איילון, שנתנה לעמק את שמו, הייתה עיר גבול בין שבטים וממלכות.",
+    "setting": "עמק איילון שוכן בין הרי ירושלים במזרח, הרי בנימין בצפון וגבעות השפלה בדרום. גובהו 140–200 מטר מעל פני הים, שטחו כ־40 קמ״ר, ואדמתו פורייה במיוחד. מימיו מתנקזים לנחל איילון, שזורם צפון־מערבה עד הירקון. מפינתו הצפונית־מזרחית מטפסת מעלה בית חורון אל רמת גבעון, ובקצהו המערבי שומר תל גזר על המפגש עם דרך החוף. לכן כל מי שרצה לעלות לירושלים מן הים עבר כאן. היום חוצים את העמק כביש 1, כביש 443 וגשר הרכבת המהירה לירושלים. יש בו שדות חיטה, פארק קנדה, מנזר לטרון ואתר אמאוס, ומצפון לו העיר מודיעין.",
+    "peoples": [
+      {
+        "name": "הכנענים (״האמורי״)",
+        "text": "במאה ה־14 לפנה״ס איילון מופיעה במכתבי אל־עמארנה בשם ״איילונה״. המכתבים מתארים מלחמות בין מלכי ערים כנעניים, וגם שיירה של המלך שנשדדה בשדות איילון. ספר שופטים מספר ש״האמורי״ המשיך לשבת באיילון ובשעלבים, עד שבית יוסף הכביד עליו את ידו ושם אותו למס. האנשים האלה דיברו כנענית, עבדו את אלי כנען וחיו מחיטה, זיתים וצאן."
+      },
+      {
+        "name": "שבט דן, הלוויים ושבטי השכנים",
+        "text": "לפי ספר יהושע איילון ניתנה לשבט דן, ונקבעה גם כעיר לוויים לבני קהת. לחץ הכנענים והפלשתים דחק את בני דן מן השפלה, ובסוף הם נדדו צפונה והקימו את העיר דן. ברשימות מאוחרות יותר מופיעים באיילון גם בני אפרים ובני בנימין. כך נעשה העמק אזור מפגש בין שבטים שונים."
+      },
+      {
+        "name": "אנשי יהודה והפלשתים",
+        "text": "אחרי פילוג הממלכה נשארה איילון בצד של יהודה, קרוב לגבול עם ממלכת ישראל. רחבעם ביצר אותה וציידה במזון, בנשק ובמפקדים. מן המערב לחצו ערי הפלשתים, ובימי אחז, בערך 735 לפנה״ס, הם כבשו את איילון יחד עם בית שמש ושוכו. העמק עבר מיד ליד לפי כוחה של כל צד."
+      },
+      {
+        "name": "תושבים מאוחרים",
+        "text": "בשנת 165 לפנה״ס ניצח כאן יהודה המכבי את צבא הסלאוקים ליד אמאוס. בימי הרומאים והביזנטים קמה אמאוס־ניקופוליס, ונוצרים רבים זיהו אותה עם אמאוס שבבשורת לוקס. הצלבנים בנו מבצרים בתל איילון ובלטרון. הכפרים הערביים יאלו, עמואס ובית נובא שכנו בעמק עד 1967, אז נהרסו ותושביהם נעקרו. היום יושבים בו קיבוצים ומושבים כמו שעלבים, משמר איילון ונחשון."
+      }
+    ],
+    "population": "קשה לדעת כמה אנשים גרו בעמק בימי המקרא. תל איילון נסקר ב־1968 אבל לא נחפר, ונראה שהייתה כאן עיר צנועה. העיר הגדולה של האזור הייתה גזר, בקצה המערבי של העמק: התל שלה משתרע על כ־130 דונם, ובשיאה גרו בה כנראה אלפים ספורים. כדי לקבל תחושה של קנה מידה: במרשם המס העות'מאני משנת 1596 רשומים ביאלו 38 בתי אב, כלומר כמה מאות נפשות, וב־1945 גרו בכפר כ־1,220 איש. בכל התקופות, העמק הפורה פרנס כפרים רבים קטנים יותר מאשר ערים גדולות.",
+    "archaeology": [
+      {
+        "title": "תל איילון והמבצר הצלבני",
+        "text": "התל, בגובה 280 מטר, שוכן במזרח פארק קנדה, ליד אתר הכפר יאלו. אדוארד רובינסון זיהה אותו ב־1838 עם איילון, לפי השם הערבי ולפי אוסביוס והירונימוס, שמיקמו את איילון כשני מילים רומיים מאמאוס. בסקר נמצאו שרידים שראשיתם בתקופת הברונזה, אבל המקום לא נחפר באופן שיטתי. בראש התל נשארו קטעי חומה של מבצר צלבני, Castellum Arnaldi, שנבנה מחדש ב־1132–1133 ונכבש בידי צלאח א־דין ב־1187."
+      },
+      {
+        "title": "איילון בכתבי מצרים",
+        "text": "בארכיון אל־עמארנה, מכתבים בכתב יתדות ששלחו מלכי כנען לפרעה במאה ה־14 לפנה״ס, נזכרת ״איילונה״. עבדי־חבה מלך ירושלים, למשל, מתלונן ששיירה שנשלחה למלך נשדדה בשדותיה. כ־400 שנה מאוחר יותר, בערך 925 לפנה״ס, מופיעה איילון ברשימת הערים שפרעה שישק (ששונק הראשון) חקק על קיר מקדש אמון בכרנך. הממצאים האלה מראים שהעיר הייתה מוכרת היטב לשליטי מצרים."
+      },
+      {
+        "title": "גזר, שומרת הכניסה לעמק",
+        "text": "תל גזר, בקצה המערבי של העמק, הוא אחד האתרים החשובים בארץ: כ־130 דונם ו־26 שכבות יישוב, מן התקופה הכלקוליתית ועד התקופה הרומית. נמצאו בו מקדש מצבות כנעני, שער מבוצר מתקופת הברזל שרבים מייחסים לימי שלמה, ו״לוח גזר״, אחת הכתובות הקדומות בכתב עברי־כנעני, שהחוקרים חלוקים אם לשונה עברית. ייחוס השער לשלמה שנוי במחלוקת בין החוקרים."
+      },
+      {
+        "title": "אמאוס־ניקופוליס",
+        "text": "בצד הדרומי של העמק, ליד לטרון, נחפרו שרידי העיר אמאוס, שהרומאים קראו לה ניקופוליס, ״עיר הניצחון״. נמצאו בה בית מרחץ רומי, כנסיות ביזנטיות וכתובות. מאז אוסביוס, במאה הרביעית, נוצרים רבים מזהים אותה עם אמאוס שבבשורת לוקס, אבל יש גם מועמדות אחרות, כמו אבו גוש, אל־קובייבה ומוצא. ב־639 פגעה בה מגפה קשה, ומאוחר יותר עברה הבירה המוסלמית של האזור לרמלה."
+      }
+    ]
+  },
+  "en": {
+    "summary": "A broad, fertile valley in the northern Shephelah on the road from the coast up to Jerusalem. Here, in the book of Joshua, comes the cry \"Sun, stand still upon Gibeon, and you, moon, in the valley of Aijalon\", and for thousands of years armies, caravans and pilgrims passed through it. The town of Aijalon, which gave the valley its name, was a border town between tribes and kingdoms.",
+    "setting": "The Aijalon Valley lies between the Jerusalem hills to the east, the hills of Benjamin to the north and the low Shephelah hills to the south. It sits 140–200 m above sea level, covers about 40 sq km and has deep, fertile soil. Its waters drain into the Ayalon stream, which runs northwest to the Yarkon. From its northeast corner the Ascent of Beth-horon climbs to the plateau of Gibeon, and at its western edge Tel Gezer guards the junction with the coastal road. So anyone going from the sea up to Jerusalem passed this way. Today Highway 1, Route 443 and the high-speed railway bridge cross it, among wheat fields, Canada Park, the Latrun monastery and the ruins of Emmaus, with the city of Modi'in to the north.",
+    "peoples": [
+      {
+        "name": "Canaanites (\"Amorites\")",
+        "text": "In the 14th century BCE Aijalon appears in the Amarna letters as Ayyaluna. The letters describe wars between Canaanite city rulers, and a royal caravan robbed in the fields of Aijalon. The book of Judges says \"the Amorites\" kept living in Aijalon and Shaalbim until the house of Joseph grew strong enough to put them to forced labour. They spoke Canaanite, worshipped the gods of Canaan and lived from wheat, olives and flocks."
+      },
+      {
+        "name": "Dan, the Levites and their neighbours",
+        "text": "In the book of Joshua, Aijalon is allotted to the tribe of Dan and named as a Levite town for the clan of Kohath. Pressure from Canaanites and Philistines pushed the Danites out of the lowland, and in the end they migrated north and founded the city of Dan. Later lists place Ephraimites and Benjaminites at Aijalon too, so the valley became a meeting ground of different tribes."
+      },
+      {
+        "name": "Judahites and Philistines",
+        "text": "After the kingdom split, Aijalon stayed on Judah's side, close to the border with the kingdom of Israel. Rehoboam fortified it and stocked it with food, weapons and commanders. From the west the Philistine cities pressed in, and in the days of Ahaz, around 735 BCE, they captured Aijalon along with Beth-shemesh and Socho. The valley changed hands as the balance of power shifted."
+      },
+      {
+        "name": "Later inhabitants",
+        "text": "In 165 BCE Judah Maccabee defeated a Seleucid army near Emmaus here. In Roman and Byzantine times Emmaus-Nicopolis flourished, and many Christians identified it with the Emmaus of Luke's Gospel. Crusaders built castles on Tel Ayalon and at Latrun. The Arab villages of Yalo, Imwas and Bayt Nuba stood in the valley until 1967, when they were destroyed and their residents displaced. Today kibbutzim and moshavim such as Sha'alvim, Mishmar Ayalon and Nahshon farm it."
+      }
+    ],
+    "population": "How many people lived here in biblical times is hard to say. Tel Ayalon was surveyed in 1968 but never excavated, and it seems to have been a modest town. The big city of the area was Gezer at the valley's western edge: its mound covers about 13 hectares, and at its height it probably held a few thousand people. For a sense of scale, the Ottoman tax register of 1596 lists 38 households at Yalo, a few hundred people, and in 1945 the village had about 1,220. In every age this fertile valley fed many small villages rather than big cities.",
+    "archaeology": [
+      {
+        "title": "Tel Ayalon and its Crusader castle",
+        "text": "The 280-metre mound stands at the eastern end of Canada Park, beside the site of the village of Yalo. Edward Robinson identified it with Aijalon in 1838, from the Arabic name and from Eusebius and Jerome, who placed Aijalon two Roman miles from Emmaus. A survey found remains going back to the Bronze Age, but the site has never been properly excavated. On top are wall stretches of a Crusader castle, Castellum Arnaldi, rebuilt in 1132–1133 and taken by Saladin in 1187."
+      },
+      {
+        "title": "Aijalon in Egyptian records",
+        "text": "In the Amarna archive, cuneiform letters sent by Canaanite rulers to Pharaoh in the 14th century BCE, the town appears as Ayyaluna. Abdi-Heba, king of Jerusalem, complains for example that a caravan sent to the king was robbed in its fields. About 400 years later, around 925 BCE, Aijalon appears in the list of towns that Pharaoh Shishak (Shoshenq I) carved on the wall of Amun's temple at Karnak. Egypt's rulers clearly knew the place well."
+      },
+      {
+        "title": "Gezer, gatekeeper of the valley",
+        "text": "Tel Gezer, at the valley's western end, is one of the land's key sites: about 13 hectares and 26 layers of settlement, from the Chalcolithic to Roman times. Finds include a Canaanite row of standing stones, an Iron Age fortified gate that many attribute to Solomon, and the Gezer Calendar, one of the earliest inscriptions in the Hebrew-Canaanite script, though scholars differ on whether its language is Hebrew. Whether the gate is really Solomonic is debated among scholars."
+      },
+      {
+        "title": "Emmaus-Nicopolis",
+        "text": "On the valley's south side near Latrun lie the ruins of Emmaus, which the Romans renamed Nicopolis, \"city of victory\". Excavations found a Roman bathhouse, Byzantine churches and inscriptions. Since Eusebius in the 4th century many Christians have identified it with the Emmaus of Luke's Gospel, though other candidates include Abu Ghosh, al-Qubeiba and Motza. In 639 a severe plague struck it, and the region's Muslim capital later moved to Ramla."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": { "he": "מצרים, דרך מלכי ערים כנעניים", "en": "Egypt, through Canaanite city rulers" },
+      "period": { "he": "בערך 1500–1150 לפנה״ס", "en": "c. 1500–1150 BCE" },
+      "note": { "he": "במכתבי אל־עמארנה איילון היא חלק מכנען הנתונה לשלטון פרעה.", "en": "In the Amarna letters Aijalon is part of Canaan under Pharaoh's rule." }
+    },
+    {
+      "realm": "united",
+      "name": { "he": "שאול, דוד ושלמה (לפי המקרא)", "en": "Saul, David and Solomon (as the Bible tells it)" },
+      "period": { "he": "בערך 1020–930 לפנה״ס", "en": "c. 1020–930 BCE" },
+      "note": { "he": "שאול רודף את הפלשתים עד איילון, ו״אילון בית חנן״ שבנציבות שלמה היא אולי אותה עיר. היקף הממלכה הזו שנוי במחלוקת.", "en": "Saul chases the Philistines to Aijalon, and Solomon's district town Elon-beth-hanan may be the same place. The extent of this kingdom is debated." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "מלכי יהודה", "en": "The kings of Judah" },
+      "period": { "he": "בערך 930–735 לפנה״ס", "en": "c. 930–735 BCE" },
+      "note": { "he": "רחבעם ביצר את איילון, שעמדה ליד הגבול עם ממלכת ישראל.", "en": "Rehoboam fortified Aijalon, which stood near the border with the kingdom of Israel." }
+    },
+    {
+      "realm": "philistia",
+      "name": { "he": "ערי הפלשתים", "en": "The Philistine cities" },
+      "period": { "he": "מבערך 735 לפנה״ס", "en": "from c. 735 BCE" },
+      "note": { "he": "לפי דברי הימים, בימי אחז כבשו הפלשתים את איילון וישבו בה.", "en": "According to Chronicles, in Ahaz's day the Philistines captured Aijalon and settled there." }
+    }
+  ],
+  "timeline": [
+    { "year": -1340, "text": { "he": "מכתבי אל־עמארנה מזכירים את ״איילונה״ (בערך)", "en": "The Amarna letters mention Ayyaluna (approximate)" } },
+    { "year": -925, "text": { "he": "פרעה שישק מונה את איילון ברשימת הערים שלו, ורחבעם מבצר אותה (בערך)", "en": "Pharaoh Shishak lists Aijalon among his conquests, and Rehoboam fortifies it (approximate)" } },
+    { "year": -735, "text": { "he": "הפלשתים כובשים את איילון בימי אחז (בערך)", "en": "The Philistines capture Aijalon in Ahaz's reign (approximate)" } },
+    { "year": -165, "text": { "he": "יהודה המכבי מנצח את הסלאוקים ליד אמאוס", "en": "Judah Maccabee defeats the Seleucids near Emmaus" } },
+    { "year": 639, "text": { "he": "מגפת עמואס פוגעת קשות באזור", "en": "The plague of Amwas devastates the area" } },
+    { "year": 1133, "text": { "he": "הצלבנים בונים מחדש את המבצר בראש תל איילון", "en": "Crusaders rebuild the castle on top of Tel Ayalon" } },
+    { "year": 1838, "text": { "he": "אדוארד רובינסון מזהה את הכפר יאלו עם איילון המקראית", "en": "Edward Robinson identifies the village of Yalo with biblical Aijalon" } }
+  ],
+  "mentions": [
+    { "ref": "Joshua 10:12", "note": { "he": "״שמש בגבעון דום וירח בעמק אילון״.", "en": "\"Sun, stand still upon Gibeon, and you, moon, in the valley of Aijalon.\"" } },
+    { "ref": "Joshua 19:42", "note": { "he": "שעלבין, איילון ויתלה בנחלת שבט דן.", "en": "Shaalabbin, Aijalon and Ithlah in the territory of Dan." } },
+    { "ref": "Joshua 21:24", "note": { "he": "איילון ומגרשה ניתנות ללוויים.", "en": "Aijalon and its pastures are given to the Levites." } },
+    { "ref": "Judges 1:35", "note": { "he": "האמורי ממשיך לשבת באיילון ובשעלבים.", "en": "The Amorites hold on in Aijalon and Shaalbim." } },
+    { "ref": "I Samuel 14:31", "note": { "he": "ישראל מכים בפלשתים ״ממכמש אילנה״.", "en": "Israel strikes the Philistines from Michmash to Aijalon." } },
+    { "ref": "I Kings 4:9", "note": { "he": "״אילון בית חנן״ בנציבות של בן דקר, אולי איילון עצמה.", "en": "Elon-beth-hanan in Ben-deker's district, possibly Aijalon itself." } },
+    { "ref": "I Chronicles 6:54", "note": { "he": "איילון ברשימת ערי הלוויים בדברי הימים.", "en": "Aijalon in Chronicles' list of Levite towns." } },
+    { "ref": "I Chronicles 8:13", "note": { "he": "בריעה ושמע, ראשי יושבי איילון, מבריחים את יושבי גת.", "en": "Beriah and Shema, heads of Aijalon's families, drive out the people of Gath." } },
+    { "ref": "II Chronicles 11:10", "note": { "he": "רחבעם מבצר את צרעה, איילון וחברון.", "en": "Rehoboam fortifies Zorah, Aijalon and Hebron." } },
+    { "ref": "II Chronicles 28:18", "note": { "he": "הפלשתים כובשים את בית שמש ואת איילון.", "en": "The Philistines capture Beth-shemesh and Aijalon." } }
+  ],
+  "images": [
+    { "file": "File:Ajalon Panorama1.jpg", "kind": "site", "caption": { "he": "עמק איילון במבט מיער המגינים", "en": "The Aijalon Valley seen from HaMeginim Wood" } },
+    { "file": "File:PikiWiki Israel 14698 Ayalon Valley Grain.JPG", "kind": "site", "caption": { "he": "חבילות קש אחרי קציר בעמק איילון", "en": "Straw bales after the harvest in the Aijalon Valley" } },
+    { "file": "File:Tel Ayalon.jpg", "kind": "site", "caption": { "he": "תל איילון בפארק קנדה", "en": "Tel Ayalon in Canada Park" } },
+    { "file": "File:One of the Amarna letters. A letter from Abdi-Heba of Jerusalem to the Egyptian Pharaoh Amenhotep III. 1st half of the 14th century BCE. From Tell el-Amarna, Egypt. Vorderasiatisches Museum, Berlin.jpg", "kind": "artifact", "caption": { "he": "מכתב של עבדי־חבה מלך ירושלים לפרעה, מארכיון אל־עמארנה, המאה ה־14 לפנה״ס (מוזיאון המזרח הקדום, ברלין)", "en": "A letter from Abdi-Heba of Jerusalem to Pharaoh, from the Amarna archive, 14th century BCE (Vorderasiatisches Museum, Berlin)" } },
+    { "file": "File:Joshua Commanding the Sun to Stand Still upon Gibeon (1816) John Martin - NGA 2004.64.1.jpg", "kind": "art", "caption": { "he": "יהושע מצווה על השמש לעמוד בגבעון, ג'ון מרטין, 1816", "en": "Joshua Commanding the Sun to Stand Still upon Gibeon, John Martin, 1816" } },
+    { "file": "File:051.Joshua Commands the Sun to Stand Still.jpg", "kind": "art", "caption": { "he": "יהושע מצווה על השמש לעמוד, גוסטב דורה, 1866", "en": "Joshua commands the sun to stand still, Gustave Doré, 1866" } }
+  ],
+  "wiki": { "he": "עמק איילון", "en": "Ayalon Valley" },
+  "related": ["gibeon", "michmash", "zorah", "bethshemesh", "gath"],
+  "sources": [
+    { "title": "Ayalon Valley (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ayalon_Valley" },
+    { "title": "עמק איילון (ויקיפדיה)", "url": "https://he.wikipedia.org/wiki/עמק_איילון" },
+    { "title": "תל איילון (ויקיפדיה)", "url": "https://he.wikipedia.org/wiki/תל_איילון" },
+    { "title": "Yalo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Yalo" },
+    { "title": "Pilgrimage sites: Tel Ayalon and Tel Azeka, KKL-JNF", "url": "https://kkl-jnf.org/hiking_and_walking_tracks/pilgrimage-center-ayalon-azeka" },
+    { "title": "Gezer (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gezer" },
+    { "title": "Joshua 10 (Sefaria)", "url": "https://www.sefaria.org/Joshua.10" }
+  ]
+}

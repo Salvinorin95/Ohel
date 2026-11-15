@@ -1,0 +1,402 @@
+{
+  "id": "hermon",
+  "he": {
+    "summary": "החרמון, ההר הגבוה באזור, מתנשא לכ־2,814 מטר ומושלג רוב החורף. במקרא הוא הגבול הצפוני של הארץ שכבשו בני ישראל בעבר הירדן, ההר שיש לו שלושה שמות, ומקור ״טל חרמון שירד על הררי ציון״. המים שלו מזינים את מקורות הירדן.",
+    "setting": "החרמון הוא קצהו הדרומי של רכס האנטי־לבנון: גוש גבוה של אבן גיר, שפסגתו (2,814 מטר) נמצאת על הגבול בין סוריה ללבנון, ומדרונותיו הדרומיים ברמת הגולן, בשליטת ישראל מאז 1967. השלג והגשם, יותר מ־1,300 מ״מ בשנה ברום של כ־1,600 מטר, מחלחלים לסלע הקרסטי ויוצאים במעיינות שלמרגלותיו: דן, בניאס והחצבאני, מקורות הירדן. מזמורי תהלים משבחים את הטל שלו. בערבית קוראים לו ג׳בל א־שיח׳, ״הר הזקן״, אולי בגלל הפסגה הלבנה. דמשק נמצאת כ־40 ק״מ ממנו. כיום פועל במדרון אתר סקי, ובימים בהירים רואים את ההר מכל הגליל ומצפון הארץ.",
+    "peoples": [
+      {
+        "name": "האמורים, החיווים והצידונים",
+        "text": "בימי המקרא ישבו סביב ההר עמים שונים, וכל אחד קרא לו בשם משלו: ״צידנים יקראו לחרמון שרין והאמרי יקראו לו שניר״. השם שריון מופיע כבר בכתבי המארות המצריים מהמאה ה־19 לפנה״ס. ספר יהושע מזכיר את ״החוי תחת חרמון״. שמו של ההר, מאותו שורש של ״חרם״, רומז אולי לקדושתו, ובמקרא הוא נקרא גם ״הר בעל חרמון״."
+      },
+      {
+        "name": "בני ישראל והארמים",
+        "text": "לפי המקרא ישבו בני חצי שבט מנשה בבשן ״עד בעל חרמון ושניר והר חרמון״, ודן הייתה עיר ישראלית למרגלות ההר. מצפון וממזרח שלטה ארם דמשק, וההר היה גבול ושטח מריבה בין הממלכות. בשנת 841 לפנה״ס ביצר חזאל מלך ארם את ״הר שניר״ מפני שלמנאסר השלישי מלך אשור, ולפי כתובות אשור הובס שם."
+      },
+      {
+        "name": "האיטורים",
+        "text": "בתקופה ההלניסטית והרומית ישבו במדרונות החרמון והלבנון האיטורים, עם ממוצא ערבי שהתפרסם בקשתיו. הם עיבדו טרסות, הפיקו שמן, רעו עדרים, ובנו כפרים מאבנים עבות כדי לעמוד בשלג ובחום. במאה ה־1 לפנה״ס היו להם נסיכות משלהם, ואחר כך נבלעו בממלכת הורדוס ובאימפריה הרומית."
+      },
+      {
+        "name": "הדרוזים",
+        "text": "כיום רוב היושבים סביב ההר הם דרוזים. ואדי א־תים שבצד הלבנוני, באזור חצבייא, נחשב לערש האמונה הדרוזית, שהתפשטה שם במאה ה־11. ברמת הגולן ארבעה כפרים דרוזיים שוכנים למרגלות החרמון: מג׳דל שמס, מסעדה, בוקעאתא ועין קיניה. בצד הסורי יש כפרים דרוזיים, סונים ונוצריים. חקלאות של תפוחים ודובדבנים היא חלק חשוב מהפרנסה."
+      }
+    ],
+    "population": "ההר עצמו מעולם לא היה מקום מגורים צפוף: בחורף הפסגות מכוסות שלג, והיישובים ישבו במדרונות הנמוכים ובעמקים. סקר ארכאולוגי של שמעון דר מצא במדרונות הדרומיים והמערביים יותר מ־60 אתרים עתיקים, חוות, כפרים ומקדשים מהתקופה ההלניסטית, הרומית והביזנטית, מה שמעיד על אוכלוסייה כפרית ניכרת. כיום חיים בארבעת הכפרים הדרוזיים ברמת הגולן כ־25,000 איש, הגדול שבהם מג׳דל שמס (כ־11,000). זה מעט לעומת דמשק הסמוכה, אחת הערים הגדולות במזרח התיכון, אז והיום.",
+    "archaeology": [
+      {
+        "title": "קסר ענתר: המקדש שבפסגה",
+        "text": "על הפסגה עצמה, ב־2,814 מטר, עומדים שרידיו של מתחם אבן מלבני ללא גג, אולי המקדש הגבוה ביותר בעולם העתיק. צ׳רלס וורן תיעד אותו ב־1869 ולקח משם לוח אבן גיר עם כתובת יוונית, היום במוזיאון הבריטי. בתרגום אחד: ״על פי צו האל הגדול והקדוש, הנשבעים (יוצאים) מכאן״. חוקרים אחדים קשרו אותה לספר חנוך, שבו מלאכים נשבעים על החרמון; אחרים זהירים יותר."
+      },
+      {
+        "title": "מקדשי החרמון",
+        "text": "במדרונות ההר, בלבנון, בסוריה וברמת הגולן, נמצאו כשלושים מקדשים ומקומות פולחן רומיים, רובם נבנו בין 150 ל־300 לספירה וננטשו אחרי המאה ה־4. שמות האלים בכתובות הם יווניים, אבל כנראה הסתתרו מאחוריהם אלים מקומיים עתיקים. במאה ה־4 כתב אוסביוס שהחרמון ״מכובד על ידי האומות כמקום קדוש״, הד לשמו העתיק בעל חרמון, ״אדון החרמון״."
+      },
+      {
+        "title": "כפרים איטוריים והר שניים",
+        "text": "בשנים 1969–1989 סקר וחפר שמעון דר מאוניברסיטת בר־אילן במדרונות החרמון. הוא מצא יותר מ־60 אתרים: חוות, כפרים ומקדשים. בכפר שבהר סומאק נבנו הבתים בקירות אבן גזית בעובי של כ־1.2 מטר והיו בו בתי בד רבים, ובהר שניים נחשף אתר פולחן עם מתחם עליון ומתחם תחתון, שפעל עד התקופה הביזנטית. דר ייחס את התרבות הזאת לאיטורים; מבקרים העירו שהזיהוי נשען על הנחות ולא תמיד על שכבות ברורות."
+      },
+      {
+        "title": "בניאס, למרגלות ההר",
+        "text": "במעיין בניאס, אחד ממקורות הירדן, עבדו בתקופה ההלניסטית לאל פאן במערה גדולה, ומכאן השם פניאס. הורדוס בנה שם מקדש לאוגוסטוס, ובנו פיליפוס ייסד את העיר קיסריה של פיליפוס. לפי הבשורות, זמן קצר אחרי ביקורו של ישו באזור התרחשה ההשתנות על ״הר גבוה״; יש המזהים אותו עם החרמון, אבל המסורת העתיקה מצביעה על הר תבור."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Mount Hermon, the highest mountain in the region at about 2,814 m, is snow-capped for much of the winter. In the Bible it marks the northern edge of the land Israel took east of the Jordan, is known by three names, and gives us “the dew of Hermon that comes down on the mountains of Zion”. Its waters feed the sources of the Jordan.",
+    "setting": "Hermon is the southern end of the Anti-Lebanon range: a high limestone massif whose summit (2,814 m) lies on the Syria–Lebanon border, while its southern slopes are in the Golan Heights, held by Israel since 1967. Snow and rain, over 1,300 mm a year at around 1,600 m, sink into the porous karst rock and burst out in springs at its foot: Dan, Banias and the Hasbani, the sources of the Jordan. The Psalms praise its dew. In Arabic it is Jabal al-Shaykh, “the old man's mountain”, perhaps for its white peak. Damascus lies about 40 km away. Today a ski site runs on its slopes, and on clear days the mountain is visible across the Galilee and the north.",
+    "peoples": [
+      {
+        "name": "Amorites, Hivites and Sidonians",
+        "text": "In biblical times several peoples lived around the mountain, each with its own name for it: “the Sidonians call Hermon Sirion, and the Amorites call it Senir”. The name Sirion already appears in Egyptian execration texts of the 19th century BCE. Joshua mentions “the Hivites under Hermon”. The name Hermon shares a root with herem, “set apart”, perhaps hinting at its holiness, and the Bible also calls it “Mount Baal-hermon”."
+      },
+      {
+        "name": "Israelites and Arameans",
+        "text": "According to the Bible, the half-tribe of Manasseh settled in Bashan “as far as Baal-hermon, Senir and Mount Hermon”, and Dan was an Israelite city at the mountain's foot. To the north and east ruled Aram-Damascus, and the mountain was a frontier contested between kingdoms. In 841 BCE Hazael of Aram fortified “Mount Senir” against Shalmaneser III of Assyria and, by the Assyrian account, was defeated there."
+      },
+      {
+        "name": "The Ituraeans",
+        "text": "In the Hellenistic and Roman periods the slopes of Hermon and Lebanon were home to the Ituraeans, a people of Arab origin famed as archers. They farmed terraces, pressed oil, herded flocks, and built villages with thick stone walls against the snow and heat. In the 1st century BCE they had their own principality, later absorbed into Herod's kingdom and the Roman Empire."
+      },
+      {
+        "name": "The Druze",
+        "text": "Today most people living around the mountain are Druze. Wadi al-Taym on the Lebanese side, around Hasbaya, is considered the cradle of the Druze faith, which spread there in the 11th century. On the Golan, four Druze villages sit at Hermon's foot: Majdal Shams, Mas'ade, Buq'ata and Ein Qiniyye. The Syrian side has Druze, Sunni and Christian villages. Apple and cherry orchards are an important livelihood."
+      }
+    ],
+    "population": "The mountain itself was never densely settled: in winter its peaks lie under snow, and villages kept to the lower slopes and valleys. Shimon Dar's archaeological survey of the southern and western slopes found more than 60 ancient sites, farms, villages and temples of the Hellenistic, Roman and Byzantine periods, pointing to a sizeable rural population. Today the four Druze villages on the Golan side are home to roughly 25,000 people, the largest being Majdal Shams (about 11,000). That is small beside nearby Damascus, one of the great cities of the Middle East, then and now.",
+    "archaeology": [
+      {
+        "title": "Qasr Antar: the summit temple",
+        "text": "On the very summit, at 2,814 m, stand the remains of a roofless rectangular stone enclosure, perhaps the highest temple of the ancient world. Charles Warren recorded it in 1869 and removed a limestone slab with a Greek inscription, now in the British Museum. In one translation it reads: “By command of the greatest and holy god, those who take an oath (go) from here.” Some scholars link it to the Book of Enoch, where angels swear an oath on Hermon; others are more cautious."
+      },
+      {
+        "title": "The temples of Hermon",
+        "text": "Around thirty Roman temples and shrines dot the mountain's slopes in Lebanon, Syria and the Golan, most built between 150 and 300 CE and abandoned after the 4th century. The gods in their inscriptions carry Greek names, but probably stand for much older local deities. In the 4th century Eusebius wrote that Hermon was still honored by the nations as a holy place, echoing its ancient name Baal-hermon, “Lord of Hermon”."
+      },
+      {
+        "title": "Ituraean villages and Har Senaim",
+        "text": "From 1969 to 1989 Shimon Dar of Bar-Ilan University surveyed and dug on Hermon's slopes. He found more than 60 sites: farms, villages and temples. At Mount Sumaq the houses had dressed-stone walls about 1.2 m thick and many oil presses, and at Har Senaim a sanctuary with upper and lower sacred enclosures stayed in use until Byzantine times. Dar attributed this culture to the Ituraeans; reviewers noted that the identification rests partly on assumptions and not always on clear layers."
+      },
+      {
+        "title": "Banias, at the mountain's foot",
+        "text": "At the Banias spring, one of the Jordan's sources, the Greek god Pan was worshipped in a large cave, hence the name Paneas. Herod built a temple to Augustus there, and his son Philip founded the city of Caesarea Philippi. The Gospels place the Transfiguration on “a high mountain” soon after Jesus visited the area; some identify it with Hermon, though the older tradition points to Mount Tabor."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": {
+        "he": "מצרים, הממלכה החדשה",
+        "en": "Egypt, New Kingdom"
+      },
+      "period": {
+        "he": "בערך 1550–1200 לפנה״ס",
+        "en": "c. 1550–1200 BCE"
+      },
+      "note": {
+        "he": "אזור דמשק והחרמון היה בשולי השטח המצרי, על הגבול עם תחום ההשפעה החתי.",
+        "en": "The Damascus and Hermon area lay at the edge of Egypt's domain, on the frontier with the Hittite sphere."
+      }
+    },
+    {
+      "realm": "aram",
+      "name": {
+        "he": "ארם דמשק",
+        "en": "Aram-Damascus"
+      },
+      "period": {
+        "he": "בערך 950–732 לפנה״ס",
+        "en": "c. 950–732 BCE"
+      },
+      "note": {
+        "he": "ההר היה חלק מעורפה של דמשק, וחזאל ביצר אותו מול אשור ב־841 לפנה״ס.",
+        "en": "The mountain was part of Damascus's hinterland; Hazael fortified it against Assyria in 841 BCE."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Assyrian Empire"
+      },
+      "period": {
+        "he": "מ־732 לפנה״ס",
+        "en": "from 732 BCE"
+      },
+      "note": {
+        "he": "עם נפילת דמשק בידי תגלת פלאסר השלישי נעשה האזור לפחוות אשוריות.",
+        "en": "With the fall of Damascus to Tiglath-pileser III the area became Assyrian provinces."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "הנסיכות האיטורית",
+        "en": "The Ituraean principality"
+      },
+      "period": {
+        "he": "בערך 100–20 לפנה״ס",
+        "en": "c. 100–20 BCE"
+      },
+      "note": {
+        "he": "נסיכות מקומית בלבנון ובחרמון, עד שרומא העבירה את דרום ההר להורדוס.",
+        "en": "A local principality in Lebanon and Hermon, until Rome gave the southern mountain to Herod."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "הורדוס, בניו ורומא",
+        "en": "Herod, his sons and Rome"
+      },
+      "period": {
+        "he": "מ־20 לפנה״ס",
+        "en": "from 20 BCE"
+      },
+      "note": {
+        "he": "הורדוס ובנו פיליפוס שלטו בדרום ההר ובפניאס, ואחריהם הפך האזור לחלק מפרובינקיה רומית.",
+        "en": "Herod and his son Philip ruled the southern slopes and Paneas; afterwards the area became part of a Roman province."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -1850,
+      "text": {
+        "he": "השם שריון מופיע בכתבי המארות המצריים",
+        "en": "The name Sirion appears in the Egyptian execration texts"
+      }
+    },
+    {
+      "year": -841,
+      "text": {
+        "he": "חזאל מלך ארם מתבצר ב״הר שניר״ ומובס בידי שלמנאסר השלישי",
+        "en": "Hazael of Aram makes a stand on “Mount Senir” and is defeated by Shalmaneser III"
+      }
+    },
+    {
+      "year": -200,
+      "text": {
+        "he": "בקרב פניון למרגלות ההר עובר האזור מידי התלמיים לסלווקים",
+        "en": "At the battle of Panium, at the mountain's foot, the region passes from the Ptolemies to the Seleucids"
+      }
+    },
+    {
+      "year": -20,
+      "text": {
+        "he": "הורדוס בונה מקדש לאוגוסטוס בפניאס",
+        "en": "Herod builds a temple to Augustus at Paneas"
+      }
+    },
+    {
+      "year": 200,
+      "text": {
+        "he": "בערך 150–300 לספירה: נבנים רוב מקדשי החרמון",
+        "en": "c. 150–300 CE: most of Hermon's temples are built"
+      }
+    },
+    {
+      "year": 1869,
+      "text": {
+        "he": "צ׳רלס וורן מתעד את המקדש שעל הפסגה",
+        "en": "Charles Warren records the summit temple"
+      }
+    },
+    {
+      "year": 1967,
+      "text": {
+        "he": "במלחמת ששת הימים עוברים הגולן ומדרונות החרמון הדרומיים לשליטת ישראל",
+        "en": "In the Six-Day War the Golan and Hermon's southern slopes come under Israeli control"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Deuteronomy 3:8",
+      "note": {
+        "he": "הארץ שנלקחה מן האמורי ״מנחל ארנן עד הר חרמון״",
+        "en": "The land taken from the Amorites “from the Arnon to Mount Hermon”"
+      }
+    },
+    {
+      "ref": "Deuteronomy 3:9",
+      "note": {
+        "he": "״צידנים יקראו לחרמון שרין והאמרי יקראו לו שניר״",
+        "en": "The Sidonians call it Sirion, the Amorites Senir"
+      }
+    },
+    {
+      "ref": "Deuteronomy 4:48",
+      "note": {
+        "he": "שם נוסף: ״הר שיאן הוא חרמון״",
+        "en": "Another name: “Mount Sion, that is Hermon”"
+      }
+    },
+    {
+      "ref": "Joshua 11:3",
+      "note": {
+        "he": "״והחוי תחת חרמון בארץ המצפה״",
+        "en": "“The Hivites under Hermon in the land of Mizpah”"
+      }
+    },
+    {
+      "ref": "Joshua 11:17",
+      "note": {
+        "he": "כיבושי יהושע מגיעים עד בעל גד ״תחת הר חרמון״",
+        "en": "Joshua's conquests reach Baal-gad “below Mount Hermon”"
+      }
+    },
+    {
+      "ref": "Joshua 12:1",
+      "note": {
+        "he": "גבול הארץ בעבר הירדן מזרחה, מארנון עד החרמון",
+        "en": "The land east of the Jordan, from the Arnon to Hermon"
+      }
+    },
+    {
+      "ref": "Joshua 13:11",
+      "note": {
+        "he": "״וכל הר חרמון״ בנחלת השבטים שבעבר הירדן",
+        "en": "“All Mount Hermon” in the territory east of the Jordan"
+      }
+    },
+    {
+      "ref": "Judges 3:3",
+      "note": {
+        "he": "החיווי היושב ״מהר בעל חרמון עד לבוא חמת״",
+        "en": "The Hivites living “from Mount Baal-hermon to Lebo-hamath”"
+      }
+    },
+    {
+      "ref": "Ezekiel 27:5",
+      "note": {
+        "he": "קרשי ספינת צור עשויים ״ברושים משניר״",
+        "en": "Tyre's ship is planked with fir “from Senir”"
+      }
+    },
+    {
+      "ref": "Psalms 29:6",
+      "note": {
+        "he": "קול ה׳ מרקיד את ״לבנון ושרין כמו בן ראמים״",
+        "en": "The voice of the LORD makes Lebanon and Sirion skip like a young wild ox"
+      }
+    },
+    {
+      "ref": "Psalms 42:7",
+      "note": {
+        "he": "״על כן אזכרך מארץ ירדן וחרמונים״",
+        "en": "“I remember you from the land of Jordan and the Hermons”"
+      }
+    },
+    {
+      "ref": "Psalms 89:13",
+      "note": {
+        "he": "״תבור וחרמון בשמך ירננו״",
+        "en": "“Tabor and Hermon sing for joy at your name”"
+      }
+    },
+    {
+      "ref": "Psalms 133:3",
+      "note": {
+        "he": "״כטל חרמון שירד על הררי ציון״",
+        "en": "“Like the dew of Hermon that comes down on the mountains of Zion”"
+      }
+    },
+    {
+      "ref": "Song of Songs 4:8",
+      "note": {
+        "he": "״מראש שניר וחרמון, ממענות אריות״",
+        "en": "“From the peak of Senir and Hermon, from the lions' dens”"
+      }
+    },
+    {
+      "ref": "I Chronicles 5:23",
+      "note": {
+        "he": "חצי שבט מנשה יושב ״עד בעל חרמון ושניר והר חרמון״",
+        "en": "Half-Manasseh lives “as far as Baal-hermon, Senir and Mount Hermon”"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Hermonsnow.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "החרמון המושלג כפי שהוא נראה מהר בנטל ברמת הגולן",
+        "en": "Snow-covered Hermon seen from Mount Bental in the Golan Heights"
+      }
+    },
+    {
+      "file": "File:Xermon144.JPG",
+      "kind": "site",
+      "caption": {
+        "he": "שלג וסלעי גיר סמוך לפסגת החרמון",
+        "en": "Snow and limestone crags near the summit of Hermon"
+      }
+    },
+    {
+      "file": "File:Qsarnaba,temple-E.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "המקדש הרומי בקצר אל־בנאת, באחד ממדרונות החרמון בלבנון",
+        "en": "The Roman temple of Qasr el-Banat, on Hermon's slopes in Lebanon"
+      }
+    },
+    {
+      "file": "File:Banias Spring Cliff Pan's Cave.JPG",
+      "kind": "site",
+      "caption": {
+        "he": "מעיין בניאס ומערת פאן למרגלות החרמון",
+        "en": "The Banias spring and the Cave of Pan at the foot of Hermon"
+      }
+    },
+    {
+      "file": "File:13.Le mont Hermon, vu de Khalwet el-Biyad.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "החרמון מכיוון ח׳לוות אל־בייאד, ליתוגרפיה של ק. ו. מ. ואן דה ולדה, ״ארץ ישראל״, אמצע המאה ה־19",
+        "en": "Mount Hermon from Khalwet el-Biyad, lithograph by C. W. M. van de Velde, Le Pays d'Israël, mid-19th century"
+      }
+    },
+    {
+      "file": "File:Mount Hermon and Mount Sannin above the Clouds Art.IWMART3081.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "החרמון והר צנין מעל העננים, ציור של ריצ׳רד קרליין מבעד לכנף מטוס, 1919",
+        "en": "Mount Hermon and Mount Sannin above the clouds, seen past a biplane's wing, Richard Carline, 1919"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "חרמון",
+    "en": "Mount Hermon"
+  },
+  "related": [
+    "dan",
+    "tabor",
+    "kinneret",
+    "hazor"
+  ],
+  "sources": [
+    {
+      "title": "Mount Hermon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mount_Hermon"
+    },
+    {
+      "title": "Temples of Mount Hermon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Temples_of_Mount_Hermon"
+    },
+    {
+      "title": "Shalmaneser III: Tyre's tribute and the campaign against Hazael (ANET 280), Livius",
+      "url": "https://www.livius.org/sources/content/anet/280-tyres-tribute-to-salmaneser-iii/"
+    },
+    {
+      "title": "Wadi al-Taym (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wadi_al-Taym"
+    },
+    {
+      "title": "S. Dar, The Israeli Mount Hermon: 50 years of discoveries (Bar-Ilan University)",
+      "url": "https://cris.biu.ac.il/en/publications/the-israeli-mount-hermon-50-years-of-discoveries-2/"
+    }
+  ]
+}

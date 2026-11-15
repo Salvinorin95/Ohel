@@ -1,0 +1,161 @@
+{
+  "id": "susa",
+  "he": {
+    "summary": "שושן הייתה במשך אלפי שנים עיר מרכזית של עילם, ואחר כך אחת מבירות האימפריה הפרסית. כאן מתרחשת מגילת אסתר, כאן שימש נחמיה שר המשקים של המלך, ובה ראה דניאל חזון על נהר אולי. העיר שוש בדרום־מערב איראן נבנתה על חורבותיה.",
+    "setting": "שושן שוכנת במישור ח׳וזסתאן שבדרום־מערב איראן, למרגלות הרי זגרוס, בין נהר הכרחה ויובלו השאור לבין נהר הדז (אולי של התנ״ך, כנראה). האדמה כאן פורייה ומושקית, והקיץ לוהט במיוחד, עם ימים של יותר מ־45 מעלות, בעוד שהחורף מתון. דרכים יצאו מכאן מערבה לבבל ולמסופוטמיה ומזרחה אל רמת פרס. האתר בנוי מכמה תלים: האקרופוליס, תל האפדנה עם ארמון דריווש, ״עיר המלוכה״ ורובע בעלי המלאכה. על האקרופוליס עומד מבצר דמוי טירה שבנתה המשלחת הצרפתית בסוף המאה ה־19, ולמרגלות התלים, ליד נהר השאור, מתנשאת הכיפה החרוטית הלבנה של קבר דניאל.",
+    "peoples": [
+      {
+        "name": "העילמים",
+        "text": "העילמים דיברו שפה שאין לה קרובים ידועים, וכתבו אותה בכתב יתדות. האל של העיר היה אינשושינק, ״אדון שושן״. שושן הייתה אחת משתי הבירות של עילם, לצד אנשן שבהרים, ונמצאה כל הזמן בין שלטון מסופוטמי לעצמאות. מלכי עילם פשטו לא פעם על בבל, ובמאה ה־12 לפנה״ס הביאו לשושן כשלל אנדרטאות מפורסמות, ובהן אסטלת חוקי חמורבי."
+      },
+      {
+        "name": "הפרסים",
+        "text": "כורש כבש את שושן בערך ב־539 לפנה״ס, ודריווש הראשון הפך אותה לבירה המנהלית האהובה עליו. בני המלוכה דיברו פרסית עתיקה, עבדו את אהורה מזדה, וכתבו את כתובותיהם בשלוש שפות: פרסית עתיקה, עילמית ובבלית. לפי כתובת היסוד של הארמון, בבנייה השתתפו אנשים מכל קצות האימפריה: בבלים עשו לבנים, יוונים מאיוניה ואנשי סרדיס סיתתו אבן, ומדים ומצרים עבדו בזהב."
+      },
+      {
+        "name": "יהודי שושן",
+        "text": "מגילת אסתר מספרת על קהילה יהודית בשושן בימי אחשורוש, ושם החג ״שושן פורים״ נשמר עד היום. נחמיה היה בשושן כשקיבל את הבשורה הקשה על חומות ירושלים. יהודים חיו בעיר ובסביבתה עוד מאות שנים: בנימין מטודלה, שביקר במאה ה־12, תיאר קהילה גדולה עם בתי כנסת רבים, ואחד מהם הציג את קבר דניאל."
+      },
+      {
+        "name": "שוש של היום",
+        "text": "אחרי הכיבוש הערבי במאה השביעית העיר נעשתה מוסלמית ברובה, ושגשגה עד שהמונגולים החריבו אותה ב־1218. היום חיה בשוש אוכלוסייה מעורבת של דוברי פרסית, ערבית ולורית. קבר דניאל הוא מקום עלייה לרגל חשוב למוסלמים שיעים, וגם יהודי איראן ממשיכים לבקר בו."
+      }
+    ],
+    "population": "אף אחד לא יודע כמה אנשים חיו בשושן בימי אסתר. שלושת התלים העיקריים משתרעים על כקילומטר רבוע (כ־100 הקטאר), מרפסת הארמון לבדה על כ־12 הקטאר, והעיר התפרשה גם מחוץ להם. ייתכן שחיו בה עשרות אלפי אנשים, אבל אין לכך הערכה מבוססת. הייתה זו אחת מערי המלוכה הגדולות של האימפריה, כנראה קטנה מבבל. להשוואה, בירושלים בימי נחמיה חיו אולי כמה מאות עד כאלף איש בלבד. בתקופה האסלאמית המוקדמת העיר השתרעה על יותר מ־400 הקטאר.",
+    "archaeology": [
+      {
+        "title": "חפירות צרפתיות וטירה",
+        "text": "ויליאם לופטוס חפר כאן לראשונה ב־1851. מרסל וז׳אן דיולפואה מצאו ב־1885–1886 את אריחי הלבנים המזוגגות של הקשתים והאריות, שנשלחו ללובר. ז׳אק דה מורגן הגיע ב־1897, הקים על האקרופוליס מבצר דמוי טירה כבסיס למשלחת, וחפר עד 1912 תעלות ענק. הוא מצא אוצרות, אבל שיטותיו הרסו שכבות רבות מהתקופות המאוחרות. רומן גירשמן (1946–1967) וז׳אן פרו (1969–1979) חפרו בזהירות רבה יותר, ובשנת 2015 הוכרזה שושן אתר מורשת עולמית."
+      },
+      {
+        "title": "אסטלת חוקי חמורבי",
+        "text": "בחורף 1901–1902 מצאה המשלחת של דה מורגן שלושה שברים של אבן בזלת שחורה בגובה 2.25 מטר: חוקי חמורבי, מלך בבל (בערך 1792–1750 לפנה״ס). בראשה נראה המלך עומד מול אל השמש שמש, ומתחת חרותים כ־282 חוקים. היא הוצבה במקור כנראה בסיפר שבמסופוטמיה והובאה לשושן כשלל, כנראה בידי המלך העילמי שותרוך־נחונטה. חוקים כמו ״עין תחת עין״ ושור נגח מזכירים את חוקי התורה. האסטלה מוצגת בלובר."
+      },
+      {
+        "title": "ארמון דריווש",
+        "text": "דריווש הראשון בנה כאן, בערך מ־515 לפנה״ס, ארמון על מרפסת מלאכותית: בית מגורים, שער מונומנטלי ואפדנה, אולם קבלות פנים ובו 36 עמודים עם כותרות בצורת שוורים. הקירות קושטו בלבנים מזוגגות של קשתים, אריות וגריפונים. שריפה פגעה בארמון בימי ארתחשסתא הראשון, וארתחשסתא השני שיקם אותו. ב־1972 נמצא ליד השער פסל של דריווש שנעשה במצרים, והוא מוצג היום במוזיאון הלאומי של איראן. חוקרים רבים קוראים את מגילת אסתר כסיפור ולא ככרוניקה, אבל מחברה הכיר היטב את חצר המלוכה הפרסית."
+      },
+      {
+        "title": "קבר דניאל",
+        "text": "לפי מסורות מוסלמיות, כשהערבים כבשו את שושן בשנת 638 בערך הם מצאו ארון שיוחס לדניאל. במאה ה־12 תיאר בנימין מטודלה ארון שהיה תלוי מעל הנהר, ומקום שבו כיבדו את דניאל יהודים ומוסלמים יחד. המבנה של היום, עם הכיפה החרוטית בסגנון המוקרנס, שופץ ב־1870 ואחר כך. גם בכרכוך, בסמרקנד ובמקומות אחרים מראים ״קבר דניאל״, אבל שושן היא המסורת הנפוצה ביותר."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Shushan (Susa) was a leading city of Elam for thousands of years and then one of the capitals of the Persian Empire. It is the setting of the Book of Esther, the place where Nehemiah served as the king's cupbearer, and where Daniel saw a vision by the Ulai River. The town of Shush in southwestern Iran stands on its ruins.",
+    "setting": "Susa lies on the Khuzestan plain in southwestern Iran, at the foot of the Zagros Mountains, between the Karkheh River with its branch the Shaour and the Dez River (probably the Bible's Ulai). The soil is rich and well watered; summers are scorching, often above 45°C, and winters mild. Roads ran west to Babylon and Mesopotamia and east up onto the Iranian plateau. The site is a cluster of mounds: the Acropolis, the Apadana mound with Darius's palace, the “Royal City” and the craftsmen's quarter. A castle-like fort built by French archaeologists in the late 1890s crowns the Acropolis, and below, by the Shaour, rises the white cone-shaped dome of the Tomb of Daniel.",
+    "peoples": [
+      {
+        "name": "The Elamites",
+        "text": "The Elamites spoke a language with no known relatives, written in cuneiform. Susa's own god was Inshushinak, “lord of Susa.” The city was one of Elam's two capitals, with Anshan in the highlands, and swung between Mesopotamian rule and independence. Elamite kings raided Babylonia more than once, and in the 12th century BCE they carried famous monuments back to Susa as trophies, among them the stele of Hammurabi's laws."
+      },
+      {
+        "name": "The Persians",
+        "text": "Cyrus took Susa around 539 BCE, and Darius I made it his favorite seat of government. The royal family spoke Old Persian, worshipped Ahura Mazda, and carved their inscriptions in three languages: Old Persian, Elamite and Babylonian. Darius's foundation text for the palace boasts of workers from every corner of the empire: Babylonians made bricks, Ionian Greeks and Sardians cut stone, and Medes and Egyptians worked the gold."
+      },
+      {
+        "name": "The Jews of Shushan",
+        "text": "The Book of Esther tells of a Jewish community in Shushan under King Ahasuerus, and the holiday name “Shushan Purim” keeps the city's name alive. Nehemiah was here when he heard the grim news about Jerusalem's walls. Jews lived in and around the city for many centuries: Benjamin of Tudela, visiting in the 12th century, described a large community with many synagogues, one of them showing the Tomb of Daniel."
+      },
+      {
+        "name": "Shush today",
+        "text": "After the Arab conquest in the 7th century the city became largely Muslim, and it flourished until the Mongols destroyed it in 1218. Today Shush is home to a mixed population speaking Persian, Arabic and Luri. The Tomb of Daniel is an important pilgrimage site for Shia Muslims, and Iranian Jews still visit it too."
+      }
+    ],
+    "population": "No one knows how many people lived in Shushan in Esther's day. The three main mounds cover about a square kilometer (some 100 hectares), the palace terrace alone about 12 hectares, and the town spread beyond them. It may have held tens of thousands of people, but there is no solid estimate. It was one of the empire's great royal cities, probably smaller than Babylon. For comparison, Jerusalem in Nehemiah's time may have had only a few hundred to about a thousand residents. In the early Islamic centuries the city covered more than 400 hectares.",
+    "archaeology": [
+      {
+        "title": "French digs and a castle",
+        "text": "William Loftus made the first excavations in 1851. Marcel and Jane Dieulafoy found the glazed-brick archers and lions in 1885–1886 and sent them to the Louvre. Jacques de Morgan arrived in 1897, built a castle-like fort on the Acropolis as a base, and dug enormous trenches until 1912. He found treasures, but his methods destroyed many of the later layers. Roman Ghirshman (1946–1967) and Jean Perrot (1969–1979) worked far more carefully, and in 2015 Susa became a UNESCO World Heritage Site."
+      },
+      {
+        "title": "The Code of Hammurabi",
+        "text": "In the winter of 1901–1902 de Morgan's team found three pieces of a black basalt stele 2.25 meters tall: the laws of Hammurabi, king of Babylon (c. 1792–1750 BCE). At the top the king stands before the sun god Shamash; below are some 282 laws. It probably stood first at Sippar in Mesopotamia and was carried to Susa as booty, most likely by the Elamite king Shutruk-Nahhunte. Laws like “an eye for an eye” and the goring ox echo laws in the Torah. It is in the Louvre."
+      },
+      {
+        "title": "Darius's palace",
+        "text": "From about 515 BCE Darius I built a palace here on an artificial terrace: a residence, a monumental gate and an apadana, an audience hall of 36 columns topped with bull capitals. Glazed bricks of archers, lions and griffins lined the walls. A fire struck under Artaxerxes I, and Artaxerxes II restored it. In 1972 an Egyptian-made statue of Darius was found by the gate; it is now in the National Museum of Iran. Many scholars read Esther as a story rather than a chronicle, but its author knew the Persian court well."
+      },
+      {
+        "title": "The Tomb of Daniel",
+        "text": "Muslim tradition says that when the Arabs took Susa around 638 they found a coffin said to be Daniel's. In the 12th century Benjamin of Tudela described a coffin hung over the river and a shrine where Jews and Muslims honored Daniel together. Today's building, with its tall cone-shaped muqarnas dome, was renovated in 1870 and since. Kirkuk, Samarkand and other places also show a “Tomb of Daniel,” but Susa is the most widely accepted tradition."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "ur3",
+      "name": { "he": "מלכי אור (שושלת אור השלישית)", "en": "The kings of Ur (Third Dynasty)" },
+      "period": { "he": "בערך 2100–2004 לפנה״ס", "en": "c. 2100–2004 BCE" },
+      "note": { "he": "שולגי מלך אור בנה כאן מקדש לאינשושינק; בסוף התקופה העילמים ובני שושן החריבו את אור.", "en": "Shulgi of Ur built a temple to Inshushinak here; in the end Elamites and Susians brought down Ur." }
+    },
+    {
+      "realm": "elam",
+      "name": { "he": "עילם", "en": "Elam" },
+      "period": { "he": "בערך 2000–647 לפנה״ס, לסירוגין", "en": "c. 2000–647 BCE, on and off" },
+      "note": { "he": "שושן הייתה אחת משתי בירות עילם, והגיעה לשיא פריחתה במאות ה־13 וה־12 לפנה״ס.", "en": "Susa was one of Elam's two capitals and flourished most in the 13th and 12th centuries BCE." }
+    },
+    {
+      "realm": "assyria",
+      "name": { "he": "אשור: אשורבניפל", "en": "Assyria: Ashurbanipal" },
+      "period": { "he": "בערך 647–617 לפנה״ס", "en": "c. 647–617 BCE" },
+      "note": { "he": "אשורבניפל בזז את שושן והתפאר שזרע מלח על אדמות עילם; אחרי זמן קצר המדים תפסו את מקומו.", "en": "Ashurbanipal sacked Susa and boasted of sowing salt on Elam's lands; the Medes soon took over." }
+    },
+    {
+      "realm": "persia",
+      "name": { "he": "פרס האחמנית: כורש, דריווש, אחשורוש", "en": "Achaemenid Persia: Cyrus, Darius, Xerxes" },
+      "period": { "he": "בערך 539–330 לפנה״ס", "en": "c. 539–330 BCE" },
+      "note": { "he": "אחשורוש של מגילת אסתר מזוהה בדרך כלל עם חשיארש הראשון (486–465 לפנה״ס).", "en": "Esther's Ahasuerus is usually identified with Xerxes I (486–465 BCE)." }
+    },
+    {
+      "realm": null,
+      "name": { "he": "סלווקים, פרתים, ססאנים וח׳ליפויות", "en": "Seleucids, Parthians, Sasanians and the caliphates" },
+      "period": { "he": "330 לפנה״ס עד המאה ה־13", "en": "330 BCE to the 13th century" },
+      "note": { "he": "אלכסנדר ערך כאן חתונת המונים ב־324 לפנה״ס; שפור השני החריב את העיר במאה הרביעית והיא נבנתה שוב.", "en": "Alexander held a mass wedding here in 324 BCE; Shapur II destroyed the city in the 4th century, and it was rebuilt." }
+    }
+  ],
+  "timeline": [
+    { "year": -4200, "text": { "he": "היישוב הראשון על האקרופוליס של שושן", "en": "First settlement on the Acropolis of Susa" } },
+    { "year": -1150, "text": { "he": "מלך עילם מביא לשושן כשלל את אסטלת חוקי חמורבי", "en": "An Elamite king brings Hammurabi's law stele to Susa as booty" } },
+    { "year": -647, "text": { "he": "אשורבניפל כובש ובוזז את שושן", "en": "Ashurbanipal takes and sacks Susa" } },
+    { "year": -539, "text": { "he": "כורש כובש את שושן; היא נעשית אחת מבירות פרס", "en": "Cyrus takes Susa; it becomes one of Persia's capitals" } },
+    { "year": -515, "text": { "he": "דריווש הראשון בונה את ארמונו ואת האפדנה", "en": "Darius I builds his palace and the Apadana" } },
+    { "year": -445, "text": { "he": "נחמיה, בשושן הבירה, שומע על חומות ירושלים הפרוצות", "en": "In Shushan, Nehemiah hears that Jerusalem's walls lie in ruins" } },
+    { "year": 1901, "text": { "he": "המשלחת הצרפתית מוצאת את אסטלת חוקי חמורבי", "en": "The French mission finds the stele of Hammurabi's laws" } },
+    { "year": 2015, "text": { "he": "שושן מוכרזת אתר מורשת עולמית של אונסק״ו", "en": "Susa becomes a UNESCO World Heritage Site" } }
+  ],
+  "mentions": [
+    { "ref": "Esther 1:2", "note": { "he": "אחשורוש יושב על כסא מלכותו ״בשושן הבירה״", "en": "Ahasuerus sits on his royal throne in Shushan the citadel" } },
+    { "ref": "Esther 1:5", "note": { "he": "משתה שבעה ימים בחצר גינת ביתן המלך", "en": "A seven-day feast in the court of the palace garden" } },
+    { "ref": "Esther 2:5", "note": { "he": "״איש יהודי היה בשושן הבירה ושמו מרדכי״", "en": "“There was a Jew in Shushan the citadel named Mordecai”" } },
+    { "ref": "Esther 3:15", "note": { "he": "גזרת המן יוצאת, ״והעיר שושן נבוכה״", "en": "Haman's decree goes out, and the city of Shushan is thrown into confusion" } },
+    { "ref": "Esther 4:16", "note": { "he": "אסתר מבקשת מיהודי שושן לצום שלושה ימים לפני שתיגש למלך", "en": "Esther asks the Jews of Shushan to fast three days before she goes to the king" } },
+    { "ref": "Esther 8:15", "note": { "he": "מרדכי יוצא בלבוש מלכות, ״והעיר שושן צהלה ושמחה״", "en": "Mordecai goes out in royal robes, and Shushan rejoices" } },
+    { "ref": "Esther 9:18", "note": { "he": "יהודי שושן חוגגים בט״ו באדר: מקור ״שושן פורים״", "en": "The Jews of Shushan celebrate on the 15th of Adar, origin of “Shushan Purim”" } },
+    { "ref": "Daniel 8:2", "note": { "he": "דניאל רואה חזון ״בשושן הבירה אשר בעילם״, על נהר אולי", "en": "Daniel sees a vision in Shushan, in the province of Elam, by the Ulai" } },
+    { "ref": "Ezra 4:9", "note": { "he": "״שושנכיא״, אנשי שושן, בין החותמים על מכתב נגד בניית ירושלים", "en": "Men of Susa are among those who sign a letter against rebuilding Jerusalem" } },
+    { "ref": "Nehemiah 1:1", "note": { "he": "״ואני הייתי בשושן הבירה״: כאן מתחיל סיפורו של נחמיה", "en": "“I was in Shushan the citadel”: Nehemiah's story begins here" } }
+  ],
+  "images": [
+    { "file": "File:The Apadana, a large hypostyle room of 36 columns in the Palace of Darius, Susa, capital of Elam and of the Achaemenid Empire, Iran (46950283754).jpg", "kind": "site", "caption": { "he": "בסיסי העמודים של האפדנה, אולם הקבלות של דריווש, ומאחור הטירה הצרפתית", "en": "Column bases of the Apadana, Darius's audience hall, with the French castle behind" } },
+    { "file": "File:Royal City and Acropolis Tepes.jpg", "kind": "site", "caption": { "he": "התלים של ״עיר המלוכה״ והאקרופוליס בשושן", "en": "The mounds of the Royal City and the Acropolis at Susa" } },
+    { "file": "File:Remnant of bull capital,Darius I palace.JPG", "kind": "site", "caption": { "he": "שריד של כותרת עמוד בצורת שוורים בארמון דריווש", "en": "Remains of a bull capital in Darius's palace" } },
+    { "file": "File:Tomb of Daniel - Susa -Iran.jpg", "kind": "site", "caption": { "he": "הכיפה החרוטית של קבר דניאל בשוש", "en": "The cone-shaped dome of the Tomb of Daniel in Shush" } },
+    { "file": "File:Archers frieze Darius 1st Palace Suse Louvre AOD 488 a.jpg", "kind": "artifact", "caption": { "he": "קשת ממשמר המלך, לבנים מזוגגות מארמון דריווש, בערך 510 לפנה״ס, הלובר", "en": "Archer of the royal guard in glazed brick from Darius's palace, c. 510 BCE, Louvre" } },
+    { "file": "File:Code of Hammurabi (Louvre Sb 8)-31434550325.jpg", "kind": "artifact", "caption": { "he": "ראש אסטלת חוקי חמורבי: המלך מול אל השמש; נמצאה בשושן ב־1901–1902, הלובר", "en": "Top of the Code of Hammurabi: the king before the sun god; found at Susa in 1901–02, Louvre" } },
+    { "file": "File:Esther before Ahasuerus MET DT1440.jpg", "kind": "art", "caption": { "he": "אסתר לפני אחשורוש, ארטמיסיה ג׳נטילסקי, בערך 1628–1635", "en": "Esther before Ahasuerus, Artemisia Gentileschi, c. 1628–1635" } },
+    { "file": "File:Rembrandt Harmensz van Rijn - Ahasuerus, Haman and Esther - Google Art Project.jpg", "kind": "art", "caption": { "he": "אחשורוש והמן במשתה אסתר, רמברנדט, 1660", "en": "Ahasuerus and Haman at Esther's feast, Rembrandt, 1660" } }
+  ],
+  "wiki": { "he": "שושן (עיר)", "en": "Susa" },
+  "related": ["babylon", "ur", "nineveh", "cityofdavid"],
+  "sources": [
+    { "title": "Susa (Wikipedia, with its references)", "url": "https://en.wikipedia.org/wiki/Susa" },
+    { "title": "Susa, Livius", "url": "https://www.livius.org/articles/place/susa/" },
+    { "title": "Susa: 6,000 years of history, French Ministry of Culture (Jacques de Morgan archive)", "url": "https://archeologie.culture.gouv.fr/jacques-morgan/en/susa-6000-years-history" },
+    { "title": "Code of Hammurabi, Louvre collections (Sb 8)", "url": "https://collections.louvre.fr/en/ark:/53355/cl010174436" },
+    { "title": "Code of Hammurabi (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Code_of_Hammurabi" },
+    { "title": "Palace of Darius in Susa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Palace_of_Darius_in_Susa" },
+    { "title": "Tomb of Daniel (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tomb_of_Daniel" },
+    { "title": "Ancient Jerusalem: population estimates, Bible History Daily (BAS)", "url": "https://www.biblicalarchaeology.org/daily/biblical-sites-places/jerusalem/ancient-jerusalem/" }
+  ]
+}

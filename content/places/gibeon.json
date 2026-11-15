@@ -1,0 +1,150 @@
+{
+  "id": "gibeon",
+  "he": {
+    "summary": "עיר על גבעה צפונית־מערבית לירושלים, שתושביה הערימו על יהושע וכרתו איתו ברית. כאן נאמר ״שמש בגבעון דום״, ליד ״ברכת גבעון״ נלחמו נערי אבנר ויואב, ובבמה הגדולה שבה חלם שלמה את חלומו. ידיות קנקנים שעליהן נחרת השם ״גבען״ הפכו אותה לאחת הערים המקראיות המזוהות בביטחון הרב ביותר.",
+    "setting": "גבעון שוכנת בכפר אל־ג'יב, כתשעה קילומטרים צפונית־מערבית לירושלים, על גבעה שמתנשאת מעל עמק חקלאי פורה ברמת בנימין. למרגלות הגבעה נובע מעיין שופע, ובסביבה מעיינות נוספים, ולכן יכלה עיר להתקיים כאן לאורך אלפי שנים. ממערב יורדת מעלה בית חורון אל השפלה ומישור החוף, הדרך שבה רדף יהושע את מלכי האמורי. מדרום מתנשא הר נבי סמואל. היום בתי הכפר מכסים את צפון הגבעה, ובצדה הדרומי אפשר לראות את הבריכה העגולה החצובה בסלע, את המנהרה המדורגת אל המעיין ואת מרתפי היין שנחשפו בחפירות.",
+    "peoples": [
+      {
+        "name": "הגבעונים",
+        "text": "לפי ספר יהושע אנשי גבעון היו חיווים, ובשמואל ב נאמר שהיו ״מיתר האמרי״. הם עמדו בראש ברית של ארבע ערים: גבעון, הכפירה, בארות וקרית יערים. הם באו אל יהושע בבגדים בלים ובלחם יבש, העמידו פנים שבאו מארץ רחוקה, וזכו בברית שהבטיחה את חייהם. בתל עצמו לא נמצאה עיר מתקופת הברונזה המאוחרת אלא רק קברים, וזו שאלה פתוחה בין החוקרים."
+      },
+      {
+        "name": "בני בנימין ואנשי יהודה",
+        "text": "גבעון נמנתה עם ערי בנימין והייתה עיר לוויים, ודברי הימים קושר אליה את אבות משפחת שאול. בימי ממלכת יהודה, במאות השמינית והשביעית לפנה״ס, הייתה כאן עיירת כורמים משגשגת. השמות שנחרתו על ידיות הקנקנים, כמו עזריהו ואמריהו, הם שמות עבריים טיפוסיים. מגבעון בא גם חנניה בן עזור, הנביא שהתעמת עם ירמיהו בבית המקדש."
+      },
+      {
+        "name": "שבי ציון והתושבים המאוחרים",
+        "text": "אחרי גלות בבל חזרו לגבעון 95 מבני העיר, ואנשיה עזרו לבנות את חומת ירושלים בימי נחמיה. בתקופה הרומית נבנו כאן מקוואות ותעלות מים, ובשנת 66 לספירה חנה בגבעון המצביא הרומי קסטיוס גאלוס בדרכו לירושלים. מאות שנים אחר כך שמר הכפר הערבי אל־ג'יב על השם הקדום."
+      }
+    ],
+    "population": "התל של גבעון משתרע על כ־6.5 הקטרים (לפי החופר ג'יימס פריצ'רד, יותר מ־16 אקר). לפי כלל האצבע המקובל של 200–250 נפש להקטר בנוי, בשיא העיר במאות השמינית והשביעית לפנה״ס גרו בה אולי 1,000–1,500 איש. זו הערכה גסה, כי רק חלק מהשטח נחפר. מרתפי היין יכלו להכיל לפי ההערכה עשרות אלפי ליטרים, הרבה יותר ממה שעיירה כזו שותה, ולכן נראה שהיין נועד גם למכירה. ירושלים הסמוכה מנתה באותה תקופה אולי 10,000–25,000 תושבים.",
+    "archaeology": [
+      {
+        "title": "הבריכה הגדולה",
+        "text": "בשנים 1956–1962 חפר במקום ג'יימס פריצ'רד מאוניברסיטת פנסילבניה. הוא חשף בור עגול חצוב בסלע, ברוחב ובעומק של כ־11 מטר, ולאורך דפנותיו גרם מדרגות לולייני של 79 מדרגות. מתחתיו ממשיכה מנהרה אל חדר מים, כ־24 מטר מתחת לפני העיר, וכדי ליצור את כל זה הוצאו כ־3,000 טון אבן. יש המזהים אותו עם ״ברכת גבעון״, אבל זמן חציבתו שנוי במחלוקת, ורבים סבורים שפעל בעיקר בימי ממלכת יהודה."
+      },
+      {
+        "title": "המנהרה אל המעיין",
+        "text": "סמוך לבריכה יוצאת מנהרה של 93 מדרגות, שיורדת מתוך העיר אל המעיין שלמרגלות הגבעה. כך יכלו התושבים להגיע למים בלי לצאת מן החומה בשעת מצור. נראה שנחצבה אחרי הבריכה, אולי משום שזו לא סיפקה מספיק מים. הכניסה התחתונה אל המעיין משמשת את תושבי הכפר עד היום."
+      },
+      {
+        "title": "ידיות הקנקנים ״גבען״",
+        "text": "ב־1956 וב־1957 נמצאו בעפר שמילא את הבריכה יותר מ־60 ידיות קנקנים שעליהן נחרת בכתב עברי קדום ״גבען גדר״ ושם של אדם. זו הייתה הפעם הראשונה מאז חרסי שומרון שנמצאו כל כך הרבה כתובות עבריות במקום אחד. הכתובות הוכיחו שאל־ג'יב היא גבעון, והידיות נמצאות היום במוזיאון פן בפילדלפיה ובמוזיאון הארכאולוגי של ירדן."
+      },
+      {
+        "title": "מרתפי היין",
+        "text": "פריצ'רד חשף עשרות מרתפים חצובים בסלע בצורת בקבוק, בעומק של כשני מטרים, מהמאות השמינית והשביעית לפנה״ס. בסלע הקריר נשמר היין בקנקנים של כ־45 ליטר כל אחד, ולידם נמצאו גתות, פקקים ומשפך. בעקבות התגלית מזהים ארכאולוגים בורות דומים באתרים אחרים כמרתפי יין, והם מכונים ״בורות גבעון״."
+      }
+    ]
+  },
+  "en": {
+    "summary": "A hilltop town northwest of Jerusalem whose people tricked Joshua into a treaty. Here Joshua cried \"Sun, stand still upon Gibeon\", the young men of Abner and Joab fought beside \"the pool of Gibeon\", and Solomon dreamed his dream at the great high place. Jar handles inscribed with the name \"Gibeon\" make it one of the most securely identified biblical towns.",
+    "setting": "Gibeon lies at the village of al-Jib, about 9 km northwest of Jerusalem, on a hill above a fertile farming valley on the Benjamin plateau. A strong spring flows at the foot of the hill, with more springs nearby, so people could live here for thousands of years. To the west the Beth-horon ascent drops toward the lowlands and the coast, the road down which Joshua chased the Amorite kings. To the south rises the hill of Nebi Samwil. Today village houses cover the north of the hill, while on its south side you can see the round rock-cut pool, the stepped tunnel to the spring and the wine cellars found by the excavators.",
+    "peoples": [
+      {
+        "name": "The Gibeonites",
+        "text": "Joshua calls the people of Gibeon Hivites; 2 Samuel calls them \"a remnant of the Amorites\". They led a league of four towns: Gibeon, Kephirah, Beeroth and Kiriath-jearim. They came to Joshua in worn clothes with dry, crumbling bread, pretended to come from a far country, and won a treaty that spared their lives. On the mound itself, though, no Late Bronze Age town has been found, only tombs, which leaves scholars with an open question."
+      },
+      {
+        "name": "Benjaminites and Judahites",
+        "text": "Gibeon was counted among Benjamin's towns and given to the Levites, and Chronicles links it to the ancestors of Saul's family. In the kingdom of Judah, in the 8th and 7th centuries BCE, it was a thriving town of winemakers. The names cut into its jar handles, such as Azariah and Amariah, are typical Hebrew names. Hananiah son of Azzur, the prophet who clashed with Jeremiah in the Temple, came from Gibeon."
+      },
+      {
+        "name": "Returnees and later residents",
+        "text": "After the Babylonian exile, 95 people of Gibeon came back, and its men helped rebuild Jerusalem's wall in Nehemiah's day. In Roman times ritual baths and water channels were built here, and in 66 CE the Roman governor Cestius Gallus camped at Gibeon on his way to Jerusalem. Centuries later the Arab village of al-Jib kept the ancient name alive."
+      }
+    ],
+    "population": "The mound of Gibeon covers about 6.5 hectares; its excavator, James Pritchard, put it at more than 16 acres. At the common rule of thumb of 200–250 people per built-up hectare, perhaps 1,000–1,500 people lived here at the town's height in the 8th and 7th centuries BCE. That is a rough estimate, since only part of the site was dug. The wine cellars could hold tens of thousands of litres, far more than such a town could drink, so much of it was probably sold. Nearby Jerusalem then had perhaps 10,000–25,000 people.",
+    "archaeology": [
+      {
+        "title": "The great pool",
+        "text": "James Pritchard of the University of Pennsylvania dug here from 1956 to 1962. He cleared a round shaft cut into the bedrock, about 11 m across and 11 m deep, with a spiral stairway of 79 steps around its walls. A tunnel continues down to a water chamber about 24 m below the town, and some 3,000 tons of rock were removed to make it all. Some link it to \"the pool of Gibeon\" of 2 Samuel, but its date is disputed, and many think it worked mainly in the time of the kingdom of Judah."
+      },
+      {
+        "title": "The tunnel to the spring",
+        "text": "Near the pool, a tunnel of 93 steps runs down from inside the town to the spring at the foot of the hill. It let people reach water without leaving the walls during a siege. It seems to have been cut after the pool, perhaps because the pool did not give enough water. The lower entrance to the spring is still used by villagers today."
+      },
+      {
+        "title": "The \"Gibeon\" jar handles",
+        "text": "In 1956 and 1957 the soil that filled the pool yielded more than 60 jar handles inscribed in old Hebrew script with \"Gibeon\", the word gdr and a personal name. It was the largest group of Hebrew inscriptions found in one place since the Samaria ostraca. They proved that al-Jib is Gibeon. The handles are now divided between the Penn Museum in Philadelphia and the Jordan Archaeological Museum."
+      },
+      {
+        "title": "The wine cellars",
+        "text": "Pritchard uncovered dozens of bottle-shaped cellars cut into the rock, about 2 m deep, from the 8th and 7th centuries BCE. In the cool rock, wine was kept in jars of about 45 litres each, and wine presses, stoppers and a funnel were found nearby. Since this find, archaeologists elsewhere identify similar pits as wine cellars and call them \"Gibeon pits\"."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "united",
+      "name": { "he": "שאול, דוד ושלמה (לפי המקרא)", "en": "Saul, David and Solomon (as the Bible tells it)" },
+      "period": { "he": "בערך 1020–930 לפנה״ס", "en": "c. 1020–930 BCE" },
+      "note": { "he": "ליד ברכת גבעון נלחמו אנשי בית שאול ואנשי דוד, ובבמה שבגבעון הקריב שלמה; היקף הממלכה בתקופה זו שנוי במחלוקת.", "en": "Saul's and David's men fought by the pool, and Solomon worshipped at its high place; how large the kingdom then was is debated." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "מלכי יהודה", "en": "The kings of Judah" },
+      "period": { "he": "בערך 930–586 לפנה״ס", "en": "c. 930–586 BCE" },
+      "note": { "he": "גבעון הייתה עיר בצפון ממלכת יהודה ושגשגה בזכות תעשיית היין.", "en": "Gibeon was a town in the north of the kingdom of Judah and prospered on its wine." }
+    },
+    {
+      "realm": "babylonia",
+      "name": { "he": "בבל, דרך המושל גדליהו במצפה", "en": "Babylon, through the governor Gedaliah at Mizpah" },
+      "period": { "he": "586–539 לפנה״ס", "en": "586–539 BCE" },
+      "note": { "he": "ליד ״המים הרבים אשר בגבעון״ השיג יוחנן בן קרח את ישמעאל רוצח גדליהו.", "en": "By \"the great waters in Gibeon\" Johanan son of Kareah caught up with Ishmael, Gedaliah's murderer." }
+    },
+    {
+      "realm": "persia",
+      "name": { "he": "פרס, פחוות יהוד", "en": "Persia, province of Yehud" },
+      "period": { "he": "539–332 לפנה״ס", "en": "539–332 BCE" },
+      "note": { "he": "אנשי גבעון והמצפה תיקנו קטע מחומת ירושלים בימי נחמיה.", "en": "The men of Gibeon and Mizpah repaired a stretch of Jerusalem's wall under Nehemiah." }
+    }
+  ],
+  "timeline": [
+    { "year": -3000, "text": { "he": "יישוב ראשון על הגבעה בתקופת הברונזה הקדומה (בערך)", "en": "First settlement on the hill in the Early Bronze Age (approximate)" } },
+    { "year": -1005, "text": { "he": "הקרב ליד ברכת גבעון בין אנשי אבנר ואנשי יואב, לפי הכרונולוגיה המקראית (בערך)", "en": "The fight at the pool of Gibeon between Abner's and Joab's men, by the Bible's chronology (approximate)" } },
+    { "year": -970, "text": { "he": "חלום שלמה בבמה הגדולה שבגבעון (בערך)", "en": "Solomon's dream at the great high place of Gibeon (approximate)" } },
+    { "year": -925, "text": { "he": "גבעון מופיעה ברשימת הערים של שישק פרעה בכרנך", "en": "Gibeon appears in Pharaoh Shoshenq I's list of towns at Karnak" } },
+    { "year": -700, "text": { "he": "שיא תעשיית היין, במאות השמינית והשביעית לפנה״ס", "en": "The wine industry at its height, 8th–7th centuries BCE" } },
+    { "year": -586, "text": { "he": "יוחנן בן קרח משחרר את השבויים ליד המים הרבים שבגבעון", "en": "Johanan son of Kareah frees the captives at the great waters of Gibeon" } },
+    { "year": 66, "text": { "he": "קסטיוס גאלוס חונה בגבעון בדרכו לירושלים", "en": "Cestius Gallus camps at Gibeon on his way to Jerusalem" } },
+    { "year": 1956, "text": { "he": "ג'יימס פריצ'רד מוצא את ידיות הקנקנים ״גבען״", "en": "James Pritchard finds the \"Gibeon\" jar handles" } }
+  ],
+  "mentions": [
+    { "ref": "Joshua 9:3", "note": { "he": "יושבי גבעון שומעים על יריחו והעי ומחליטים להערים.", "en": "Gibeon's people hear about Jericho and Ai and plan a ruse." } },
+    { "ref": "Joshua 10:12", "note": { "he": "״שמש בגבעון דום וירח בעמק אילון״.", "en": "\"Sun, stand still upon Gibeon, and you, moon, in the valley of Aijalon.\"" } },
+    { "ref": "Joshua 18:25", "note": { "he": "גבעון ברשימת ערי בנימין, יחד עם הרמה.", "en": "Gibeon in the list of Benjamin's towns, beside Ramah." } },
+    { "ref": "Joshua 21:17", "note": { "he": "גבעון ניתנת לכהנים כעיר לוויים.", "en": "Gibeon is given to the priests as a Levitical town." } },
+    { "ref": "II Samuel 2:13", "note": { "he": "אנשי יואב ואנשי אבנר נפגשים ״על ברכת גבעון״.", "en": "Joab's and Abner's men meet at the pool of Gibeon." } },
+    { "ref": "II Samuel 20:8", "note": { "he": "ליד ״האבן הגדולה אשר בגבעון״ יואב הורג את עמשא.", "en": "At the great stone in Gibeon, Joab kills Amasa." } },
+    { "ref": "II Samuel 21:2", "note": { "he": "דוד פונה אל הגבעונים בעקבות הרעב ומעשי שאול.", "en": "David turns to the Gibeonites after a famine and Saul's wrongs against them." } },
+    { "ref": "I Kings 3:5", "note": { "he": "״בגבעון נראה ה׳ אל שלמה בחלום הלילה״.", "en": "At Gibeon the LORD appears to Solomon in a dream at night." } },
+    { "ref": "I Kings 9:2", "note": { "he": "ה׳ נראה לשלמה שנית, ״כאשר נראה אליו בגבעון״.", "en": "God appears to Solomon a second time, as at Gibeon." } },
+    { "ref": "Isaiah 28:21", "note": { "he": "ישעיהו מזכיר את ״עמק בגבעון״ כסמל למעשה אלוהי מפתיע.", "en": "Isaiah recalls \"the valley of Gibeon\" as a symbol of God's startling deeds." } },
+    { "ref": "Jeremiah 28:1", "note": { "he": "חנניה בן עזור, ״הנביא אשר מגבעון״, מתנבא נגד ירמיהו.", "en": "Hananiah son of Azzur, the prophet from Gibeon, opposes Jeremiah." } },
+    { "ref": "Jeremiah 41:12", "note": { "he": "יוחנן בן קרח מוצא את ישמעאל ״אל מים רבים אשר בגבעון״.", "en": "Johanan finds Ishmael by the great waters in Gibeon." } },
+    { "ref": "Nehemiah 3:7", "note": { "he": "אנשי גבעון והמצפה מחזקים את חומת ירושלים.", "en": "The men of Gibeon and Mizpah repair Jerusalem's wall." } },
+    { "ref": "Nehemiah 7:25", "note": { "he": "״בני גבעון תשעים וחמשה״ בין שבי ציון.", "en": "Ninety-five people of Gibeon among the returning exiles." } },
+    { "ref": "I Chronicles 16:39", "note": { "he": "צדוק הכהן משרת לפני המשכן ״בבמה אשר בגבעון״.", "en": "Zadok the priest serves before the Tabernacle at the high place in Gibeon." } }
+  ],
+  "images": [
+    { "file": "File:By Ovedc - Gibeon (1).jpg", "kind": "site", "caption": { "he": "הבריכה החצובה של גבעון וגרם המדרגות הלולייני שלה", "en": "Gibeon's rock-cut pool and its spiral stairway" } },
+    { "file": "File:The Pool of Gibeon.png", "kind": "site", "caption": { "he": "הבריכה המגודרת, ומאחוריה הכפר אל־ג'יב", "en": "The fenced pool, with the village of al-Jib beyond" } },
+    { "file": "File:Gibeon spring.jpg", "kind": "site", "caption": { "he": "מים במנהרה החצובה אל המעיין שמתחת לבריכה", "en": "Water in the rock-cut tunnel to the spring below the pool" } },
+    { "file": "File:1880 map of El Jib showing the well (marked Ain), cisterns (marked Cis) and Caves.png", "kind": "map", "caption": { "he": "אל־ג'יב במפת הסקר של הקרן הבריטית לחקר ארץ ישראל, 1880", "en": "El Jib on the Palestine Exploration Fund survey map, 1880" } },
+    { "file": "File:Karnak Tempel Bubastis-Portal 02.JPG", "kind": "artifact", "caption": { "he": "תבליט הניצחון של שישק ליד שער בובסטיס בכרנך; ברשימת הערים שלו מופיעה גבעון", "en": "Shoshenq I's victory relief by the Bubastite Portal at Karnak; its list of towns includes Gibeon" } },
+    { "file": "File:Joshua Commanding the Sun to Stand Still upon Gibeon (1816) John Martin - NGA 2004.64.1.jpg", "kind": "art", "caption": { "he": "יהושע מצווה על השמש לעמוד בגבעון, ג'ון מרטין, 1816", "en": "Joshua Commanding the Sun to Stand Still upon Gibeon, John Martin, 1816" } },
+    { "file": "File:Giordano Le Rêve de Salomon Prado.jpg", "kind": "art", "caption": { "he": "חלום שלמה, לוקה ג'ורדנו, בערך 1694", "en": "Solomon's Dream, Luca Giordano, c. 1694" } }
+  ],
+  "wiki": { "he": "גבעון", "en": "Gibeon (ancient city)" },
+  "related": ["aijalon", "mizpah", "ramah", "kiriathjearim", "gibeah", "cityofdavid"],
+  "sources": [
+    { "title": "Gibeon (ancient city) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gibeon_(ancient_city)" },
+    { "title": "גבעון (ויקיפדיה)", "url": "https://he.wikipedia.org/wiki/גבעון" },
+    { "title": "Al Jib jar handles (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Al_Jib_jar_handles" },
+    { "title": "Gibeon, Encyclopedia.com (Encyclopaedia Judaica)", "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/gibeon" },
+    { "title": "Gibeon, BiblePlaces.com", "url": "https://www.bibleplaces.com/gibeon/" },
+    { "title": "Jar handle from Gibeon, Penn Museum collections", "url": "https://collections.penn.museum/collections/object/135813" },
+    { "title": "II Samuel 2 (Sefaria)", "url": "https://www.sefaria.org/II_Samuel.2" }
+  ]
+}

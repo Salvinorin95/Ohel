@@ -1,0 +1,434 @@
+{
+  "id": "samaria",
+  "he": {
+    "summary": "שומרון הייתה בירת ממלכת ישראל כמאה וחמישים שנה. עמרי קנה את ההר ובנה עליו עיר, אחאב ואיזבל מלכו בה, ובה פעלו הנביאים אליהו ואלישע. האשורים כבשו אותה בערך ב־722–720 לפנה״ס והגלו את תושביה, ולימים בנה בה הורדוס את העיר סבסטי.",
+    "setting": "גבעת שומרון מתנשאת כ־120–150 מטר מעל העמקים שסביבה, כ־12 ק״מ צפון־מערבית לשכם (נבלוס). מראשה רואים בימים בהירים את מישור החוף ואת הים התיכון. מעמקים פוריים, מטעי זיתים וכרמים הקיפו אותה, ודרכים יצאו ממנה אל החוף, אל עמק יזרעאל ואל שכם. הגבעה עמדה לבדה, ולכן היה קל לבצר אותה ולהגן עליה. כיום שרידי העיר העתיקה שוכנים לצד הכפר הפלסטיני סבסטיה שבגדה המערבית, ובו מסגד נבי יחיא שנבנה בתוך כנסייה צלבנית. חלקים מן האתר מנוהלים בידי רשויות ישראליות וחלקים בידי הרשות הפלסטינית.",
+    "peoples": [
+      {
+        "name": "בני ישראל, בירת הממלכה הצפונית",
+        "text": "בערך ב־880 לפנה״ס קנה עמרי את ההר משמר בשני כיכרי כסף, והעיר הייתה בירת ממלכת ישראל עד נפילתה. ישבו בה המלך, חצרו, פקידים, סוחרים ובעלי מלאכה, ולצידם עבדו גם לה׳ וגם לבעל. נביאים כמו עמוס והושע מתחו ביקורת חריפה על העושר והעושק שבה. אחאב, יהוא וירבעם השני מלכו מכאן."
+      },
+      {
+        "name": "גולים, מתיישבים ושומרונים",
+        "text": "אחרי הכיבוש האשורי הפכה העיר למרכז הפחווה ״סמרינה״. לפי מלכים ב יז הושיבו האשורים בערי שומרון אנשים מבבל, מכותה ומחמת, לצד ישראלים שנשארו בארץ. מכאן התפתחה, לפי המסורת המקראית, הקהילה השומרונית; השומרונים עצמם רואים את עצמם צאצאי שבטי אפרים ומנשה. בימי פרס היה סנבלט מושל שומרון, יריבו של נחמיה."
+      },
+      {
+        "name": "יוונים ורומאים",
+        "text": "אחרי שתושבי שומרון מרדו באלכסנדר מוקדון ב־331 לפנה״ס, יושבה בעיר מושבה מקדונית. משפחות שברחו מפני צבאו הסתתרו במערה בוואדי דליה, שם נמצאו בשנות ה־60 התעודות שלהן. יוחנן הורקנוס החשמונאי החריב את העיר בסוף המאה ה־2 לפנה״ס, והורדוס בנה אותה מחדש בשם סבסטי, לכבוד אוגוסטוס, והושיב בה כ־6,000 מתיישבים."
+      },
+      {
+        "name": "נוצרים ומוסלמים בסבסטיה",
+        "text": "מאז המאה ה־4 לספירה מזהים נוצרים את סבסטיה כמקום קבורתו של יוחנן המטביל, ומאוחר יותר אימצו את המסורת גם המוסלמים; לפיה נקברו כאן גם הנביאים אלישע ועובדיה. הביזנטים בנו כאן כנסיות, הצלבנים בנו קתדרלה, ובתוכה עומד היום מסגד נבי יחיא. בכפר סבסטיה, המוקף מטעי זיתים, חיים כיום כ־3,200 איש, רובם מוסלמים."
+      }
+    ],
+    "population": "איש אינו יודע בדיוק כמה חיו בשומרון של ימי המלכים. לפי שחזור של ישראל פינקלשטיין, העיר המלכותית של המאה ה־9 השתרעה על כ־8 הקטאר: מתחם מלכותי בראש ההר ומרפסת תחתונה סביבו. לפי מקדם מקובל של 150–250 איש להקטאר, זה בערך 1,200–2,000 איש, ועוד מספר לא ידוע בבתים שעל המדרונות, שכמעט לא נחפרו. 27,290 הגולים שסרגון השני מתפאר בהם באו כנראה מכל האזור ולא רק מן העיר. לשם השוואה, ירושלים התרחבה במאה ה־8 לכ־50 הקטאר. חומות הורדוס הקיפו לימים כ־75 הקטאר.",
+    "archaeology": [
+      {
+        "title": "ארמון עמרי ואחאב",
+        "text": "בראש ההר נחשפו יסודות ארמון גדול, כ־55 על 40 מטר, בנוי אבני גזית מסותתות היטב, ומסביבו חומת סוגרים. הוא נבנה כנראה בשני שלבים, בימי עמרי ובימי אחאב. משלחת של אוניברסיטת הרווארד חפרה כאן בשנים 1908–1910, ומשלחת משותפת בראשות ג׳ון קראופוט, עם קתלין קניון ואלעזר ליפא סוקניק, בשנים 1931–1935."
+      },
+      {
+        "title": "שנהבי שומרון",
+        "text": "בשטח הארמון נמצאו כ־500 שברי שנהב מגולפים מן המאות ה־9–8 לפנה״ס: לוחיות שקושטו בהן רהיטים, עם ספינקסים, פרחי לוטוס, אריות ו״אישה בחלון״, בסגנון פיניקי ומצרי. הם מזכירים את ״בית השן אשר בנה״ אחאב (מלכים א כב 39) ואת ״מטות שן״ שעליהן מתלונן עמוס. חלק מהם מוצגים במוזיאון ישראל."
+      },
+      {
+        "title": "חרסי שומרון",
+        "text": "ב־1910 מצאה משלחת הרווארד 102 חרסים שנכתבו בדיו בכתב עברי קדום, מן המאה ה־8 לפנה״ס, כנראה מימי ירבעם השני. הם רושמים משלוחים של ״יין ישן״ ו״שמן רחוץ״ מכפרים בסביבה, ומופיעים בהם שמות משפחות משבט מנשה המוכרים מיהושע יז, כמו אביעזר, שמידע וחלק. החרסים שמורים היום במוזיאונים הארכאולוגיים של איסטנבול."
+      },
+      {
+        "title": "מי כבש את שומרון?",
+        "text": "המקרא מספר שמלך אשור צר על שומרון שלוש שנים ולכד אותה (מלכים ב יז–יח), ומזכיר את שלמנאסר. גם כרוניקה בבלית מייחסת את חורבנה לשלמנאסר החמישי. אבל יורשו סרגון השני מתפאר בכתובותיו שכבש את העיר והגלה ממנה 27,290 איש. רבים מסבירים שהעיר נכבשה ב־722 ושוב, אחרי מרד, ב־720 לפנה״ס; אחרים חושבים שסרגון פשוט ייחס לעצמו את הצלחת קודמו."
+      },
+      {
+        "title": "סבסטי של הורדוס",
+        "text": "מעל הארמון הישראלי בנה הורדוס מקדש לאוגוסטוס, שמדרגותיו עדיין נראות בראש ההר. העיר הוקפה חומה עם עשרות מגדלים ונבנה בה אצטדיון באורך כ־200 מטר. בסביבות 200 לספירה הפך אותה הקיסר ספטימיוס סוורוס למושבה רומית, ולאורך הרחוב הראשי שלה עמדו מאות עמודים. גם תיאטרון רומי ומגדלים עגולים מן התקופה ההלניסטית נחשפו באתר."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Samaria was the capital of the Kingdom of Israel for about 150 years. Omri bought the hill and built a city on it, Ahab and Jezebel reigned in it, and the prophets Elijah and Elisha were active there. The Assyrians took it around 722–720 BCE and deported its people, and centuries later Herod rebuilt it as Sebaste.",
+    "setting": "The hill of Samaria rises about 120–150 m above the valleys around it, some 12 km northwest of Shechem (Nablus). On clear days its summit looks out over the coastal plain to the Mediterranean. Fertile valleys, olive groves and vineyards surrounded it, and roads ran from it to the coast, to the Jezreel Valley and to Shechem. Because the hill stands alone, it was easy to fortify and defend. Today the ruins lie beside the Palestinian village of Sebastia in the West Bank, whose Nabi Yahya mosque stands inside a Crusader church. Parts of the site are managed by Israeli authorities and parts by the Palestinian Authority.",
+    "peoples": [
+      {
+        "name": "Israelites: capital of the northern kingdom",
+        "text": "Around 880 BCE Omri bought the hill from Shemer for two talents of silver, and the city remained Israel's capital until its fall. It housed the king and his court, officials, merchants and craftsmen, and both the LORD and Baal were worshipped there. Prophets such as Amos and Hosea sharply attacked its wealth and injustice. Ahab, Jehu and Jeroboam II all ruled from here."
+      },
+      {
+        "name": "Exiles, settlers and Samaritans",
+        "text": "After the Assyrian conquest the city became the center of the province of Samerina. According to II Kings 17, the Assyrians settled people from Babylon, Cuthah and Hamath in the towns of Samaria, alongside Israelites who remained. In the biblical account this is where the Samaritan community began; the Samaritans themselves trace their descent to the tribes of Ephraim and Manasseh. Under Persia, Sanballat governed Samaria and opposed Nehemiah."
+      },
+      {
+        "name": "Greeks and Romans",
+        "text": "After the people of Samaria revolted against Alexander the Great in 331 BCE, a Macedonian colony was settled in the city. Families fleeing his army hid in a cave at Wadi Daliyeh, where their documents were found in the 1960s. The Hasmonean John Hyrcanus destroyed the city in the late 2nd century BCE, and Herod rebuilt it as Sebaste, in honor of Augustus, settling some 6,000 colonists there."
+      },
+      {
+        "name": "Christians and Muslims of Sebastia",
+        "text": "Since the 4th century CE Christians, and later Muslims too, have honored Sebastia as the burial place of John the Baptist, and by tradition of the prophets Elisha and Obadiah. The Byzantines built churches here and the Crusaders a cathedral, inside which the Nabi Yahya mosque stands today. The village of Sebastia, ringed by olive groves, is home to about 3,200 people, most of them Muslim."
+      }
+    ],
+    "population": "Nobody knows how many lived in royal Samaria. In Israel Finkelstein's reconstruction, the 9th-century royal city covered about 8 hectares: a royal compound on the summit with a lower terrace around it. At a common rule of thumb of 150–250 people per hectare, that is roughly 1,200–2,000 people, plus an unknown number in houses on the barely excavated slopes. The 27,290 deportees Sargon II boasts of probably came from the whole region, not just the city. For comparison, Jerusalem grew to about 50 hectares in the 8th century. Herod's walls later enclosed some 75 hectares.",
+    "archaeology": [
+      {
+        "title": "The palace of Omri and Ahab",
+        "text": "On the summit lie the foundations of a large palace, about 55 by 40 m, built of finely dressed stone and surrounded by a casemate wall. It was probably built in two stages, under Omri and under Ahab. A Harvard University expedition dug here in 1908–1910, and a joint expedition led by John Crowfoot, with Kathleen Kenyon and Eleazar Sukenik, in 1931–1935."
+      },
+      {
+        "title": "The Samaria ivories",
+        "text": "Around the palace lay some 500 fragments of carved ivory from the 9th–8th centuries BCE: furniture inlays decorated with sphinxes, lotus flowers, lions and a “woman at the window”, in Phoenician and Egyptian style. They recall the “ivory house” Ahab built (I Kings 22:39) and the “beds of ivory” Amos rails against. Some are on display at the Israel Museum."
+      },
+      {
+        "title": "The Samaria ostraca",
+        "text": "In 1910 the Harvard team found 102 potsherds written in ink in the old Hebrew script, from the 8th century BCE, probably the reign of Jeroboam II. They record deliveries of “old wine” and “washed oil” from nearby villages and name clans of Manasseh known from Joshua 17, such as Abiezer, Shemida and Helek. The ostraca are kept today in the Istanbul Archaeology Museums."
+      },
+      {
+        "title": "Who conquered Samaria?",
+        "text": "The Bible says the king of Assyria besieged Samaria for three years and took it (II Kings 17–18), naming Shalmaneser. A Babylonian chronicle also credits Shalmaneser V with its destruction. Yet his successor Sargon II boasts in his inscriptions that he conquered the city and deported 27,290 people. Many scholars think the city fell in 722 and again, after a revolt, in 720 BCE; others suspect Sargon simply claimed his predecessor's victory."
+      },
+      {
+        "title": "Herod's Sebaste",
+        "text": "Over the Israelite palace Herod built a temple to Augustus, whose great staircase still stands on the summit. The city was walled with dozens of towers and given a stadium some 200 m long. Around 200 CE Emperor Septimius Severus made it a Roman colony, and hundreds of columns lined its main street. A Roman theater and round towers of the Hellenistic period have also been uncovered."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "israel",
+      "name": {
+        "he": "ממלכת ישראל",
+        "en": "Kingdom of Israel"
+      },
+      "period": {
+        "he": "בערך 880–722/720 לפנה״ס",
+        "en": "c. 880–722/720 BCE"
+      },
+      "note": {
+        "he": "בירת הממלכה מימי עמרי ועד הכיבוש האשורי.",
+        "en": "The kingdom's capital from Omri until the Assyrian conquest."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Assyrian Empire"
+      },
+      "period": {
+        "he": "בערך 720–630 לפנה״ס",
+        "en": "c. 720–630 BCE"
+      },
+      "note": {
+        "he": "העיר נעשתה מרכז הפחווה האשורית סמרינה, עם מושל אשורי ומתיישבים חדשים.",
+        "en": "The city became the seat of the Assyrian province of Samerina, with an Assyrian governor and new settlers."
+      }
+    },
+    {
+      "realm": "babylonia",
+      "name": {
+        "he": "האימפריה הבבלית",
+        "en": "Neo-Babylonian Empire"
+      },
+      "period": {
+        "he": "בערך 600–539 לפנה״ס",
+        "en": "c. 600–539 BCE"
+      },
+      "note": {
+        "he": "שומרון נשארה מרכז מנהלי גם תחת בבל.",
+        "en": "Samaria remained an administrative center under Babylon."
+      }
+    },
+    {
+      "realm": "persia",
+      "name": {
+        "he": "האימפריה הפרסית",
+        "en": "Persian Empire"
+      },
+      "period": {
+        "he": "539–332 לפנה״ס",
+        "en": "539–332 BCE"
+      },
+      "note": {
+        "he": "בירת פחוות שומרון; ממנה משלה שושלת סנבלט.",
+        "en": "Capital of the province of Samaria, governed by the house of Sanballat."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "הורדוס ורומא",
+        "en": "Herod and Rome"
+      },
+      "period": {
+        "he": "מ־30 לפנה״ס",
+        "en": "from 30 BCE"
+      },
+      "note": {
+        "he": "אוגוסטוס נתן את העיר להורדוס, שבנה אותה מחדש בשם סבסטי.",
+        "en": "Augustus gave the city to Herod, who rebuilt it as Sebaste."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -880,
+      "text": {
+        "he": "בערך: עמרי קונה את ההר ובונה את שומרון",
+        "en": "Around this time Omri buys the hill and builds Samaria"
+      }
+    },
+    {
+      "year": -853,
+      "text": {
+        "he": "אחאב מצטרף עם 2,000 מרכבות לקרב קרקר נגד אשור",
+        "en": "Ahab joins the battle of Qarqar against Assyria with 2,000 chariots"
+      }
+    },
+    {
+      "year": -841,
+      "text": {
+        "he": "יהוא מעלה מס לשלמנאסר השלישי, כפי שמתואר באובליסק השחור",
+        "en": "Jehu pays tribute to Shalmaneser III, as shown on the Black Obelisk"
+      }
+    },
+    {
+      "year": -722,
+      "text": {
+        "he": "שומרון נופלת לאשור אחרי מצור של שלוש שנים; סרגון השני מגלה את תושביה (722–720)",
+        "en": "Samaria falls to Assyria after a three-year siege; Sargon II deports its people (722–720)"
+      }
+    },
+    {
+      "year": -331,
+      "text": {
+        "he": "מרד נגד אלכסנדר מוקדון; מושבה מקדונית מוקמת בעיר",
+        "en": "A revolt against Alexander the Great; a Macedonian colony is founded"
+      }
+    },
+    {
+      "year": -108,
+      "text": {
+        "he": "בערך: יוחנן הורקנוס כובש ומחריב את העיר",
+        "en": "Around this time John Hyrcanus captures and destroys the city"
+      }
+    },
+    {
+      "year": -27,
+      "text": {
+        "he": "הורדוס בונה את העיר מחדש בשם סבסטי, לכבוד אוגוסטוס",
+        "en": "Herod rebuilds the city as Sebaste, in honor of Augustus"
+      }
+    },
+    {
+      "year": 1908,
+      "text": {
+        "he": "משלחת הרווארד מתחילה לחפור באתר",
+        "en": "A Harvard expedition begins excavating the site"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "I Kings 16:24",
+      "note": {
+        "he": "עמרי קונה את ההר משמר בכיכרים כסף וקורא לעיר שומרון",
+        "en": "Omri buys the hill from Shemer for two talents and names the city Samaria"
+      }
+    },
+    {
+      "ref": "I Kings 16:32",
+      "note": {
+        "he": "אחאב בונה מקדש ומזבח לבעל בשומרון",
+        "en": "Ahab builds a temple and altar to Baal in Samaria"
+      }
+    },
+    {
+      "ref": "I Kings 20:1",
+      "note": {
+        "he": "בן הדד מלך ארם צר על שומרון",
+        "en": "Ben-hadad of Aram besieges Samaria"
+      }
+    },
+    {
+      "ref": "I Kings 22:38",
+      "note": {
+        "he": "מרכבת אחאב נשטפת בברכת שומרון, והכלבים מלקקים את דמו",
+        "en": "Ahab's chariot is washed at the pool of Samaria and dogs lick his blood"
+      }
+    },
+    {
+      "ref": "II Kings 6:25",
+      "note": {
+        "he": "רעב כבד במצור: ראש חמור בשמונים כסף",
+        "en": "A terrible famine under siege: a donkey's head for eighty silver pieces"
+      }
+    },
+    {
+      "ref": "II Kings 7:1",
+      "note": {
+        "he": "אלישע מבטיח שמחר יימכר סולת בזול ״בשער שמרון״",
+        "en": "Elisha promises cheap flour “at the gate of Samaria” tomorrow"
+      }
+    },
+    {
+      "ref": "II Kings 10:1",
+      "note": {
+        "he": "שבעים בני אחאב בשומרון, ויהוא כותב אל שריה",
+        "en": "Ahab's seventy sons in Samaria, and Jehu writes to its leaders"
+      }
+    },
+    {
+      "ref": "II Kings 17:6",
+      "note": {
+        "he": "מלך אשור לוכד את שומרון ומגלה את ישראל לחלח, חבור וערי מדי",
+        "en": "The king of Assyria takes Samaria and exiles Israel to Halah, Habor and Media"
+      }
+    },
+    {
+      "ref": "II Kings 17:24",
+      "note": {
+        "he": "מתיישבים מבבל, מכותה ומחמת מושבים בערי שומרון",
+        "en": "Settlers from Babylon, Cuthah and Hamath are placed in the towns of Samaria"
+      }
+    },
+    {
+      "ref": "II Kings 18:10",
+      "note": {
+        "he": "שומרון נלכדת בשנת שש לחזקיהו",
+        "en": "Samaria is captured in Hezekiah's sixth year"
+      }
+    },
+    {
+      "ref": "Isaiah 7:9",
+      "note": {
+        "he": "״וראש אפרים שמרון״",
+        "en": "“The head of Ephraim is Samaria”"
+      }
+    },
+    {
+      "ref": "Hosea 8:6",
+      "note": {
+        "he": "״כי שבבים יהיה עגל שמרון״",
+        "en": "“The calf of Samaria shall be broken to pieces”"
+      }
+    },
+    {
+      "ref": "Amos 4:1",
+      "note": {
+        "he": "״פרות הבשן אשר בהר שמרון״, העושקות דלים",
+        "en": "The “cows of Bashan on the mount of Samaria” who oppress the poor"
+      }
+    },
+    {
+      "ref": "Micah 1:6",
+      "note": {
+        "he": "״ושמתי שמרון לעי השדה למטעי כרם״",
+        "en": "Samaria will become a heap of ruins, a place for planting vineyards"
+      }
+    },
+    {
+      "ref": "Nehemiah 3:34",
+      "note": {
+        "he": "סנבלט לועג לבוני החומה לפני ״חיל שמרון״",
+        "en": "Sanballat mocks the wall-builders before “the army of Samaria”"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:2016 WLM - OVEDC - Shomron capital of the Kingdom of Israel 067.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "חורבות שומרון, בירת ממלכת ישראל",
+        "en": "The ruins of Samaria, capital of the Kingdom of Israel"
+      }
+    },
+    {
+      "file": "File:Achav palace 2.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "שרידים בראש ההר, באזור שבו עמד ארמון עמרי ואחאב",
+        "en": "Remains on the summit, where the palace of Omri and Ahab stood"
+      }
+    },
+    {
+      "file": "File:Sebastia-382.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "מדרגות המקדש לאוגוסטוס שבנה הורדוס בסבסטי",
+        "en": "The steps of the temple to Augustus that Herod built at Sebaste"
+      }
+    },
+    {
+      "file": "File:PANO 20170613 125649.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "התיאטרון הרומי של סבסטי",
+        "en": "The Roman theater of Sebaste"
+      }
+    },
+    {
+      "file": "File:Furniture Inlays, Samaria, 9th-8th Century BC (41408597500).jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "לוחיות שנהב מגולפות מרהיטים בשומרון, המאות ה־9–8 לפנה״ס, מוזיאון ישראל",
+        "en": "Carved ivory furniture inlays from Samaria, 9th–8th century BCE, Israel Museum"
+      }
+    },
+    {
+      "file": "File:Black Obelisk Yehu in front of Shalmaneser III.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "יהוא מלך ישראל (או שליחו) משתחווה לפני שלמנאסר השלישי, האובליסק השחור, בערך 841 לפנה״ס, המוזיאון הבריטי",
+        "en": "Jehu of Israel (or his envoy) bowing before Shalmaneser III on the Black Obelisk, c. 841 BCE, British Museum"
+      }
+    },
+    {
+      "file": "File:093.The Death of Ahab.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "מות אחאב, גוסטב דורה, 1866",
+        "en": "The death of Ahab, Gustave Doré, 1866"
+      }
+    },
+    {
+      "file": "File:Four lepers bring the news to the guards at the gate of Samaria.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "ארבעת המצורעים מבשרים לשומרי שער שומרון, איור מ״התנ״ך ההיסטורי״, 1372",
+        "en": "The four lepers bring the news to the guards at the gate of Samaria, Bible Historiale, 1372"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "שומרון (עיר)",
+    "en": "Samaria (ancient city)"
+  },
+  "related": [
+    "shechem",
+    "jezreel",
+    "bethel",
+    "megiddo",
+    "gerizim"
+  ],
+  "sources": [
+    {
+      "title": "Samaria (ancient city) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samaria_(ancient_city)"
+    },
+    {
+      "title": "I. Finkelstein, Observations on the Layout of Iron Age Samaria, Tel Aviv 38 (2011)",
+      "url": "https://cris.haifa.ac.il/en/publications/observations-on-the-layout-of-iron-age-samaria/"
+    },
+    {
+      "title": "K. Lawson Younger, Israelites in Exile (Center for Online Judaic Studies)",
+      "url": "https://cojs.org/israelites-in-exile-k-lawson-younger/"
+    },
+    {
+      "title": "Samaria ostraca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samaria_ostraca"
+    },
+    {
+      "title": "Sebastia, Nablus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+    }
+  ]
+}

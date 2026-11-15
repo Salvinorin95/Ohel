@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { AttributionControl, Map as MLMap, Marker, NavigationControl, setWorkerUrl, type StyleSpecification } from "maplibre-gl";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { AttributionControl, Map as MLMap, Marker, NavigationControl, setWorkerUrl, type GeoJSONSource, type StyleSpecification } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import { PLACES, findPlace, type Place } from "../../shared/places.ts";
@@ -8,6 +8,9 @@ import type { MapView as View } from "../../shared/protocol.ts";
 import { postVisit } from "../api.ts";
 import type { Key } from "../i18n.ts";
 import { useApp } from "../state.tsx";
+import { REALMS, type RealmId } from "../../shared/placeInfo.ts";
+import { loadRealms, realmColor, usePlaceIndex, yearLabel } from "../placeData.ts";
+import { PlacePage } from "./PlacePage.tsx";
 
 setWorkerUrl(workerUrl);
 
@@ -61,6 +64,9 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   const [list, setList] = useState(false);
   const [q, setQ] = useState("");
   const [visible, setVisible] = useState(false);
+  const [page, setPage] = useState<string | null>(null);
+  const [realm, setRealm] = useState<{ id: RealmId; year: number; back: string | null } | null>(null);
+  const index = usePlaceIndex();
   const selectRef = useRef<(id: string | null, fly?: boolean) => void>(() => {});
 
   // Create the map once.
@@ -129,6 +135,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
 
   const select = (id: string | null, fly = false) => {
     setSelected(id);
+    setPage((pg) => (pg && id ? id : null));
     onSelect?.(id);
     for (const [pid, { el }] of markers.current) el.classList.toggle("on", pid === id);
     const p = findPlace(id);
@@ -160,6 +167,49 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     if (map.isStyleLoaded()) apply();
     else map.once("load", apply);
   }, [sat]);
+
+  // ── who ruled here: a realm's borders drawn on the map ──
+  const realmLayers = (map: MLMap, show: boolean) => {
+    for (const l of ["realm-fill", "realm-line"]) if (map.getLayer(l)) map.setLayoutProperty(l, "visibility", show ? "visible" : "none");
+  };
+  const showRealm = async (id: RealmId) => {
+    const map = mapRef.current;
+    const f = (await loadRealms()).get(id);
+    if (!map || !f) return;
+    const color = realmColor(id);
+    const apply = () => {
+      const data = f as unknown as Parameters<GeoJSONSource["setData"]>[0];
+      const src = map.getSource("realm") as GeoJSONSource | undefined;
+      if (src) src.setData(data);
+      else {
+        map.addSource("realm", { type: "geojson", data });
+        map.addLayer({ id: "realm-fill", type: "fill", source: "realm", paint: { "fill-color": color, "fill-opacity": 0.24 } });
+        map.addLayer({ id: "realm-line", type: "line", source: "realm", paint: { "line-color": color, "line-width": 2.6, "line-blur": 0.8 } });
+      }
+      map.setPaintProperty("realm-fill", "fill-color", color);
+      map.setPaintProperty("realm-line", "line-color", color);
+      realmLayers(map, true);
+    };
+    if (map.isStyleLoaded()) apply();
+    else map.once("idle", apply);
+    let [w, so, e, n] = [180, 90, -180, -90];
+    for (const poly of f.geometry.coordinates) for (const [x, y] of poly[0]) (w = Math.min(w, x)), (e = Math.max(e, x)), (so = Math.min(so, y)), (n = Math.max(n, y));
+    const h = box.current?.clientHeight ?? 600;
+    // On phones the place card is hidden while a realm shows (styles.css), so leave room only for the realm chip.
+    const narrow = (box.current?.clientWidth ?? 1000) <= 600;
+    map.fitBounds([[w, so], [e, n]], {
+      padding: { top: narrow ? 130 : 76, bottom: selected && !narrow ? Math.min(280, h * 0.4) : 40, left: 30, right: 30 },
+      // absolutePadding: replace the padding a place's flyTo left on the map (bottom ~290 px) instead of adding to it,
+      // which squeezed tall realms like Assyria down to a whole-world view.
+      pitch: 0, bearing: 0, maxZoom: 8, duration: 2400, essential: true, absolutePadding: true,
+    });
+    setRealm({ id, year: f.properties.year, back: page });
+    setPage(null);
+  };
+  const hideRealm = () => {
+    if (mapRef.current) realmLayers(mapRef.current, false);
+    setRealm(null);
+  };
 
   const toggle3d = () => {
     const map = mapRef.current;
@@ -197,7 +247,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   }, [q]);
 
   return (
-    <div className={embedded ? "mapwrap embedded" : "mapwrap"}>
+    <div className={`mapwrap${embedded ? " embedded" : ""}${realm ? " has-realm" : ""}`}>
       <div ref={box} className="map" />
 
       <div className="map-tools">
@@ -240,7 +290,8 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
       )}
 
       {sel && (
-        <div className="place-card glass" key={sel.id}>
+        <div className={index[sel.id]?.cover ? "place-card glass has-img" : "place-card glass"} key={sel.id}>
+          {index[sel.id]?.cover && <img className="place-card-img" src={index[sel.id].cover} alt="" loading="lazy" onClick={() => setPage(sel.id)} />}
           <div className="place-card-head">
             <div>
               <h3>{sel[lang]}</h3>
@@ -259,6 +310,11 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
             ))}
           </div>
           <div className="place-actions">
+            {index[sel.id] && (
+              <button className="btn btn-glow small" onClick={() => setPage(sel.id)}>
+                📜 {t("moreAbout")}
+              </button>
+            )}
             <button className="btn small" onClick={() => flyTo(sel)}>
               🕊️ {t("flyHere")}
             </button>
@@ -274,6 +330,39 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
             )}
           </div>
         </div>
+      )}
+
+      {realm && (
+        <div className="realm-chip glass" style={{ "--realm": realmColor(realm.id) } as CSSProperties}>
+          <span className="realm-swatch" />
+          <div>
+            <b>{REALMS[realm.id][lang]}</b>
+            <span className="fine">
+              {t("realmBorders")} {yearLabel(realm.year, lang)} · {t("realmSource")}
+            </span>
+          </div>
+          {realm.back && findPlace(realm.back) && (
+            <button className="btn small" onClick={() => setPage(realm.back)}>
+              ↩ {findPlace(realm.back)![lang]}
+            </button>
+          )}
+          <button className="icon-btn" onClick={hideRealm} aria-label={t("close")}>
+            ×
+          </button>
+        </div>
+      )}
+
+      {page && (
+        <PlacePage
+          id={page}
+          onClose={() => setPage(null)}
+          onShowRealm={(r) => void showRealm(r)}
+          onOpenRef={onOpenRef}
+          onSelectPlace={(id) => {
+            select(id, true);
+            setPage(id);
+          }}
+        />
       )}
     </div>
   );

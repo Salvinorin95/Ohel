@@ -1,0 +1,367 @@
+{
+  "id": "endor",
+  "he": {
+    "summary": "עין דור הייתה כפר כנעני וישראלי למרגלות גבעת המורה, מצפון לעמק יזרעאל. היא ידועה בזכות לילה אחד: שאול, ערב הקרב בגלבוע, התחפש ועבר ליד מחנה הפלשתים כדי לבקש מ״בעלת אוב״ להעלות את רוחו של שמואל. מיקומה המדויק של העיר המקראית עדיין שנוי במחלוקת.",
+    "setting": "עין דור שוכנת במדרון הצפוני־מזרחי של גבעת המורה (515 מ׳), הגבעה הבודדת שמפרידה בין עמק יזרעאל לעמק חרוד, ומולה, כ־5 ק״מ לצפון־מערב, מתנשא הר תבור. האדמה פורייה, ומעיינות קטנים נובעים בשולי הגבעה. ממחנה ישראל ליד מעיין חרוד, למרגלות הגלבוע, הדרך לעין דור חוצה את עמק חרוד ומקיפה את הגבעה ממזרח, כ־13 ק״מ בקו אווירי. שונם, שם חנו הפלשתים, יושבת בצדה הדרום־מערבי של אותה גבעה, ולכן שאול נאלץ לעבור קרוב מאוד לאויב. היום שוכן במקום קיבוץ עין דור, שנוסד ב־1948, ובו מוזיאון ארכאולוגי קטן, ולידו הכפר הערבי כפר מצר.",
+    "peoples": [
+      {
+        "name": "הכנענים",
+        "text": "בתקופת הברונזה עמק יזרעאל היה רצוף ערים כנעניות קטנות, רובן תחת שלטון מצרים. ספר יהושע מונה את עין דור בין הערים, כמו בית שאן, תענך ומגידו, שבני מנשה לא הצליחו לכבוש מיד, וכנענים המשיכו לגור בהן. ככל הנראה הייתה זו עיירה חקלאית של חיטה, שעורה וזיתים, שנהנתה גם מהדרכים שחצו את העמק."
+      },
+      {
+        "name": "בני ישראל: יששכר ומנשה",
+        "text": "לפי המקרא העיר הייתה בנחלת יששכר אך שייכת למנשה. בימי שאול התגוררה בה אשה ״בעלת אוב״, כלומר מי שמדברת עם רוחות המתים. התורה אוסרת זאת, ושאול עצמו גירש את בעלי האוב מהארץ, ולכן הבקשה שלו בלילה ההוא הייתה גם סתירה למעשיו. תהלים פג זוכר את עין דור כמקום שבו הושמדו אויבי ישראל, אולי בימי דבורה או גדעון."
+      },
+      {
+        "name": "תושבי התקופה הרומית והביזנטית",
+        "text": "במאה הרביעית לספירה תיאר אוסביוס, אב הכנסייה, את עין דור ככפר גדול מאוד, כארבעה מילין מדרום להר תבור, ליד נאין. צליינים נוצרים עברו בה בדרכם לתבור ולנצרת. חרסים מהתקופות האלה נמצאו גם באתר הכפר הערבי אנדור הסמוך, ומסורת מקומית מאוחרת, שנוסעי המאה ה־19 תיעדו, הצביעה על מערה עם מעיין כעל ״מערת בעלת האוב״."
+      },
+      {
+        "name": "תושבי הכפר אנדור",
+        "text": "הכפר הערבי אנדור שימר את השם העתיק. במרשם מס עות׳מאני מ־1596 נרשמו בו ארבעה משקי בית מוסלמים בלבד, אך עד 1945 גדל ל־620 תושבים שעיבדו כ־12,400 דונם, רובם דגנים. בתיו נבנו מלבני בוץ צמוד למדרון, ולידם מערות. במאי 1948, במהלך המלחמה, נכבש הכפר ותושביו עזבו או גורשו, ובאותה שנה הוקם בסמוך קיבוץ עין דור."
+      }
+    ],
+    "population": "את עין דור העתיקה איש עוד לא מדד. בח׳רבת ספספה, האתר המועדף, נמצאו חרסים מתקופות הברונזה והברזל, אך לא נערכה בו חפירה גדולה, ולכן גודלה אינו ידוע. בימי שאול רוב היישובים באזור היו כפרים של כמה עשרות עד כמה מאות תושבים, וסביר שגם עין דור הייתה כזו (הערכה בלבד). אוסביוס כינה אותה במאה הרביעית לספירה ״כפר גדול מאוד״. ב־1945 גרו באנדור 620 תושבים, ובקיבוץ עין דור גרים היום כ־1,165 איש (2024).",
+    "archaeology": [
+      {
+        "title": "ח׳רבת ספספה: המועמדת המקובלת",
+        "text": "כקילומטר מצפון־מזרח לכפר אנדור נמצאת ח׳רבת ספספה (צפצפה). הסוקר נ׳ צורי הציע לזהות בה את עין דור, וסקרים מצאו בה חרסים מתקופת הברונזה, מתקופת הברזל ומתקופות מאוחרות יותר, כלומר היה בה יישוב בדיוק בימים שהסיפור מתאר. רוב החוקרים מקבלים היום את הזיהוי, אף שהאתר לא נחפר ביסודיות ואין בו כתובת שתאשר אותו."
+      },
+      {
+        "title": "אנדור: השם בלי השרידים",
+        "text": "השם הערבי אנדור משמר את ״עין דור״, ולכן חוקרי המאה ה־19 זיהו את העיר המקראית בכפר עצמו. אבל סקרים באתר הכפר לא מצאו שרידים קדומים מהתקופה הרומית. זו תופעה מוכרת בארץ: שם של מקום ״נודד״ לפעמים מעט ממקומו המקורי, ונשמר בכפר חדש יותר שקם בסמוך."
+      },
+      {
+        "title": "הצעות אחרות",
+        "text": "לא כולם משוכנעים. האנציקלופדיה יודאיקה מזכירה גם את תל עג׳ול, ליד נאין, שבו נמצאו קברים ומעיין בתוך מערה, ושם יש שרידים מתקופת הברזל. חוקרים אחרים טוענים שפרטי הסיפור מתאימים דווקא לעיר בשוליו הדרומיים של העמק, בין יבלעם לתענך, והציעו את תל קדש שליד מגידו. בלי חפירה מסודרת, השאלה נשארת פתוחה."
+      },
+      {
+        "title": "המוזיאון הארכאולוגי בעין דור",
+        "text": "בקיבוץ עין דור פועל מאז 1986 מוזיאון ארכאולוגי קטן שהתחיל מאוסף שליקטו חברי הקיבוץ בשדות. מוצגים בו יותר מ־2,000 ממצאים מעמק יזרעאל ומהגליל התחתון, מהתקופות הפרהיסטוריות ועד העבר הקרוב. הוא אינו מציג ממצא שקשור ישירות לבעלת האוב, אבל הוא נותן תמונה טובה של החיים באזור לאורך אלפי שנים."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Endor was a Canaanite and Israelite village at the foot of the Hill of Moreh, on the north side of the Jezreel Valley. It is remembered for one night: on the eve of the battle on Gilboa, King Saul disguised himself and slipped past the Philistine camp to ask a medium to call up the spirit of Samuel. Where exactly the biblical town stood is still debated.",
+    "setting": "Endor lies on the northeastern slope of the Hill of Moreh (515 m), the lone hill that divides the Jezreel Valley from the Harod Valley, with Mount Tabor rising about 5 km to the northwest. The soil is fertile, and small springs rise around the edge of the hill. From Israel's camp by the spring of Harod at the foot of Gilboa, the way to Endor crosses the Harod Valley and curves around the east side of the hill, about 13 km as the crow flies. Shunem, where the Philistines camped, sits on the southwestern side of the same hill, so Saul had to pass very close to the enemy. Today Kibbutz Ein Dor (founded 1948) stands here, with a small archaeology museum, next to the Arab village of Kfar Misr.",
+    "peoples": [
+      {
+        "name": "The Canaanites",
+        "text": "In the Bronze Age the Jezreel Valley was dotted with small Canaanite towns, most of them under Egyptian rule. The Book of Joshua lists Endor with Beth-shean, Taanach and Megiddo among the towns the tribe of Manasseh could not take at first, so Canaanites went on living there. It was probably a farming town growing wheat, barley and olives, and it also gained from the roads that crossed the valley."
+      },
+      {
+        "name": "The Israelites: Issachar and Manasseh",
+        "text": "According to the Bible the town lay in Issachar's land but belonged to Manasseh. In Saul's day a woman lived here who was a \"ba'alat ov\", someone who speaks with the spirits of the dead. The Torah forbids this, and Saul himself had driven such people out of the land, so his request that night went against his own laws. Psalm 83 remembers Endor as a place where Israel's enemies were destroyed, perhaps in the days of Deborah or Gideon."
+      },
+      {
+        "name": "Roman and Byzantine villagers",
+        "text": "In the 4th century CE the church historian Eusebius described Endor as a very large village about four Roman miles south of Mount Tabor, near Nain. Christian pilgrims passed through on the way to Tabor and Nazareth. Pottery from these periods has also been found at the site of the nearby Arab village of Indur, and a later local tradition, recorded by 19th-century travelers, pointed to a cave with a spring as \"the witch's cave.\""
+      },
+      {
+        "name": "The villagers of Indur",
+        "text": "The Arab village of Indur kept the ancient name alive. An Ottoman tax register of 1596 lists only four Muslim households, but by 1945 it had 620 people farming about 12,400 dunams, mostly grain. Its houses were built of mud brick against the hillside, with caves nearby. In May 1948, during the war, the village was captured and its people fled or were driven out; Kibbutz Ein Dor was founded close by the same year."
+      }
+    ],
+    "population": "Nobody has measured ancient Endor. At Khirbet Safsafa, the favored site, surveys found Bronze and Iron Age pottery, but there has been no major excavation, so its size is unknown. In Saul's time most settlements in the region were villages of a few dozen to a few hundred people, and Endor was likely one of them (an estimate only). Eusebius, in the 4th century CE, called it \"a very large village.\" In 1945 Indur had 620 residents; Kibbutz Ein Dor has about 1,165 today (2024).",
+    "archaeology": [
+      {
+        "title": "Khirbet Safsafa: the favored candidate",
+        "text": "About a kilometer northeast of Indur lies Khirbet Safsafa. The surveyor N. Zori proposed it as Endor, and surveys there found pottery from the Bronze Age, the Iron Age and later periods, so people lived here in the very centuries the story describes. Most scholars accept this identification today, although the site has never been fully excavated and no inscription confirms it."
+      },
+      {
+        "title": "Indur: the name without the ruins",
+        "text": "The Arabic name Indur preserves \"Ein Dor,\" so 19th-century explorers placed the biblical town in the village itself. But surveys at the village site found nothing older than the Roman period. This is a familiar pattern in the region: a place name sometimes drifts a little from its original spot and survives in a newer village nearby."
+      },
+      {
+        "title": "Other proposals",
+        "text": "Not everyone is convinced. The Encyclopaedia Judaica also mentions Tell el-Ajjul near Nain, with tombs and a spring inside a cave, which likewise has Iron Age remains. Others argue that the details of the story fit a town on the southern edge of the valley, between Ibleam and Taanach, and have suggested Tel Kedesh near Megiddo. Without a proper excavation, the question stays open."
+      },
+      {
+        "title": "The Ein Dor Archaeological Museum",
+        "text": "Since 1986 Kibbutz Ein Dor has had a small archaeology museum, which grew out of objects that members picked up in their fields. It shows more than 2,000 finds from the Jezreel Valley and Lower Galilee, from prehistoric times to the recent past. Nothing in it is tied directly to the medium, but it gives a good picture of life in the area over thousands of years."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": {
+        "he": "מצרים, הממלכה החדשה",
+        "en": "Egypt, New Kingdom"
+      },
+      "period": {
+        "he": "בערך 1450–1130 לפנה״ס",
+        "en": "c. 1450–1130 BCE"
+      },
+      "note": {
+        "he": "ערי עמק יזרעאל היו כפופות לפרעה, ובית שאן הסמוכה שימשה בסיס מצרי.",
+        "en": "The towns of the Jezreel Valley answered to Pharaoh, with nearby Beth-shean as an Egyptian base."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "ממלכת שאול (מול הפלשתים)",
+        "en": "Saul's kingdom (contested by the Philistines)"
+      },
+      "period": {
+        "he": "בערך 1025–1005 לפנה״ס (תאריכים משוערים)",
+        "en": "c. 1025–1005 BCE (approximate)"
+      },
+      "note": {
+        "he": "לפי שמואל א, העמק היה שטח ספר שבו נלחמו שאול והפלשתים.",
+        "en": "In I Samuel the valley is a frontier where Saul and the Philistines fought."
+      }
+    },
+    {
+      "realm": "israel",
+      "name": {
+        "he": "ממלכת ישראל",
+        "en": "Kingdom of Israel"
+      },
+      "period": {
+        "he": "בערך 930–732 לפנה״ס",
+        "en": "c. 930–732 BCE"
+      },
+      "note": {
+        "he": "עמק יזרעאל היה לב חקלאי וצבאי של הממלכה הצפונית.",
+        "en": "The Jezreel Valley was a farming and military heartland of the northern kingdom."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Neo-Assyrian Empire"
+      },
+      "period": {
+        "he": "732–בערך 630 לפנה״ס",
+        "en": "732–c. 630 BCE"
+      },
+      "note": {
+        "he": "תגלת פלאסר השלישי סיפח את העמק, והוא הפך לחלק מפחוות מגידו.",
+        "en": "Tiglath-pileser III annexed the valley, which became part of the province of Megiddo."
+      }
+    },
+    {
+      "realm": "persia",
+      "name": {
+        "he": "האימפריה הפרסית",
+        "en": "Achaemenid Persian Empire"
+      },
+      "period": {
+        "he": "בערך 539–332 לפנה״ס",
+        "en": "c. 539–332 BCE"
+      },
+      "note": {
+        "he": "האזור היה חלק מהפחווה ״עבר הנהר״.",
+        "en": "The area was part of the province \"Beyond the River.\""
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -1200,
+      "text": {
+        "he": "בערך 1200 לפנה״ס: לפי ספר יהושע, הכנענים ממשיכים לשבת בעין דור ובערי העמק.",
+        "en": "c. 1200 BCE: By the Book of Joshua, Canaanites still hold Endor and the valley towns."
+      }
+    },
+    {
+      "year": -1010,
+      "text": {
+        "he": "בערך 1010 לפנה״ס (תאריך מסורתי): שאול פוקד את בעלת האוב בלילה שלפני הקרב בגלבוע.",
+        "en": "c. 1010 BCE (traditional date): Saul visits the medium the night before the battle on Gilboa."
+      }
+    },
+    {
+      "year": -732,
+      "text": {
+        "he": "732 לפנה״ס: אשור כובשת את עמק יזרעאל ואת הגליל.",
+        "en": "732 BCE: Assyria conquers the Jezreel Valley and Galilee."
+      }
+    },
+    {
+      "year": 330,
+      "text": {
+        "he": "בערך 330 לספירה: אוסביוס מתאר את עין דור ככפר גדול מאוד מדרום לתבור.",
+        "en": "c. 330 CE: Eusebius describes Endor as a very large village south of Tabor."
+      }
+    },
+    {
+      "year": 1596,
+      "text": {
+        "he": "1596: מרשם המס העות׳מאני מונה באנדור ארבעה משקי בית.",
+        "en": "1596: An Ottoman tax register lists four households in Indur."
+      }
+    },
+    {
+      "year": 1948,
+      "text": {
+        "he": "1948: הכפר אנדור מתרוקן במלחמה, וקיבוץ עין דור נוסד בסמוך.",
+        "en": "1948: Indur is emptied in the war, and Kibbutz Ein Dor is founded nearby."
+      }
+    },
+    {
+      "year": 1986,
+      "text": {
+        "he": "1986: נפתח המוזיאון הארכאולוגי בעין דור.",
+        "en": "1986: The Ein Dor Archaeological Museum opens."
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Joshua 17:11",
+      "note": {
+        "he": "עין דור ובנותיה בין ערי מנשה שהכנענים המשיכו לשבת בהן.",
+        "en": "Endor and its villages among Manasseh's towns where Canaanites stayed on."
+      }
+    },
+    {
+      "ref": "I Samuel 28:3",
+      "note": {
+        "he": "שאול הסיר את בעלי האוב והידעונים מן הארץ.",
+        "en": "Saul had banished mediums and spiritists from the land."
+      }
+    },
+    {
+      "ref": "I Samuel 28:4",
+      "note": {
+        "he": "הפלשתים חונים בשונם, ושאול בגלבוע: עין דור נמצאת מאחורי מחנה האויב.",
+        "en": "Philistines at Shunem, Saul on Gilboa: Endor lies behind the enemy camp."
+      }
+    },
+    {
+      "ref": "I Samuel 28:7",
+      "note": {
+        "he": "״הנה אשת בעלת אוב בעין דור״.",
+        "en": "His servants tell him of a medium at Endor."
+      }
+    },
+    {
+      "ref": "I Samuel 28:14",
+      "note": {
+        "he": "״איש זקן עלה והוא עטה מעיל״: שאול מבין שזה שמואל.",
+        "en": "\"An old man… wrapped in a robe\": Saul knows it is Samuel."
+      }
+    },
+    {
+      "ref": "Psalms 83:11",
+      "note": {
+        "he": "״נשמדו בעין דאר, היו דמן לאדמה״.",
+        "en": "Enemies \"destroyed at Endor\" become dung for the ground."
+      }
+    },
+    {
+      "ref": "I Chronicles 10:13",
+      "note": {
+        "he": "דברי הימים מונה את הפנייה לבעלת האוב בין חטאי שאול.",
+        "en": "Chronicles counts consulting a medium among Saul's sins."
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:WikiAir Flight IL-13-01 IMG 4800.JPG",
+      "kind": "site",
+      "caption": {
+        "he": "עין דור ממבט אווירי, 2013, ומאחוריה עמק יזרעאל",
+        "en": "Ein Dor from the air, 2013, with the Jezreel Valley beyond"
+      }
+    },
+    {
+      "file": "File:Eindor2223.JPG",
+      "kind": "site",
+      "caption": {
+        "he": "עין דור כפי שהיא נראית מפסגת הר תבור",
+        "en": "Ein Dor seen from the top of Mount Tabor"
+      }
+    },
+    {
+      "file": "File:Northern views. Hill of Moreh and the Plain of Esdraelon LOC matpc.01076.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "גבעת המורה ועמק יזרעאל, צילום של אוסף מטסון, בערך 1900",
+        "en": "The Hill of Moreh and the Jezreel Valley, Matson Collection photo, c. 1900"
+      }
+    },
+    {
+      "file": "File:Entrance to the cave of Endor. Between two rocks overshadowed by a fig-tree; the cave itself is apparently a natural one, and has within it a never-failing spring of water, which originated (NYPL b10607452-80432).jpg",
+      "kind": "site",
+      "caption": {
+        "he": "״מערת עין דור״ עם המעיין שבתוכה, תחריט מהמאה ה־19",
+        "en": "The \"cave of Endor\" with its spring, 19th-century engraving"
+      }
+    },
+    {
+      "file": "File:134957 ein dor - archaeological museum PikiWiki Israel.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "ממצאים מעמק יזרעאל והגליל במוזיאון הארכאולוגי בעין דור",
+        "en": "Finds from the Jezreel Valley and Galilee in the Ein Dor Archaeological Museum"
+      }
+    },
+    {
+      "file": "File:Witch of Endor. Dore 1866.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "בעלת האוב מעין דור, גוסטב דורה, 1866",
+        "en": "The witch of Endor, Gustave Doré, 1866"
+      }
+    },
+    {
+      "file": "File:Witch of Endor (Martynov).jpg",
+      "kind": "art",
+      "caption": {
+        "he": "רוחו של שמואל מופיעה לפני שאול, דמיטרי מרטינוב, 1857",
+        "en": "The shade of Samuel appears to Saul, Dmitry Martynov, 1857"
+      }
+    },
+    {
+      "file": "File:Saul and the Witch of Endor (Stom, 1635).jpg",
+      "kind": "art",
+      "caption": {
+        "he": "שאול ובעלת האוב מעין דור, מתיאס סטום, בערך 1635",
+        "en": "Saul and the witch of Endor, Matthias Stom, c. 1635"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "עין דור (אתר מקראי)",
+    "en": "Endor (village)"
+  },
+  "related": [
+    "gilboa",
+    "shunem",
+    "tabor",
+    "harod",
+    "jezreel"
+  ],
+  "sources": [
+    {
+      "title": "Encyclopaedia Judaica, \"En-Dor\" (Jewish Virtual Library)",
+      "url": "https://www.jewishvirtuallibrary.org/en-dor"
+    },
+    {
+      "title": "עין דור (אתר מקראי), ויקיפדיה",
+      "url": "https://he.wikipedia.org/wiki/עין_דור_(אתר_מקראי)"
+    },
+    {
+      "title": "Endor (village), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Endor_(village)"
+    },
+    {
+      "title": "Indur, Wikipedia (village history, census figures)",
+      "url": "https://en.wikipedia.org/wiki/Indur"
+    },
+    {
+      "title": "Ein Dor (kibbutz), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ein_Dor"
+    },
+    {
+      "title": "Givat HaMoreh (Hill of Moreh), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Givat_HaMoreh"
+    }
+  ]
+}
