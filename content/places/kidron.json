@@ -1,0 +1,405 @@
+{
+  "id": "kidron",
+  "he": {
+    "summary": "נחל קדרון הוא הגיא שמפריד בין העיר העתיקה והר הבית לבין הר הזיתים, וממשיך משם דרך מדבר יהודה עד ים המלח. דוד חצה אותו בבכי כשברח מפני אבשלום, ומלכי יהודה שביקשו לטהר את הפולחן, אסא, חזקיהו ויאשיהו, שרפו והשליכו אליו פסלים ומזבחות של עבודה זרה. על מדרונותיו נחצבו קברי נכבדי ירושלים, מקבר ״אשר על הבית״ מימי הבית הראשון ועד ״יד אבשלום״ מימי הבית השני.",
+    "setting": "נחל קדרון מתחיל מצפון לעיר העתיקה, מתעקל דרומה לאורך החומה המזרחית והר הבית, ועובר בין עיר דוד שממערב לבין הכפר סילואן, הבנוי על מדרון הר הזיתים, ממזרח. מדרום לעיר מצטרף אליו גיא בן הינום, ומשם הוא פונה לדרום־מזרח ויורד כ־1,200 מטר לאורך כ־32 ק״מ דרך מדבר יהודה, על פני מנזר מר סבא התלוי על הצוקים, עד ים המלח. ליד העיר הגיא צר ותלול. מים זורמים בו רק אחרי גשמים חזקים. במשך עשרות שנים זרמו בחלקו התחתון שפכים לא מטוהרים של ירושלים, ופרויקט משותף לישראלים ולפלסטינים אמור לשים לכך סוף.",
+    "peoples": [
+      {
+        "name": "נכבדי ירושלים בימי המלכים",
+        "text": "בימי ממלכת יהודה היה הקדרון גבולה המזרחי של העיר. בעמק היו שדות וגנים, אולי ״גן המלך״ שהמקרא מזכיר, ובצלע הסלע שממול חצבו פקידים ובני משפחות עשירות קברים מפוארים, חלקם בצורת בתים עם גגות משופעים. כתובות עבריות על כמה מהם מקללות את מי שיפתח את הקבר. העמק שימש גם מקום לסלק אליו את מה שנחשב טמא: לשם השליכו המלכים את האלילים ששרפו."
+      },
+      {
+        "name": "יהודים בימי הבית השני",
+        "text": "בימי הבית השני נחצבו מול הר הבית קברים מונומנטליים בסגנון הלניסטי: קבר בני חזיר, משפחת כוהנים ששמה כשם אחד ממשמרות הכהונה בדברי הימים, ״קבר זכריה״ ו״יד אבשלום״. העמק היה גם דרך לעולי רגל ונתיב אל גת שמנים ואל בית עניה. לפי הבשורה על פי יוחנן, ישו חצה את הקדרון בלילה שבו נעצר."
+      },
+      {
+        "name": "נזירים במדבר",
+        "text": "מהמאה ה־4 התיישבו נזירים נוצרים במערות ובקברים שלאורך הנחל. בשנת 483 ייסד סבאס את המנזר הגדול שעל צוקי הקדרון במדבר, מר סבא, שנזירים חיים בו כמעט ברציפות עד היום. גם בסילואן גרו נזירים בתוך מערות הקבורה העתיקות, וחלק מהן הפכו לכנסיות קטנות."
+      },
+      {
+        "name": "תושבי סילואן",
+        "text": "הכפר סילואן, ששמו שומר את שם השילוח המקראי, צמח על מדרון הר הזיתים מעל הקברים העתיקים, ובתיו נבנו על גביהם ואפילו בתוכם. בשנות ה־70 של המאה ה־19 מצא שארל קלרמון־גנו את כתובת ״אשר על הבית״ מעל פתח של בית בכפר. היום סילואן היא שכונה פלסטינית צפופה במזרח ירושלים, ובחלקים ממנה גרים מתיישבים יהודים; זהו אחד המקומות הטעונים בעיר."
+      }
+    ],
+    "population": "על קרקעית הנחל, שמוצפת אחרי גשמים, לא גר איש. המדרונות שירתו את העיר שמעליהם: סביב 700 לפנה״ס חיו בירושלים, לפי ההערכות, בין 8,000 ל־25,000 איש, וכ־50 הקברים החצובים של סילואן היו שייכים רק לשכבה דקה של עשירים ובעלי משרות. בתקופה הביזנטית חיו במנזרי מדבר יהודה, ובהם מר סבא, נזירים רבים, אבל מספרם המדויק אינו ידוע. כיום לאורך החלק העליון של הנחל שוכנות שכונות צפופות כמו סילואן ואדי ג׳וז.",
+    "archaeology": [
+      {
+        "title": "קבר ״אשר על הבית״",
+        "text": "על מדרון הסלע שמול עיר דוד יש כ־50 קברים חצובים מהמאות ה־9 עד ה־7 לפנה״ס, שדוד אוסישקין סקר החל ב־1968. על משקוף של אחד מהם נחרתה בכתב עברי קדום הכתובת: ״זאת [קברת ...]יהו אשר על הבית... ארור האדם אשר יפתח את זאת״. השם נשבר, אבל חוקרים רבים מקשרים אותו לשבנא, ״אשר על הבית״ בימי חזקיהו, שישעיהו נזף בו על שחצב לעצמו קבר במרום. המשקוף נמצא כיום במוזיאון הבריטי."
+      },
+      {
+        "title": "המונוליתים של סילואן",
+        "text": "שלושה מקברי סילואן נחצבו כגושי סלע שעומדים בפני עצמם, מנותקים מהצוק. המפורסם שבהם מכונה ״קבר בת פרעה״, על שם אשתו המצרית של שלמה, ועוטר בכרכוב בסגנון מצרי. פעם היה לו גג בצורת פירמידה, אבל הוא נחצב ונלקח לבנייה, וגם כתובתו העברית כמעט נמחקה. אלה מן המצבות המרשימות ביותר שנותרו מירושלים של ימי הבית הראשון."
+      },
+      {
+        "title": "״יד אבשלום״ ושכניו",
+        "text": "יד אבשלום הוא מבנה גבוה כ־20 מטר: קוביה חצובה בסלע ועליה גג חרוטי בנוי. המסורת קשרה אותו לאבשלום, שלפי ספר שמואל הציב לעצמו מצבה ״בעמק המלך״, ובמשך מאות שנים יידו בו עוברים ושבים אבנים כמצבת בן סורר. אבל הסגנון שלו מתארך אותו למאה ה־1 לספירה, כאלף שנה אחרי אבשלום. לידו עומד קבר בני חזיר מהמאה ה־2 לפנה״ס, שכתובת עברית על חזיתו מונה כוהנים ממשפחת חזיר."
+      }
+    ]
+  },
+  "en": {
+    "summary": "The Kidron is the valley that separates the Old City and the Temple Mount from the Mount of Olives, then winds through the Judean Desert down to the Dead Sea. David crossed it in tears as he fled from Absalom, and the reforming kings of Judah, Asa, Hezekiah and Josiah, burned idols and altars in it and threw them there. Its slopes hold Jerusalem's grandest tombs, from the First Temple tomb of a royal steward to the Second Temple monument wrongly called Absalom's Pillar.",
+    "setting": "The Kidron begins north of the Old City, curves south along the eastern wall and the Temple Mount, and runs between the City of David on the west and the village of Silwan, built on the slope of the Mount of Olives, on the east. South of the city the Hinnom Valley joins it; it then turns southeast and drops some 1,200 m over about 32 km through the Judean Desert, past the cliff-hung monastery of Mar Saba, to the Dead Sea. Near the city it is narrow and steep. It flows only after heavy rain. For decades its lower course carried Jerusalem's untreated sewage; a joint Israeli–Palestinian project is meant to end that.",
+    "peoples": [
+      {
+        "name": "Jerusalem's elite in the age of the kings",
+        "text": "In the days of the kingdom of Judah the Kidron was the city's eastern edge. There were fields and gardens in the valley, perhaps the \"king's garden\" the Bible mentions, and on the rock face opposite, officials and wealthy families cut tombs, some shaped like houses with gabled roofs. Hebrew inscriptions on a few of them curse anyone who opens the tomb. The valley was also where unclean things were thrown: kings cast the idols they burned into it."
+      },
+      {
+        "name": "Jews of the Second Temple period",
+        "text": "In Second Temple times, monumental tombs in Hellenistic style were cut facing the Temple Mount: the tomb of the Bene Hezir, a priestly family whose name is that of a priestly course in Chronicles, the so-called Tomb of Zechariah, and the so-called Absalom's Pillar. The valley was also a road for pilgrims and a way to Gethsemane and Bethany. In the Gospel of John, Jesus crosses the Kidron on the night of his arrest."
+      },
+      {
+        "name": "Desert monks",
+        "text": "From the 4th century Christian monks settled in caves and old tombs along the valley. In 483 Sabbas founded the great monastery on the Kidron's cliffs in the desert, Mar Saba, where monks have lived almost without a break ever since. In Silwan, too, monks lived inside the ancient burial caves and turned some of them into small chapels."
+      },
+      {
+        "name": "The people of Silwan",
+        "text": "The village of Silwan, whose name keeps the biblical Siloam alive, grew up on the slope of the Mount of Olives over the ancient tombs, with houses built on top of them and even inside them. In the 1870s Charles Clermont-Ganneau found the royal steward's inscription above a house door in the village. Today Silwan is a crowded Palestinian neighbourhood of East Jerusalem, with Jewish settlers in parts of it, and one of the city's most contested places."
+      }
+    ],
+    "population": "Nobody lived on the valley floor, which floods after heavy rain. Its slopes served the city above: around 700 BCE Jerusalem had perhaps 8,000–25,000 people, and the roughly 50 rock-cut tombs of Silwan belonged to only a thin layer of the rich and the office-holders. In Byzantine times many monks lived in the monasteries of the Judean Desert, Mar Saba among them, though their exact numbers are not known. Today crowded neighbourhoods such as Silwan and Wadi al-Joz line the upper valley.",
+    "archaeology": [
+      {
+        "title": "The tomb of the royal steward",
+        "text": "On the rocky slope facing the City of David are about 50 rock-cut tombs of the 9th–7th centuries BCE, surveyed by David Ussishkin from 1968. Over one doorway an ancient Hebrew inscription reads: \"This is [the tomb of ...]yahu, who is over the house... Cursed be the man who opens this.\" The name is broken, but many scholars link it with Shebna, Hezekiah's steward, whom Isaiah rebuked for carving himself a tomb on high. The lintel is now in the British Museum."
+      },
+      {
+        "title": "The Silwan monoliths",
+        "text": "Three of the Silwan tombs were carved as free-standing blocks, cut away from the cliff. The best known is called the Tomb of Pharaoh's Daughter, after Solomon's Egyptian wife, and is crowned with an Egyptian-style cornice. It once had a pyramid roof, but that was quarried away for building stone, and its Hebrew inscription is almost gone. These are among the most striking monuments left from First Temple Jerusalem."
+      },
+      {
+        "title": "\"Absalom's Pillar\" and its neighbours",
+        "text": "Absalom's Pillar is about 20 m tall: a cube cut from the bedrock topped by a built conical roof. Tradition tied it to Absalom, who in Samuel set up a pillar for himself \"in the King's Valley\", and for centuries passers-by threw stones at it as the monument of a rebellious son. But its style dates it to the 1st century CE, about a thousand years after Absalom. Beside it stands the 2nd-century BCE tomb of the Bene Hezir, whose Hebrew inscription lists priests of the Hezir family."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "united",
+      "name": {
+        "he": "דוד ושלמה",
+        "en": "David and Solomon"
+      },
+      "period": {
+        "he": "בערך 1000–930 לפנה״ס",
+        "en": "c. 1000–930 BCE"
+      },
+      "note": {
+        "he": "הקדרון היה גבולה המזרחי של עיר הבירה; היקף ממלכתם שנוי במחלוקת.",
+        "en": "The Kidron was the eastern edge of their capital; how large their kingdom was is debated."
+      }
+    },
+    {
+      "realm": "judah",
+      "name": {
+        "he": "מלכי יהודה",
+        "en": "The kings of Judah"
+      },
+      "period": {
+        "he": "בערך 930–586 לפנה״ס",
+        "en": "c. 930–586 BCE"
+      },
+      "note": {
+        "he": "בימיהם נחצבו קברי סילואן, ובנחל נשרפו האלילים.",
+        "en": "In their time the Silwan tombs were cut and idols were burned in the valley."
+      }
+    },
+    {
+      "realm": "babylonia",
+      "name": {
+        "he": "בבל, נבוכדנאצר השני",
+        "en": "Babylon, Nebuchadnezzar II"
+      },
+      "period": {
+        "he": "586–539 לפנה״ס",
+        "en": "586–539 BCE"
+      },
+      "note": {
+        "he": "ירושלים נחרבה, וקברי נכבדיה נותרו ריקים מול העיר ההרוסה.",
+        "en": "Jerusalem was destroyed, and its nobles' tombs stood empty facing the ruined city."
+      }
+    },
+    {
+      "realm": "persia",
+      "name": {
+        "he": "פרס, פחוות יהוד",
+        "en": "Persia, province of Yehud"
+      },
+      "period": {
+        "he": "539–332 לפנה״ס",
+        "en": "539–332 BCE"
+      },
+      "note": {
+        "he": "נחמיה יצא בלילה לבדוק את החומה דרך הנחל.",
+        "en": "Nehemiah rode up the valley by night to inspect the broken wall."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "החשמונאים ובית הורדוס",
+        "en": "The Hasmoneans and the house of Herod"
+      },
+      "period": {
+        "he": "בערך 140 לפנה״ס – 70 לספירה",
+        "en": "c. 140 BCE – 70 CE"
+      },
+      "note": {
+        "he": "בתקופה זו נחצבו הקברים המונומנטליים שמול הר הבית.",
+        "en": "In this age the monumental tombs facing the Temple Mount were cut."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -980,
+      "text": {
+        "he": "בערך 980 לפנה״ס (לפי המסורת): דוד חוצה את נחל קדרון בבריחתו מאבשלום.",
+        "en": "c. 980 BCE (traditional dating): David crosses the Kidron fleeing from Absalom."
+      }
+    },
+    {
+      "year": -900,
+      "text": {
+        "he": "בערך 900 לפנה״ס: אסא שורף בנחל את פסל האשרה של אמו מעכה.",
+        "en": "c. 900 BCE: Asa burns his mother Maacah's Asherah image in the valley."
+      }
+    },
+    {
+      "year": -700,
+      "text": {
+        "he": "בערך 700 לפנה״ס: נחצב בסילואן קבר ״אשר על הבית״.",
+        "en": "c. 700 BCE: the royal steward's tomb is cut in Silwan."
+      }
+    },
+    {
+      "year": -622,
+      "text": {
+        "he": "בערך 622 לפנה״ס: יאשיהו שורף את האשרה בנחל קדרון ומפזר את אפרה.",
+        "en": "c. 622 BCE: Josiah burns the Asherah in the Kidron and scatters its ashes."
+      }
+    },
+    {
+      "year": -150,
+      "text": {
+        "he": "המאה ה־2 לפנה״ס: נחצב קבר בני חזיר מול הר הבית.",
+        "en": "2nd century BCE: the tomb of the Bene Hezir is cut facing the Temple Mount."
+      }
+    },
+    {
+      "year": 50,
+      "text": {
+        "he": "המאה ה־1 לספירה: נבנה המונומנט שיכונה לימים ״יד אבשלום״.",
+        "en": "1st century CE: the monument later called Absalom's Pillar is built."
+      }
+    },
+    {
+      "year": 483,
+      "text": {
+        "he": "סבאס מייסד את מנזר מר סבא על צוקי הקדרון במדבר.",
+        "en": "Sabbas founds the monastery of Mar Saba on the Kidron's desert cliffs."
+      }
+    },
+    {
+      "year": 1870,
+      "text": {
+        "he": "שארל קלרמון־גנו מוצא בסילואן את כתובת ״אשר על הבית״.",
+        "en": "Charles Clermont-Ganneau finds the royal steward inscription in Silwan."
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "II Samuel 15:23",
+      "note": {
+        "he": "״והמלך עבר בנחל קדרון״, וכל הארץ בוכה.",
+        "en": "\"The king crossed the Kidron Valley\", while all the land wept."
+      }
+    },
+    {
+      "ref": "II Samuel 18:18",
+      "note": {
+        "he": "אבשלום מציב לעצמו מצבה ״בעמק המלך״, ״יד אבשלם״.",
+        "en": "Absalom sets up a pillar for himself \"in the King's Valley\", called Absalom's monument."
+      }
+    },
+    {
+      "ref": "I Kings 2:37",
+      "note": {
+        "he": "שלמה מזהיר את שמעי: ביום שתעבור את נחל קדרון, תמות.",
+        "en": "Solomon warns Shimei: the day you cross the Kidron, you will die."
+      }
+    },
+    {
+      "ref": "I Kings 15:13",
+      "note": {
+        "he": "אסא כורת את פסל האשרה של מעכה ושורף אותו בנחל קדרון.",
+        "en": "Asa cuts down Maacah's Asherah image and burns it in the Kidron."
+      }
+    },
+    {
+      "ref": "II Kings 23:4",
+      "note": {
+        "he": "יאשיהו שורף את כלי הבעל והאשרה ״בשדמות קדרון״.",
+        "en": "Josiah burns the vessels made for Baal and Asherah \"in the fields of Kidron\"."
+      }
+    },
+    {
+      "ref": "II Kings 23:6",
+      "note": {
+        "he": "האשרה מוצאת מבית ה׳, נשרפת בנחל קדרון ונטחנת לעפר.",
+        "en": "The Asherah is taken out of the Temple, burned in the Kidron and ground to dust."
+      }
+    },
+    {
+      "ref": "II Kings 23:12",
+      "note": {
+        "he": "את עפר המזבחות שנתץ משליך יאשיהו אל נחל קדרון.",
+        "en": "Josiah throws the dust of the altars he smashed into the Kidron."
+      }
+    },
+    {
+      "ref": "Isaiah 22:16",
+      "note": {
+        "he": "ישעיהו נוזף בשבנא ״אשר על הבית״ שחצב לו קבר בסלע.",
+        "en": "Isaiah rebukes Shebna, \"who is over the house\", for carving himself a tomb in the rock."
+      }
+    },
+    {
+      "ref": "Jeremiah 31:40",
+      "note": {
+        "he": "בחזון העיר החדשה, כל השדמות ״עד נחל קדרון״ יהיו קודש לה׳.",
+        "en": "In the vision of the rebuilt city, the fields \"as far as the Kidron\" will be holy to the LORD."
+      }
+    },
+    {
+      "ref": "Joel 4:2",
+      "note": {
+        "he": "״עמק יהושפט״ של יום הדין; מאז המאה ה־4 המסורת מזהה אותו עם הקדרון.",
+        "en": "The \"Valley of Jehoshaphat\" of the last judgment; since the 4th century tradition has identified it with the Kidron."
+      }
+    },
+    {
+      "ref": "Nehemiah 2:15",
+      "note": {
+        "he": "נחמיה עולה בנחל בלילה כדי לבדוק את החומה ההרוסה.",
+        "en": "Nehemiah goes up the valley by night to inspect the broken wall."
+      }
+    },
+    {
+      "ref": "II Chronicles 29:16",
+      "note": {
+        "he": "בימי חזקיהו הלוויים מוציאים את הטומאה מן המקדש אל נחל קדרון.",
+        "en": "Under Hezekiah the Levites carry the impure things out of the Temple to the Kidron."
+      }
+    },
+    {
+      "ref": "II Chronicles 30:14",
+      "note": {
+        "he": "לפני הפסח של חזקיהו מסירים את מזבחות הקטורת ומשליכים אותם לנחל קדרון.",
+        "en": "Before Hezekiah's Passover the incense altars are removed and thrown into the Kidron."
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Yad Avshalom Kidron Valley P1120505 (6979245600).jpg",
+      "kind": "site",
+      "caption": {
+        "he": "״יד אבשלום״ בנחל קדרון",
+        "en": "The so-called Absalom's Pillar in the Kidron Valley"
+      }
+    },
+    {
+      "file": "File:Tombs of Zechariah and Bnei Hazir.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "״קבר זכריה״ וקבר בני חזיר, מול הר הבית",
+        "en": "The so-called Tomb of Zechariah and the tomb of the Bene Hezir, facing the Temple Mount"
+      }
+    },
+    {
+      "file": "File:Monolith-3.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "״קבר בת פרעה״, קבר מונוליתי מימי הבית הראשון בסילואן",
+        "en": "The \"Tomb of Pharaoh's Daughter\", a First Temple period monolith tomb in Silwan"
+      }
+    },
+    {
+      "file": "File:Palestine-2013-Aerial-Mar Saba Monastery.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "מנזר מר סבא על צוקי נחל קדרון במדבר יהודה",
+        "en": "The monastery of Mar Saba on the cliffs of the Kidron in the Judean Desert"
+      }
+    },
+    {
+      "file": "File:Silwan-inscr.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "כתובת ״אשר על הבית״ מסילואן, המאה ה־7 לפנה״ס, המוזיאון הבריטי",
+        "en": "The royal steward inscription from Silwan, 7th century BCE, British Museum"
+      }
+    },
+    {
+      "file": "File:Benei Hezir Tomb inscription.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "הכתובת העברית על חזית קבר בני חזיר",
+        "en": "The Hebrew inscription on the facade of the Bene Hezir tomb"
+      }
+    },
+    {
+      "file": "File:Seddon Jerusalem and the Valley of Jehoshaphat from the Hill of Evil Counsel.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "״ירושלים ועמק יהושפט מגבעת העצה הרעה״, תומס סדון, 1854–1855, טייט בריטן",
+        "en": "Jerusalem and the Valley of Jehoshaphat from the Hill of Evil Counsel, Thomas Seddon, 1854–55, Tate Britain"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "נחל קדרון",
+    "en": "Kidron Valley"
+  },
+  "related": [
+    "olives",
+    "cityofdavid",
+    "moriah",
+    "hinnom",
+    "deadsea",
+    "anathoth"
+  ],
+  "sources": [
+    {
+      "title": "Kidron Valley (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kidron_Valley"
+    },
+    {
+      "title": "Silwan necropolis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Silwan_necropolis"
+    },
+    {
+      "title": "Royal Steward inscription (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Royal_Steward_inscription"
+    },
+    {
+      "title": "Tomb of Absalom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tomb_of_Absalom"
+    },
+    {
+      "title": "Tomb of Benei Hezir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tomb_of_Benei_Hezir"
+    },
+    {
+      "title": "Israel, Palestinians eye smooth waters with historic cooperation on sewage (Times of Israel, 2019)",
+      "url": "https://www.timesofisrael.com/israel-palestinians-eye-smooth-waters-with-historic-cooperation-on-sewage/"
+    },
+    {
+      "title": "I Kings 15 (Sefaria)",
+      "url": "https://www.sefaria.org/I_Kings.15"
+    }
+  ]
+}

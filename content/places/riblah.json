@@ -1,0 +1,345 @@
+{
+  "id": "riblah",
+  "he": {
+    "summary": "רבלה הייתה עיר קטנה על נהר האורונטס, ״בארץ חמת״, בצומת הדרכים בין מצרים למסופוטמיה. בגלל מיקומה חנו בה מלכים כובשים: פרעה נכה אסר בה את יהואחז מלך יהודה, ונבוכדנאצר ישב בה בזמן המצור על ירושלים. לכאן הובא צדקיהו, המלך האחרון של יהודה, לשמוע את דינו.",
+    "setting": "רבלה שוכנת על הגדה המזרחית של האורונטס, במישור רחב ופורה בדרום מחוז חומס בסוריה, סמוך לגבול לבנון. העיר חומס נמצאת כ־35 ק״מ צפונה, והתל של קדש, העיר הכנענית הגדולה, כ־14 ק״מ צפונה בלבד. ממערב עולים הרי הלבנון וממזרח רכס האנטי־לבנון, וביניהם עוברת הדרך הטבעית מבקעת הלבנון צפונה אל חמת, חלב והפרת. הנהר, שדות הדגן והמרעה סיפקו מים, מזון ומספוא לצבאות גדולים. כיום ניצב ליד המקום הכפר רבלה, והתל עצמו מכוסה בבית קברות.",
+    "peoples": [
+      {
+        "name": "תושבי עמק האורונטס בתקופת הברונזה",
+        "text": "בתקופת הברונזה ישבו בעמק האורונטס העליון ערים כנעניות ואמוריות, וקדש הסמוכה הייתה החזקה שבהן. כאן נפגשו מצרים והאימפריה החתית: בסביבות 1274 לפנה״ס נלחמו רעמסס השני והמלך החתי מואוטלי השני בקרב קדש. התעודות המצריות מזכירות עיר בשם שבתונה, שיש המזהים אותה עם רבלה."
+      },
+      {
+        "name": "הארמים והלווים של חמת",
+        "text": "בתקופת הברזל הייתה רבלה חלק מממלכת חמת, שלמלכיה היו שמות לוויים (״ניאו־חתיים״) וארמיים. המקרא מספר על תעי מלך חמת ששלח מתנות לדוד, ומלך חמת בשם ארחולני נלחם לצד אחאב בקרב קרקר. חמת, בירת הממלכה, שכנה כ־80 ק״מ צפונה. החקלאים גידלו דגן ורעו צאן במישור שהאורונטס משקה."
+      },
+      {
+        "name": "שבויי יהודה",
+        "text": "המקרא זוכר את רבלה בגלל אנשי יהודה שהובאו אליה כשבויים: המלך יהואחז ב־609 לפנה״ס, שנלקח משם למצרים ומת בה, ובשנת 586 לפנה״ס המלך צדקיהו ובניו, הכהן הגדול שריה וכשבעים שרים ונכבדים נוספים. בעיני יהודה הפכה העיר הרחוקה למקום של משפט ושל אבל."
+      }
+    ],
+    "population": "איש אינו יודע כמה אנשים חיו ברבלה. האתר מעולם לא נחפר ואפילו לא נמדד כראוי, ושום טקסט קדום אינו מוסר מספר. כנראה הייתה זו עיירה כפרית צנועה, קטנה בהרבה מקדש השכנה או מחמת, בירת הממלכה. חשיבותה באה ממקומה ולא מגודלה: הצבאות של נכה ושל נבוכדנאצר, שמנו אלפים רבים, יכלו לחנות כאן לאורך זמן, ליד מים, תבואה ומרעה, ובצומת שממנו נשלטו כל סוריה וארץ ישראל.",
+    "archaeology": [
+      {
+        "title": "תל שלא נחפר",
+        "text": "הזיהוי של רבלה המקראית עם האתר שליד הכפר רבלה נשען על השם שנשמר ועל המיקום, ״בארץ חמת״ ועל הדרך הראשית. אבל התל לא נחפר מעולם, ומדרונותיו משמשים בית קברות, דבר שמקשה על כל חפירה. לכן אין ממצא ארכאולוגי שמעיד ישירות על המחנות של נכה ושל נבוכדנאצר או על המשפט של צדקיהו."
+      },
+      {
+        "title": "קדש השכנה",
+        "text": "כ־14 ק״מ צפונה מתנשא תל נבי מנד, היא קדש שעל האורונטס, העיר הגדולה של העמק. שם, בסביבות 1274 לפנה״ס, התחולל אחד הקרבות המתועדים הראשונים בהיסטוריה, בין רעמסס השני למואוטלי השני. בחפירות בתל נמצא בין השאר שבר של מצבה של פרעה סתי הראשון, אביו של רעמסס, עדות לנוכחות המצרית באזור."
+      },
+      {
+        "title": "כרוניקת נבוכדנאצר",
+        "text": "לוח טין בבלי ששמור במוזיאון הבריטי מתאר את שנותיו הראשונות של נבוכדנאצר: הניצחון במצרים בכרכמיש ב־605 לפנה״ס, המרדף אחריהם עד ״ארץ חמת״, המסעות השנתיים לסוריה ולכידת ירושלים ב־597 לפנה״ס. הכרוניקה אינה מזכירה את רבלה בשמה, אבל היא מראה מדוע אזור חמת היה בסיס טבעי לצבאות בבל."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Riblah was a small town on the Orontes river, “in the land of Hamath”, at the crossroads between Egypt and Mesopotamia. Because of where it stood, conquering kings camped here: Pharaoh Necho imprisoned King Jehoahaz of Judah at Riblah, and Nebuchadnezzar made it his headquarters during the siege of Jerusalem. Zedekiah, Judah's last king, was brought here for judgment.",
+    "setting": "Riblah lies on the east bank of the Orontes, in a broad, fertile plain in the south of Syria's Homs province, close to the Lebanese border. The city of Homs is about 35 km to the north, and the mound of Kadesh, the great Canaanite city, only about 14 km north. The Lebanon range rises to the west and the Anti-Lebanon to the east, and between them runs the natural route from the Beqaa Valley north to Hamath, Aleppo and the Euphrates. The river, grain fields and pasture could supply water, food and fodder for large armies. Today the village of Ribla stands nearby, and the mound itself is covered by a cemetery.",
+    "peoples": [
+      {
+        "name": "Bronze Age people of the Orontes valley",
+        "text": "In the Bronze Age the upper Orontes valley held Canaanite and Amorite towns, with nearby Kadesh the strongest of them. Egypt and the Hittite empire met here: around 1274 BCE Ramesses II and the Hittite king Muwatalli II fought the battle of Kadesh. Egyptian records mention a town called Shabtuna, which some scholars identify with Riblah."
+      },
+      {
+        "name": "Arameans and Luwians of Hamath",
+        "text": "In the Iron Age Riblah belonged to the kingdom of Hamath, whose kings bore Luwian (“Neo-Hittite”) and Aramaic names. The Bible tells of Toi, king of Hamath, who sent gifts to David, and a Hamathite king called Irhuleni fought alongside Ahab at Qarqar. Hamath, the capital, lay about 80 km to the north. Farmers grew grain and grazed flocks on the plain watered by the Orontes."
+      },
+      {
+        "name": "Captives from Judah",
+        "text": "The Bible remembers Riblah for the people of Judah brought here as prisoners: King Jehoahaz in 609 BCE, who was taken on to Egypt and died there, and in 586 BCE King Zedekiah and his sons, the chief priest Seraiah and some seventy other officials and leaders. For Judah this distant town became a place of judgment and grief."
+      }
+    ],
+    "population": "No one knows how many people lived at Riblah. The site has never been excavated or even properly measured, and no ancient text gives a figure. It was probably a modest country town, far smaller than neighbouring Kadesh or Hamath, the kingdom's capital. Its importance came from its position, not its size: the armies of Necho and Nebuchadnezzar, many thousands strong, could camp here for months beside water, grain and grazing, at a junction from which all of Syria and the land of Israel could be controlled.",
+    "archaeology": [
+      {
+        "title": "A mound never dug",
+        "text": "The identification of biblical Riblah with the site by the village of Ribla rests on the surviving name and on the location, “in the land of Hamath” and on the main road. But the mound has never been excavated, and its slopes are used as a cemetery, which makes any dig difficult. So no find bears directly on the camps of Necho and Nebuchadnezzar or on Zedekiah's trial."
+      },
+      {
+        "title": "Kadesh next door",
+        "text": "About 14 km to the north rises Tell Nebi Mend, ancient Kadesh on the Orontes, the great city of the valley. There, around 1274 BCE, Ramesses II and Muwatalli II fought one of the first battles in history known in detail. Excavations at the mound have turned up, among other finds, a fragment of a stele of Pharaoh Seti I, Ramesses' father, evidence of Egypt's presence in the region."
+      },
+      {
+        "title": "The Nebuchadnezzar Chronicle",
+        "text": "A Babylonian clay tablet in the British Museum records Nebuchadnezzar's early years: his victory over Egypt at Carchemish in 605 BCE, the pursuit into “the land of Hamath”, his yearly campaigns in Syria and the capture of Jerusalem in 597 BCE. It does not name Riblah, but it shows why the district of Hamath made a natural base for Babylon's armies."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "hatti",
+      "name": {
+        "he": "האימפריה החתית",
+        "en": "Hittite Empire"
+      },
+      "period": {
+        "he": "בערך 1340–1180 לפנה״ס",
+        "en": "c. 1340–1180 BCE"
+      },
+      "note": {
+        "he": "רבלה שכנה ליד הגבול שבו נפגשו החתים והמצרים; קדש שמצפון לה הייתה וסלית של החתים.",
+        "en": "Riblah lay near the frontier where Hittite and Egyptian power met; Kadesh, just to the north, was a Hittite vassal."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "ממלכת חמת",
+        "en": "Kingdom of Hamath"
+      },
+      "period": {
+        "he": "בערך 1000–720 לפנה״ס",
+        "en": "c. 1000–720 BCE"
+      },
+      "note": {
+        "he": "ממלכה ניאו־חתית וארמית על האורונטס, שבירתה חמת שבצפון.",
+        "en": "A Neo-Hittite and Aramean kingdom on the Orontes, with its capital at Hamath to the north."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Neo-Assyrian Empire"
+      },
+      "period": {
+        "he": "720–בערך 610 לפנה״ס",
+        "en": "720–c. 610 BCE"
+      },
+      "note": {
+        "he": "סרגון השני דיכא את מרד חמת וסיפח את הממלכה.",
+        "en": "Sargon II crushed Hamath's revolt and annexed the kingdom."
+      }
+    },
+    {
+      "realm": null,
+      "name": {
+        "he": "מצרים בימי פרעה נכה",
+        "en": "Egypt under Pharaoh Necho II"
+      },
+      "period": {
+        "he": "609–605 לפנה״ס",
+        "en": "609–605 BCE"
+      },
+      "note": {
+        "he": "לזמן קצר שלטה מצרים בסוריה, ונכה קבע את מחנהו ברבלה.",
+        "en": "For a short time Egypt controlled Syria, and Necho set up his camp at Riblah."
+      }
+    },
+    {
+      "realm": "babylonia",
+      "name": {
+        "he": "האימפריה הבבלית החדשה",
+        "en": "Neo-Babylonian Empire"
+      },
+      "period": {
+        "he": "605–539 לפנה״ס",
+        "en": "605–539 BCE"
+      },
+      "note": {
+        "he": "נבוכדנאצר עשה את רבלה למפקדה בזמן מסעותיו ליהודה.",
+        "en": "Nebuchadnezzar used Riblah as his headquarters during his campaigns against Judah."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -1274,
+      "text": {
+        "he": "בערך 1274 לפנה״ס: קרב קדש בין רעמסס השני לחתים, כ־14 ק״מ מרבלה",
+        "en": "c. 1274 BCE: the battle of Kadesh between Ramesses II and the Hittites, about 14 km away"
+      }
+    },
+    {
+      "year": -853,
+      "text": {
+        "he": "ארחולני מלך חמת נלחם לצד אחאב והדדעזר בקרב קרקר",
+        "en": "Irhuleni of Hamath fights alongside Ahab and Hadadezer at Qarqar"
+      }
+    },
+    {
+      "year": -720,
+      "text": {
+        "he": "סרגון השני מלך אשור כובש את חמת",
+        "en": "Sargon II of Assyria conquers Hamath"
+      }
+    },
+    {
+      "year": -609,
+      "text": {
+        "he": "פרעה נכה חונה ברבלה, אוסר את יהואחז ומטיל מס על יהודה",
+        "en": "Pharaoh Necho camps at Riblah, imprisons Jehoahaz and imposes tribute on Judah"
+      }
+    },
+    {
+      "year": -605,
+      "text": {
+        "he": "אחרי הקרב בכרכמיש רודפים הבבלים אחרי המצרים עד ארץ חמת",
+        "en": "After Carchemish the Babylonians pursue the Egyptians into the land of Hamath"
+      }
+    },
+    {
+      "year": -586,
+      "text": {
+        "he": "587/586 לפנה״ס: צדקיהו מובא לנבוכדנאצר ברבלה; זמן קצר אחר כך מוצאים שם להורג שרי יהודה",
+        "en": "587/586 BCE: Zedekiah is brought before Nebuchadnezzar at Riblah; soon after, Judah's leaders are executed there"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Numbers 34:11",
+      "note": {
+        "he": "גבול הארץ יורד ״משפם הרבלה מקדם לעין״; לא ברור אם זו אותה רבלה",
+        "en": "The border runs from Shepham to Riblah, east of Ain; whether this is the same Riblah is unclear"
+      }
+    },
+    {
+      "ref": "II Kings 23:33",
+      "note": {
+        "he": "״ויאסרהו פרעה נכה ברבלה בארץ חמת״",
+        "en": "Pharaoh Necho imprisons Jehoahaz at Riblah in the land of Hamath"
+      }
+    },
+    {
+      "ref": "II Kings 25:6",
+      "note": {
+        "he": "צדקיהו נתפס ומועלה אל מלך בבל רבלתה, והם ״ידברו אתו משפט״",
+        "en": "Zedekiah is captured and brought to the king of Babylon at Riblah for judgment"
+      }
+    },
+    {
+      "ref": "II Kings 25:7",
+      "note": {
+        "he": "בני צדקיהו נשחטים לעיניו, ועיניו מנוקרות לפני הגלייתו לבבל",
+        "en": "Zedekiah's sons are killed before his eyes, and he is blinded and taken to Babylon"
+      }
+    },
+    {
+      "ref": "II Kings 25:21",
+      "note": {
+        "he": "מלך בבל ממית את שרי יהודה ״ברבלה בארץ חמת״",
+        "en": "The king of Babylon puts Judah's leaders to death at Riblah in the land of Hamath"
+      }
+    },
+    {
+      "ref": "Jeremiah 39:5",
+      "note": {
+        "he": "צדקיהו נלכד בערבות יריחו ומובא אל נבוכדראצר רבלתה",
+        "en": "Zedekiah is caught in the plains of Jericho and taken to Nebuchadrezzar at Riblah"
+      }
+    },
+    {
+      "ref": "Jeremiah 39:6",
+      "note": {
+        "he": "מלך בבל שוחט ברבלה את בני צדקיהו ואת כל חורי יהודה",
+        "en": "At Riblah the king of Babylon kills Zedekiah's sons and the nobles of Judah"
+      }
+    },
+    {
+      "ref": "Jeremiah 52:9",
+      "note": {
+        "he": "אותו סיפור בסוף ספר ירמיהו: המלך מועלה ״רבלתה בארץ חמת״",
+        "en": "The same account at the end of Jeremiah: the king is brought to Riblah in the land of Hamath"
+      }
+    },
+    {
+      "ref": "Jeremiah 52:27",
+      "note": {
+        "he": "שרי יהודה מומתים ברבלה, ״ויגל יהודה מעל אדמתו״",
+        "en": "Judah's leaders are executed at Riblah, “and Judah went into exile from its land”"
+      }
+    },
+    {
+      "ref": "Ezekiel 6:14",
+      "note": {
+        "he": "״ממדבר דבלתה״; חוקרים רבים קוראים כאן רבלה, כי ד׳ ור׳ דומות בכתב",
+        "en": "“From the wilderness to Diblah”; many scholars read Riblah, since the Hebrew letters d and r look alike"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Damascus, Palmyra and Baalbek. An old bridge on the River Oeontes, (i.e., Orontes) near Riblah. II Kings 23-33 LOC matpc.22984.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "גשר ישן על האורונטס ליד רבלה, בתצלום מאוסף מטסון",
+        "en": "An old bridge over the Orontes near Riblah, from the Matson Collection"
+      }
+    },
+    {
+      "file": "File:92.Kamoa el-Hermel (monument dans la plaine de Riblah.) .jpg",
+      "kind": "site",
+      "caption": {
+        "he": "קמועת אל־הרמל, מונומנט עתיק במישור רבלה, ליטוגרפיה של ק״ו״מ ון דה ולדה, המאה ה־19",
+        "en": "Qamu'at al-Hermel, an ancient monument in the plain of Riblah, lithograph by C. W. M. van de Velde, 19th century"
+      }
+    },
+    {
+      "file": "File:The cuneiform inscription highlights the conquest of Jerusalem and the surrender of Jehoiakim, king of Judah, in 597 BCE. From Babylon, Iraq.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "הכרוניקה הבבלית לשנים 605–594 לפנה״ס: כרכמיש, המרדף עד חמת ולכידת ירושלים, המוזיאון הבריטי",
+        "en": "The Babylonian Chronicle for 605–594 BCE: Carchemish, the pursuit to Hamath and the capture of Jerusalem, British Museum"
+      }
+    },
+    {
+      "file": "File:Exode des prisonniers (2 Kings 25 11) • invenit James Tissot • pinxit Charles Hoffbauer • excudit Maurice de Brunoff apud Philip de Vere • praesentat Phillip Medhurst.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "שבויי יהודה יוצאים לגלות, לפי רישום של ג׳יימס טיסו, פורסם ב־1904",
+        "en": "The captives of Judah led into exile, after a sketch by James Tissot, published 1904"
+      }
+    },
+    {
+      "file": "File:Rembrandt Harmensz. van Rijn - Jeremia treurend over de verwoesting van Jeruzalem - Google Art Project.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "ירמיהו מקונן על חורבן ירושלים, רמברנדט, 1630 (הרייקסמוזיאום)",
+        "en": "Jeremiah lamenting the destruction of Jerusalem, Rembrandt, 1630 (Rijksmuseum)"
+      }
+    },
+    {
+      "file": "File:Encyclopaedia Biblica map of Syria, Mesopotamia, Babylonia, and Assyria.jpg",
+      "kind": "map",
+      "caption": {
+        "he": "מפת סוריה ומסופוטמיה מתוך האנציקלופדיה ביבליקה, 1903",
+        "en": "Map of Syria and Mesopotamia from the Encyclopaedia Biblica, 1903"
+      }
+    }
+  ],
+  "wiki": {
+    "en": "Riblah"
+  },
+  "related": [
+    "carchemish",
+    "damascus",
+    "hermon",
+    "megiddo",
+    "cityofdavid",
+    "babylon"
+  ],
+  "sources": [
+    {
+      "title": "Riblah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Riblah"
+    },
+    {
+      "title": "Riblah, Encyclopaedia Judaica (Encyclopedia.com)",
+      "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/riblah"
+    },
+    {
+      "title": "Riblah in the Land of Hamath (Ferrell Jenkins' Biblical World blog)",
+      "url": "https://ferrelljenkins.blog/2009/03/02/riblah-in-the-land-of-hamath/"
+    },
+    {
+      "title": "Battle of Carchemish (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Carchemish"
+    },
+    {
+      "title": "Kurkh Monoliths (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kurkh_Monoliths"
+    }
+  ]
+}

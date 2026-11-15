@@ -1,0 +1,143 @@
+{
+  "id": "rephaim",
+  "he": {
+    "summary": "עמק רפאים הוא העמק שיורד מירושלים לכיוון דרום־מערב, ושימש מימי קדם דרך מן השפלה אל הרי יהודה. בתחילת מלכות דוד פשטו בו הפלשתים פעמיים, ופעמיים הביס אותם דוד: פעם בבעל פרצים ופעם אחרי ש״קול צעדה בראשי הבכאים״ סימן לו לתקוף. ישעיהו מזכיר אותו כשדה דגן פורה, וחפירות לאורכו חשפו כפרים כנעניים, חוות ווילה רומית.",
+    "setting": "העמק מתחיל בדרום־מערב ירושלים, באזור המושבה הגרמנית שרחוב ״עמק רפאים״ שבה נקרא על שמו, ויורד מערבה ודרומה דרך מלחה ומתחת לכפרים אל־ולג׳ה ובתיר, עד שהוא מתחבר לנחל שורק. מסילת הרכבת הישנה מיפו לירושלים, שנפתחה ב־1892, עוברת לכל אורכו. לאורך העמק נובעים מעיינות כמו עין יעל ועין חניה, ועל מדרונותיו טרסות חקלאיות עתיקות, שחלקן מעובדות עד היום. בספר יהושע הוא נזכר כנקודה בגבול יהודה ובנימין. כיום חלקו העליון הוא פארק עמק רפאים, ובו שבילים, גן החיות התנ״כי ומוזיאון עין יעל.",
+    "peoples": [
+      {
+        "name": "כפריים בתקופת הברונזה",
+        "text": "כבר בסוף תקופת הברונזה הקדומה, לפני יותר מ־4,000 שנה, קם כפר על מדרון ליד מנחת של היום, ואחריו, בתקופת הברונזה התיכונה, כפר כנעני חדש על אותם יסודות. תושביו גידלו דגן, עדשים, זיתים וענבים בחלקות קטנות, רעו צאן ועזים וצדו חיות בר. היה להם מקדש בחצר מוקפת חומה. ייתכן ששם המקום הקדום, מנחת, נשמר בשם הכפר מלחה."
+      },
+      {
+        "name": "פלשתים ובני יהודה",
+        "text": "בימי דוד היה העמק דרך הכניסה של הפלשתים מן החוף אל לב ההר. לפי ספר שמואל הם ״נטשו בעמק רפאים״, כלומר פשטו בו, ומחנה שלהם חנה שם כשדוד ישב במערת עדולם. אחר כך עבדו בני יהודה את אדמתו: בחוות כמו א־ראס חצבו טרסות וגידלו גפנים ודגן, וישעיהו מתאר את מלקטי השיבולים שבעמק כמראה מוכר לשומעיו."
+      },
+      {
+        "name": "רומאים ויהודי ביתר",
+        "text": "בימי הרומאים קמו לאורך העמק אחוזות. בעין יעל נבנתה במאות ה־2 וה־3 לספירה וילה עם פסיפסים ובית מרחץ. מעל העמק, ליד בתיר, נמצאת חורבת אל־יהוד, שמזוהה עם ביתר, מבצרו האחרון של בר כוכבא, שנפל בשנת 135 לספירה. במעיין עין חניה עומדת נימפאה רומית, ונוצרים אתיופים מזהים אותו עם המקום שבו הוטבל הסריס האתיופי."
+      },
+      {
+        "name": "כפרים, רכבת ושכונות",
+        "text": "בתקופה העות׳מאנית ישבו מעל העמק כפרים ערביים, ובהם מלחה, אל־ולג׳ה ובתיר, שהטרסות שלו הוכרזו ב־2014 כאתר מורשת עולמית. ב־1873 ייסדו הטמפלרים הגרמנים את המושבה הגרמנית בראש העמק, וב־1892 נפתחה מסילת הברזל. בין 1948 ל־1967 עבר לאורכו קו שביתת הנשק, וכיום חלקו העליון מוקף שכונות ירושלמיות כמו מלחה וקטמון."
+      }
+    ],
+    "population": "העמק עצמו מעולם לא היה עיר, אלא רצף של כפרים, חוות ושדות. בכפר הכנעני מתקופת הברונזה התיכונה, שהשתרע על כ־50 דונם, נחשפו כ־30 בתים, וייתכן שחיו בו כמה מאות איש; זו הערכה בלבד. בימי דוד חיו בירושלים כולה, לפי ההערכות, רק כ־2,000 עד 5,000 איש, ולכן מחנה פלשתי בעמק היה איום של ממש. כיום חלקו העליון בתוך העיר, וחלקו התחתון ירוק וכפרי.",
+    "archaeology": [
+      {
+        "title": "הכפרים הכנעניים של מנחת",
+        "text": "ב־1987–1990, לפני הקמת גן החיות התנ״כי ובסביבת קניון מלחה, חפרה רשות העתיקות על מדרונות העמק ומצאה שני כפרים גדולים, זה על גבי זה. הראשון נוסד בסוף תקופת הברונזה הקדומה, בערך 2200–2000 לפנה״ס, והשני בתקופת הברונזה התיכונה, בערך 1750–1550 לפנה״ס. בכפר המאוחר נמצא מקדש בגודל של כ־10 על 6 מטר עם מחסן לכלי פולחן. שרידי הבתים נשמרו בתוך גן החיות."
+      },
+      {
+        "title": "הווילה הרומית בעין יעל",
+        "text": "ליד מעיין עין יעל נחפרה וילה רומית מהמאות ה־2 וה־3 לספירה, עם רצפות פסיפס, ובהן פסיפס עם ראש מדוזה, וטיח מצויר על הקירות. היה בה בית מרחץ ששימש עד ראשית התקופה המוסלמית, ובסמוך נמצאו גם שרידים מימי הצלבנים. כיום האתר הוא ״מוזיאון חי״, שבו מבקרים לומדים חקלאות ומלאכות עתיקות."
+      },
+      {
+        "title": "טרסות וחוות",
+        "text": "על מדרון מעל מלחה, באתר א־ראס, נחשפה חווה חקלאית מתקופת הברזל, מהמאות ה־8 וה־7 לפנה״ס, עם טרסות שנבנו כדי לעבד את ההר. טרסות כאלה מעצבות את נוף העמק עד היום, בעיקר סביב בתיר ואל־ולג׳ה, שם הן עדיין מעובדות. רוב האתרים בעמק לא נחפרו מעולם, וסקרים מצאו בו עשרות אתרים מתקופות שונות."
+      }
+    ]
+  },
+  "en": {
+    "summary": "The Valley of Rephaim runs southwest from Jerusalem and has served since ancient times as a road from the lowlands up into the Judean hills. Early in David's reign the Philistines spread out in it twice, and twice David beat them: once at Baal-perazim, and once after \"the sound of marching in the tops of the balsam trees\" gave him the signal to attack. Isaiah remembers it as a rich grain field, and digs along it have found Canaanite villages, farms and a Roman villa.",
+    "setting": "The valley begins in southwest Jerusalem, around the German Colony, whose Emek Refaim Street is named after it, and descends west and south past Malha and below the villages of al-Walaja and Battir until it joins the Sorek. The old Jaffa–Jerusalem railway, opened in 1892, runs its whole length. Springs such as Ein Yael and Ein Haniya rise along it, and ancient farming terraces climb its slopes, some still tilled today. In Joshua it marks a point on the border of Judah and Benjamin. Today its upper part is the Rephaim Valley Park, with trails, the Biblical Zoo and the Ein Yael museum.",
+    "peoples": [
+      {
+        "name": "Bronze Age villagers",
+        "text": "As early as the end of the Early Bronze Age, more than 4,000 years ago, a village stood on a slope near today's Manahat, and later, in the Middle Bronze Age, a new Canaanite village rose on the same foundations. Its people grew grain, lentils, olives and grapes on small plots, herded sheep and goats and hunted game. They had a temple in a walled courtyard. The ancient name, Manahat, may survive in that of the Arab village of Malha."
+      },
+      {
+        "name": "Philistines and Judahites",
+        "text": "In David's day the valley was the Philistines' way in from the coast to the heart of the hills. Samuel says they \"spread out in the Valley of Rephaim\", and a Philistine camp lay there while David was at the cave of Adullam. Later Judahites farmed it: at farmsteads such as er-Ras they built terraces and grew vines and grain, and Isaiah describes gleaners gathering ears in the valley as a sight his listeners knew well."
+      },
+      {
+        "name": "Romans and the Jews of Betar",
+        "text": "In Roman times estates sprang up along the valley. At Ein Yael a villa with mosaics and a bathhouse was built in the 2nd–3rd centuries CE. Above the valley near Battir is Khirbet al-Yahud, identified with Betar, Bar Kokhba's last stronghold, which fell in 135 CE. A Roman fountain house stands at the Ein Haniya spring, which Ethiopian Christians identify with the place where Philip baptised the Ethiopian official."
+      },
+      {
+        "name": "Villages, a railway and neighbourhoods",
+        "text": "In Ottoman times Arab villages overlooked the valley, among them Malha, al-Walaja and Battir, whose terraces became a World Heritage Site in 2014. In 1873 the German Templers founded the German Colony at the valley's head, and in 1892 the railway opened. From 1948 to 1967 the armistice line ran along it, and today Jerusalem neighbourhoods such as Malha and Katamon surround its upper part."
+      }
+    ],
+    "population": "The valley was never a town, only a string of villages, farms and fields. In the Middle Bronze Age Canaanite village, which spread over about 5 hectares, some 30 houses were uncovered, and perhaps a few hundred people lived there; that is only an estimate. In David's time all of Jerusalem probably held just 2,000–5,000 people, so a Philistine camp in the valley was a real threat. Today the upper valley lies inside the city, while its lower reaches are green and rural.",
+    "archaeology": [
+      {
+        "title": "The Canaanite villages of Manahat",
+        "text": "In 1987–1990, before the Biblical Zoo was built and around the Malha mall, the Israel Antiquities Authority dug on the valley's slopes and found two large villages, one on top of the other. The first was founded at the end of the Early Bronze Age, around 2200–2000 BCE, the second in the Middle Bronze Age, around 1750–1550 BCE. The later village had a temple about 10 by 6 m with a storeroom for cult vessels. Its houses are preserved inside the zoo."
+      },
+      {
+        "title": "The Roman villa at Ein Yael",
+        "text": "Beside the Ein Yael spring, archaeologists excavated a Roman villa of the 2nd–3rd centuries CE, with mosaic floors, including one with the head of Medusa, and painted plaster walls. Its bathhouse stayed in use until the early Islamic period, and Crusader-era remains were found nearby. Today the site is a \"living museum\" where visitors learn ancient farming and crafts."
+      },
+      {
+        "title": "Terraces and farmsteads",
+        "text": "On a slope above Malha, at the site of er-Ras, an Iron Age farm of the 8th–7th centuries BCE was uncovered, with terraces built to farm the hillside. Terraces like these still shape the valley's landscape, especially around Battir and al-Walaja, where they are still worked. Most sites in the valley have never been excavated, though surveys have recorded dozens from many periods."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "philistia",
+      "name": { "he": "ערי הפלשתים", "en": "The Philistine cities" },
+      "period": { "he": "סוף המאה ה־11 לפנה״ס", "en": "late 11th century BCE" },
+      "note": { "he": "הפלשתים פשטו בעמק וחנו בו, אבל לא החזיקו בו לאורך זמן.", "en": "The Philistines raided and camped in the valley but did not hold it for long." }
+    },
+    {
+      "realm": "united",
+      "name": { "he": "הממלכה המאוחדת (דוד ושלמה)", "en": "United Monarchy (David and Solomon)" },
+      "period": { "he": "בערך 1000–930 לפנה״ס", "en": "c. 1000–930 BCE" },
+      "note": { "he": "שני הניצחונות בעמק פתחו לדוד את הדרך מירושלים אל השפלה; היקף ממלכתו שנוי במחלוקת.", "en": "The two victories in the valley opened David's way from Jerusalem to the lowlands; how large his kingdom was is debated." }
+    },
+    {
+      "realm": "judah",
+      "name": { "he": "ממלכת יהודה", "en": "Kingdom of Judah" },
+      "period": { "he": "בערך 930–586 לפנה״ס", "en": "c. 930–586 BCE" },
+      "note": { "he": "העמק היה חלק מארץ החקלאות שסביב ירושלים.", "en": "The valley was part of the farmland around Jerusalem." }
+    },
+    {
+      "realm": null,
+      "name": { "he": "האימפריה הרומית", "en": "The Roman Empire" },
+      "period": { "he": "63 לפנה״ס – המאה ה־4 לספירה", "en": "63 BCE – 4th century CE" },
+      "note": { "he": "בימיה נבנתה הווילה בעין יעל, ומעל העמק נפלה ביתר בשנת 135.", "en": "In this age the Ein Yael villa was built, and above the valley Betar fell in 135." }
+    }
+  ],
+  "timeline": [
+    { "year": -2100, "text": { "he": "בערך 2200–2000 לפנה״ס: כפר ראשון קם על מדרון העמק ליד מנחת.", "en": "c. 2200–2000 BCE: a first village rises on the valley slope near Manahat." } },
+    { "year": -1650, "text": { "he": "בערך 1750–1550 לפנה״ס: כפר כנעני עם מקדש נבנה על יסודות הכפר הקודם.", "en": "c. 1750–1550 BCE: a Canaanite village with a temple is built on the earlier village's foundations." } },
+    { "year": -1000, "text": { "he": "בערך 1000 לפנה״ס (לפי המסורת): דוד מביס את הפלשתים פעמיים בעמק רפאים.", "en": "c. 1000 BCE (traditional dating): David defeats the Philistines twice in the Valley of Rephaim." } },
+    { "year": -700, "text": { "he": "המאות ה־8 וה־7 לפנה״ס: חוות עם טרסות במדרונות; ישעיהו מזכיר את מלקטי השיבולים בעמק.", "en": "8th–7th centuries BCE: terraced farms on the slopes; Isaiah speaks of gleaners in the valley." } },
+    { "year": 135, "text": { "he": "ביתר, מעל העמק, נופלת בידי הרומאים, ומרד בר כוכבא מסתיים.", "en": "Betar, above the valley, falls to the Romans, ending the Bar Kokhba revolt." } },
+    { "year": 250, "text": { "he": "המאות ה־2 וה־3 לספירה: וילה רומית עם פסיפסים בעין יעל.", "en": "2nd–3rd centuries CE: a Roman villa with mosaics at Ein Yael." } },
+    { "year": 1892, "text": { "he": "מסילת הברזל מיפו לירושלים נפתחת לאורך העמק.", "en": "The Jaffa–Jerusalem railway opens along the valley." } },
+    { "year": 1987, "text": { "he": "מתחילות החפירות הגדולות בכפרים הכנעניים של מנחת.", "en": "Large-scale excavations begin at the Canaanite villages of Manahat." } }
+  ],
+  "mentions": [
+    { "ref": "Joshua 15:8", "note": { "he": "גבול יהודה עובר ״בקצה עמק רפאים צפונה״.", "en": "Judah's border passes \"at the northern end of the Valley of Rephaim\"." } },
+    { "ref": "Joshua 18:16", "note": { "he": "גבול בנימין יורד אל ההר ״אשר בעמק רפאים צפונה״.", "en": "Benjamin's border runs down to the hill \"at the north of the Valley of Rephaim\"." } },
+    { "ref": "II Samuel 5:18", "note": { "he": "״ופלשתים באו וינטשו בעמק רפאים״.", "en": "\"The Philistines came and spread out in the Valley of Rephaim.\"" } },
+    { "ref": "II Samuel 5:20", "note": { "he": "דוד מכה אותם וקורא למקום ״בעל פרצים״: ״פרץ ה׳ את איבי״.", "en": "David strikes them and names the place Baal-perazim: \"The LORD has burst through my enemies.\"" } },
+    { "ref": "II Samuel 5:22", "note": { "he": "הפלשתים חוזרים ושוב פושטים בעמק רפאים.", "en": "The Philistines come back and spread out in the valley again." } },
+    { "ref": "II Samuel 5:23", "note": { "he": "הפעם דוד מקיף אותם ותוקף ״ממול בכאים״.", "en": "This time David circles behind them and attacks \"opposite the balsam trees\"." } },
+    { "ref": "II Samuel 5:25", "note": { "he": "דוד מכה את הפלשתים ״מגבע עד בואך גזר״.", "en": "David strikes the Philistines \"from Geba all the way to Gezer\"." } },
+    { "ref": "II Samuel 23:13", "note": { "he": "שלושה מגיבורי דוד יורדים אליו למערת עדולם, ״וחית פלשתים חנה בעמק רפאים״.", "en": "Three of David's warriors come to him at Adullam while a Philistine band is camped in the Valley of Rephaim." } },
+    { "ref": "Isaiah 17:5", "note": { "he": "״והיה כמלקט שבלים בעמק רפאים״.", "en": "\"It shall be like one gleaning ears of grain in the Valley of Rephaim.\"" } },
+    { "ref": "I Chronicles 11:15", "note": { "he": "דברי הימים חוזר על סיפור הגיבורים: ״ומחנה פלשתים חנה בעמק רפאים״.", "en": "Chronicles retells the warriors' story: \"the Philistine army was camped in the Valley of Rephaim\"." } },
+    { "ref": "I Chronicles 14:9", "note": { "he": "״ופלשתים באו ויפשטו בעמק רפאים״.", "en": "\"The Philistines came and made a raid in the Valley of Rephaim.\"" } }
+  ],
+  "images": [
+    { "file": "File:131936 nahal refaim valley park PikiWiki Israel.jpg", "kind": "site", "caption": { "he": "פארק עמק רפאים בירושלים", "en": "The Rephaim Valley Park in Jerusalem" } },
+    { "file": "File:Ein-Yael-600.jpg", "kind": "site", "caption": { "he": "עין יעל בעמק רפאים", "en": "Ein Yael in the Valley of Rephaim" } },
+    { "file": "File:עין אל-חניה alHanyah.JPG", "kind": "site", "caption": { "he": "מעיין עין חניה והנימפאה הרומית שלו", "en": "The Ein Haniya spring and its Roman fountain house" } },
+    { "file": "File:Ein-Yael-541.jpg", "kind": "site", "caption": { "he": "שרידי הווילה הרומית בעין יעל", "en": "Remains of the Roman villa at Ein Yael" } },
+    { "file": "File:Roman Medusa Mosaic at Ein Yael -3 (8118671449).jpg", "kind": "artifact", "caption": { "he": "פסיפס מדוזה מהווילה הרומית בעין יעל, המאות ה־2–3 לספירה", "en": "Medusa mosaic from the Roman villa at Ein Yael, 2nd–3rd century CE" } },
+    { "file": "File:Weltchronik Fulda Aa88 265r detail.jpg", "kind": "art", "caption": { "he": "דוד מביס את הפלשתים, איור בכתב יד של ״כרוניקת העולם״, פראג, המאה ה־14", "en": "David defeats the Philistines, miniature in a World Chronicle manuscript, Prague, 14th century" } }
+  ],
+  "wiki": { "he": "עמק רפאים", "en": "Valley of Rephaim" },
+  "related": ["hinnom", "cityofdavid", "bethlehem", "adullam", "gezer", "gibeon"],
+  "sources": [
+    { "title": "Valley of Rephaim (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Valley_of_Rephaim" },
+    { "title": "Nahal Refa'im: Canaanite Bronze Age villages near Jerusalem (Jewish Virtual Library)", "url": "https://www.jewishvirtuallibrary.org/jsource/Archaeology/Nahal_Refaiim.html" },
+    { "title": "Refaim Valley: the Palestinian villages of Al Wallaja and Battir, archaeological view (Emek Shaveh)", "url": "https://emekshaveh.org/en/?p=532" },
+    { "title": "II Samuel 5 (Sefaria)", "url": "https://www.sefaria.org/II_Samuel.5" },
+    { "title": "Isaiah 17 (Sefaria)", "url": "https://www.sefaria.org/Isaiah.17" }
+  ]
+}

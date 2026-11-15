@@ -1,6 +1,7 @@
 import { findBook, parseRef, refLabel } from "../shared/books.ts";
-import { findPlace } from "../shared/places.ts";
+import { findPlace, PLACES } from "../shared/places.ts";
 import type { RoomInfo } from "../shared/protocol.ts";
+import { langOf, placeBody, placeJsonLd, placeTitle, placeUrl, robots, sitemap, type BuiltPlace } from "./seo.ts";
 
 export { Hub } from "./hub.ts";
 
@@ -62,6 +63,14 @@ interface Meta {
   title: string;
   description: string;
   image?: { url: string; width?: number; height?: number };
+  /** For search engines: the one address of this page, its other-language twin, and whether to list it at all. */
+  canonical?: string;
+  alternates?: { lang: string; href: string }[];
+  noindex?: boolean;
+  jsonld?: object;
+  /** HTML put inside #root until the app starts (the place page as text). */
+  body?: string;
+  lang?: "he" | "en";
 }
 
 const HOME: Meta = {
@@ -72,15 +81,46 @@ const HOME: Meta = {
 
 const clip = (s: string, n: number) => ([...s].length > n ? `${[...s].slice(0, n - 1).join("").trimEnd()}…` : s);
 
+async function builtPlace(url: URL, env: Env, id: string): Promise<BuiltPlace | null> {
+  const res = await env.ASSETS.fetch(new Request(`${url.origin}/data/places/${id}.json`));
+  if (!res.ok || !(res.headers.get("content-type") ?? "").includes("json")) return null;
+  return (await res.json()) as BuiltPlace;
+}
+
+const twins = (origin: string, id: string) => [
+  { lang: "he", href: placeUrl(origin, id, "he") },
+  { lang: "en", href: placeUrl(origin, id, "en") },
+  { lang: "x-default", href: placeUrl(origin, id, "he") },
+];
+
 async function metaFor(url: URL, env: Env): Promise<Meta> {
   const p = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  // A place's own page, in Hebrew (/place/gilboa) or English (/place/gilboa?lang=en).
+  if (p[0] === "place" && p[1]) {
+    const place = findPlace(p[1]);
+    const d = place && (await builtPlace(url, env, place.id));
+    if (!place || !d) return { ...HOME, noindex: true };
+    const lang = langOf(url);
+    const cover = d.images.find((i) => i.kind === "site" && i.thumb) ?? d.images.find((i) => i.thumb);
+    return {
+      title: placeTitle(place, lang),
+      description: clip(d[lang].summary, 200),
+      image: cover?.thumb ? { url: cover.thumb, width: cover.width, height: cover.height } : undefined,
+      canonical: placeUrl(url.origin, place.id, lang),
+      alternates: twins(url.origin, place.id),
+      jsonld: placeJsonLd(place, d, lang, url.origin),
+      body: placeBody(place, d, lang),
+      lang,
+    };
+  }
   if (p[0] === "room" && p[1] && /^[\w-]{1,40}$/.test(p[1])) {
     const res = await env.HUB.get(env.HUB.idFromName("ohel")).fetch(`https://hub/api/rooms/${p[1]}`);
-    if (!res.ok) return HOME;
+    if (!res.ok) return { ...HOME, noindex: true };
     const r = (await res.json()) as RoomInfo;
     const he = r.title_he || r.title;
     const ref = r.ref ? `${refLabel(r.ref, "he")} · ` : "";
     return {
+      noindex: true,
       title: `${clip(he, 70)} · אוהל`,
       description: `${ref}בואו לדבר על זה ביחד, עם הפרק ומפת לוויין. ${r.title_en ? `${r.title_en}: ` : ""}come talk it through on Ohel.`,
     };
@@ -89,19 +129,19 @@ async function metaFor(url: URL, env: Env): Promise<Meta> {
     const place = findPlace(p[1]);
     if (place) {
       const meta: Meta = { title: `${place.he} · ${place.en} · על המפה באוהל`, description: clip(place.story.he, 180) };
-      // A place with a deep page shares its own photo and summary.
-      const res = await env.ASSETS.fetch(new Request(`${url.origin}/data/places/${place.id}.json`));
-      if (res.ok && (res.headers.get("content-type") ?? "").includes("json")) {
-        const d = (await res.json()) as { he?: { summary?: string }; images?: { kind: string; thumb?: string; width?: number; height?: number }[] };
-        if (d.he?.summary) meta.description = clip(d.he.summary, 200);
-        const cover = d.images?.find((i) => i.kind === "site" && i.thumb) ?? d.images?.find((i) => i.thumb);
+      // A place with a deep page shares its own photo and summary; search engines are sent to that page.
+      const d = await builtPlace(url, env, place.id);
+      if (d) {
+        meta.description = clip(d.he.summary, 200);
+        const cover = d.images.find((i) => i.kind === "site" && i.thumb) ?? d.images.find((i) => i.thumb);
         if (cover?.thumb) meta.image = { url: cover.thumb, width: cover.width, height: cover.height };
+        meta.canonical = placeUrl(url.origin, place.id, langOf(url));
       }
       return meta;
     }
     return { title: "המפה · The map · אוהל", description: HOME.description };
   }
-  if (p[0] === "map") return { title: "מקומות התנ״ך על מפת לוויין · אוהל", description: "הר הגלבוע, עמק האלה, הכרמל ועוד 56 מקומות, בתלת־ממד. Bible places on a 3D satellite map." };
+  if (p[0] === "map") return { title: "מקומות התנ״ך על מפת לוויין · אוהל", description: `הר הגלבוע, עמק האלה, הכרמל ועוד ${PLACES.length - 3} מקומות, בתלת־ממד. ${PLACES.length} Bible places on a 3D satellite map.` };
   if (p[0] === "read") {
     const r = parseRef(`${(p[1] ?? "").replace(/_/g, " ")} ${Number(p[2]) || 1}`);
     if (r) {
@@ -112,6 +152,7 @@ async function metaFor(url: URL, env: Env): Promise<Meta> {
       };
     }
   }
+  if (p[0] === "me" || p[0] === "admin") return { ...HOME, noindex: true };
   if (p[0] === "about") return { title: "כללי האוהל ופרטיות · House rules & privacy · אוהל", description: "מה מותר, מה לא, ומה נשמר עליך (כמעט כלום). What's welcome, what isn't, and what we keep about you (almost nothing)." };
   return HOME;
 }
@@ -135,12 +176,21 @@ function withMeta(res: Response, m: Meta, url: URL, env: Env) {
     ["property", "og:locale:alternate", "en_US"],
     ["name", "twitter:card", "summary_large_image"],
   ];
+  if (m.noindex) tags.push(["name", "robots", "noindex"]);
+  const verify: string = env.GOOGLE_SITE_VERIFICATION;
+  if (verify && url.pathname === "/") tags.push(["name", "google-site-verification", verify]);
   let head = tags.map(([k, n, v]) => `<meta ${k}="${n}" content="${attr(v)}">`).join("\n    ");
+  if (m.canonical) head += `\n    <link rel="canonical" href="${attr(m.canonical)}">`;
+  for (const a of m.alternates ?? []) head += `\n    <link rel="alternate" hreflang="${a.lang}" href="${attr(a.href)}">`;
+  if (m.jsonld) head += `\n    <script type="application/ld+json">${JSON.stringify(m.jsonld).replace(/</g, "\\u003c")}</script>`;
   const token: string = env.ANALYTICS_TOKEN;
   if (token && !local) {
     head += `\n    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${attr(JSON.stringify({ token }))}'></script>`;
   }
-  return new HTMLRewriter()
+  let rw = new HTMLRewriter();
+  if (m.lang === "en") rw = rw.on("html", { element: (e) => void (e.setAttribute("lang", "en"), e.setAttribute("dir", "ltr")) });
+  if (m.body) rw = rw.on("#root", { element: (e) => void e.setInnerContent(m.body!, { html: true }) });
+  return rw
     .on("title", { element: (e) => void e.setInnerContent(m.title) })
     .on('meta[name="description"]', { element: (e) => void e.setAttribute("content", m.description) })
     .on("head", { element: (e) => void e.append(`    ${head}\n  `, { html: true }) })
@@ -151,6 +201,8 @@ export default {
   async fetch(req, env, ctx): Promise<Response> {
     const url = new URL(req.url);
     if (url.pathname === "/api/text") return chapterText(req, ctx);
+    if (url.pathname === "/sitemap.xml") return sitemap(url.origin);
+    if (url.pathname === "/robots.txt") return robots(url.origin);
     if (url.pathname.startsWith("/api/")) {
       const headers = new Headers(req.headers);
       headers.set("x-ohel-ip", req.headers.get("cf-connecting-ip") ?? "");

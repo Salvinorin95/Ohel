@@ -239,6 +239,9 @@ export function translate(lang: Lang, key: Key): string {
 }
 
 export function detectLang(): Lang {
+  // A link can ask for a language (/place/gilboa?lang=en); that wins and is remembered.
+  const asked = new URLSearchParams(location.search).get("lang");
+  if (asked === "he" || asked === "en") return asked;
   const saved = localStorage.getItem("ohel.lang");
   if (saved === "he" || saved === "en") return saved;
   return navigator.languages?.some((l) => l.startsWith("he") || l.startsWith("iw")) ? "he" : "en";

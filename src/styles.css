@@ -419,6 +419,8 @@ select option { background: #1a0d33; }
   text-shadow: 0 1px 3px #000;
 }
 .map.labels .pin-label, .pin.on .pin-label, .pin:hover .pin-label { display: block; }
+.map.labels .pin.nolabel:not(.on):not(:hover) .pin-label { display: none; }
+.pin.crowded:not(.on) { visibility: hidden; pointer-events: none; }
 .maplibregl-ctrl-group { background: var(--glass-strong) !important; border: 1px solid var(--line) !important; border-radius: 14px !important; overflow: hidden; }
 .maplibregl-ctrl-group button + button { border-top: 1px solid var(--line) !important; }
 .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1); }
@@ -570,3 +572,14 @@ select option { background: #1a0d33; }
   .realm-chip { width: calc(100% - 24px); flex-wrap: wrap; row-gap: 6px; }
   .realm-chip > div { flex: 1 1 60%; }
 }
+
+/* The place page as plain HTML, sent with /place/<id> for search engines and shown until the app starts. */
+.ssr-place { max-width: 760px; margin: 0 auto; padding: 28px 20px 60px; line-height: 1.7; color: #ece4ff; font-family: var(--ui); }
+.ssr-place h1 { font-family: var(--scripture); font-size: 2.2rem; margin: 8px 0 12px; }
+.ssr-place h2 { font-size: 1.2rem; margin: 26px 0 8px; color: var(--cyan); }
+.ssr-place h3 { font-size: 1rem; margin: 14px 0 4px; }
+.ssr-place a { color: var(--cyan); }
+.ssr-place img { max-width: 100%; height: auto; border-radius: 14px; }
+.ssr-place figcaption, .ssr-crumbs { font-size: 0.85rem; color: var(--muted); }
+.ssr-lede { font-size: 1.1rem; }
+a.chip { text-decoration: none; color: inherit; }

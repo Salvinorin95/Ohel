@@ -214,9 +214,17 @@ export function PlacePage({ id, onClose, onShowRealm, onOpenRef, onSelectPlace }
                 {info.related.map((r) => {
                   const p = findPlace(r);
                   return p ? (
-                    <button key={r} className="chip chip-place" onClick={() => onSelectPlace(r)}>
+                    <a
+                      key={r}
+                      href={`/place/${r}`}
+                      className="chip chip-place"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onSelectPlace(r);
+                      }}
+                    >
                       📍 {p[lang]}
-                    </button>
+                    </a>
                   ) : null;
                 })}
               </div>

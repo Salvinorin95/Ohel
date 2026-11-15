@@ -1,0 +1,416 @@
+{
+  "id": "tyre",
+  "he": {
+    "summary": "צור הייתה הגדולה בערי פיניקיה: מבצר של סוחרים ויורדי ים על אי מול חופי לבנון של היום. חירם מלך צור שלח ארזים ובעלי מלאכה לדוד ולשלמה, ובדי הארגמן והאוניות שלה נודעו בכל הים התיכון. ישעיהו, יחזקאל ועמוס קוננו על גאוותה וניבאו את נפילתה, ובשנת 332 לפנה״ס כבש אותה אלכסנדר הגדול אחרי שבנה סוללה אל האי.",
+    "setting": "צור שוכנת בדרום חוף לבנון, כ־80 ק״מ דרומית לביירות וכ־20 ק״מ מגבול ישראל. בימי קדם עמדה העיר עצמה על אי סלעי, כ־500–700 מטר מהחוף, ולו שני נמלים: ״הצידוני״ בצפון ו״המצרי״ בדרום. ביבשה שכנו הפרבר אושו, שהיוונים קראו לו ״צור הישנה״, והמעיינות של ראס אל־עין, שסיפקו לעיר מים. הסוללה של אלכסנדר והחול שהצטבר לצדה במשך מאות שנים הפכו את האי לחצי אי. כיום מקיפה העיר סור את השרידים: אתר אל־מינה על האי הקדום, ובצוואר היבשה בית הקברות אל־בס עם קשת רומית ואחד מהיפודרומים הגדולים בעולם הרומי.",
+    "peoples": [
+      {
+        "name": "הכנענים של תקופת הברונזה",
+        "text": "בתקופת הברונזה הייתה צור עיר כנענית על האי שלה, ותיקה כבר כשפרעוני מצרים שלטו בחוף. במכתבי אל־עמארנה מהמאה ה־14 לפנה״ס מבקש מלכה, אבי־מלכו, את עזרת פרעה מול צידון ומתלונן שאין באי מים ועצים. הרודוטוס שמע מכוהני העיר שהיא נוסדה כ־2,300 שנה לפני ביקורו, כלומר בסביבות 2750 לפנה״ס."
+      },
+      {
+        "name": "הסוחרים הפיניקים",
+        "text": "הצורים קראו לעצמם כנענים, והיוונים כינו אותם פיניקים, כנראה על שם צבע הארגמן שהפיקו מחלזונות הארגמון. הם דיברו שפה כנענית קרובה לעברית, עבדו למלקרת, ״מלך העיר״, ולעשתרת, והפליגו עד קפריסין, צפון אפריקה וספרד. הם ייסדו מושבות כמו כיתיון, אוטיקה, קרתגו וגדיר, היא קדיס של היום."
+      },
+      {
+        "name": "שכנים של ישראל",
+        "text": "היחסים עם ישראל היו קרובים ומעשיים: לצור היו עצים, אוניות ובעלי מלאכה, ולישראל היו חיטה ושמן זית. חירם החליף עם שלמה ארזים בתבואה, ומלך צורי מאוחר יותר, אתבעל, השיא את בתו איזבל לאחאב. עמוס מזכיר ״ברית אחים״ שצור הפרה, ובימי נחמיה מכרו סוחרים צורים דגים בירושלים בשבת."
+      },
+      {
+        "name": "יוונים ורומאים",
+        "text": "אחרי אלכסנדר נבנתה צור מחדש כעיר הלניסטית, ותחת שלטון רומא שגשגה, עם מרחצאות, רחובות מעוטרי עמודים, קשת ניצחון והיפודרום עצום. היא המשיכה לטבוע מטבעות כסף, ו״שקל צורי״ שימש לימים גם לתשלום מחצית השקל במקדש בירושלים. הנצרות הגיעה אליה מוקדם, ולימים הייתה צור מושב של ארכיבישוף."
+      }
+    ],
+    "population": "לא שרד מפקד. האי הקדום היה קטן לעיר כה מפורסמת, ולכן הבתים בו נבנו לגובה: הגאוגרף היווני סטרבון כותב שהיו בהם יותר קומות מאשר בבתי רומא. כשכבש אלכסנדר את העיר ב־332 לפנה״ס, מספר ההיסטוריון אריאנוס על כ־8,000 הרוגים ו־30,000 שנמכרו לעבדות, ולפי סופרים קדומים נשים וילדים רבים פונו לפני כן לקרתגו. המספרים מרמזים על עשרות אלפי תושבים, עיר גדולה מאוד לזמנה. ירושלים מנתה אז, לפי רוב ההערכות, אלפים ספורים בלבד.",
+    "archaeology": [
+      {
+        "title": "האי והנמלים",
+        "text": "הנזיר הישועי אנטואן פואידבאר סקר את נמלי צור מהאוויר ומתחת למים בשנים 1934–1936. מחקרים גאו־ארכאולוגיים חדשים יותר, שקדחו גלעינים בקרקע, איתרו את הנמלים הפיניקיים הקבורים מתחת לעיר של היום, והראו איך החול שנערם לצד הסוללה של אלכסנדר, שנבנתה על שרטון רדוד, הפך אותה במשך מאות שנים לצוואר יבשה רחב שעליו עומדת היום חלק מהעיר."
+      },
+      {
+        "title": "בית הקברות הפיניקי באל־בס",
+        "text": "ב־1990 התגלה במקרה בית קברות פיניקי של שריפת מתים, וב־1997–2008 חפרה בו משלחת ספרדית בראשות מריה אאוחניה אאובט מאוניברסיטת פומפאו פברה. נמצאו בו כ־320 כדים, מסוף המאה ה־10 ועד המאה ה־7 לפנה״ס בערך. לרוב הונחו שני כדים זה לצד זה, אחד לאפר ואחד לעצמות, ולצדם כלים קטנים, ולעתים קמע בצורת חיפושית. זהו בית הקברות הפיניקי הצפוף ביותר שידוע בלבנט."
+      },
+      {
+        "title": "הקשת, בית הקברות וההיפודרום",
+        "text": "מוריס שהאב, ראש רשות העתיקות של לבנון, חשף מ־1946 ואילך את השרידים הרומיים והביזנטיים באל־בס: דרך מרוצפת שלצדה מאות ארונות קבורה מאבן ומשיש, קשת ניצחון משולשת מהמאה ה־2 לספירה ששוחזרה בעת החדשה, אמת מים, והיפודרום באורך של כ־480 מטר שהכיל עשרות אלפי צופים. האתרים נכללו ב־1984 ברשימת אתרי המורשת העולמית של אונסק״ו."
+      },
+      {
+        "title": "אל־מינה, העיר שעל האי",
+        "text": "באתר אל־מינה, על האי הקדום, נחשפו מרחצאות רומיים, רחובות מעוטרי עמודים ושכונות מגורים, וחלק מהעמודים שקועים היום בים ליד הנמל הדרומי. השכבות הפיניקיות, שעליהן עומדת העיר מימי הנביאים, קבורות עמוק מתחתן ונחשפו רק בחלקן. מאז 2008 חופרת שם משלחת לבנונית־צרפתית מאוניברסיטת ליון."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Tyre was the greatest of the Phoenician cities, an island stronghold of merchants and seafarers off the coast of today's Lebanon. Its king Hiram sent cedar and craftsmen to David and Solomon, and its purple cloth and ships were famous across the Mediterranean. Isaiah, Ezekiel and Amos lamented its pride and foretold its fall, and in 332 BCE Alexander the Great took it by building a causeway out to the island.",
+    "setting": "Tyre lies on Lebanon's southern coast, about 80 km south of Beirut and some 20 km from the Israeli border. In antiquity the city proper stood on an island 500–700 m offshore, with a northern “Sidonian” harbour and a southern “Egyptian” one. On the mainland lay its suburb Ushu, which the Greeks called Old Tyre, and the springs of Ras al-Ain that supplied the city's water. Alexander's causeway and the sand that built up beside it over centuries turned the island into a peninsula. Today the town of Sour wraps around the ruins: Al Mina on the old island and, on the isthmus, the Al-Bass necropolis with a Roman arch and one of the largest hippodromes of the Roman world.",
+    "peoples": [
+      {
+        "name": "Bronze Age Canaanites",
+        "text": "In the Bronze Age Tyre was a Canaanite city on its island, already old when Egypt's pharaohs ruled the coast. In the Amarna letters of the 14th century BCE its king, Abi-Milku, asks Pharaoh for help against Sidon and complains that his island lacks water and wood. Herodotus was told by Tyre's priests that the city had been founded 2,300 years before his visit, around 2750 BCE."
+      },
+      {
+        "name": "Phoenician merchants",
+        "text": "The Tyrians called themselves Canaanites; the Greeks called them Phoenicians, probably after the purple dye they made from murex sea snails. They spoke a Canaanite language close to Hebrew, worshipped Melqart, “king of the city”, and Astarte, and sailed as far as Cyprus, North Africa and Spain, founding colonies such as Kition, Utica, Carthage and Gadir, today's Cádiz."
+      },
+      {
+        "name": "Israel's neighbours",
+        "text": "Relations with Israel were close and practical: Tyre had timber, ships and craftsmen, and Israel had wheat and olive oil. Hiram traded cedar for grain with Solomon, and a later Tyrian king, Ethbaal, married his daughter Jezebel to Ahab. Amos speaks of a “covenant of brothers” that Tyre broke, and in Nehemiah's day Tyrian traders sold fish in Jerusalem on the Sabbath."
+      },
+      {
+        "name": "Greeks and Romans",
+        "text": "After Alexander, Tyre was rebuilt as a Hellenistic city and flourished under Rome, with baths, colonnaded streets, a triumphal arch and an enormous hippodrome. It kept minting silver, and the Tyrian shekel later became the coin used to pay the half-shekel tax to the Temple in Jerusalem. Christianity reached Tyre early, and the city later became the seat of an archbishop."
+      }
+    ],
+    "population": "No census survives. The ancient island was small for so famous a city, so its houses rose high: the Greek geographer Strabo says they had more storeys than the houses of Rome. When Alexander took Tyre in 332 BCE, the historian Arrian reports about 8,000 killed and 30,000 sold into slavery, and ancient writers add that many women and children had been sent to Carthage beforehand. The figures suggest tens of thousands of people, a very large city for its day. Jerusalem then had only a few thousand by most estimates.",
+    "archaeology": [
+      {
+        "title": "The island and its harbours",
+        "text": "The Jesuit priest Antoine Poidebard surveyed Tyre's harbours from the air and underwater in 1934–36. More recent geoarchaeological studies, drilling cores into the ground, have located Phoenician harbours buried beneath the modern town, and shown how sand piling up beside Alexander's causeway, built over a shallow shoal, slowly turned it into the broad isthmus on which part of the town now stands."
+      },
+      {
+        "title": "The Phoenician cemetery at Al-Bass",
+        "text": "A Phoenician cremation cemetery came to light by chance in 1990, and from 1997 to 2008 a Spanish team led by María Eugenia Aubet of Pompeu Fabra University excavated it. About 320 urns were found, dating from the late 10th to about the 7th century BCE. Usually two urns stood side by side, one for ashes and one for bones, with small vessels and sometimes a scarab amulet. It is the most densely used Phoenician cemetery known in the Levant."
+      },
+      {
+        "title": "Arch, tombs and hippodrome",
+        "text": "From 1946 Maurice Chéhab, head of Lebanon's antiquities service, uncovered the Roman and Byzantine remains at Al-Bass: a paved road lined with hundreds of stone and marble sarcophagi, a triple triumphal arch of the 2nd century CE that has been rebuilt in modern times, an aqueduct, and a hippodrome about 480 m long that held tens of thousands of spectators. The sites were inscribed on UNESCO's World Heritage List in 1984."
+      },
+      {
+        "title": "Al Mina, the island city",
+        "text": "At the Al Mina site, on the old island, excavators uncovered Roman baths, colonnaded streets and houses, and columns now lie submerged by the southern harbour. The Phoenician layers, the city of the prophets' day, lie deep below and have been reached only in places. Since 2008 a Lebanese–French team from the University of Lyon has been digging there."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": {
+        "he": "מצרים, הממלכה החדשה",
+        "en": "Egypt, New Kingdom"
+      },
+      "period": {
+        "he": "בערך 1550–1150 לפנה״ס",
+        "en": "c. 1550–1150 BCE"
+      },
+      "note": {
+        "he": "מלכי צור היו וסלים של פרעה, כמו שמראים מכתבי אבי־מלכו באל־עמארנה.",
+        "en": "Tyre's kings were Pharaoh's vassals, as Abi-Milku's Amarna letters show."
+      }
+    },
+    {
+      "realm": "phoenicia",
+      "name": {
+        "he": "ממלכת צור",
+        "en": "Kingdom of Tyre"
+      },
+      "period": {
+        "he": "בערך 1100–870 לפנה״ס",
+        "en": "c. 1100–870 BCE"
+      },
+      "note": {
+        "he": "ימי הזוהר של צור העצמאית, בימי חירם הראשון ואתבעל הראשון.",
+        "en": "The heyday of independent Tyre, under Hiram I and Ethbaal I."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Neo-Assyrian Empire"
+      },
+      "period": {
+        "he": "בערך 870–630 לפנה״ס",
+        "en": "c. 870–630 BCE"
+      },
+      "note": {
+        "he": "צור שילמה מס ונצורה שוב ושוב, אבל האי עצמו לא נכבש.",
+        "en": "Tyre paid tribute and was besieged again and again, but the island itself was never taken."
+      }
+    },
+    {
+      "realm": "babylonia",
+      "name": {
+        "he": "האימפריה הבבלית החדשה",
+        "en": "Neo-Babylonian Empire"
+      },
+      "period": {
+        "he": "בערך 573–539 לפנה״ס",
+        "en": "c. 573–539 BCE"
+      },
+      "note": {
+        "he": "אחרי מצור של 13 שנה נכנעה צור לנבוכדנאצר.",
+        "en": "After a 13-year siege Tyre submitted to Nebuchadnezzar."
+      }
+    },
+    {
+      "realm": "persia",
+      "name": {
+        "he": "האימפריה הפרסית",
+        "en": "Achaemenid Persian Empire"
+      },
+      "period": {
+        "he": "539–332 לפנה״ס",
+        "en": "539–332 BCE"
+      },
+      "note": {
+        "he": "צור שמרה על מלכיה ושירתה את פרס בצי שלה, עד שאלכסנדר כבש אותה.",
+        "en": "Tyre kept its kings and served Persia with its fleet until Alexander conquered it."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -1350,
+      "text": {
+        "he": "בערך 1350 לפנה״ס: אבי־מלכו מלך צור כותב לפרעה את מכתבי אל־עמארנה",
+        "en": "c. 1350 BCE: Abi-Milku of Tyre writes to Pharaoh in the Amarna letters"
+      }
+    },
+    {
+      "year": -970,
+      "text": {
+        "he": "בערך 970 לפנה״ס: חירם מלך צור שולח ארזים ובעלי מלאכה לשלמה",
+        "en": "c. 970 BCE: Hiram of Tyre sends cedar and craftsmen to Solomon"
+      }
+    },
+    {
+      "year": -814,
+      "text": {
+        "he": "814 לפנה״ס, לפי המסורת: מתיישבים מצור מייסדים את קרתגו",
+        "en": "814 BCE, by tradition: settlers from Tyre found Carthage"
+      }
+    },
+    {
+      "year": -701,
+      "text": {
+        "he": "סנחריב מלך אשור פושט על החוף, ולולי מלך צור וצידון נמלט לקפריסין",
+        "en": "Sennacherib of Assyria sweeps down the coast; Luli, king of Tyre and Sidon, flees to Cyprus"
+      }
+    },
+    {
+      "year": -586,
+      "text": {
+        "he": "בערך 586–573 לפנה״ס: נבוכדנאצר צר על צור 13 שנה",
+        "en": "c. 586–573 BCE: Nebuchadnezzar besieges Tyre for 13 years"
+      }
+    },
+    {
+      "year": -332,
+      "text": {
+        "he": "אלכסנדר הגדול בונה סוללה אל האי וכובש את צור אחרי מצור של שבעה חודשים",
+        "en": "Alexander the Great builds a causeway to the island and takes Tyre after a seven-month siege"
+      }
+    },
+    {
+      "year": 1984,
+      "text": {
+        "he": "צור נכללת ברשימת אתרי המורשת העולמית של אונסק״ו",
+        "en": "Tyre is inscribed on UNESCO's World Heritage List"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Joshua 19:29",
+      "note": {
+        "he": "גבול אשר עובר ליד ״עיר מבצר צר״",
+        "en": "Asher's border passes “the fortified city of Tyre”"
+      }
+    },
+    {
+      "ref": "II Samuel 5:11",
+      "note": {
+        "he": "חירם מלך צור שולח לדוד עצי ארזים, חרשי עץ וחרשי אבן",
+        "en": "Hiram king of Tyre sends David cedar, carpenters and stonemasons"
+      }
+    },
+    {
+      "ref": "I Kings 5:15",
+      "note": {
+        "he": "חירם, ״אוהב היה לדוד״, שולח את עבדיו אל שלמה",
+        "en": "Hiram, a lifelong friend of David, sends envoys to Solomon"
+      }
+    },
+    {
+      "ref": "I Kings 5:25",
+      "note": {
+        "he": "שלמה נותן לחירם חיטה ושמן שנה בשנה תמורת הארזים",
+        "en": "Solomon pays Hiram wheat and oil year by year for the cedar"
+      }
+    },
+    {
+      "ref": "I Kings 7:13",
+      "note": {
+        "he": "שלמה מביא מצור את חירם האומן לעבודות הנחושת של המקדש",
+        "en": "Solomon brings Hiram the craftsman from Tyre for the Temple's bronze work"
+      }
+    },
+    {
+      "ref": "I Kings 9:13",
+      "note": {
+        "he": "חירם מאוכזב מעשרים הערים שבגליל וקורא להן ״ארץ כבול״",
+        "en": "Hiram, unimpressed by twenty towns in Galilee, calls them “the land of Cabul”"
+      }
+    },
+    {
+      "ref": "Isaiah 23:8",
+      "note": {
+        "he": "״צר המעטירה אשר סחריה שרים״",
+        "en": "Tyre, “the crown-giver”, whose merchants are princes"
+      }
+    },
+    {
+      "ref": "Jeremiah 27:3",
+      "note": {
+        "he": "שליחי מלך צור בירושלים, וירמיהו שולח להם עול ומוטות",
+        "en": "Envoys of the king of Tyre in Jerusalem; Jeremiah sends them a yoke"
+      }
+    },
+    {
+      "ref": "Ezekiel 26:5",
+      "note": {
+        "he": "צור תהיה ״משטח חרמים בתוך הים״",
+        "en": "Tyre will become a place for spreading fishing nets in the sea"
+      }
+    },
+    {
+      "ref": "Ezekiel 27:3",
+      "note": {
+        "he": "קינה על צור ״הישבת על מבואת ים, רוכלת העמים״",
+        "en": "A lament for Tyre, the trader of the nations, set at the gateway of the sea"
+      }
+    },
+    {
+      "ref": "Ezekiel 28:2",
+      "note": {
+        "he": "נגיד צור אומר בלבו ״אל אני״",
+        "en": "The prince of Tyre says in his heart, “I am a god”"
+      }
+    },
+    {
+      "ref": "Ezekiel 29:18",
+      "note": {
+        "he": "צבא נבוכדנאצר עבד ״עבודה גדולה״ על צור ושכר לא היה לו",
+        "en": "Nebuchadnezzar's army labours long against Tyre and gains nothing"
+      }
+    },
+    {
+      "ref": "Joel 4:4",
+      "note": {
+        "he": "תוכחה לצור ולצידון שמכרו את בני יהודה",
+        "en": "A rebuke to Tyre and Sidon for selling the people of Judah"
+      }
+    },
+    {
+      "ref": "Amos 1:9",
+      "note": {
+        "he": "על פשעי צור, ש״לא זכרו ברית אחים״",
+        "en": "Tyre's crimes: it forgot the covenant of brothers"
+      }
+    },
+    {
+      "ref": "Nehemiah 13:16",
+      "note": {
+        "he": "סוחרים צורים מוכרים דגים בירושלים בשבת",
+        "en": "Tyrian traders sell fish in Jerusalem on the Sabbath"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:TyrePeninsulaPanorama RomanDecert07112019.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "העיר העתיקה של צור על האי לשעבר, ובקצה שרידי הקתדרלה הצלבנית",
+        "en": "Tyre's old town on the former island, with the ruins of the Crusader cathedral"
+      }
+    },
+    {
+      "file": "File:SubmergedEgyptianHarbour TyreSour Lebanon RomanDeckert04112019.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "עמודים עתיקים שקועים בנמל הדרומי, ״המצרי״, של צור",
+        "en": "Ancient columns in Tyre's submerged southern, “Egyptian”, harbour"
+      }
+    },
+    {
+      "file": "File:TyreAlBass RomanTriumphalArch RomanDeckert24092019.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "קשת הניצחון הרומית מהמאה ה־2 באל־בס, כפי ששוחזרה",
+        "en": "The 2nd-century Roman arch at Al-Bass, as reconstructed"
+      }
+    },
+    {
+      "file": "File:Tyre hippodrome 01.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "ההיפודרום הרומי באל־בס",
+        "en": "The Roman hippodrome at Al-Bass"
+      }
+    },
+    {
+      "file": "File:ReconstitutionOfTwoCremationBurialsFromPhoenicianNecropolisAlBass NationalMuseumOfBeirut RomanDeckert31102019.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "שחזור של שני קברי שריפה מבית הקברות הפיניקי באל־בס, המוזיאון הלאומי בביירות",
+        "en": "Reconstruction of two Phoenician cremation burials from Al-Bass, National Museum of Beirut"
+      }
+    },
+    {
+      "file": "File:Monnaie - Shekel, argent, Tyr, Phénicie - btv1b84798617 (1 of 2).jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "שקל כסף של צור מימי המלך עזמלך, שמלך כשאלכסנדר צר על העיר, הספרייה הלאומית של צרפת",
+        "en": "Silver shekel of Tyre under King Azemilcus (Ozmilk), who reigned when Alexander besieged the city, Bibliothèque nationale de France"
+      }
+    },
+    {
+      "file": "File:085.Cedars Are Cut Down for the Jerusalem Temple.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "כריתת ארזים למקדש בירושלים, גוסטב דורה, 1866",
+        "en": "Cedars are cut down for the Temple in Jerusalem, Gustave Doré, 1866"
+      }
+    },
+    {
+      "file": "File:Siege of Tyre 332BC plan.jpg",
+      "kind": "map",
+      "caption": {
+        "he": "תוכנית המצור של אלכסנדר על צור ב־332 לפנה״ס, עם הסוללה אל האי",
+        "en": "Plan of Alexander's siege of Tyre in 332 BCE, with the causeway to the island"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "צור (לבנון)",
+    "en": "Tyre, Lebanon"
+  },
+  "related": [
+    "sidon",
+    "zarephath",
+    "kedesh",
+    "carmel",
+    "dan",
+    "joppa"
+  ],
+  "sources": [
+    {
+      "title": "Tyre, Lebanon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tyre,_Lebanon"
+    },
+    {
+      "title": "Tyre, Livius.org",
+      "url": "https://www.livius.org/articles/place/tyre/"
+    },
+    {
+      "title": "Tyre Necropolis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tyre_Necropolis"
+    },
+    {
+      "title": "Kingdom of Tyre (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Tyre"
+    }
+  ]
+}

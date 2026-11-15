@@ -1,0 +1,419 @@
+{
+  "id": "sidon",
+  "he": {
+    "summary": "צידון הייתה מן הערים הפיניקיות העתיקות והחשובות ביותר. ספר בראשית קורא לצידון ״בכור״ כנען, והמקרא משתמש לא פעם בשם ״צידונים״ לכל הפיניקים: איזבל הייתה בתו של אתבעל ״מלך צידנים״. תחת שלטון פרס הייתה לעיר המובילה בפיניקיה, ומקברי מלכיה הגיעו לעולם כמה מארונות הקבורה המפורסמים ביותר של העת העתיקה.",
+    "setting": "צידון, היום סיידא, שוכנת על חוף לבנון, כ־40 ק״מ דרומית לביירות וכ־40 ק״מ צפונית לצור. העיר הקדומה ישבה על לשון יבשה נמוכה, ושרשרת של איים סלעיים מול החוף הגנה על נמל בצפון ועל מפרץ בדרום. מאחוריה משתרע מישור חוף צר של פרדסים ומטעים, שנהר האוואלי מצפון לעיר משקה אותו, ומעליו מתנשאים הרי הלבנון. כיום רואים בה את מבצר הים הצלבני על אי קטן המחובר לחוף בגשר, את השוק הישן, תל של קונכיות ארגמון שהושלכו בימי קדם, וכ־2 ק״מ מצפון־מזרח לעיר את מקדש אשמון.",
+    "peoples": [
+      {
+        "name": "הכנענים של תקופת הברונזה",
+        "text": "על לשון היבשה גרו כבר בתקופת הברונזה הקדומה, לפני יותר מ־5,000 שנה. בחפירות המוזיאון הבריטי ב״אתר הקולג׳״ נמצאו יותר מ־150 קברים מתקופת הברונזה התיכונה, ובהם קברי לוחמים עם כלי נשק מברונזה. במכתבי אל־עמארנה מהמאה ה־14 לפנה״ס כותב זמרידא מלך צידון לפרעה, ואילו מלך צור מאשים אותו בקשירת קשר עם אויבי מצרים."
+      },
+      {
+        "name": "הצידונים הפיניקים",
+        "text": "אנשי צידון היו כנענים שדיברו בשפה קרובה לעברית. הם נודעו כבעלי מלאכה וכחוטבי עצים: הומרוס משבח את מלאכת המתכת הצידונית, ושלמה אומר לחירם ש״אין בנו איש ידע לכרת עצים כצדנים״. הם עבדו לעשתרת, ״אלהי צדנים״ בלשון המקרא, ולאשמון, אל המרפא. מפני שצידון הייתה כה בולטת, נעשה השם ״צידונים״ כינוי לפיניקים בכלל."
+      },
+      {
+        "name": "הצידונים בימי פרס",
+        "text": "תחת שלטון פרס התעשרו מלכי צידון, ובהם אשמנעזר השני ובדעשתרת, והפכו לבעלי השפעה רבה. הצי שלהם הפליג עם חשיארש נגד יוון ב־480 לפנה״ס, מלך פרס העניק להם את דאר ואת יפו שעל חוף ארץ ישראל, ולפי ספר עזרא סייעו צידונים להביא ארזים לבניין המקדש השני."
+      }
+    ],
+    "population": "לא שרדו נתונים קדומים על מספר תושבי צידון, והעיר העתיקה קבורה מתחת לעיר של היום, כך שגם שטחה אינו ידוע. רמז אחד מביא ההיסטוריון היווני דיודורוס: כשהעיר עלתה באש בסביבות 345 לפנה״ס, הוא כותב, מתו יותר מ־40,000 איש, כולל עבדי הבית. גם אם המספר מוגזם, הוא מצביע על עיר של עשרות אלפים, מהגדולות בחוף הלבנט. ירושלים מנתה אז אלפים ספורים בלבד. בסיידא של היום חיים כ־80,000 איש.",
+    "archaeology": [
+      {
+        "title": "מקדש אשמון",
+        "text": "כ־2 ק״מ מצפון־מזרח לעיר, ליד נהר האוואלי, שוכנים שרידי מקדשו של אשמון, אל המרפא. המתחם החל בסוף המאה ה־7 לפנה״ס בערך והורחב מאוד בימי מלכי התקופה הפרסית, אשמנעזר השני ובדעשתרת. שמו של בדעשתרת מופיע בכשלושים כתובות יסוד שהוסתרו בתוך בסיס האבן הענק. מוריס דינאן חפר כאן בשנים 1963–1975. בין הממצאים ״כס עשתרת״ שלצדו ספינקסים ו״במת אשמון״ משיש, היום במוזיאון הלאומי בביירות."
+      },
+      {
+        "title": "ארון הקבורה של אשמנעזר השני",
+        "text": "ב־19 בינואר 1855 גילו פועלים מדרום־מזרח לצידון ארון קבורה בסגנון מצרי מאבן כהה. על המכסה כתובת פיניקית של 22 שורות: המלך הצעיר אשמנעזר השני מקלל את מי שיפתח את קברו, מספר על המקדשים שבנה ומציין ש״אדון המלכים״, מלך פרס, נתן לו את דאר ואת יפו. זו הייתה הכתובת הפיניקית הראשונה שנמצאה בפיניקיה עצמה. הארון מוצג היום במוזיאון הלובר בפריז."
+      },
+      {
+        "title": "בית הקברות המלכותי באיאא",
+        "text": "ב־1887 חשפו עות׳מאן חמדי ביי וירוואנט ווסקן מערות קבורה של מלכי צידון באיאא, ממזרח לעיר. נמצאו בהן ארונות מפוארים: ארון תבנית, ארון ״הנשים המקוננות״, הארון הלוקי, ו״ארון אלכסנדר״ מסוף המאה ה־4 לפנה״ס, שעליו תבליטים של אלכסנדר הגדול בציד ובקרב. הוא נועד כנראה לעבדאלונים, מלך צידון שמינה אלכסנדר, אבל גם זה שנוי במחלוקת. כל הארונות מוצגים היום במוזיאוני הארכאולוגיה של איסטנבול."
+      },
+      {
+        "title": "אתר הקולג׳ ותל הקונכיות",
+        "text": "מאז 1998 חופרת משלחת של המוזיאון הבריטי, בראשות קלוד דומה־סרהל, ב״אתר הקולג׳״ שבלב העיר הישנה. היא חשפה שכבות מתקופת הברונזה הקדומה ויותר מ־150 קברים מתקופת הברונזה התיכונה, ובהם קברים עם כלי נשק וחגורות מתכת. ליד הנמל הדרומי נמצא תל גדול של קונכיות ארגמון שבורות, עדות לתעשיית צבע הארגמן שהעשירה את העיר."
+      }
+    ]
+  },
+  "en": {
+    "summary": "Sidon was one of the oldest and greatest Phoenician cities. Genesis calls Sidon the firstborn of Canaan, and the Bible often uses “Sidonians” for all the Phoenicians: Jezebel was the daughter of Ethbaal, “king of the Sidonians”. Under the Persians it became the leading city of Phoenicia, and its royal tombs have given the world some of the most famous sarcophagi of antiquity.",
+    "setting": "Sidon, today Saida, lies on the Lebanese coast about 40 km south of Beirut and 40 km north of Tyre. The ancient city stood on a low promontory, with a chain of rocky islets offshore sheltering a northern harbour and a southern bay. Behind it a narrow coastal plain of orchards stretches north to the Awali river, with the Lebanon mountains rising beyond. Visitors today see the Crusader Sea Castle on its islet, joined to the shore by a causeway, the old souk, a mound of ancient murex shells and, 2 km to the northeast, the Temple of Eshmun.",
+    "peoples": [
+      {
+        "name": "Bronze Age Canaanites",
+        "text": "People lived on the promontory as early as the Early Bronze Age, more than 5,000 years ago. The British Museum's excavations at the “College Site” found more than 150 Middle Bronze Age burials, some of warriors laid to rest with bronze weapons. In the Amarna letters of the 14th century BCE, Sidon's king Zimredda writes to Pharaoh, while the king of Tyre accuses him of conspiring with Egypt's enemies."
+      },
+      {
+        "name": "Phoenician Sidonians",
+        "text": "Sidon's people were Canaanites who spoke a language close to Hebrew. They were famous craftsmen and timber cutters: Homer praises Sidonian metalwork, and Solomon tells Hiram that no one can fell trees like the Sidonians. They worshipped Astarte, whom the Bible calls the goddess of the Sidonians, and Eshmun, a god of healing. Because Sidon was so prominent, “Sidonians” became a name for Phoenicians in general."
+      },
+      {
+        "name": "Sidonians under Persia",
+        "text": "Under Persian rule Sidon's kings, among them Eshmunazar II and Bodashtart, grew rich and influential. Their fleet sailed with Xerxes against Greece in 480 BCE, the Persian king granted them Dor and Joppa on the coast of the land of Israel, and according to Ezra, Sidonians helped bring cedar for the rebuilding of the Temple."
+      }
+    ],
+    "population": "No ancient population figures for Sidon survive, and the old city lies buried under the modern one, so even its area is unknown. One clue comes from the Greek historian Diodorus: when the city burned around 345 BCE, he writes, more than 40,000 people died, household slaves included. Even if exaggerated, that points to a city of tens of thousands, among the largest on the Levantine coast; Jerusalem then had only a few thousand. Modern Saida has around 80,000 residents.",
+    "archaeology": [
+      {
+        "title": "The Temple of Eshmun",
+        "text": "About 2 km northeast of the city, near the Awali river, lie the remains of the sanctuary of Eshmun, god of healing. It began around the late 7th century BCE and was greatly enlarged by the Persian-era kings Eshmunazar II and Bodashtart, whose name appears in some thirty foundation inscriptions hidden inside the huge stone podium. Maurice Dunand excavated it from 1963 to 1975. Finds include the sphinx-flanked “Throne of Astarte” and the marble “Tribune of Eshmun”, now in Beirut's National Museum."
+      },
+      {
+        "title": "The sarcophagus of Eshmunazar II",
+        "text": "On 19 January 1855 workmen southeast of Sidon found an Egyptian-style coffin of dark stone. Its lid bears a 22-line Phoenician inscription in which the young king Eshmunazar II curses anyone who opens his tomb, lists the temples he built and says that the “lord of kings”, the Persian ruler, gave him Dor and Joppa. It was the first Phoenician inscription ever found in Phoenicia itself. The sarcophagus is in the Louvre in Paris."
+      },
+      {
+        "title": "The royal necropolis at Ayaa",
+        "text": "In 1887 Osman Hamdi Bey and Yervant Voskan opened the tomb chambers of Sidon's kings at Ayaa, east of the city. Inside were magnificent coffins: the sarcophagus of Tabnit, the “Mourning Women”, the Lycian sarcophagus and the “Alexander Sarcophagus” of the late 4th century BCE, carved with Alexander the Great hunting and in battle. It was probably made for Abdalonymus, the king Alexander set over Sidon, though even that is debated. All are now in the Istanbul Archaeology Museums."
+      },
+      {
+        "title": "The College Site and the shell mound",
+        "text": "Since 1998 a British Museum team led by Claude Doumet-Serhal has been excavating the “College Site” in the heart of the old city. It has exposed Early Bronze Age layers and more than 150 Middle Bronze Age burials, some with weapons and metal belts. Near the southern harbour lies a great mound of crushed murex shells, evidence of the purple-dye industry that made the city rich."
+      }
+    ]
+  },
+  "rulers": [
+    {
+      "realm": "egypt_nk",
+      "name": {
+        "he": "מצרים, הממלכה החדשה",
+        "en": "Egypt, New Kingdom"
+      },
+      "period": {
+        "he": "בערך 1550–1150 לפנה״ס",
+        "en": "c. 1550–1150 BCE"
+      },
+      "note": {
+        "he": "מלכי צידון, כמו זמרידא, היו וסלים של פרעה.",
+        "en": "Sidon's kings, such as Zimredda, were vassals of Pharaoh."
+      }
+    },
+    {
+      "realm": "phoenicia",
+      "name": {
+        "he": "ממלכת צידון",
+        "en": "Kingdom of Sidon"
+      },
+      "period": {
+        "he": "בערך 1100–677 לפנה״ס",
+        "en": "c. 1100–677 BCE"
+      },
+      "note": {
+        "he": "עיר־ממלכה פיניקית, לעתים קשורה בצור ולעתים יריבתה, ששילמה מס לאשור מהמאה ה־9.",
+        "en": "A Phoenician city-kingdom, sometimes linked with Tyre and sometimes its rival, paying tribute to Assyria from the 9th century."
+      }
+    },
+    {
+      "realm": "assyria",
+      "name": {
+        "he": "האימפריה האשורית",
+        "en": "Neo-Assyrian Empire"
+      },
+      "period": {
+        "he": "677–בערך 630 לפנה״ס",
+        "en": "677–c. 630 BCE"
+      },
+      "note": {
+        "he": "אסרחדון החריב את צידון אחרי מצור של שלוש שנים והקים במקומה עיר נמל בשמו.",
+        "en": "Esarhaddon destroyed Sidon after a three-year siege and built a harbour town named after himself."
+      }
+    },
+    {
+      "realm": "babylonia",
+      "name": {
+        "he": "האימפריה הבבלית החדשה",
+        "en": "Neo-Babylonian Empire"
+      },
+      "period": {
+        "he": "בערך 600–539 לפנה״ס",
+        "en": "c. 600–539 BCE"
+      },
+      "note": {
+        "he": "אחרי מצור קצר הייתה צידון למרכז השלטון הבבלי בפיניקיה.",
+        "en": "After a siege Sidon became the main seat of Babylonian rule in Phoenicia."
+      }
+    },
+    {
+      "realm": "persia",
+      "name": {
+        "he": "האימפריה הפרסית",
+        "en": "Achaemenid Persian Empire"
+      },
+      "period": {
+        "he": "539–332 לפנה״ס",
+        "en": "539–332 BCE"
+      },
+      "note": {
+        "he": "צידון הייתה העיר המובילה בפיניקיה ובסיס לצי הפרסי, עד המרד שבו עלתה באש.",
+        "en": "Sidon was Phoenicia's leading city and a base of the Persian fleet, until the revolt in which it burned."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": -3200,
+      "text": {
+        "he": "בערך 3200 לפנה״ס: יישוב מתקופת הברונזה הקדומה על לשון היבשה",
+        "en": "c. 3200 BCE: an Early Bronze Age settlement on the promontory"
+      }
+    },
+    {
+      "year": -1350,
+      "text": {
+        "he": "בערך 1350 לפנה״ס: זמרידא מלך צידון במכתבי אל־עמארנה",
+        "en": "c. 1350 BCE: Zimredda, king of Sidon, in the Amarna letters"
+      }
+    },
+    {
+      "year": -701,
+      "text": {
+        "he": "סנחריב כובש את צידון, ולולי מלכה נמלט לקפריסין",
+        "en": "Sennacherib takes Sidon; its king Luli flees to Cyprus"
+      }
+    },
+    {
+      "year": -677,
+      "text": {
+        "he": "אסרחדון מחריב את צידון אחרי מרד ומוציא להורג את מלכה עבדי־מלכותי",
+        "en": "Esarhaddon destroys Sidon after a revolt and executes its king, Abdi-Milkutti"
+      }
+    },
+    {
+      "year": -480,
+      "text": {
+        "he": "ספינות צידון מפליגות עם חשיארש נגד יוון, בקרב סלמיס",
+        "en": "Sidon's ships sail with Xerxes against Greece at Salamis"
+      }
+    },
+    {
+      "year": -345,
+      "text": {
+        "he": "בערך 345 לפנה״ס: מרד תנס נגד ארתחשסתא השלישי; העיר עולה באש",
+        "en": "c. 345 BCE: Tennes revolts against Artaxerxes III; the city goes up in flames"
+      }
+    },
+    {
+      "year": -333,
+      "text": {
+        "he": "צידון נכנעת לאלכסנדר הגדול, והוא ממנה את עבדאלונים למלך",
+        "en": "Sidon submits to Alexander the Great, who makes Abdalonymus king"
+      }
+    },
+    {
+      "year": 1887,
+      "text": {
+        "he": "עות׳מאן חמדי ביי חושף את בית הקברות המלכותי ואת ״ארון אלכסנדר״",
+        "en": "Osman Hamdi Bey uncovers the royal necropolis and the Alexander Sarcophagus"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Genesis 10:15",
+      "note": {
+        "he": "״וכנען ילד את צידן בכרו״",
+        "en": "Canaan's firstborn is Sidon"
+      }
+    },
+    {
+      "ref": "Genesis 10:19",
+      "note": {
+        "he": "גבול הכנעני מתחיל מצידון",
+        "en": "The border of the Canaanites runs from Sidon"
+      }
+    },
+    {
+      "ref": "Genesis 49:13",
+      "note": {
+        "he": "בברכת יעקב: זבולון ״לחוף ימים ישכן... וירכתו על צידן״",
+        "en": "Jacob's blessing: Zebulun dwells by the sea, his flank toward Sidon"
+      }
+    },
+    {
+      "ref": "Joshua 11:8",
+      "note": {
+        "he": "ישראל רודפים את מלכי הצפון ״עד צידון רבה״",
+        "en": "Israel pursues the northern kings as far as “Great Sidon”"
+      }
+    },
+    {
+      "ref": "Judges 1:31",
+      "note": {
+        "he": "שבט אשר לא הוריש את יושבי צידון",
+        "en": "The tribe of Asher does not drive out the people of Sidon"
+      }
+    },
+    {
+      "ref": "Judges 10:12",
+      "note": {
+        "he": "הצידונים בין העמים שלחצו את ישראל",
+        "en": "The Sidonians among the peoples who oppressed Israel"
+      }
+    },
+    {
+      "ref": "Judges 18:7",
+      "note": {
+        "he": "תושבי ליש יושבים לבטח ״כמשפט צדנים״",
+        "en": "The people of Laish live securely, in the manner of the Sidonians"
+      }
+    },
+    {
+      "ref": "I Kings 5:20",
+      "note": {
+        "he": "״אין בנו איש ידע לכרת עצים כצדנים״",
+        "en": "Solomon: none of us knows how to fell timber like the Sidonians"
+      }
+    },
+    {
+      "ref": "I Kings 11:5",
+      "note": {
+        "he": "שלמה הולך אחרי ״עשתרת אלהי צדנים״",
+        "en": "Solomon follows Ashtoreth, the goddess of the Sidonians"
+      }
+    },
+    {
+      "ref": "I Kings 16:31",
+      "note": {
+        "he": "אחאב לוקח את ״איזבל בת אתבעל מלך צידנים״",
+        "en": "Ahab marries Jezebel, daughter of Ethbaal, king of the Sidonians"
+      }
+    },
+    {
+      "ref": "Isaiah 23:4",
+      "note": {
+        "he": "״בושי צידון כי אמר ים״",
+        "en": "“Be ashamed, Sidon, for the sea has spoken”"
+      }
+    },
+    {
+      "ref": "Jeremiah 27:3",
+      "note": {
+        "he": "שליחי מלך צידון בירושלים בימי צדקיהו",
+        "en": "Envoys of the king of Sidon in Jerusalem in Zedekiah's day"
+      }
+    },
+    {
+      "ref": "Ezekiel 28:22",
+      "note": {
+        "he": "״הנני עליך צידון ונכבדתי בתוכך״",
+        "en": "God declares himself against Sidon, to be glorified in her"
+      }
+    },
+    {
+      "ref": "Joel 4:4",
+      "note": {
+        "he": "תוכחה לצור ולצידון",
+        "en": "A rebuke to Tyre and Sidon"
+      }
+    },
+    {
+      "ref": "Zechariah 9:2",
+      "note": {
+        "he": "״צר וצידון כי חכמה מאד״",
+        "en": "Tyre and Sidon, “though they are very wise”"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Sidon Sea Castle in 2018.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "מבצר הים הצלבני, שנבנה ב־1228 על אי קטן מול צידון",
+        "en": "The Crusader Sea Castle, built in 1228 on an islet off Sidon"
+      }
+    },
+    {
+      "file": "File:Old city of Sidon, Lebanon.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "סמטה בשוק הישן של צידון",
+        "en": "A lane in the old souk of Sidon"
+      }
+    },
+    {
+      "file": "File:Echnoum Libanon 026.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "בסיס האבן הענק של מקדש אשמון, ליד צידון",
+        "en": "The great stone podium of the Temple of Eshmun near Sidon"
+      }
+    },
+    {
+      "file": "File:Along the sea coast. Old castle at Sidon LOC matpc.01191.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "מבצר הים של צידון בתצלום ישן מאוסף מטסון",
+        "en": "Sidon's Sea Castle in an old photograph from the Matson Collection"
+      }
+    },
+    {
+      "file": "File:Sarcophage d'Eshmunazor - 500-475. av. J.-C. - Saïda Magharat Tabloun (Saïda) - Louvre - AO 4806 - picture 01.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "ארון הקבורה של אשמנעזר השני, מלך צידון, סוף המאה ה־6 או ראשית המאה ה־5 לפנה״ס, הלובר",
+        "en": "Sarcophagus of Eshmunazar II, king of Sidon, late 6th or early 5th century BCE, Louvre"
+      }
+    },
+    {
+      "file": "File:Throne of Ashtart.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "״כס עשתרת״ שלצדו ספינקסים, במקדש אשמון",
+        "en": "The sphinx-flanked “Throne of Astarte” at the Temple of Eshmun"
+      }
+    },
+    {
+      "file": "File:Alexander Sarcophagus, long side B, hunting scene, Istanbul Archaeology Museum (14042900900).jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "״ארון אלכסנדר״ מבית הקברות המלכותי של צידון: סצנת ציד, סוף המאה ה־4 לפנה״ס, מוזיאוני הארכאולוגיה של איסטנבול",
+        "en": "The Alexander Sarcophagus from Sidon's royal necropolis: a hunting scene, late 4th century BCE, Istanbul Archaeology Museums"
+      }
+    },
+    {
+      "file": "File:Frederic Leighton (1830-1896) - Jezebel and Ahab - SMG.289 - Scarborough Art Gallery.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "איזבל ואחאב, פרדריק לייטון, בערך 1863",
+        "en": "Jezebel and Ahab, Frederic Leighton, c. 1863"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "צידון",
+    "en": "Sidon"
+  },
+  "related": [
+    "tyre",
+    "zarephath",
+    "dan",
+    "samaria",
+    "jezreel",
+    "joppa"
+  ],
+  "sources": [
+    {
+      "title": "Sidon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sidon"
+    },
+    {
+      "title": "Sidon (2), Livius.org",
+      "url": "https://livius.org/articles/place/sidon/sidon-2"
+    },
+    {
+      "title": "Temple of Eshmun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Eshmun"
+    },
+    {
+      "title": "Sarcophagus of Eshmunazar II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sarcophagus_of_Eshmunazar_II"
+    },
+    {
+      "title": "Diodorus Siculus, Library of History, Book 16 (LacusCurtius)",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/16C*.html"
+    }
+  ]
+}

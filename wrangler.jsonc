@@ -11,7 +11,9 @@
   },
   "vars": {
     // Cloudflare Web Analytics (no cookies). Empty = no beacon.
-    "ANALYTICS_TOKEN": "543355d1bcb34ebb945ccba7570509e1"
+    "ANALYTICS_TOKEN": "543355d1bcb34ebb945ccba7570509e1",
+    // Google Search Console's HTML-tag code for this site (only the content="..." part). Empty = no tag.
+    "GOOGLE_SITE_VERIFICATION": ""
   },
   "durable_objects": {
     "bindings": [{ "name": "HUB", "class_name": "Hub" }]

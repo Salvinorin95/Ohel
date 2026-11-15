@@ -14,6 +14,8 @@ export interface Place {
   certainty: Certainty;
   refs: string[];
   story: { en: string; he: string };
+  /** A smaller place right next to a bigger one: its dot and label give way first when the map is crowded. */
+  minor?: boolean;
 }
 
 export const PLACES: Place[] = [
@@ -96,6 +98,14 @@ export const PLACES: Place[] = [
     story: {
       en: "Elijah against the prophets of Baal. Fire falls, and then a small cloud rises from the sea.",
       he: "אליהו מול נביאי הבעל. אש יורדת מהשמיים, ואחר כך עב קטנה כף איש עולה מן הים.",
+    },
+  },
+  {
+    id: "kishon", en: "Kishon Brook", he: "נחל קישון", lat: 32.6475, lng: 35.1613, zoom: 11.5, certainty: "known",
+    refs: ["Judges 4", "Judges 5", "I Kings 18", "Psalms 83"],
+    story: {
+      en: "Deborah's song: “the ancient stream, the stream Kishon” swept Sisera's chariots away. After the fire fell on Carmel, Elijah led the prophets of Baal down to its banks.",
+      he: "שירת דבורה: ״נחל קישון גרפם״, ורכב סיסרא נסחף. אחרי שירדה אש בכרמל, הוריד אליהו את נביאי הבעל אל גדותיו.",
     },
   },
   // ── Judah, Benjamin and Jerusalem ────────────────────────────────
@@ -304,6 +314,126 @@ export const PLACES: Place[] = [
     refs: ["Numbers 21"],
     story: { en: "The king of Arad attacks Israel on the way of Atharim.", he: "מלך ערד נלחם בישראל בדרך האתרים." },
   },
+  {
+    id: "olives", en: "Mount of Olives", he: "הר הזיתים", lat: 31.7789, lng: 35.2439, zoom: 14.5, certainty: "known",
+    refs: ["II Samuel 15", "I Kings 11", "Ezekiel 11", "Zechariah 14"],
+    story: {
+      en: "David climbs it barefoot and weeping as he flees Absalom. In Zechariah's vision the LORD's feet stand here and the mountain splits in two.",
+      he: "דוד עולה בו יחף ובוכה בבריחתו מפני אבשלום. בחזון זכריה רגלי ה׳ עומדות עליו וההר נבקע לשניים.",
+    },
+  },
+  {
+    id: "kidron", en: "Kidron Valley", he: "נחל קדרון", lat: 31.7752, lng: 35.2387, zoom: 14, certainty: "known",
+    refs: ["II Samuel 15", "I Kings 15", "II Kings 23", "Jeremiah 31"],
+    story: {
+      en: "David crosses it in tears as he flees Absalom. Kings of Judah burn idols in it, and Jerusalem's nobles carve their tombs in its rock.",
+      he: "דוד חוצה אותו בבכי בבריחתו מאבשלום. מלכי יהודה שורפים בו אלילים, ונכבדי ירושלים חוצבים בסלעו את קבריהם.",
+    },
+  },
+  {
+    id: "hinnom", en: "Valley of Hinnom", he: "גיא בן הינום", lat: 31.7695, lng: 35.2305, zoom: 14.5, certainty: "known",
+    refs: ["Joshua 15", "II Kings 23", "Jeremiah 7", "Jeremiah 19"],
+    story: {
+      en: "The Tophet, where children were passed through fire, stood here, and Jeremiah renamed it the Valley of Slaughter. Its name became Gehenna.",
+      he: "כאן עמד התופת שבו העבירו ילדים באש, וירמיהו קרא לו ״גיא ההרגה״. משמו נולדה המילה ״גיהנום״.",
+    },
+  },
+  {
+    id: "rephaim", en: "Valley of Rephaim", he: "עמק רפאים", lat: 31.75, lng: 35.195, zoom: 13, certainty: "known",
+    refs: ["II Samuel 5", "II Samuel 23", "Isaiah 17"],
+    story: {
+      en: "Twice the Philistines spread out in the valley, and twice David beat them, once at the sound of marching in the treetops.",
+      he: "פעמיים פשטו הפלשתים בעמק ופעמיים הכה אותם דוד, פעם אחת לקול צעדה בראשי הבכאים.",
+    },
+  },
+  {
+    id: "mamre", en: "Oaks of Mamre", he: "אלוני ממרא", lat: 31.5565, lng: 35.1053, zoom: 14, certainty: "traditional",
+    refs: ["Genesis 13", "Genesis 14", "Genesis 18", "Genesis 23"],
+    story: {
+      en: "Sitting at his tent door in the heat of the day, Abraham sees three strangers, runs to meet them and feeds them. They promise Sarah a son.",
+      he: "אברהם יושב בפתח האוהל כחום היום, רואה שלושה זרים, רץ לקראתם ומאכיל אותם. הם מבשרים לשרה על בן.",
+    },
+  },
+  {
+    id: "ai", en: "Ai (et-Tell)", he: "העי (א־תל)", lat: 31.9165, lng: 35.2615, zoom: 14, certainty: "debated",
+    refs: ["Genesis 12", "Joshua 7", "Joshua 8"],
+    story: {
+      en: "Achan's stolen treasure brings defeat; then Joshua's ambush takes the town and burns it to a heap. The mound was already an ancient ruin.",
+      he: "השלל שגנב עכן מביא תבוסה, ואז המארב של יהושע כובש את העיר ושורף אותה לתל. התל היה כבר אז חורבה עתיקה.",
+    },
+  },
+  {
+    id: "gerar", en: "Gerar", he: "גרר", lat: 31.3821, lng: 34.6065, zoom: 13.5, certainty: "debated",
+    refs: ["Genesis 20", "Genesis 26", "II Chronicles 14"],
+    story: {
+      en: "Abraham and Isaac live here under King Abimelech. Isaac's men dig wells, quarrel over Esek and Sitnah, and at last find Rehoboth, with room for all.",
+      he: "אברהם ויצחק גרים כאן תחת אבימלך. עבדי יצחק חופרים בארות, רבים על עשק ושטנה, ולבסוף מוצאים את רחובות.",
+    },
+  },
+  {
+    id: "ziklag", en: "Ziklag", he: "צקלג", lat: 31.3912, lng: 34.6816, zoom: 13.5, certainty: "debated",
+    refs: ["I Samuel 27", "I Samuel 30", "II Samuel 1"],
+    story: {
+      en: "Achish gives David this Negev town. Amalekites burn it while he is away; David rides them down and brings every captive home.",
+      he: "אכיש נותן לדוד את העיירה שבנגב. העמלקים שורפים אותה בהיעדרו, ודוד רודף אחריהם ומחזיר את כל השבויים.",
+    },
+  },
+  {
+    id: "azekah", en: "Azekah", he: "עזקה", lat: 31.701, lng: 34.9357, zoom: 14, certainty: "known",
+    refs: ["Joshua 10", "I Samuel 17", "Jeremiah 34", "Nehemiah 11"],
+    story: {
+      en: "A hilltop fortress above the Valley of Elah. Joshua’s hailstones fell “as far as Azekah”, and in Judah’s last days an officer wrote that he could no longer see it.",
+      he: "מבצר על גבעה מעל עמק האלה. אבני הברד של יהושע ירדו ״עד עזקה״, ובימיה האחרונים של יהודה כתב קצין: ״לא נראה את עזקה״.",
+    },
+  },
+  {
+    id: "gezer", en: "Gezer", he: "גזר", lat: 31.8599, lng: 34.9196, zoom: 14, certainty: "known",
+    refs: ["Joshua 10", "Joshua 16", "Judges 1", "I Kings 9"],
+    story: {
+      en: "A Canaanite city on the road from the coast to Jerusalem. Pharaoh burned it and gave it to his daughter, Solomon’s wife, and Solomon rebuilt it.",
+      he: "עיר כנענית על הדרך מן החוף לירושלים. פרעה שרף אותה ונתן אותה לבתו, אשת שלמה, ושלמה בנה אותה מחדש.",
+    },
+  },
+  {
+    id: "timnah", en: "Timnah (Tel Batash)", he: "תמנה (תל בטש)", lat: 31.7864, lng: 34.9108, zoom: 14, certainty: "known",
+    refs: ["Judges 14", "Judges 15", "Joshua 15", "II Chronicles 28"],
+    story: {
+      en: "A Philistine town in the Sorek Valley. On the way to his bride here Samson tore apart a lion, and at the wedding feast he set his famous riddle.",
+      he: "עיר פלשתית בעמק שורק. בדרך אל כלתו שבה קרע שמשון אריה, ובמשתה החתונה חד את חידתו המפורסמת.",
+    },
+  },
+  {
+    id: "ekron", en: "Ekron (Tel Miqne)", he: "עקרון (תל מקנה)", lat: 31.7789, lng: 34.8511, zoom: 14, certainty: "known",
+    refs: ["I Samuel 5", "I Samuel 6", "II Kings 1", "Zephaniah 2"],
+    story: {
+      en: "The Philistine city nearest Judah. The captured Ark was sent here last, and a king of Israel sent to ask its god, Baal-zebub, if he would live.",
+      he: "עיר הפלשתים הקרובה ביותר ליהודה. לכאן נשלח הארון השבוי באחרונה, ואל אלוהיה, בעל זבוב, שלח מלך ישראל לשאול אם יחיה.",
+    },
+  },
+  {
+    id: "ashkelon", en: "Ashkelon", he: "אשקלון", lat: 31.6619, lng: 34.5461, zoom: 13.5, certainty: "known",
+    refs: ["Judges 14", "II Samuel 1", "Jeremiah 47", "Zephaniah 2"],
+    story: {
+      en: "A great Philistine port by the sea. “Tell it not in Gath, publish it not in the streets of Ashkelon,” David lamented over Saul.",
+      he: "נמל פלשתי גדול לחוף הים. ״אל תגידו בגת, אל תבשרו בחוצת אשקלון״, קונן דוד על שאול.",
+    },
+  },
+  {
+    id: "joppa", en: "Joppa (Jaffa)", he: "יפו", lat: 32.0545, lng: 34.7517, zoom: 14, certainty: "known",
+    refs: ["Jonah 1", "II Chronicles 2", "Ezra 3", "Joshua 19"],
+    story: {
+      en: "An ancient port on a rocky hill. Jonah went down to Joppa to flee by ship to Tarshish, and Lebanon’s cedars came ashore here for both Temples.",
+      he: "נמל עתיק על גבעת סלע. יונה ירד ליפו כדי לברוח באונייה תרשישה, ודרכה הגיעו ארזי הלבנון לשני בתי המקדש.",
+    },
+  },
+  {
+    id: "aphek", en: "Aphek and Ebenezer", he: "אפק ואבן העזר", lat: 32.105, lng: 34.9304, zoom: 13.5, certainty: "known",
+    refs: ["I Samuel 4", "I Samuel 5", "I Samuel 29", "Joshua 12"],
+    story: {
+      en: "The Philistines camped at Aphek, by the springs of the Yarkon, and Israel at Ebenezer. Israel lost, and the Ark of the Covenant was captured.",
+      he: "הפלשתים חנו באפק, ליד מעיינות הירקון, וישראל באבן העזר. ישראל הובסו, וארון הברית נשבה.",
+    },
+  },
   // ── The Jordan, Jericho and the center ───────────────────────────
   {
     id: "jericho", en: "Jericho", he: "יריחו", lat: 31.8711, lng: 35.444, zoom: 14.5, certainty: "known",
@@ -377,6 +507,94 @@ export const PLACES: Place[] = [
       he: "אברהם מתמקח על הערים. אשת לוט מביטה לאחור.",
     },
   },
+  {
+    id: "gilgal", en: "Gilgal", he: "הגלגל", lat: 31.845, lng: 35.48, zoom: 12.5, certainty: "debated",
+    refs: ["Joshua 4", "Joshua 5", "I Samuel 11", "I Samuel 15", "II Kings 2"],
+    story: {
+      en: "Israel's first camp across the Jordan: twelve stones from the river and the first Passover in the land. Later Saul is made king here.",
+      he: "המחנה הראשון מעבר לירדן: שתים עשרה אבנים מן הנהר והפסח הראשון בארץ. לימים מומלך כאן שאול.",
+    },
+  },
+  {
+    id: "shittim", en: "Shittim (Abel-shittim)", he: "שיטים (אבל השיטים)", lat: 31.8402, lng: 35.6737, zoom: 13, certainty: "debated",
+    refs: ["Numbers 25", "Numbers 33", "Joshua 2", "Joshua 3", "Micah 6"],
+    story: {
+      en: "Israel's last camp before the Jordan. The people go astray after Baal-peor, and from here Joshua sends two spies to Jericho.",
+      he: "המחנה האחרון לפני הירדן. העם חוטא בבעל פעור, ומכאן שולח יהושע שני מרגלים ליריחו.",
+    },
+  },
+  {
+    id: "deadsea", en: "Dead Sea (Salt Sea)", he: "ים המלח", lat: 31.5536, lng: 35.4867, zoom: 10, certainty: "known",
+    refs: ["Genesis 14", "Numbers 34", "Joshua 3", "Ezekiel 47", "Zechariah 14"],
+    story: {
+      en: "The Salt Sea, the lowest land on Earth. Ezekiel sees its water healed, with fishermen spreading nets from Ein Gedi.",
+      he: "ים המלח, המקום הנמוך ביותר ביבשה. יחזקאל רואה את מימיו נרפאים, ודייגים פורשים רשתות מעין גדי.",
+    },
+  },
+  {
+    id: "tirzah", en: "Tirzah", he: "תרצה", lat: 32.2874, lng: 35.3378, zoom: 14, certainty: "known",
+    refs: ["I Kings 14", "I Kings 15", "I Kings 16", "Song of Songs 6"],
+    story: {
+      en: "An early royal city of the northern kingdom. Zimri reigned here seven days, then burned the palace over himself as Omri besieged the town.",
+      he: "עיר מלכות מוקדמת של ממלכת ישראל. זמרי מלך בה שבעה ימים, ואז שרף עליו את הארמון כשעמרי צר על העיר.",
+    },
+  },
+  {
+    id: "dothan", en: "Dothan", he: "דותן", lat: 32.4135, lng: 35.2399, zoom: 14, certainty: "known",
+    refs: ["Genesis 37", "II Kings 6"],
+    story: {
+      en: "Joseph’s brothers threw him into a pit near Dothan and sold him to a caravan. Later the hills here were full of fiery chariots around Elisha.",
+      he: "ליד דותן השליכו אחי יוסף אותו לבור ומכרו אותו לשיירה. לימים התמלאו ההרים כאן סוסים ורכב אש סביב אלישע.",
+    },
+  },
+  {
+    id: "ebal", en: "Mount Ebal", he: "הר עיבל", lat: 32.234, lng: 35.2733, zoom: 13, certainty: "known",
+    refs: ["Deuteronomy 11", "Deuteronomy 27", "Joshua 8"],
+    story: {
+      en: "The mountain of the curse, facing Gerizim across Shechem’s valley. Joshua built an altar of uncut stones here, and on a spur of it stands a structure some call his altar.",
+      he: "הר הקללה, מול גריזים מעבר לעמק שכם. יהושע בנה כאן מזבח אבנים שלמות, ועל אחת משלוחותיו עומד מבנה שיש המכנים אותו מזבח יהושע.",
+    },
+  },
+  {
+    id: "mahanaim", en: "Mahanaim", he: "מחנים", lat: 32.1856, lng: 35.6866, zoom: 13, certainty: "debated",
+    refs: ["Genesis 32", "II Samuel 2", "II Samuel 17", "II Samuel 19", "I Kings 4"],
+    story: {
+      en: "Jacob meets God's angels and names the place “two camps.” Later David waits here at the gate and weeps for Absalom.",
+      he: "יעקב פוגש מלאכי אלוהים וקורא למקום ״מחנים״. לימים דוד מחכה כאן בשער ובוכה על אבשלום.",
+    },
+  },
+  {
+    id: "ramothgilead", en: "Ramoth-gilead", he: "רמות גלעד", lat: 32.5, lng: 36.0147, zoom: 12.5, certainty: "debated",
+    refs: ["Deuteronomy 4", "I Kings 22", "II Kings 8", "II Kings 9"],
+    story: {
+      en: "A city of refuge that Israel and Aram fought over. Ahab dies from a stray arrow, and a young prophet anoints Jehu king.",
+      he: "עיר מקלט שעליה נלחמו ישראל וארם. אחאב נהרג מחץ תועה, ונער מבני הנביאים מושח את יהוא למלך.",
+    },
+  },
+  {
+    id: "rabbah", en: "Rabbah of the Ammonites", he: "רבת בני עמון", lat: 31.9547, lng: 35.9343, zoom: 14.5, certainty: "known",
+    refs: ["Deuteronomy 3", "II Samuel 11", "II Samuel 12", "Jeremiah 49", "Amos 1"],
+    story: {
+      en: "Capital of the Ammonites, today's Amman. Joab besieges it, and Uriah the Hittite falls beneath its walls.",
+      he: "בירת בני עמון, עמאן של היום. יואב צר עליה, ואוריה החתי נופל תחת חומותיה.",
+    },
+  },
+  {
+    id: "heshbon", en: "Heshbon", he: "חשבון", lat: 31.8008, lng: 35.8089, zoom: 14, certainty: "debated",
+    refs: ["Numbers 21", "Numbers 32", "Isaiah 15", "Jeremiah 48", "Song of Songs 7"],
+    story: {
+      en: "Sihon's city, taken on the way to the Jordan. “Your eyes are pools in Heshbon.”",
+      he: "עירו של סיחון, שנכבשה בדרך אל הירדן. ״עיניך ברכות בחשבון״.",
+    },
+  },
+  {
+    id: "dibon", en: "Dibon (Dhiban)", he: "דיבון (ד׳יבאן)", lat: 31.4992, lng: 35.7805, zoom: 14, certainty: "known",
+    refs: ["Numbers 21", "Numbers 32", "II Kings 3", "Isaiah 15", "Jeremiah 48"],
+    story: {
+      en: "Home of Mesha king of Moab, who rebelled against Israel. His victory stone was found here in 1868.",
+      he: "עירו של מישע מלך מואב, שמרד בישראל. אבן הניצחון שלו נמצאה כאן ב־1868.",
+    },
+  },
   // ── The north ────────────────────────────────────────────────────
   {
     id: "kinneret", en: "Sea of Galilee (Kinneret)", he: "ים כנרת", lat: 32.82, lng: 35.59, zoom: 10.5, certainty: "known",
@@ -402,6 +620,54 @@ export const PLACES: Place[] = [
     story: {
       en: "“Like the dew of Hermon that falls on the mountains of Zion.”",
       he: "״כטל חרמון שיורד על הררי ציון״.",
+    },
+  },
+  {
+    id: "kedesh", en: "Kedesh in Naphtali", he: "קדש נפתלי", lat: 33.1117, lng: 35.5294, zoom: 14, certainty: "known",
+    refs: ["Joshua 20", "Judges 4", "II Kings 15"],
+    story: {
+      en: "A city of refuge in the hills of Naphtali and Barak's hometown. Tiglath-pileser took it; centuries later a burnt archive here left 2,000 clay seals.",
+      he: "עיר מקלט בהר נפתלי ועירו של ברק. תגלת פלאסר כבש אותה, ומאות שנים אחר כך הותיר בה ארכיון שרוף 2,000 חותמות טין.",
+    },
+  },
+  {
+    id: "tyre", en: "Tyre", he: "צור", lat: 33.2721, lng: 35.1955, zoom: 13, certainty: "known",
+    refs: ["II Samuel 5", "I Kings 5", "Isaiah 23", "Ezekiel 27", "Amos 1"],
+    story: {
+      en: "Island city of merchants. King Hiram sent cedar to David and Solomon; Ezekiel mourned its pride, and Alexander built a causeway to take it.",
+      he: "עיר אי של סוחרים. חירם שלח ארזים לדוד ולשלמה, יחזקאל קונן על גאוותה, ואלכסנדר בנה סוללה כדי לכבוש אותה.",
+    },
+  },
+  {
+    id: "sidon", en: "Sidon", he: "צידון", lat: 33.5625, lng: 35.3725, zoom: 13.5, certainty: "known",
+    refs: ["Genesis 10", "Judges 18", "I Kings 16", "Ezekiel 28"],
+    story: {
+      en: "Canaan's “firstborn” and home of the Sidonians. Jezebel was the daughter of their king, and its Persian-era kings left famous sarcophagi.",
+      he: "״בכור״ כנען ועיר הצידונים. איזבל הייתה בת מלכם, ומלכיה בתקופה הפרסית הותירו ארונות קבורה מפורסמים.",
+    },
+  },
+  {
+    id: "zarephath", en: "Zarephath (Sarafand)", he: "צרפת (סרפנד)", lat: 33.4575, lng: 35.2958, zoom: 13.5, certainty: "known",
+    refs: ["I Kings 17", "Obadiah 1"],
+    story: {
+      en: "In the drought Elijah lodged with a widow here: her jar of flour never ran out and her jug of oil never failed.",
+      he: "בימי הבצורת התגורר כאן אליהו אצל אלמנה: ״כד הקמח לא כלתה וצפחת השמן לא חסר״.",
+    },
+  },
+  {
+    id: "damascus", en: "Damascus", he: "דמשק", lat: 33.5117, lng: 36.3064, zoom: 12, certainty: "known",
+    refs: ["Genesis 15", "I Kings 19", "II Kings 5", "II Kings 16", "Isaiah 17"],
+    story: {
+      en: "Capital of Aram and Israel's great rival. Naaman preferred its rivers to the Jordan, and King Ahaz copied an altar he saw here.",
+      he: "בירת ארם ויריבתה הגדולה של ישראל. נעמן העדיף את נהרותיה על הירדן, והמלך אחז העתיק מזבח שראה בה.",
+    },
+  },
+  {
+    id: "riblah", en: "Riblah", he: "רבלה", lat: 34.4321, lng: 36.5491, zoom: 13, certainty: "known",
+    refs: ["II Kings 23", "II Kings 25", "Jeremiah 39", "Jeremiah 52"],
+    story: {
+      en: "Conquerors' camp on the Orontes. Here Pharaoh Necho chained Jehoahaz, and Nebuchadnezzar passed judgment on Zedekiah, Judah's last king.",
+      he: "מחנה הכובשים על האורונטס. כאן אסר פרעה נכה את יהואחז, ונבוכדנאצר דן את צדקיהו, מלכה האחרון של יהודה.",
     },
   },
   // ── Wilderness and Egypt ──────────────────────────────────────────
@@ -435,6 +701,62 @@ export const PLACES: Place[] = [
     story: {
       en: "Solomon's fleet sails from here to Ophir for gold.",
       he: "מכאן הפליג הצי של שלמה לאופיר להביא זהב.",
+    },
+  },
+  {
+    id: "redsea", en: "The Sea of Reeds", he: "ים סוף", lat: 30.3225, lng: 32.3825, zoom: 9, certainty: "debated",
+    refs: ["Exodus 14", "Exodus 15", "Numbers 33", "Psalms 136"],
+    story: {
+      en: "A strong east wind blows all night, the sea splits, and Israel crosses on dry ground. On the far shore Miriam takes up her drum.",
+      he: "רוח קדים עזה נושבת כל הלילה, הים נבקע ובני ישראל עוברים ביבשה. על החוף שמנגד לוקחת מרים את התוף בידה.",
+    },
+  },
+  {
+    id: "raamses", en: "Raamses and Pithom", he: "רעמסס ופיתום", lat: 30.7989, lng: 31.8358, zoom: 13, certainty: "known",
+    refs: ["Genesis 47", "Exodus 1", "Exodus 12", "Numbers 33"],
+    story: {
+      en: "The store cities Israel built for Pharaoh, and the first stage of the Exodus: “They set out from Rameses to Succoth.”",
+      he: "ערי המסכנות שבני ישראל בנו לפרעה, ונקודת היציאה ממצרים: ״ויסעו בני ישראל מרעמסס סכתה״.",
+    },
+  },
+  {
+    id: "memphis", en: "Memphis (Noph)", he: "נוף (ממפיס)", lat: 29.8494, lng: 31.255, zoom: 13.5, certainty: "known",
+    refs: ["Isaiah 19", "Jeremiah 44", "Jeremiah 46", "Ezekiel 30", "Hosea 9"],
+    story: {
+      en: "Egypt's ancient capital, Noph to the prophets. In Jeremiah's day refugees from Judah lived here.",
+      he: "בירתה העתיקה של מצרים, ״נֹף״ בפי הנביאים. בימי ירמיהו ישבו בה פליטים מיהודה.",
+    },
+  },
+  {
+    id: "on", en: "On (Heliopolis)", he: "און (הליופוליס)", lat: 30.1293, lng: 31.3075, zoom: 14, certainty: "known",
+    refs: ["Genesis 41", "Genesis 46", "Jeremiah 43", "Ezekiel 30"],
+    story: {
+      en: "The city of the sun. Joseph marries Asenath, daughter of Potiphera, priest of On; one of its obelisks still stands.",
+      he: "עיר השמש. יוסף נושא את אסנת בת פוטי פרע כהן און; אחד האובליסקים שלה עדיין עומד במקומו.",
+    },
+  },
+  {
+    id: "nile", en: "The Nile", he: "היאור (הנילוס)", lat: 27.2029, lng: 31.1902, zoom: 7, certainty: "known",
+    refs: ["Genesis 41", "Exodus 2", "Exodus 7", "Ezekiel 29"],
+    story: {
+      en: "Pharaoh dreams on its bank, a baby floats in a basket among its reeds, and its water turns to blood.",
+      he: "פרעה חולם על שפתו, תינוק צף בתיבה בין קני הסוף שלו, ומימיו הופכים לדם.",
+    },
+  },
+  {
+    id: "bozrah", en: "Bozrah (Busayra)", he: "בצרה (בוצירה)", lat: 30.7389, lng: 35.6072, zoom: 14, certainty: "known",
+    refs: ["Genesis 36", "Isaiah 34", "Isaiah 63", "Jeremiah 49", "Amos 1"],
+    story: {
+      en: "Edom's chief city. Isaiah sees one coming from Edom in crimson-stained garments from Bozrah.",
+      he: "העיר הראשית של אדום. ״מי זה בא מאדום חמוץ בגדים מבצרה״.",
+    },
+  },
+  {
+    id: "mounthor", en: "Mount Hor (Jabal Harun)", he: "הור ההר (ג׳בל הארון)", lat: 30.317, lng: 35.4064, zoom: 13, certainty: "traditional",
+    refs: ["Numbers 20", "Numbers 21", "Numbers 33", "Deuteronomy 32"],
+    story: {
+      en: "Moses dresses Eleazar in his father's robes, and Aaron dies on the mountaintop. All Israel mourns him thirty days.",
+      he: "משה מלביש את אלעזר בבגדי אביו, ואהרן מת בראש ההר. כל ישראל בוכים עליו שלושים יום.",
     },
   },
   // ── Mesopotamia and Persia ───────────────────────────────────────
@@ -481,6 +803,38 @@ export const PLACES: Place[] = [
     story: {
       en: "Esther's palace. “Who knows whether you came to royalty for such a time as this?”",
       he: "הארמון של אסתר. ״ומי יודע אם לעת כזאת הגעת למלכות״.",
+    },
+  },
+  {
+    id: "carchemish", en: "Carchemish", he: "כרכמיש", lat: 36.8295, lng: 38.0165, zoom: 13.5, certainty: "known",
+    refs: ["Isaiah 10", "Jeremiah 46", "II Chronicles 35"],
+    story: {
+      en: "The great fortress on the Euphrates where Nebuchadnezzar crushed Pharaoh Necho in 605 BCE, ending Egypt's hold on the Levant.",
+      he: "המבצר הגדול על הפרת, שבו ריסק נבוכדנאצר את צבא פרעה נכה ב־605 לפנה״ס ושם קץ לשליטת מצרים בלבנט.",
+    },
+  },
+  {
+    id: "euphrates", en: "The Euphrates", he: "נהר פרת", lat: 34.5494, lng: 40.89, zoom: 9, certainty: "known",
+    refs: ["Genesis 2", "Genesis 15", "Jeremiah 13", "Jeremiah 46", "Jeremiah 51"],
+    story: {
+      en: "“The great river,” the far border of the promise. Babylon beat Egypt on its bank at Carchemish, and Jeremiah's scroll sank in its water.",
+      he: "״הנהר הגדול״, גבולה הרחוק של ההבטחה. על גדתו, בכרכמיש, הביסה בבל את מצרים, ובמימיו טבע ספר נבואותיו של ירמיהו.",
+    },
+  },
+  {
+    id: "tigris", en: "The Tigris (Hiddekel)", he: "החידקל (טיגריס)", lat: 35.4567, lng: 43.2625, zoom: 9, certainty: "known",
+    refs: ["Genesis 2", "Genesis 10", "Daniel 10"],
+    story: {
+      en: "A river of Eden. Daniel stands on its bank and sees “a man clothed in linen”; on its banks rose Ashur, Assyria's first capital.",
+      he: "מנהרות עדן. דניאל עומד על גדתו ורואה ״איש לבוש בדים״; על גדותיו קמה אשור, הבירה הראשונה של האשורים.",
+    },
+  },
+  {
+    id: "ecbatana", en: "Ecbatana (Achmetha)", he: "אחמתא (המדאן)", lat: 34.8064, lng: 48.5161, zoom: 13, certainty: "known",
+    refs: ["II Kings 17", "Ezra 5", "Ezra 6"],
+    story: {
+      en: "The summer capital of Persia's kings. Here Darius's officials found the scroll in which Cyrus allowed the Temple to be rebuilt.",
+      he: "בירת הקיץ של מלכי פרס. כאן מצאו פקידי דריווש את המגילה שבה התיר כורש לבנות מחדש את המקדש.",
     },
   },
 ];

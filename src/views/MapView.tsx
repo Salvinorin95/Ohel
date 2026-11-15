@@ -51,9 +51,13 @@ export interface MapProps {
   onOpenRef?: (ref: string) => void;
   onTalk?: (id: string) => void;
   onSelect?: (id: string | null) => void;
+  /** Open this place's page straight away (the /place/<id> address). */
+  openPage?: boolean;
+  /** Called when a place page opens (id) or closes (null), so the address can follow. */
+  onPage?: (id: string | null) => void;
 }
 
-export function MapView({ place, view, embedded, onShareView, onSharePlace, onOpenRef, onTalk, onSelect }: MapProps) {
+export function MapView({ place, view, embedded, onShareView, onSharePlace, onOpenRef, onTalk, onSelect, openPage, onPage }: MapProps) {
   const { t, lang, token, celebrate } = useApp();
   const box = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
@@ -64,7 +68,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   const [list, setList] = useState(false);
   const [q, setQ] = useState("");
   const [visible, setVisible] = useState(false);
-  const [page, setPage] = useState<string | null>(null);
+  const [page, setPage] = useState<string | null>(openPage && findPlace(place) ? place! : null);
   const [realm, setRealm] = useState<{ id: RealmId; year: number; back: string | null } | null>(null);
   const index = usePlaceIndex();
   const selectRef = useRef<(id: string | null, fly?: boolean) => void>(() => {});
@@ -122,8 +126,61 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
       markers.current.set(p.id, { marker, el });
     }
     for (const [id, { el }] of markers.current) el.classList.toggle("on", id === selected);
+    declutterRef.current();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);
+
+  // Keep a crowded map readable: where dots or labels would sit on top of each other, the selected place wins,
+  // then the bigger places (minor ones give way), then the list order. Zooming in brings the rest back.
+  const declutter = () => {
+    const map = mapRef.current;
+    if (!map || !markers.current.size) return;
+    const showLabels = map.getZoom() >= 8.6;
+    const order = [...PLACES].sort((a, b) => Number(b.id === selected) - Number(a.id === selected) || Number(!!a.minor) - Number(!!b.minor));
+    type Box = [number, number, number, number];
+    const hit = (a: Box, b: Box) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+    const dots: Box[] = [];
+    const taken: Box[] = [];
+    for (const p of order) {
+      const m = markers.current.get(p.id);
+      if (!m) continue;
+      const { x, y } = map.project([p.lng, p.lat]);
+      const dot: Box = [x - 9, y - 9, x + 9, y + 9];
+      const keep = p.id === selected || !dots.some((d) => hit(d, dot));
+      m.el.classList.toggle("crowded", !keep);
+      if (!keep) continue;
+      dots.push(dot);
+      taken.push(dot);
+      if (!showLabels) continue;
+      const w = p[lang].length * (lang === "he" ? 7 : 6.6) + 18;
+      const label: Box = [x - w / 2, y + 10, x + w / 2, y + 31];
+      const fits = p.id === selected || !taken.some((d) => hit(d, label));
+      m.el.classList.toggle("nolabel", !fits);
+      if (fits) taken.push(label);
+    }
+  };
+  const declutterRef = useRef(declutter);
+  declutterRef.current = declutter;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    let raf = 0;
+    const run = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => declutterRef.current());
+    };
+    map.on("moveend", run);
+    map.on("load", run);
+    map.on("resize", run);
+    run();
+    return () => {
+      cancelAnimationFrame(raf);
+      map.off("moveend", run);
+      map.off("load", run);
+      map.off("resize", run);
+    };
+  }, []);
+  useEffect(() => declutterRef.current(), [selected]);
 
   const flyTo = (p: Place) => {
     const h = box.current?.clientHeight ?? 600;
@@ -149,6 +206,17 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     if (place) select(place, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [place]);
+  // The address and the tab title follow what is open: /place/<id> for a page, /map/<id> for a pin.
+  useEffect(() => {
+    if (page) onPage?.(page);
+    else if (selected) onSelect?.(selected);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+  useEffect(() => {
+    if (embedded) return;
+    const p = findPlace(page ?? selected);
+    document.title = p ? `${p[lang]} · ${page ? (lang === "he" ? "בתנ״ך" : "in the Bible") : t("navMap")} · Ohel` : `${t("navMap")} · Ohel`;
+  }, [page, selected, lang, embedded, t]);
   useEffect(() => {
     if (!view || !mapRef.current) return;
     setSat(view.sat);
