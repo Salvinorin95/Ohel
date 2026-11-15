@@ -2,7 +2,7 @@ import { DurableObject } from "cloudflare:workers";
 import { BADGES, DAILY_CAPS, POINTS, type BadgeStats, type Stats } from "../shared/game.ts";
 import { findBook, parseRef, refString } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
-import type { AdminAction, AdminData, AdminMsg, AdminUser, ClientMsg, ErrorCode, MapView, Me, Msg, Person, QuizPublic, RoomInfo, ServerMsg } from "../shared/protocol.ts";
+import type { AdminAction, AdminData, AdminMsg, AdminUser, ClientMsg, ErrorCode, MapView, Me, Msg, Person, PublicProfile, QuizPublic, RoomInfo, ServerMsg } from "../shared/protocol.ts";
 import { check, checkName, type Severity } from "./moderation.ts";
 import { dailyQuestion, findQuestion, pickQuestion } from "./quiz.ts";
 
@@ -22,6 +22,7 @@ interface Attachment {
   uid: string | null;
   name: string;
   avatar: number;
+  photo?: string | null;
 }
 
 interface QuizState {
@@ -176,6 +177,12 @@ export class Hub extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS bans (ip_hash TEXT PRIMARY KEY, until INTEGER);
       CREATE TABLE IF NOT EXISTS joins (ip_hash TEXT, day TEXT, n INTEGER, PRIMARY KEY (ip_hash, day));
       CREATE TABLE IF NOT EXISTS dq (uid TEXT, day TEXT, choice INTEGER, correct INTEGER, PRIMARY KEY (uid, day));
+      CREATE TABLE IF NOT EXISTS accounts (uid TEXT PRIMARY KEY, username TEXT NOT NULL UNIQUE COLLATE NOCASE, pass TEXT NOT NULL, salt TEXT NOT NULL, created INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, uid TEXT NOT NULL, created INTEGER NOT NULL);
+      CREATE INDEX IF NOT EXISTS sessions_uid ON sessions (uid);
+      CREATE TABLE IF NOT EXISTS profiles (uid TEXT PRIMARY KEY, bio TEXT NOT NULL DEFAULT '', photo INTEGER, updated INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS photos (id INTEGER PRIMARY KEY AUTOINCREMENT, uid TEXT NOT NULL, data BLOB NOT NULL, mime TEXT NOT NULL, created INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS logins (k TEXT, day TEXT, n INTEGER, PRIMARY KEY (k, day));
     `);
     const salt = this.sql.exec<{ v: string }>("SELECT v FROM meta WHERE k = 'salt'").toArray()[0];
     if (salt) this.salt = salt.v;
@@ -203,12 +210,27 @@ export class Hub extends DurableObject<Env> {
 
   private async userByToken(token: string | null | undefined) {
     if (!token || token.length > 200) return undefined;
-    const u = this.one<UserRow>("SELECT * FROM users WHERE token_hash = ?", await sha256(token));
+    const h = await sha256(token);
+    let u = this.one<UserRow>("SELECT * FROM users WHERE token_hash = ?", h);
+    if (u) u.main_key = 1; // the account's own key (it can also reset the password)
+    else u = this.one<UserRow>("SELECT u.* FROM sessions s JOIN users u ON u.id = s.uid WHERE s.token_hash = ?", h);
     return u && !u.banned ? u : undefined;
   }
 
+  private photoOf(uid: string | null): string | null {
+    if (!uid) return null;
+    const p = this.one<{ photo: number | null }>("SELECT photo FROM profiles WHERE uid = ?", uid);
+    return p?.photo ? `/api/photo/${p.photo}` : null;
+  }
+
   private meOf(u: UserRow): Me {
-    return { id: u.id, name: u.name, avatar: u.avatar, points: u.points, streak: u.streak, mutedUntil: u.muted_until, ...(this.isAdmin(u.id) ? { admin: true } : {}) };
+    const acc = this.one<{ username: string }>("SELECT username FROM accounts WHERE uid = ?", u.id);
+    const prof = this.one<{ bio: string }>("SELECT bio FROM profiles WHERE uid = ?", u.id);
+    return {
+      id: u.id, name: u.name, avatar: u.avatar, points: u.points, streak: u.streak, mutedUntil: u.muted_until,
+      ...(this.isAdmin(u.id) ? { admin: true } : {}),
+      registered: !!acc, ...(acc ? { username: acc.username } : {}), photo: this.photoOf(u.id), bio: prof?.bio ?? "",
+    };
   }
 
   /** The people who look after the tent: user ids in the ADMIN_IDS secret, comma separated. */
@@ -356,7 +378,7 @@ export class Hub extends DurableObject<Env> {
   private toMsg(r: MsgRow, lit = false): Msg {
     const hidden = !!r.hidden;
     return {
-      id: r.id, uid: r.uid, name: r.name, avatar: r.avatar, kind: r.kind as Msg["kind"],
+      id: r.id, uid: r.uid, name: r.name, avatar: r.avatar, photo: this.photoOf(r.uid), kind: r.kind as Msg["kind"],
       body: hidden ? "" : r.body, ref: hidden ? null : r.ref, place: hidden ? null : r.place,
       view: hidden || !r.view ? null : JSON.parse(r.view), replyTo: r.reply_to, lights: r.lights, lit,
       helpful: !!r.helpful, hidden, quiz: r.quiz && !hidden ? this.quizPublic(JSON.parse(r.quiz)) : null, at: r.at,
@@ -388,7 +410,7 @@ export class Hub extends DurableObject<Env> {
     for (const ws of this.ctx.getWebSockets(room)) {
       if (ws === except || ws.readyState !== WebSocket.OPEN) continue;
       const at = ws.deserializeAttachment() as Attachment | null;
-      if (at?.uid) people.set(at.uid, { uid: at.uid, name: at.name, avatar: at.avatar });
+      if (at?.uid) people.set(at.uid, { uid: at.uid, name: at.name, avatar: at.avatar, photo: at.photo ?? null });
       else guests++;
     }
     return { online: [...people.values()], guests };
@@ -424,6 +446,12 @@ export class Hub extends DurableObject<Env> {
     }
 
     if (path === "/api/join" && method === "POST") return this.join(req);
+    if (path === "/api/login" && method === "POST") return this.login(req);
+    if (path === "/api/register" && method === "POST") return this.register(req, await this.userByToken(auth));
+    const photoMatch = /^\/api\/photo\/(\d{1,12})$/.exec(path);
+    if (photoMatch && method === "GET") return this.photo(Number(photoMatch[1]));
+    const profMatch = /^\/api\/users\/([\w-]{1,20})$/.exec(path);
+    if (profMatch && method === "GET") return this.publicProfile(profMatch[1]);
     if (path === "/api/rooms" && method === "GET") return this.listRooms();
     if (path === "/api/leaderboard" && method === "GET") return this.leaderboard();
     if (path === "/api/daily" && method === "GET") return this.daily((await this.userByToken(auth)) ?? null);
@@ -441,6 +469,11 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/read" && method === "POST") return this.read(me, req);
     if (path === "/api/visit" && method === "POST") return this.visit(me, req);
     if (path === "/api/daily" && method === "POST") return this.answerDaily(me, req);
+    if (path === "/api/password" && method === "POST") return this.setPassword(me, req);
+    if (path === "/api/profile" && method === "POST") return this.saveProfile(me, req);
+    if (path === "/api/photo" && method === "POST") return this.savePhoto(me, req);
+    if (path === "/api/photo" && method === "DELETE") return (this.clearPhoto(me.id), json({ me: this.meOf(this.user(me.id)!) }));
+    if (path === "/api/sessions" && method === "DELETE") return (this.sql.exec("DELETE FROM sessions WHERE uid = ?", me.id), json({ ok: true }));
     if (path.startsWith("/api/admin")) {
       if (!this.isAdmin(me.id)) return fail("forbidden", 403);
       if (path === "/api/admin" && method === "GET") return json(this.adminData());
@@ -460,6 +493,13 @@ export class Hub extends DurableObject<Env> {
 
   private async join(req: Request) {
     const b = await this.body(req);
+    const made = await this.newUser(req, b);
+    if (made instanceof Response) return made;
+    return json({ token: made.token, me: this.meOf(this.user(made.id)!) });
+  }
+
+  /** A new person (guest or about to register): name check, the network's daily limit, a fresh key. */
+  private async newUser(req: Request, b: Record<string, unknown>): Promise<Response | { id: string; token: string }> {
     const checked = checkName(String(b.name ?? ""));
     if (!checked.ok) return fail(`name_${checked.reason}`);
     const avatar = Math.max(0, Math.min(7, Math.floor(Number(b.avatar) || 0)));
@@ -482,7 +522,151 @@ export class Hub extends DurableObject<Env> {
       id, checked.name, avatar, await sha256(token), Date.now(), ipHash,
     );
     this.award(id, null);
-    return json({ token, me: this.meOf(this.user(id)!) });
+    return { id, token };
+  }
+
+  // ── Accounts: a username and password on top of the key ──
+  // The browser stretches the password (PBKDF2, 150,000 rounds, salted with the username) before sending it,
+  // so the server only ever sees that stretched value and stores a salted hash of it. Cheap for the server,
+  // slow for anyone guessing.
+  private static USERNAME = /^[\p{L}\p{N}_.\-]{3,20}$/u;
+  private async passHash(salt: string, pass: string) {
+    return sha256(`${salt}:${pass}`);
+  }
+  private loginGate(k: string) {
+    const row = this.one<{ n: number }>("SELECT n FROM logins WHERE k = ? AND day = ?", k, today());
+    return (row?.n ?? 0) < 20;
+  }
+  private loginFailed(k: string) {
+    this.sql.exec("INSERT INTO logins (k, day, n) VALUES (?, ?, 1) ON CONFLICT DO UPDATE SET n = n + 1", k, today());
+  }
+  private async newSession(uid: string) {
+    const token = `ohel_${randomId(24)}`;
+    this.sql.exec("INSERT INTO sessions (token_hash, uid, created) VALUES (?, ?, ?)", await sha256(token), uid, Date.now());
+    return token;
+  }
+
+  /** Register: a guest who is signed in keeps everything and gains a username; otherwise a new person. */
+  private async register(req: Request, me: UserRow | undefined) {
+    const b = await this.body(req);
+    const username = String(b.username ?? "").normalize("NFC").trim();
+    const pass = String(b.pass ?? "");
+    if (!Hub.USERNAME.test(username)) return fail("username_chars");
+    const named = checkName(username.replace(/[_.\-]+/g, " ").trim());
+    if (!named.ok && (named.reason === "blocked" || named.reason === "reserved")) return fail(`username_${named.reason}`);
+    if (!/^[0-9a-f]{64}$/.test(pass)) return fail("bad_request");
+    if (this.one("SELECT uid FROM accounts WHERE username = ?", username)) return fail("username_taken", 409);
+    let uid: string;
+    let token: string | null = null;
+    if (me) {
+      if (this.one("SELECT uid FROM accounts WHERE uid = ?", me.id)) return fail("already_registered", 409);
+      uid = me.id;
+    } else {
+      const made = await this.newUser(req, { name: b.name || username, avatar: b.avatar });
+      if (made instanceof Response) return made;
+      uid = made.id;
+      token = made.token;
+    }
+    const salt = randomId(16);
+    this.sql.exec("INSERT INTO accounts (uid, username, pass, salt, created) VALUES (?, ?, ?, ?, ?)", uid, username, await this.passHash(salt, pass), salt, Date.now());
+    return json({ ...(token ? { token } : {}), me: this.meOf(this.user(uid)!) });
+  }
+
+  private async login(req: Request) {
+    const b = await this.body(req);
+    const username = String(b.username ?? "").normalize("NFC").trim();
+    const pass = String(b.pass ?? "");
+    const ip = req.headers.get("x-ohel-ip") ?? "";
+    const keys = [`u:${username.toLowerCase()}`, ...(ip && ip !== "127.0.0.1" && ip !== "::1" ? [`ip:${(await sha256(this.salt + ip)).slice(0, 32)}`] : [])];
+    if (!keys.every((k) => this.loginGate(k))) return fail("rate", 429);
+    const acc = this.one<{ uid: string; pass: string; salt: string }>("SELECT uid, pass, salt FROM accounts WHERE username = ?", username);
+    const u = acc && this.user(acc.uid);
+    if (!acc || !u || (await this.passHash(acc.salt, pass)) !== acc.pass) {
+      for (const k of keys) this.loginFailed(k);
+      return fail("login_wrong", 401);
+    }
+    if (u.banned) return fail("banned", 403);
+    return json({ token: await this.newSession(u.id), me: this.meOf(u) });
+  }
+
+  /** Change the password: with the old one, or with the account's own key (the way back if it's forgotten). */
+  private async setPassword(u: UserRow, req: Request) {
+    const b = await this.body(req);
+    const pass = String(b.pass ?? "");
+    if (!/^[0-9a-f]{64}$/.test(pass)) return fail("bad_request");
+    const acc = this.one<{ pass: string; salt: string }>("SELECT pass, salt FROM accounts WHERE uid = ?", u.id);
+    if (!acc) return fail("not_registered", 404);
+    if (!u.main_key && (await this.passHash(acc.salt, String(b.old ?? ""))) !== acc.pass) return fail("login_wrong", 401);
+    const salt = randomId(16);
+    this.sql.exec("UPDATE accounts SET pass = ?, salt = ? WHERE uid = ?", await this.passHash(salt, pass), salt, u.id);
+    return json({ ok: true });
+  }
+
+  // ── Profiles: name, colour, a few words, a photo ──
+  private async saveProfile(u: UserRow, req: Request) {
+    const b = await this.body(req);
+    if (typeof b.name === "string" && b.name.trim() !== u.name) {
+      const checked = checkName(b.name);
+      if (!checked.ok) return fail(`name_${checked.reason}`);
+      this.sql.exec("UPDATE users SET name = ? WHERE id = ?", checked.name, u.id);
+    }
+    if (b.avatar !== undefined) this.sql.exec("UPDATE users SET avatar = ? WHERE id = ?", Math.max(0, Math.min(7, Math.floor(Number(b.avatar) || 0))), u.id);
+    if (typeof b.bio === "string") {
+      const bio = b.bio.replace(/\r/g, "").replace(/\n{3,}/g, "\n\n").trim();
+      if ([...bio].length > 280) return fail("too_long");
+      if (bio && !check(bio).ok) return fail("blocked");
+      this.sql.exec("INSERT INTO profiles (uid, bio, updated) VALUES (?, ?, ?) ON CONFLICT DO UPDATE SET bio = excluded.bio, updated = excluded.updated", u.id, bio, Date.now());
+    }
+    return json({ me: this.meOf(this.user(u.id)!) });
+  }
+
+  private async savePhoto(u: UserRow, req: Request) {
+    const mime = (req.headers.get("content-type") ?? "").split(";")[0].trim();
+    if (!["image/webp", "image/jpeg", "image/png"].includes(mime)) return fail("bad_type", 415);
+    const data = await req.arrayBuffer();
+    if (data.byteLength < 100 || data.byteLength > 200_000) return fail("too_big", 413);
+    // The bytes must really be the image they claim to be (WebP, JPEG or PNG signature).
+    const h = new Uint8Array(data.slice(0, 12));
+    const isWebp = String.fromCharCode(...h.slice(0, 4)) === "RIFF" && String.fromCharCode(...h.slice(8, 12)) === "WEBP";
+    const isJpeg = h[0] === 0xff && h[1] === 0xd8 && h[2] === 0xff;
+    const isPng = h[0] === 0x89 && h[1] === 0x50 && h[2] === 0x4e && h[3] === 0x47;
+    if (!((mime === "image/webp" && isWebp) || (mime === "image/jpeg" && isJpeg) || (mime === "image/png" && isPng))) return fail("bad_type", 415);
+    const day = today();
+    const n = this.one<{ n: number }>("SELECT n FROM daily WHERE uid = ? AND day = ? AND kind = 'photo'", u.id, day)?.n ?? 0;
+    if (n >= 10) return fail("rate", 429);
+    this.sql.exec("INSERT INTO daily (uid, day, kind, n) VALUES (?, ?, 'photo', 1) ON CONFLICT DO UPDATE SET n = n + 1", u.id, day);
+    this.clearPhoto(u.id);
+    const row = this.one<{ id: number }>("INSERT INTO photos (uid, data, mime, created) VALUES (?, ?, ?, ?) RETURNING id", u.id, data, mime, Date.now())!;
+    this.sql.exec("INSERT INTO profiles (uid, photo, updated) VALUES (?, ?, ?) ON CONFLICT DO UPDATE SET photo = excluded.photo, updated = excluded.updated", u.id, row.id, Date.now());
+    return json({ me: this.meOf(this.user(u.id)!) });
+  }
+
+  private clearPhoto(uid: string) {
+    this.sql.exec("DELETE FROM photos WHERE uid = ?", uid);
+    this.sql.exec("UPDATE profiles SET photo = NULL, updated = ? WHERE uid = ?", Date.now(), uid);
+  }
+
+  private photo(id: number) {
+    const p = this.one<{ data: ArrayBuffer; mime: string }>("SELECT data, mime FROM photos WHERE id = ?", id);
+    if (!p) return new Response("not found", { status: 404 });
+    return new Response(p.data, {
+      headers: {
+        "content-type": p.mime, "cache-control": "public, max-age=31536000, immutable",
+        "x-content-type-options": "nosniff", "content-security-policy": "default-src 'none'; img-src 'self'",
+      },
+    });
+  }
+
+  private publicProfile(id: string) {
+    const u = this.user(id);
+    if (!u || u.banned) return fail("not_found", 404);
+    const badges = this.sql.exec<{ badge: string }>("SELECT badge FROM badges WHERE uid = ? ORDER BY at", id).toArray().map((r) => r.badge);
+    const p: PublicProfile = {
+      id, name: u.name, avatar: u.avatar, photo: this.photoOf(id), bio: this.one<{ bio: string }>("SELECT bio FROM profiles WHERE uid = ?", id)?.bio ?? "",
+      points: u.points, badges, joined: Number(u.created), registered: !!this.one("SELECT uid FROM accounts WHERE uid = ?", id),
+      ...(this.isAdmin(id) ? { admin: true } : {}),
+    };
+    return json(p);
   }
 
   private profile(u: UserRow) {
@@ -555,6 +739,7 @@ export class Hub extends DurableObject<Env> {
       if (at?.uid === u.id) ws.close(4000, "left");
     }
     this.sql.exec("UPDATE messages SET uid = NULL, name = '' WHERE uid = ?", u.id);
+    for (const t of ["accounts", "sessions", "profiles", "photos"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     for (const t of ["daily", "chapters", "visits", "badges", "dq"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     this.sql.exec("DELETE FROM users WHERE id = ?", u.id);
     return json({ ok: true });
@@ -658,7 +843,7 @@ export class Hub extends DurableObject<Env> {
 
     if (m.t === "hello") {
       const u = await this.userByToken(m.token);
-      const next: Attachment = u ? { room: at.room, uid: u.id, name: u.name, avatar: u.avatar } : { ...at, uid: null };
+      const next: Attachment = u ? { room: at.room, uid: u.id, name: u.name, avatar: u.avatar, photo: this.photoOf(u.id) } : { ...at, uid: null };
       ws.serializeAttachment(next);
       const room = this.room(at.room);
       if (!room) return ws.close(4004, "not_found");
@@ -875,6 +1060,12 @@ export class Hub extends DurableObject<Env> {
           break;
         case "ban":
           this.ban(u.id);
+          break;
+        case "clear_photo":
+          this.clearPhoto(u.id);
+          break;
+        case "clear_bio":
+          this.sql.exec("UPDATE profiles SET bio = '', updated = ? WHERE uid = ?", Date.now(), u.id);
           break;
         case "unban":
           this.sql.exec("UPDATE users SET banned = 0, strikes = 0, muted_until = 0 WHERE id = ?", u.id);

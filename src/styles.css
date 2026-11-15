@@ -689,3 +689,19 @@ a.chip-person { text-decoration: none; color: inherit; }
 .join-welcome { text-align: center; }
 .join-welcome h3 { margin: 6px 0 4px; }
 .join-welcome .save-user { text-align: start; margin: 14px 0; }
+
+.orb { overflow: hidden; }
+.orb-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+
+/* ── profiles & settings ── */
+.orb-btn { padding: 0; border: 0; background: none; cursor: pointer; border-radius: 50%; display: inline-flex; }
+.settings-photo { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 6px 0 14px; }
+.settings textarea { width: 100%; resize: vertical; font: inherit; color: inherit; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+.settings h2 { font-size: 1.05rem; margin: 6px 0 10px; }
+.settings-keep { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.settings-keep h3 { margin: 0 0 10px; font-size: 1rem; }
+.join-tabs { display: flex; width: 100%; margin-bottom: 4px; }
+.join-tabs button { flex: 1; }
+.join-under { margin: -6px 0 2px; }
+.user-pills { justify-content: center; }
+.user-bio { max-width: 520px; margin: 10px auto 4px; line-height: 1.6; white-space: pre-wrap; }

@@ -30,6 +30,10 @@ Every place has its own deep page: the setting today, the peoples who lived ther
 
 <img src="docs/screenshots/en/realm.jpg" alt="The Neo-Assyrian Empire's borders on the map">
 
+### 👥 People of the Bible
+
+31 people have their own page, from Noah and Abraham to Esther and Nehemiah: their story chapter by chapter with the verses, the places of their life on the map (and their journey, where there is one), family, who they were, how Jews, Christians and Muslims remember them, and what history and archaeology can and can't say. Every place page lists the people whose story passes through it.
+
 ### 🧭 Journeys
 
 Six journeys played on the map, stop by stop, with the verse for each stop: Abraham, Jacob, the Exodus (the traditional route, marked as debated), David on the run from Saul, Elijah, and the exile to Babylon and the return. The camera flies from stop to stop while the road draws itself; `/journey/<id>` opens one directly.
@@ -87,6 +91,7 @@ npm test           # moderation tests (72)
 node scripts/e2e.mjs http://localhost:5173   # two people chat, ask, light, report, quiz (26 checks)
 OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:5173   # admin tools (23 checks)
 node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
+npm run people     # check content/people/*.json and build public/data/people (same image checks)
 npm run places     # check content/places/*.json and build public/data/places (image credits from Commons; --offline reuses the last lookup)
 node --max-old-space-size=4096 scripts/build-realms.mjs <cliopatria.geojson>   # realm borders → public/data/realms.json
 node scripts/daily-e2e.mjs http://localhost:5173   # question of the day (11 checks)
@@ -107,6 +112,7 @@ worker/   index.ts (routes + Sefaria proxy with edge cache), hub.ts (the Durable
           seo.ts (place pages for search engines, sitemap), moderation.ts, quiz.ts
 src/      React app: views/Home, Room, Reader, MapView, PlacePage, Profile; components; i18n.ts
 content/  places/<id>.json: the place pages (how to write one: content/places/README.md)
+          people/<id>.json: the people pages (content/people/README.md)
 docs/     screenshots/he, screenshots/en (made by scripts/shots.mjs)
 ```
 

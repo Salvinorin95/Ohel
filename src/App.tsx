@@ -13,6 +13,7 @@ import { About } from "./views/About.tsx";
 import { Admin } from "./views/Admin.tsx";
 import { WeekPage } from "./views/WeekPage.tsx";
 import { PeoplePage, PersonPage } from "./views/PersonPage.tsx";
+import { Settings, UserPage } from "./views/Settings.tsx";
 import { usePeopleIndex } from "./placeData.ts";
 import { parseRef } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
@@ -60,7 +61,7 @@ function Nav() {
           {token && me ? (
             <button className={route.name === "me" ? "me-btn on" : "me-btn"} onClick={() => go({ name: "me" })}>
               <span className="me-pts">✨ {me.points}</span>
-              <Orb avatar={me.avatar} name={me.name} size={30} />
+              <Orb avatar={me.avatar} name={me.name} size={30} photo={me.photo} />
             </button>
           ) : (
             <button className="btn btn-glow small" onClick={() => askJoin()}>
@@ -77,7 +78,7 @@ function Nav() {
           </button>
         ))}
         <button className={route.name === "me" ? "on" : ""} onClick={() => go({ name: "me" })}>
-          <span className="bn-icon">{me ? <Orb avatar={me.avatar} name={me.name} size={22} /> : "🙂"}</span>
+          <span className="bn-icon">{me ? <Orb avatar={me.avatar} name={me.name} size={22} photo={me.photo} /> : "🙂"}</span>
           <span>{t("navMe")}</span>
         </button>
       </nav>
@@ -155,6 +156,8 @@ export function App() {
           {route.name === "about" && <About />}
           {route.name === "week" && <WeekPage />}
           {route.name === "people" && <PeoplePage />}
+          {route.name === "settings" && <Settings />}
+          {route.name === "user" && <UserPage key={route.id} id={route.id} />}
           {route.name === "person" && <PersonPage key={route.id} id={route.id} />}
           {route.name === "admin" && <Admin />}
         </main>
