@@ -8,7 +8,7 @@ import { Orb } from "./Orb.tsx";
 import { Sheet } from "./Sheet.tsx";
 
 export function JoinSheet() {
-  const { t, setSession, closeJoin, celebrate } = useApp();
+  const { t, setSession, closeJoin, celebrate, go } = useApp();
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState(() => Math.floor(Math.random() * ORBS.length));
   const [err, setErr] = useState("");
@@ -79,7 +79,12 @@ export function JoinSheet() {
             {t("joinGo")}
           </button>
           <p className="fine">{t("joinNoEmail")}</p>
-          <p className="fine">{t("kindness")}</p>
+          <p className="fine">
+            {t("kindness")}{" "}
+            <button type="button" className="link small" onClick={() => (closeJoin(false), go({ name: "about" }))}>
+              {t("rulesLink")}
+            </button>
+          </p>
           <button type="button" className="link" onClick={() => setKeyMode(true)}>
             {t("haveKey")}
           </button>

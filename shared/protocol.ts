@@ -55,6 +55,7 @@ export interface Me {
   points: number;
   streak: number;
   mutedUntil: number;
+  admin?: boolean; // one of the people who look after the tent
 }
 
 export interface Person {
@@ -99,9 +100,9 @@ export type ErrorCode =
   | "not_found";
 
 export type ServerMsg =
-  | { t: "welcome"; room: RoomInfo; history: Msg[]; me: Me | null; online: Person[]; guests: number }
+  | { t: "welcome"; room: RoomInfo; history: Msg[]; me: Me | null; online: Person[]; guests: number; staff: string[] }
   | { t: "msg"; msg: Msg }
-  | { t: "update"; id: number; lights?: number; helpful?: boolean; hidden?: boolean; quiz?: QuizPublic }
+  | { t: "update"; id: number; lights?: number; helpful?: boolean; hidden?: boolean; quiz?: QuizPublic; msg?: Msg }
   | { t: "presence"; online: Person[]; guests: number }
   | { t: "error"; code: ErrorCode; nonce?: string; until?: number; strikes?: number }
   | { t: "points"; delta: number; total: number; reason: string; badges: string[] }
@@ -113,3 +114,52 @@ export interface Award {
   total: number;
   badges: string[];
 }
+
+// ── looking after the tent (admins only) ─────────────────────────────
+export interface AdminUser {
+  id: string;
+  name: string;
+  avatar: number;
+  strikes: number;
+  mutedUntil: number;
+  banned: boolean;
+  msgs: number;
+  created: number;
+}
+
+export interface AdminMsg {
+  id: number;
+  room: string;
+  roomTitle: string;
+  uid: string | null;
+  name: string;
+  avatar: number;
+  kind: MsgKind;
+  body: string; // the original words, even when hidden
+  reports: number;
+  hidden: boolean;
+  at: number;
+  user: AdminUser | null;
+}
+
+export interface AdminRoom {
+  id: string;
+  title: string;
+  by: string;
+  msgs: number;
+  created: number;
+  last: number;
+}
+
+export interface AdminData {
+  stats: { people: number; newWeek: number; msgsDay: number; msgsWeek: number; rooms: number; online: number; guests: number };
+  reported: AdminMsg[];
+  latest: AdminMsg[];
+  people: AdminUser[];
+  rooms: AdminRoom[];
+}
+
+export type AdminAction =
+  | { on: "msg"; id: number; action: "hide" | "restore" }
+  | { on: "user"; id: string; action: "mute_hour" | "mute_day" | "unmute" | "ban" | "unban" }
+  | { on: "room"; id: string; action: "delete" };

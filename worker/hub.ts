@@ -2,7 +2,7 @@ import { DurableObject } from "cloudflare:workers";
 import { BADGES, DAILY_CAPS, POINTS, type Stats } from "../shared/game.ts";
 import { findBook, parseRef, refString } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
-import type { ClientMsg, ErrorCode, MapView, Me, Msg, Person, QuizPublic, RoomInfo, ServerMsg } from "../shared/protocol.ts";
+import type { AdminAction, AdminData, AdminMsg, AdminUser, ClientMsg, ErrorCode, MapView, Me, Msg, Person, QuizPublic, RoomInfo, ServerMsg } from "../shared/protocol.ts";
 import { check, checkName, type Severity } from "./moderation.ts";
 import { findQuestion, pickQuestion } from "./quiz.ts";
 
@@ -207,7 +207,19 @@ export class Hub extends DurableObject<Env> {
   }
 
   private meOf(u: UserRow): Me {
-    return { id: u.id, name: u.name, avatar: u.avatar, points: u.points, streak: u.streak, mutedUntil: u.muted_until };
+    return { id: u.id, name: u.name, avatar: u.avatar, points: u.points, streak: u.streak, mutedUntil: u.muted_until, ...(this.isAdmin(u.id) ? { admin: true } : {}) };
+  }
+
+  /** The people who look after the tent: user ids in the ADMIN_IDS secret, comma separated. */
+  private adminIds(): string[] {
+    return String(this.env.ADMIN_IDS ?? "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+
+  private isAdmin(uid: string | null | undefined) {
+    return !!uid && this.adminIds().includes(uid);
   }
 
   // ── points and badges ───────────────────────────────────────────────
@@ -285,18 +297,24 @@ export class Hub extends DurableObject<Env> {
     if (strikes >= 9) banned = 1;
     else if (strikes >= 6) until = Math.max(until, now + DAY);
     else if (strikes >= 3) until = Math.max(until, now + HOUR);
-    this.sql.exec("UPDATE users SET strikes = ?, last_strike = ?, muted_until = ?, banned = ? WHERE id = ?", strikes, now, until, banned, uid);
-    if (banned) {
-      if (u.ip_hash) this.sql.exec("INSERT OR REPLACE INTO bans (ip_hash, until) VALUES (?, ?)", u.ip_hash, now + 30 * DAY);
-      for (const ws of this.ctx.getWebSockets()) {
-        const at = ws.deserializeAttachment() as Attachment | null;
-        if (at?.uid === uid) {
-          this.send(ws, { t: "error", code: "banned" });
-          ws.close(4003, "banned");
-        }
+    this.sql.exec("UPDATE users SET strikes = ?, last_strike = ?, muted_until = ? WHERE id = ?", strikes, now, until, uid);
+    if (banned) this.ban(uid);
+    return { strikes, until, banned };
+  }
+
+  /** No more posting, and no new sign-ups from the same address for 30 days. */
+  private ban(uid: string) {
+    const u = this.user(uid);
+    if (!u) return;
+    this.sql.exec("UPDATE users SET banned = 1 WHERE id = ?", uid);
+    if (u.ip_hash) this.sql.exec("INSERT OR REPLACE INTO bans (ip_hash, until) VALUES (?, ?)", u.ip_hash, Date.now() + 30 * DAY);
+    for (const ws of this.ctx.getWebSockets()) {
+      const at = ws.deserializeAttachment() as Attachment | null;
+      if (at?.uid === uid) {
+        this.send(ws, { t: "error", code: "banned" });
+        ws.close(4003, "banned");
       }
     }
-    return { strikes, until, banned };
   }
 
   private rateOk(uid: string) {
@@ -340,7 +358,7 @@ export class Hub extends DurableObject<Env> {
       id: r.id, uid: r.uid, name: r.name, avatar: r.avatar, kind: r.kind as Msg["kind"],
       body: hidden ? "" : r.body, ref: hidden ? null : r.ref, place: hidden ? null : r.place,
       view: hidden || !r.view ? null : JSON.parse(r.view), replyTo: r.reply_to, lights: r.lights, lit,
-      helpful: !!r.helpful, hidden, quiz: r.quiz ? this.quizPublic(JSON.parse(r.quiz)) : null, at: r.at,
+      helpful: !!r.helpful, hidden, quiz: r.quiz && !hidden ? this.quizPublic(JSON.parse(r.quiz)) : null, at: r.at,
     };
   }
 
@@ -420,6 +438,11 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/rooms" && method === "POST") return this.createRoom(me, req);
     if (path === "/api/read" && method === "POST") return this.read(me, req);
     if (path === "/api/visit" && method === "POST") return this.visit(me, req);
+    if (path.startsWith("/api/admin")) {
+      if (!this.isAdmin(me.id)) return fail("forbidden", 403);
+      if (path === "/api/admin" && method === "GET") return json(this.adminData());
+      if (path === "/api/admin" && method === "POST") return this.adminAct(me, (await this.body(req)) as unknown as AdminAction);
+    }
     return fail("not_found", 404);
   }
 
@@ -591,7 +614,10 @@ export class Hub extends DurableObject<Env> {
         for (const r of this.sql.exec<{ msg: number }>("SELECT msg FROM lights WHERE uid = ? AND msg >= ?", u.id, rows[0].id)) lit.add(r.msg);
       }
       const p = this.presence(at.room);
-      this.send(ws, { t: "welcome", room: this.roomInfo(room), history: rows.map((r) => this.toMsg(r, lit.has(r.id))), me: u ? this.meOf(u) : null, ...p });
+      this.send(ws, {
+        t: "welcome", room: this.roomInfo(room), history: rows.map((r) => this.toMsg(r, lit.has(r.id))), me: u ? this.meOf(u) : null,
+        staff: this.adminIds(), ...p,
+      });
       this.broadcast(at.room, { t: "presence", ...p });
       return;
     }
@@ -700,6 +726,124 @@ export class Hub extends DurableObject<Env> {
 
   async webSocketError(ws: WebSocket) {
     await this.webSocketClose(ws, 1011);
+  }
+
+  // ── looking after the tent ──────────────────────────────────────────
+  private adminUser(u: UserRow | undefined): AdminUser | null {
+    if (!u) return null;
+    return {
+      id: u.id, name: u.name, avatar: u.avatar, strikes: u.strikes, mutedUntil: u.muted_until, banned: !!u.banned,
+      msgs: u.msgs, created: Number(u.created),
+    };
+  }
+
+  private adminMsgs(where: string, limit: number): AdminMsg[] {
+    const rows = this.sql
+      .exec<MsgRow & { room_title: string; title_he: string | null }>(
+        `SELECT m.*, r.title AS room_title, r.title_he FROM messages m LEFT JOIN rooms r ON r.id = m.room
+         WHERE ${where} ORDER BY m.id DESC LIMIT ?`,
+        limit,
+      )
+      .toArray();
+    return rows.map((r) => ({
+      id: r.id, room: r.room, roomTitle: (r.title_he || r.room_title || r.room) as string, uid: r.uid, name: r.name, avatar: r.avatar,
+      kind: r.kind as AdminMsg["kind"], body: r.body, reports: r.reports, hidden: !!r.hidden, at: r.at,
+      user: this.adminUser(this.user(r.uid)),
+    }));
+  }
+
+  private adminData(): AdminData {
+    const now = Date.now();
+    const count = (q: string, ...a: unknown[]) => this.one<{ n: number }>(q, ...a)?.n ?? 0;
+    const uids = new Set<string>();
+    let guests = 0;
+    for (const ws of this.ctx.getWebSockets()) {
+      const at = ws.deserializeAttachment() as Attachment | null;
+      if (at?.uid) uids.add(at.uid);
+      else guests++;
+    }
+    return {
+      stats: {
+        people: count("SELECT COUNT(*) AS n FROM users"),
+        newWeek: count("SELECT COUNT(*) AS n FROM users WHERE created > ?", now - 7 * DAY),
+        msgsDay: count("SELECT COUNT(*) AS n FROM messages WHERE at > ? AND kind != 'quiz'", now - DAY),
+        msgsWeek: count("SELECT COUNT(*) AS n FROM messages WHERE at > ? AND kind != 'quiz'", now - 7 * DAY),
+        rooms: count("SELECT COUNT(*) AS n FROM rooms WHERE starter = 0"),
+        online: uids.size,
+        guests,
+      },
+      reported: this.adminMsgs("m.reports > 0", 50),
+      latest: this.adminMsgs("m.kind != 'quiz'", 40),
+      people: this.sql
+        .exec<UserRow>("SELECT * FROM users WHERE banned = 1 OR muted_until > ? OR strikes > 0 ORDER BY banned DESC, muted_until DESC LIMIT 100", now)
+        .toArray()
+        .map((u) => this.adminUser(u)!),
+      rooms: this.sql
+        .exec<RoomRow & { by_name: string | null }>(
+          "SELECT r.*, u.name AS by_name FROM rooms r LEFT JOIN users u ON u.id = r.created_by WHERE r.starter = 0 ORDER BY r.last_at DESC LIMIT 100",
+        )
+        .toArray()
+        .map((r) => ({ id: r.id, title: r.title, by: r.by_name ?? "", msgs: r.msgs, created: r.created_at, last: r.last_at })),
+    };
+  }
+
+  private adminAct(me: UserRow, a: AdminAction) {
+    const now = Date.now();
+    if (a?.on === "msg" && typeof a.id === "number") {
+      const r = this.one<MsgRow>("SELECT * FROM messages WHERE id = ?", a.id);
+      if (!r) return fail("not_found", 404);
+      if (a.action === "hide") {
+        this.sql.exec("UPDATE messages SET hidden = 1 WHERE id = ?", r.id);
+        if (r.quiz) this.sql.exec("UPDATE rooms SET quiz_open = NULL WHERE quiz_open = ?", r.id);
+        this.broadcast(r.room, { t: "update", id: r.id, hidden: true });
+      } else if (a.action === "restore") {
+        this.sql.exec("UPDATE messages SET hidden = 0, reports = 0 WHERE id = ?", r.id);
+        this.sql.exec("DELETE FROM reports WHERE msg = ?", r.id);
+        this.broadcast(r.room, { t: "update", id: r.id, msg: this.toMsg(this.one<MsgRow>("SELECT * FROM messages WHERE id = ?", r.id)!) });
+      } else return fail("bad_action");
+      return json({ ok: true });
+    }
+    if (a?.on === "user" && typeof a.id === "string") {
+      const u = this.user(a.id);
+      if (!u) return fail("not_found", 404);
+      if (u.id === me.id || this.isAdmin(u.id)) return fail("forbidden", 403);
+      switch (a.action) {
+        case "mute_hour":
+        case "mute_day": {
+          const until = now + (a.action === "mute_hour" ? HOUR : DAY);
+          this.sql.exec("UPDATE users SET muted_until = ? WHERE id = ?", until, u.id);
+          break;
+        }
+        case "unmute":
+          this.sql.exec("UPDATE users SET muted_until = 0, strikes = 0 WHERE id = ?", u.id);
+          break;
+        case "ban":
+          this.ban(u.id);
+          break;
+        case "unban":
+          this.sql.exec("UPDATE users SET banned = 0, strikes = 0, muted_until = 0 WHERE id = ?", u.id);
+          if (u.ip_hash) this.sql.exec("DELETE FROM bans WHERE ip_hash = ?", u.ip_hash);
+          break;
+        default:
+          return fail("bad_action");
+      }
+      return json({ ok: true, user: this.adminUser(this.user(u.id)) });
+    }
+    if (a?.on === "room" && typeof a.id === "string" && a.action === "delete") {
+      const r = this.room(a.id);
+      if (!r) return fail("not_found", 404);
+      if (r.starter) return fail("starter_room");
+      const ids = "SELECT id FROM messages WHERE room = ?";
+      for (const t of ["lights", "reports", "answers"]) this.sql.exec(`DELETE FROM ${t} WHERE msg IN (${ids})`, r.id);
+      this.sql.exec("DELETE FROM messages WHERE room = ?", r.id);
+      this.sql.exec("DELETE FROM rooms WHERE id = ?", r.id);
+      for (const ws of this.ctx.getWebSockets(r.id)) {
+        this.send(ws, { t: "error", code: "not_found" });
+        ws.close(4004, "room_gone");
+      }
+      return json({ ok: true });
+    }
+    return fail("bad_action");
   }
 
   // ── quiz rounds ─────────────────────────────────────────────────────

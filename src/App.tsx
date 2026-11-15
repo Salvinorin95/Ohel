@@ -9,6 +9,8 @@ import { Home } from "./views/Home.tsx";
 import { Profile } from "./views/Profile.tsx";
 import { Reader } from "./views/Reader.tsx";
 import { Room } from "./views/Room.tsx";
+import { About } from "./views/About.tsx";
+import { Admin } from "./views/Admin.tsx";
 import { parseRef } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
 import { lazy, Suspense, useEffect, useState } from "react";
@@ -142,6 +144,8 @@ export function App() {
           {route.name === "read" && <ReadPage book={route.book} chapter={route.chapter} />}
           {route.name === "map" && <MapPage place={route.place} />}
           {route.name === "me" && <Profile />}
+          {route.name === "about" && <About />}
+          {route.name === "admin" && <Admin />}
         </main>
       </div>
       <Toasts />

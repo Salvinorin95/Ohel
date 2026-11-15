@@ -1,4 +1,6 @@
-import { findBook, parseRef } from "../shared/books.ts";
+import { findBook, parseRef, refLabel } from "../shared/books.ts";
+import { findPlace } from "../shared/places.ts";
+import type { RoomInfo } from "../shared/protocol.ts";
 
 export { Hub } from "./hub.ts";
 
@@ -52,6 +54,86 @@ async function chapterText(req: Request, ctx: ExecutionContext) {
   return res;
 }
 
+// ── link previews ─────────────────────────────────────────────────────
+// WhatsApp, Telegram and friends don't run JavaScript, so each page gets its own title,
+// description and picture written into the HTML before it leaves.
+
+interface Meta {
+  title: string;
+  description: string;
+}
+
+const HOME: Meta = {
+  title: "אוהל · Ohel: לומדים תנ״ך ביחד",
+  description:
+    "אוהל פתוח לתנ״ך: לקרוא, לראות על מפת לוויין ולדבר על זה ביחד. An open tent for the Bible: read it, see it on the map, talk it through together.",
+};
+
+const clip = (s: string, n: number) => ([...s].length > n ? `${[...s].slice(0, n - 1).join("").trimEnd()}…` : s);
+
+async function metaFor(url: URL, env: Env): Promise<Meta> {
+  const p = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  if (p[0] === "room" && p[1] && /^[\w-]{1,40}$/.test(p[1])) {
+    const res = await env.HUB.get(env.HUB.idFromName("ohel")).fetch(`https://hub/api/rooms/${p[1]}`);
+    if (!res.ok) return HOME;
+    const r = (await res.json()) as RoomInfo;
+    const he = r.title_he || r.title;
+    const ref = r.ref ? `${refLabel(r.ref, "he")} · ` : "";
+    return {
+      title: `${clip(he, 70)} · אוהל`,
+      description: `${ref}בואו לדבר על זה ביחד, עם הפרק ומפת לוויין. ${r.title_en ? `${r.title_en}: ` : ""}come talk it through on Ohel.`,
+    };
+  }
+  if (p[0] === "map" && p[1]) {
+    const place = findPlace(p[1]);
+    if (place) return { title: `${place.he} · ${place.en} · על המפה באוהל`, description: clip(place.story.he, 180) };
+    return { title: "המפה · The map · אוהל", description: HOME.description };
+  }
+  if (p[0] === "map") return { title: "מקומות התנ״ך על מפת לוויין · אוהל", description: "הר הגלבוע, עמק האלה, הכרמל ועוד 56 מקומות, בתלת־ממד. Bible places on a 3D satellite map." };
+  if (p[0] === "read") {
+    const r = parseRef(`${(p[1] ?? "").replace(/_/g, " ")} ${Number(p[2]) || 1}`);
+    if (r) {
+      const ref = `${r.book} ${r.chapter}`;
+      return {
+        title: `${refLabel(ref, "he")} · ${refLabel(ref, "en")} · אוהל`,
+        description: "לקרוא את הפרק בעברית ובאנגלית, ולראות את המקומות שלו על המפה. Read the chapter in Hebrew and English, with its places on the map.",
+      };
+    }
+  }
+  if (p[0] === "about") return { title: "כללי האוהל ופרטיות · House rules & privacy · אוהל", description: "מה מותר, מה לא, ומה נשמר עליך (כמעט כלום). What's welcome, what isn't, and what we keep about you (almost nothing)." };
+  return HOME;
+}
+
+const attr = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+function withMeta(res: Response, m: Meta, url: URL, env: Env) {
+  const local = url.hostname === "localhost" || url.hostname === "127.0.0.1";
+  const tags: [string, string, string][] = [
+    ["property", "og:type", "website"],
+    ["property", "og:site_name", "Ohel · אוהל"],
+    ["property", "og:title", m.title],
+    ["property", "og:description", m.description],
+    ["property", "og:url", `${url.origin}${url.pathname}`],
+    ["property", "og:image", `${url.origin}/og.jpg`],
+    ["property", "og:image:width", "1200"],
+    ["property", "og:image:height", "630"],
+    ["property", "og:image:alt", "אוהל · Ohel"],
+    ["property", "og:locale", "he_IL"],
+    ["property", "og:locale:alternate", "en_US"],
+    ["name", "twitter:card", "summary_large_image"],
+  ];
+  let head = tags.map(([k, n, v]) => `<meta ${k}="${n}" content="${attr(v)}">`).join("\n    ");
+  const token: string = env.ANALYTICS_TOKEN;
+  if (token && !local) {
+    head += `\n    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${attr(JSON.stringify({ token }))}'></script>`;
+  }
+  return new HTMLRewriter()
+    .on("title", { element: (e) => void e.setInnerContent(m.title) })
+    .on('meta[name="description"]', { element: (e) => void e.setAttribute("content", m.description) })
+    .on("head", { element: (e) => void e.append(`    ${head}\n  `, { html: true }) })
+    .transform(res);
+}
+
 export default {
   async fetch(req, env, ctx): Promise<Response> {
     const url = new URL(req.url);
@@ -62,6 +144,9 @@ export default {
       const stub = env.HUB.get(env.HUB.idFromName("ohel"));
       return stub.fetch(new Request(req, { headers }));
     }
-    return new Response("Not found", { status: 404 });
+    const res = await env.ASSETS.fetch(req);
+    if (!(res.headers.get("content-type") ?? "").includes("text/html")) return res;
+    const meta = await metaFor(url, env).catch(() => HOME);
+    return withMeta(res, meta, url, env);
   },
 } satisfies ExportedHandler<Env>;

@@ -25,6 +25,16 @@ The name comes from Abraham's tent, which was open on all four sides so anyone c
 - Three reports from different people hide a message and give its author a strike. Reporting a message hides it for you right away.
 - Rate limits: 6 messages per 10 seconds, and 30 sign-ups per network per day.
 
+### The team (admins)
+
+Admins are user ids listed in the `ADMIN_IDS` secret (comma separated). Each person's id is on their Me page. Set it with
+`echo "<id>,<id>" | npx wrangler secret put ADMIN_IDS`, or in `.dev.vars` locally. No passwords: an admin is recognised by their own key.
+
+- In a room, tapping a message gives admins: hide for everyone / bring back, pause 1 hour, pause 1 day, block (two taps).
+- `/admin` shows how busy the tent is, reported messages (with the original words), paused/blocked/warned people, the rooms people opened (delete with two taps) and the latest messages.
+- Admin names carry a "Team" label in chat. "צוות", "admin" and similar names are reserved, so nobody else can look like the team.
+- `/about` holds the house rules and the privacy page. Keep it in step with the code.
+
 ## Run it
 
 ```sh
@@ -32,7 +42,11 @@ npm install
 npm run dev        # http://localhost:5173 (worker + Durable Object + Vite together)
 npm test           # moderation tests (72)
 node scripts/e2e.mjs http://localhost:5173   # two people chat, ask, light, report, quiz (26 checks)
+OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:5173   # admin tools (23 checks)
+node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
 ```
+
+Link previews: pages go through the Worker (`run_worker_first`), which writes a title, description and `og:image` per room, place and chapter, so links shared on WhatsApp look right. Visits are counted with Cloudflare Web Analytics (no cookies); the beacon is added only on the real host, from `ANALYTICS_TOKEN` in `wrangler.jsonc`.
 
 Deploy to Cloudflare Workers with `npm run deploy` (builds, then `wrangler deploy`). Everything runs on one Worker and one SQLite-backed Durable Object, with no other services to set up. It fits the free plan for a small community.
 

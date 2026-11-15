@@ -1,4 +1,4 @@
-import type { Award, Me, RoomInfo } from "../shared/protocol.ts";
+import type { AdminAction, AdminData, AdminUser, Award, Me, RoomInfo } from "../shared/protocol.ts";
 import type { Stats } from "../shared/game.ts";
 
 export class ApiError extends Error {
@@ -44,3 +44,5 @@ export const getBoard = () =>
 export const getText = (ref: string) => api<ChapterText>(`/api/text?ref=${encodeURIComponent(ref)}`);
 export const postRead = (token: string, ref: string) => api<{ award: Award }>("/api/read", { token, body: { ref } });
 export const postVisit = (token: string, place: string) => api<{ award: Award }>("/api/visit", { token, body: { place } });
+export const adminGet = (token: string) => api<AdminData>("/api/admin", { token });
+export const adminAct = (token: string, a: AdminAction) => api<{ ok: true; user?: AdminUser }>("/api/admin", { token, body: a });

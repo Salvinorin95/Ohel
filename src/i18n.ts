@@ -168,6 +168,47 @@ const S = {
   pts_quiz: { en: "right answer", he: "תשובה נכונה" },
   pts_together: { en: "solved together", he: "פתרנו ביחד" },
   pts_room: { en: "for opening a room", he: "על פתיחת חדר" },
+  // house rules
+  rulesLink: { en: "House rules & privacy", he: "כללי האוהל ופרטיות" },
+  // looking after the tent
+  team: { en: "Team", he: "צוות" },
+  modHide: { en: "Hide for everyone", he: "להסתיר לכולם" },
+  modRestore: { en: "Bring back", he: "להחזיר" },
+  modMuteHour: { en: "Pause 1 hour", he: "השתקה לשעה" },
+  modMuteDay: { en: "Pause 1 day", he: "השתקה ליום" },
+  modUnmute: { en: "End pause", he: "לבטל השתקה" },
+  modBan: { en: "Block", he: "לחסום" },
+  modBanSure: { en: "Tap again to block", he: "עוד לחיצה כדי לחסום" },
+  modUnban: { en: "Unblock", he: "לבטל חסימה" },
+  modDone: { en: "Done", he: "בוצע" },
+  modErr: { en: "That didn't work. Try again.", he: "זה לא עבד. אפשר לנסות שוב." },
+  adminTitle: { en: "Looking after the tent", he: "ניהול האוהל" },
+  adminOpen: { en: "Admin page", he: "דף הניהול" },
+  adminHint: { en: "Reports, paused people, rooms and how busy the tent is.", he: "דיווחים, השתקות, חדרים וכמה תנועה יש באוהל." },
+  adminOnly: { en: "This page is for the tent's team.", he: "הדף הזה מיועד לצוות האוהל." },
+  st_people: { en: "people joined", he: "אנשים הצטרפו" },
+  st_newWeek: { en: "new this week", he: "חדשים השבוע" },
+  st_msgsDay: { en: "messages, last 24h", he: "הודעות ב־24 שעות" },
+  st_msgsWeek: { en: "messages, last 7 days", he: "הודעות ב־7 ימים" },
+  st_rooms: { en: "rooms opened", he: "חדרים שנפתחו" },
+  st_online: { en: "here now", he: "כאן עכשיו" },
+  adminReported: { en: "Reported messages", he: "הודעות שדווחו" },
+  adminNoReports: { en: "No reports. Quiet and kind.", he: "אין דיווחים. שקט ונעים." },
+  adminLatest: { en: "Latest messages", he: "הודעות אחרונות" },
+  adminNoMsgs: { en: "No messages yet.", he: "עדיין אין הודעות." },
+  adminPeople: { en: "Paused, blocked or warned", he: "בהשתקה, חסומים או עם התראות" },
+  adminNoPeople: { en: "No one. Everyone's being lovely.", he: "אף אחד. כולם מתנהגים יפה." },
+  adminNoRooms: { en: "No rooms yet.", he: "עדיין אין חדרים." },
+  deleteRoom: { en: "Delete room", he: "למחוק חדר" },
+  deleteRoomSure: { en: "Tap again: the room and its messages go for good", he: "עוד לחיצה: החדר וההודעות שלו יימחקו לתמיד" },
+  reportsN: { en: "reports", he: "דיווחים" },
+  hiddenTag: { en: "hidden", he: "מוסתרת" },
+  pausedUntil: { en: "paused until", he: "בהשתקה עד" },
+  blockedTag: { en: "blocked", he: "חסום/ה" },
+  strikesN: { en: "warnings", he: "התראות" },
+  by: { en: "by", he: "מאת" },
+  refresh: { en: "Refresh", he: "רענון" },
+  yourId: { en: "Your ID", he: "המזהה שלך" },
 } as const;
 
 export type Key = keyof typeof S;
@@ -184,4 +225,8 @@ export function detectLang(): Lang {
 
 export function timeOf(t: number, lang: Lang) {
   return new Intl.DateTimeFormat(lang === "he" ? "he-IL" : "en", { hour: "2-digit", minute: "2-digit" }).format(t);
+}
+
+export function dateTimeOf(t: number, lang: Lang) {
+  return new Intl.DateTimeFormat(lang === "he" ? "he-IL" : "en", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(t);
 }

@@ -10,7 +10,9 @@ export type Route =
   | { name: "room"; id: string }
   | { name: "read"; book: string; chapter: number }
   | { name: "map"; place?: string }
-  | { name: "me" };
+  | { name: "me" }
+  | { name: "about" }
+  | { name: "admin" };
 
 export function parseRoute(path: string): Route {
   const p = path.split("/").filter(Boolean).map(decodeURIComponent);
@@ -18,6 +20,8 @@ export function parseRoute(path: string): Route {
   if (p[0] === "read") return { name: "read", book: (p[1] ?? "I_Samuel").replace(/_/g, " "), chapter: Number(p[2]) || 1 };
   if (p[0] === "map") return { name: "map", place: p[1] };
   if (p[0] === "me") return { name: "me" };
+  if (p[0] === "about") return { name: "about" };
+  if (p[0] === "admin") return { name: "admin" };
   return { name: "home" };
 }
 
@@ -31,6 +35,10 @@ export function routePath(r: Route): string {
       return r.place ? `/map/${r.place}` : "/map";
     case "me":
       return "/me";
+    case "about":
+      return "/about";
+    case "admin":
+      return "/admin";
     default:
       return "/";
   }

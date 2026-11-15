@@ -143,7 +143,12 @@ export function Home() {
         )}
       </section>
 
-      <p className="kindness">🌱 {t("kindness")}</p>
+      <p className="kindness">
+        🌱 {t("kindness")}{" "}
+        <button className="link" onClick={() => go({ name: "about" })}>
+          {t("rulesLink")}
+        </button>
+      </p>
 
       {creating && <NewRoomSheet onClose={() => setCreating(false)} />}
     </div>

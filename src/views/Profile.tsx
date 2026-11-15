@@ -120,7 +120,20 @@ export function Profile() {
             {t("showKey")}
           </button>
         )}
+        <p className="fine">
+          {t("yourId")}: <code dir="ltr" className="id-code">{me.id}</code>
+        </p>
       </section>
+
+      {me.admin && (
+        <section className="glass card admin-link">
+          <h2>🛡️ {t("adminTitle")}</h2>
+          <p className="muted">{t("adminHint")}</p>
+          <button className="btn btn-glow small" onClick={() => go({ name: "admin" })}>
+            {t("adminOpen")}
+          </button>
+        </section>
+      )}
 
       <section className="glass card leave">
         <div>
@@ -136,6 +149,10 @@ export function Profile() {
           {sure && <p className="fine warn">{t("deleteSure")}</p>}
         </div>
       </section>
+
+      <button className="link center-link" onClick={() => go({ name: "about" })}>
+        {t("rulesLink")}
+      </button>
     </div>
   );
 }

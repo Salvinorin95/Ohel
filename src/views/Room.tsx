@@ -1,11 +1,11 @@
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { parseRef, refLabel } from "../../shared/books.ts";
 import { findPlace } from "../../shared/places.ts";
-import type { ClientMsg, MapView as View, Me, Msg, Person, RoomInfo, ServerMsg } from "../../shared/protocol.ts";
+import type { AdminAction, ClientMsg, MapView as View, Me, Msg, Person, RoomInfo, ServerMsg } from "../../shared/protocol.ts";
 import { Orb } from "../components/Orb.tsx";
 import { timeOf, type Key } from "../i18n.ts";
 import { useApp } from "../state.tsx";
-import { getRoom } from "../api.ts";
+import { adminAct, getRoom } from "../api.ts";
 const MapView = lazy(() => import("./MapView.tsx").then((m) => ({ default: m.MapView })));
 import { Reader } from "./Reader.tsx";
 
@@ -19,13 +19,21 @@ interface RoomState {
   guests: number;
   status: Status;
   answers: Record<number, { choice: number; correct: boolean }>;
+  staff: string[];
 }
 
-function useRoom(id: string, token: string | null, onError: (m: Extract<ServerMsg, { t: "error" }>) => void, onPoints: (m: Extract<ServerMsg, { t: "points" }>) => void, onMe: (me: Me | null) => void) {
-  const [s, setS] = useState<RoomState>({ room: null, msgs: [], online: [], guests: 0, status: "connecting", answers: {} });
+function useRoom(
+  id: string,
+  token: string | null,
+  onError: (m: Extract<ServerMsg, { t: "error" }>) => void,
+  onPoints: (m: Extract<ServerMsg, { t: "points" }>) => void,
+  onMe: (me: Me | null) => void,
+  onGone: () => void,
+) {
+  const [s, setS] = useState<RoomState>({ room: null, msgs: [], online: [], guests: 0, status: "connecting", answers: {}, staff: [] });
   const wsRef = useRef<WebSocket | null>(null);
-  const handlers = useRef({ onError, onPoints, onMe });
-  handlers.current = { onError, onPoints, onMe };
+  const handlers = useRef({ onError, onPoints, onMe, onGone });
+  handlers.current = { onError, onPoints, onMe, onGone };
 
   useEffect(() => {
     if (!id) return;
@@ -47,7 +55,7 @@ function useRoom(id: string, token: string | null, onError: (m: Extract<ServerMs
         const m = JSON.parse(e.data) as ServerMsg;
         switch (m.t) {
           case "welcome":
-            setS((x) => ({ ...x, room: m.room, msgs: m.history, online: m.online, guests: m.guests, status: "open" }));
+            setS((x) => ({ ...x, room: m.room, msgs: m.history, online: m.online, guests: m.guests, status: "open", staff: m.staff ?? [] }));
             handlers.current.onMe(m.me);
             break;
           case "msg":
@@ -59,11 +67,13 @@ function useRoom(id: string, token: string | null, onError: (m: Extract<ServerMs
               msgs: x.msgs.map((y) =>
                 y.id !== m.id
                   ? y
+                  : m.msg
+                  ? { ...m.msg, lit: y.lit }
                   : {
                       ...y,
                       ...(m.lights !== undefined ? { lights: m.lights } : {}),
                       ...(m.helpful !== undefined ? { helpful: m.helpful } : {}),
-                      ...(m.hidden ? { hidden: true, body: "", ref: null, place: null, view: null } : {}),
+                      ...(m.hidden ? { hidden: true, body: "", ref: null, place: null, view: null, quiz: null } : {}),
                       ...(m.quiz ? { quiz: m.quiz } : {}),
                     },
               ),
@@ -86,7 +96,10 @@ function useRoom(id: string, token: string | null, onError: (m: Extract<ServerMs
       ws.onclose = (e) => {
         clearInterval(ping);
         if (closed) return;
-        if (e.code === 4004) return setS((x) => ({ ...x, status: "closed" }));
+        if (e.code === 4004) {
+          setS((x) => ({ ...x, status: "closed" }));
+          return handlers.current.onGone();
+        }
         setS((x) => ({ ...x, status: "closed" }));
         timer = setTimeout(connect, Math.min(10_000, 600 * 2 ** retry++));
       };
@@ -183,6 +196,8 @@ interface ItemProps {
   parent?: Msg;
   parentIsMyQuestion: boolean;
   hiddenForMe: boolean;
+  staff: boolean; // the writer looks after the tent
+  admin: boolean; // I look after the tent
   answer?: { choice: number; correct: boolean };
   onReply: () => void;
   onLight: () => void;
@@ -194,12 +209,14 @@ interface ItemProps {
   onOpenPlace: (p: string) => void;
   onOpenView: (v: View) => void;
   onJump: (id: number) => void;
+  onMod: (a: AdminAction) => void;
 }
 
 function Item(p: ItemProps) {
   const { t, lang } = useApp();
   const { m } = p;
   const [menu, setMenu] = useState(false);
+  const [sureBan, setSureBan] = useState(false);
   const own = !!p.mineId && m.uid === p.mineId;
   const name = m.name || t("someoneLeft");
 
@@ -207,6 +224,13 @@ function Item(p: ItemProps) {
     return (
       <div className="msg-row quiz-row" id={`m-${m.id}`}>
         <QuizCard m={m} mine={p.answer} onAnswer={p.onAnswer} onOpenRef={p.onOpenRef} />
+        {p.admin && (
+          <div className="mod-mini-row">
+            <button className="mod-mini" onClick={() => p.onMod({ on: "msg", id: m.id, action: "hide" })}>
+              🛡️ {t("modHide")}
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -216,10 +240,14 @@ function Item(p: ItemProps) {
   return (
     <div className={`msg-row${own ? " own" : ""}${p.compact ? " compact" : ""}`} id={`m-${m.id}`}>
       {!own && <div className="msg-orb">{!p.compact && <Orb avatar={m.avatar} name={name} size={34} />}</div>}
-      <div className={`bubble${m.kind === "question" ? " question" : ""}${m.helpful ? " helpful" : ""}${hidden ? " hidden" : ""}`} onClick={() => setMenu(!menu)}>
+      <div
+        className={`bubble${m.kind === "question" ? " question" : ""}${m.helpful ? " helpful" : ""}${hidden ? " hidden" : ""}`}
+        onClick={() => (setMenu(!menu), setSureBan(false))}
+      >
         {!p.compact && !own && (
           <div className="msg-meta">
             <span className="msg-name">{name}</span>
+            {p.staff && <span className="pill pill-team">{t("team")}</span>}
             <span className="msg-time">{timeOf(m.at, lang)}</span>
           </div>
         )}
@@ -269,6 +297,13 @@ function Item(p: ItemProps) {
             {own && p.compact ? null : own && <span className="msg-time">{timeOf(m.at, lang)}</span>}
           </div>
         )}
+        {menu && hidden && p.admin && m.hidden && (
+          <div className="msg-actions" onClick={(e) => e.stopPropagation()}>
+            <button className="mod" onClick={() => (p.onMod({ on: "msg", id: m.id, action: "restore" }), setMenu(false))}>
+              🛡️ {t("modRestore")}
+            </button>
+          </div>
+        )}
         {menu && !hidden && (
           <div className="msg-actions" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => (p.onReply(), setMenu(false))}>↩ {m.kind === "question" ? t("answer") : t("reply")}</button>
@@ -283,6 +318,34 @@ function Item(p: ItemProps) {
               <button className="danger" onClick={() => (p.onReport(), setMenu(false))}>
                 ⚑ {t("report")}
               </button>
+            )}
+            {p.admin && !own && (
+              <>
+                <button className="mod" onClick={() => (p.onMod({ on: "msg", id: m.id, action: "hide" }), setMenu(false))}>
+                  🛡️ {t("modHide")}
+                </button>
+                {m.uid && !p.staff && (
+                  <>
+                    <button className="mod" onClick={() => (p.onMod({ on: "user", id: m.uid!, action: "mute_hour" }), setMenu(false))}>
+                      🛡️ {t("modMuteHour")}
+                    </button>
+                    <button className="mod" onClick={() => (p.onMod({ on: "user", id: m.uid!, action: "mute_day" }), setMenu(false))}>
+                      🛡️ {t("modMuteDay")}
+                    </button>
+                    <button
+                      className={sureBan ? "mod danger on" : "mod danger"}
+                      onClick={() => {
+                        if (!sureBan) return setSureBan(true);
+                        p.onMod({ on: "user", id: m.uid!, action: "ban" });
+                        setSureBan(false);
+                        setMenu(false);
+                      }}
+                    >
+                      🛡️ {sureBan ? t("modBanSure") : t("modBan")}
+                    </button>
+                  </>
+                )}
+              </>
             )}
           </div>
         )}
@@ -327,6 +390,7 @@ export function Room({ id }: { id: string }) {
       else if (e.code === "blocked") toast({ kind: "warn", text: t("err_blocked"), glyph: "🌱" });
       else if (e.code === "quiz_busy") toast({ kind: "info", text: t("quizBusy") });
       else if (e.code === "auth") askJoin();
+      else if (e.code === "not_found") return;
       else if (["banned", "rate", "too_long"].includes(e.code)) toast({ kind: "warn", text: t(`err_${e.code}` as Key) });
       if (e.code === "banned") setSession(null, null);
     },
@@ -335,6 +399,7 @@ export function Room({ id }: { id: string }) {
   const onPoints = useCallback((m: Extract<ServerMsg, { t: "points" }>) => celebrate(m, m.reason), [celebrate]);
   const onMe = useCallback(() => {}, []);
   const [missing, setMissing] = useState(false);
+  const onGone = useCallback(() => setMissing(true), []);
   const [mapUsed, setMapUsed] = useState(false);
   useEffect(() => {
     if (study === "map") setMapUsed(true);
@@ -342,7 +407,14 @@ export function Room({ id }: { id: string }) {
   useEffect(() => {
     getRoom(id).catch((e) => e?.status === 404 && setMissing(true));
   }, [id]);
-  const r = useRoom(missing ? "" : id, token, onError, onPoints, onMe);
+  const r = useRoom(missing ? "" : id, token, onError, onPoints, onMe, onGone);
+  const staff = useMemo(() => new Set(r.staff), [r.staff]);
+  const mod = (a: AdminAction) => {
+    if (!token) return;
+    adminAct(token, a)
+      .then(() => toast({ kind: "info", text: t("modDone"), glyph: "🛡️" }))
+      .catch(() => toast({ kind: "warn", text: t("modErr") }));
+  };
   const room = r.room;
 
   // Point the study pane at the room's chapter and place once we know them.
@@ -439,6 +511,9 @@ export function Room({ id }: { id: string }) {
               parent={parent}
               parentIsMyQuestion={!!parent && myQuestionIds.has(parent.id)}
               hiddenForMe={hiddenForMe.has(m.id)}
+              staff={!!m.uid && staff.has(m.uid)}
+              admin={!!me?.admin}
+              onMod={mod}
               answer={r.answers[m.id]}
               onReply={() => {
                 if (!token) return askJoin();
