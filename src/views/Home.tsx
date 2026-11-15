@@ -6,6 +6,9 @@ import { getBoard, getRooms } from "../api.ts";
 import { DailyCard } from "../components/DailyCard.tsx";
 import { Logo } from "../components/Logo.tsx";
 import { WeekCard } from "../components/WeekCard.tsx";
+import { PEOPLE } from "../../shared/people.ts";
+import { usePeopleIndex } from "../placeData.ts";
+import { PersonTile } from "./PersonPage.tsx";
 import { NewRoomSheet } from "../components/NewRoomSheet.tsx";
 import { Orb } from "../components/Orb.tsx";
 import { useApp } from "../state.tsx";
@@ -45,6 +48,8 @@ export function Home() {
   const [board, setBoard] = useState<Board | null>(null);
   const [boardTab, setBoardTab] = useState<"week" | "all">("week");
   const [creating, setCreating] = useState(false);
+  const peopleIndex = usePeopleIndex();
+  const withPages = PEOPLE.filter((p) => peopleIndex[p.id]);
 
   useEffect(() => {
     document.title = "Ohel · אוהל";
@@ -92,6 +97,22 @@ export function Home() {
         <WeekCard />
         <DailyCard />
       </div>
+
+      {withPages.length > 0 && (
+        <section className="people-strip">
+          <div className="section-head">
+            <h2>👥 {t("peopleTitle")}</h2>
+            <button className="link" onClick={() => go({ name: "people" })}>
+              {t("peopleAll")}
+            </button>
+          </div>
+          <div className="people-row">
+            {withPages.map((p) => (
+              <PersonTile key={p.id} id={p.id} cover={peopleIndex[p.id]?.cover} onGo={() => go({ name: "person", id: p.id })} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section id="rooms" className="rooms">
         <div className="section-head">

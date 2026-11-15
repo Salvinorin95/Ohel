@@ -6,6 +6,7 @@ import type { Key } from "../i18n.ts";
 import { useApp } from "../state.tsx";
 import { Orb } from "./Orb.tsx";
 import { Sheet } from "./Sheet.tsx";
+import { inAppBrowser, SaveUser } from "./SaveUser.tsx";
 
 export function JoinSheet() {
   const { t, setSession, closeJoin, celebrate, go } = useApp();
@@ -15,6 +16,7 @@ export function JoinSheet() {
   const [busy, setBusy] = useState(false);
   const [keyMode, setKeyMode] = useState(false);
   const [key, setKey] = useState("");
+  const [welcome, setWelcome] = useState<Me | null>(null);
 
   const join = async () => {
     setBusy(true);
@@ -22,8 +24,9 @@ export function JoinSheet() {
     try {
       const r = await api<{ token: string; me: Me }>("/api/join", { body: { name, avatar } });
       setSession(r.token, r.me);
-      closeJoin(true);
       celebrate({ delta: 0, total: r.me.points, badges: [] }, "");
+      // Before going on: a moment to keep this user (passwords or a personal link), so tomorrow isn't a new person.
+      setWelcome(r.me);
     } catch (e) {
       const code = e instanceof ApiError ? e.code : "";
       setErr(code.startsWith("name_") ? t(`nameErr_${code.slice(5)}` as Key) : t("joinErr"));
@@ -48,8 +51,22 @@ export function JoinSheet() {
   };
 
   return (
-    <Sheet title={t("joinTitle")} onClose={() => closeJoin(false)}>
-      {!keyMode ? (
+    <Sheet title={welcome ? t("saveUserTitle") : t("joinTitle")} onClose={() => closeJoin(!!welcome)}>
+      {welcome ? (
+        <div className="join join-welcome">
+          <div className="join-preview">
+            <Orb avatar={welcome.avatar} name={welcome.name} size={72} ring />
+          </div>
+          <h3 dir="auto">
+            ✨ {t("welcomeIn")}, {welcome.name}
+          </h3>
+          <p className="muted">{t("saveUserHint")}</p>
+          <SaveUser compact />
+          <button className="btn btn-glow big" onClick={() => closeJoin(true)}>
+            {t("welcomeContinue")}
+          </button>
+        </div>
+      ) : !keyMode ? (
         <form
           className="join"
           onSubmit={(e) => {
@@ -74,6 +91,7 @@ export function JoinSheet() {
               ))}
             </div>
           </div>
+          {inAppBrowser() && <p className="save-warn">⚠️ {t("inAppWarn")}</p>}
           {err && <p className="err">{err}</p>}
           <button className="btn btn-glow big" disabled={busy || name.trim().length < 2}>
             {t("joinGo")}
@@ -97,9 +115,21 @@ export function JoinSheet() {
             if (!busy) void useKey();
           }}
         >
+          {/* Named like a sign-in form, so a key saved in the phone's passwords is offered here. */}
+          <input type="text" name="username" autoComplete="username" className="sr-only" tabIndex={-1} aria-hidden="true" />
           <label className="field">
             <span>{t("yourKey")}</span>
-            <input autoFocus value={key} placeholder={t("keyPh")} onChange={(e) => setKey(e.target.value)} dir="ltr" spellCheck={false} />
+            <input
+              autoFocus
+              type="password"
+              name="password"
+              autoComplete="current-password"
+              value={key}
+              placeholder={t("keyPh")}
+              onChange={(e) => setKey(e.target.value)}
+              dir="ltr"
+              spellCheck={false}
+            />
           </label>
           {err && <p className="err">{err}</p>}
           <button className="btn btn-glow big" disabled={busy || key.trim().length < 10}>

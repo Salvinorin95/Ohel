@@ -4,6 +4,8 @@
 import { parseRef, refLabel } from "../shared/books.ts";
 import { PLACES, findPlace, type Place } from "../shared/places.ts";
 import { JOURNEYS } from "../shared/journeys.ts";
+import { ERAS, findPerson, PEOPLE, type Person } from "../shared/people.ts";
+import type { PersonInfo } from "../shared/personInfo.ts";
 
 type Lang = "he" | "en";
 type L = { he: string; en: string };
@@ -140,10 +142,63 @@ export function placeJsonLd(place: Place, d: BuiltPlace, lang: Lang, origin: str
 
 export const placeTitle = (place: Place, lang: Lang) => WORDS[lang].title(place[lang]);
 
-export function sitemap(origin: string) {
+export const personUrl = (origin: string, id: string, lang: Lang) => `${origin}/person/${id}${lang === "en" ? "?lang=en" : ""}`;
+const personAlt = (origin: string, id: string) =>
+  `<xhtml:link rel="alternate" hreflang="he" href="${personUrl(origin, id, "he")}"/><xhtml:link rel="alternate" hreflang="en" href="${personUrl(origin, id, "en")}"/>`;
+
+const PW = {
+  he: { story: "הסיפור", places: "המקומות בסיפור", family: "משפחה", character: "מי היו באמת", traditions: "איך זוכרים אותם", history: "מה ההיסטוריה יכולה לומר", verses: "פסוקים חשובים", all: "הדמויות של התנ״ך", title: (n: string) => `${n} בתנ״ך: הסיפור, המקומות על המפה והפסוקים · אוהל` },
+  en: { story: "The story", places: "Places in the story", family: "Family", character: "Who they were", traditions: "How they are remembered", history: "What history can say", verses: "Key verses", all: "People of the Bible", title: (n: string) => `${n} in the Bible: the story, the places on the map and the verses · Ohel` },
+};
+export const personTitle = (p: Person, lang: Lang) => PW[lang].title(p[lang]);
+
+/** The person page as plain HTML, for crawlers and for the moment before the app starts. */
+export function personBody(p: Person, d: PersonInfo, lang: Lang): string {
+  const w = PW[lang];
+  const tx = d[lang];
+  const q = lang === "en" ? "?lang=en" : "";
+  const other: Lang = lang === "he" ? "en" : "he";
+  const cover = d.images[0];
+  const out: string[] = [`<article class="ssr-place" lang="${lang}" dir="${lang === "he" ? "rtl" : "ltr"}">`];
+  out.push(`<nav class="ssr-crumbs"><a href="/${q}">${WORDS[lang].site}</a> › <a href="/people${q}">${w.all}</a> · <a href="/person/${p.id}${other === "en" ? "?lang=en" : ""}" hreflang="${other}">${WORDS[lang].other}</a></nav>`);
+  out.push(`<h1>${esc(p[lang])}</h1>`);
+  out.push(`<p class="ssr-crumbs">${esc(ERAS[p.era][lang])} · ${esc(d.era[lang])}${tx.aka.length ? ` · ${tx.aka.map(esc).join(" · ")}` : ""}</p>`);
+  out.push(`<p class="ssr-lede">${esc(tx.summary)}</p>`);
+  if (cover?.thumb) out.push(`<figure><img src="${esc(cover.thumb)}" alt="${esc(cover.caption[lang])}" loading="lazy"><figcaption>${esc(cover.caption[lang])}${cover.credit ? ` · ${esc(cover.credit)}` : ""}${cover.license ? `, ${esc(cover.license)}` : ""}</figcaption></figure>`);
+  out.push(`<h2>${w.story}</h2>${tx.story.map((s) => `<h3>${esc(s.title)}</h3><p>${esc(s.text)}</p>`).join("")}`);
+  const places = d.places.map((x) => ({ p: findPlace(x.place), what: x.what })).filter((x) => x.p);
+  if (places.length) out.push(`<h2>${w.places}</h2><ul>${places.map((x) => `<li><a href="/place/${x.p!.id}${q}">${esc(x.p![lang])}</a>: ${esc(x.what[lang])}</li>`).join("")}</ul>`);
+  if (d.family.length)
+    out.push(`<h2>${w.family}</h2><ul>${d.family.map((f) => `<li>${f.person && findPerson(f.person) ? `<a href="/person/${f.person}${q}">${esc(f.name[lang])}</a>` : esc(f.name[lang])} (${esc(f.relation[lang])})</li>`).join("")}</ul>`);
+  out.push(`<h2>${w.character}</h2><p>${esc(tx.character)}</p>`);
+  if (tx.traditions.length) out.push(`<h2>${w.traditions}</h2>${tx.traditions.map((x) => `<h3>${esc(x.name)}</h3><p>${esc(x.text)}</p>`).join("")}`);
+  out.push(`<h2>${w.history}</h2><p>${esc(tx.history)}</p>`);
+  if (d.mentions.length)
+    out.push(`<h2>${w.verses}</h2><ul>${d.mentions.map((m) => { const href = readHref(m.ref); const label = esc(refLabel(m.ref, lang)); return `<li>${href ? `<a href="${href}${q}">${label}</a>` : label}: ${esc(m.note[lang])}</li>`; }).join("")}</ul>`);
+  out.push(`</article>`);
+  return out.join("\n");
+}
+
+export function personJsonLd(p: Person, d: PersonInfo, lang: Lang, origin: string) {
+  const sameAs = (["he", "en"] as const).filter((l) => d.wiki[l]).map((l) => `https://${l}.wikipedia.org/wiki/${encodeURIComponent(d.wiki[l]!.replace(/ /g, "_"))}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: p[lang],
+    alternateName: [p[lang === "he" ? "en" : "he"], ...d[lang].aka],
+    description: d[lang].summary,
+    url: personUrl(origin, p.id, lang),
+    image: d.images.filter((i) => i.thumb).slice(0, 3).map((i) => i.thumb),
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+}
+
+export function sitemap(origin: string, people: Set<string>) {
   const alt = (id: string) =>
     `<xhtml:link rel="alternate" hreflang="he" href="${placeUrl(origin, id, "he")}"/><xhtml:link rel="alternate" hreflang="en" href="${placeUrl(origin, id, "en")}"/><xhtml:link rel="alternate" hreflang="x-default" href="${placeUrl(origin, id, "he")}"/>`;
   const urls = [`${origin}/`, `${origin}/map`, `${origin}/week`, `${origin}/about`].map((u) => `<url><loc>${u}</loc></url>`);
+  if (people.size) urls.push(`<url><loc>${origin}/people</loc></url>`);
+  for (const p of PEOPLE.filter((x) => people.has(x.id))) for (const l of ["he", "en"] as const) urls.push(`<url><loc>${personUrl(origin, p.id, l)}</loc>${personAlt(origin, p.id)}</url>`);
   for (const j of JOURNEYS) urls.push(`<url><loc>${origin}/journey/${j.id}</loc></url>`);
   for (const p of PLACES) for (const l of ["he", "en"] as const) urls.push(`<url><loc>${placeUrl(origin, p.id, l)}</loc>${alt(p.id)}</url>`);
   return new Response(

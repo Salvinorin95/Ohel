@@ -46,7 +46,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
       },
       {
         h: "מה לא נשמר",
-        items: ["אין מייל, אין טלפון ואין סיסמה.", "אין פרסומות ואין עוגיות מעקב.", "שום דבר לא נמכר ולא מועבר לאף אחד."],
+        items: ["אין מייל, אין טלפון ואין סיסמה.", "אין פרסומות ואין עוגיות מעקב (יש רק עוגיית כניסה אחת, ראו למטה).", "שום דבר לא נמכר ולא מועבר לאף אחד."],
       },
       {
         h: "מי עוד מעורב",
@@ -54,7 +54,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
           "Cloudflare מארחת את האוהל וסופרת ביקורים (Cloudflare Web Analytics) בלי עוגיות ובלי לעקוב אחריך בין אתרים.",
           "הטקסטים מגיעים מספריא דרך השרת שלנו, כך שספריא לא רואה אותך.",
           "תמונות המפה נטענות ישירות מ־Esri (לוויין) ומ־Amazon (תבליט), ותמונות המקומות מוויקישיתוף (Wikimedia), ולכן הם רואים את כתובת האינטרנט שלך, כמו כל אתר.",
-          "המפתח, השפה והגדרות הקריאה נשמרים אצלך בדפדפן, כדי שלא תצטרכו להיכנס מחדש בכל פעם.",
+          "המפתח, השפה והגדרות הקריאה נשמרים אצלך בדפדפן, כדי שלא תצטרכו להיכנס מחדש בכל פעם. עותק של המפתח נשמר גם בעוגייה אחת שנחוצה לכניסה (לא למעקב), כדי שהדפדפן לא ישכח אותך. ביציאה היא נמחקת.",
         ],
       },
       {
@@ -110,7 +110,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
       },
       {
         h: "What we don't",
-        items: ["No email, no phone number, no password.", "No ads and no tracking cookies.", "Nothing is sold or handed to anyone."],
+        items: ["No email, no phone number, no password.", "No ads and no tracking cookies (just one sign-in cookie, see below).", "Nothing is sold or handed to anyone."],
       },
       {
         h: "Who else is involved",
@@ -118,7 +118,7 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
           "Cloudflare hosts Ohel and counts visits (Cloudflare Web Analytics) without cookies and without following you around the web.",
           "Bible texts come from Sefaria through our server, so Sefaria doesn't see you.",
           "Map images load straight from Esri (satellite) and Amazon (terrain), and place photos from Wikimedia Commons, so they see your internet address, like any website does.",
-          "Your key, language and reading settings are saved in your own browser, so you don't have to sign in every time.",
+          "Your key, language and reading settings are saved in your own browser, so you don't have to sign in every time. A copy of the key also sits in one cookie that's needed for signing in (not for tracking), so the browser doesn't forget you. Signing out deletes it.",
         ],
       },
       {

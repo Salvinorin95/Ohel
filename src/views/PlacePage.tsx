@@ -4,7 +4,8 @@ import { refLabel } from "../../shared/books.ts";
 import type { PlaceImage, PlaceInfo, RealmId } from "../../shared/placeInfo.ts";
 import { findPlace } from "../../shared/places.ts";
 import type { Key } from "../i18n.ts";
-import { loadPlaceInfo, loadRealms, realmColor, yearLabel } from "../placeData.ts";
+import { loadPlaceInfo, loadRealms, realmColor, usePeopleIndex, yearLabel } from "../placeData.ts";
+import { PEOPLE } from "../../shared/people.ts";
 import { useApp } from "../state.tsx";
 
 // The deep page for one place: what it looks like, who lived and ruled here, how many people,
@@ -18,7 +19,7 @@ interface Props {
   onSelectPlace: (id: string) => void;
 }
 
-function Gallery({ images, onOpen, wide }: { images: PlaceImage[]; onOpen: (i: PlaceImage) => void; wide?: boolean }) {
+export function Gallery({ images, onOpen, wide }: { images: PlaceImage[]; onOpen: (i: PlaceImage) => void; wide?: boolean }) {
   const { lang } = useApp();
   if (!images.length) return null;
   return (
@@ -33,7 +34,7 @@ function Gallery({ images, onOpen, wide }: { images: PlaceImage[]; onOpen: (i: P
   );
 }
 
-function Lightbox({ img, onClose }: { img: PlaceImage; onClose: () => void }) {
+export function Lightbox({ img, onClose }: { img: PlaceImage; onClose: () => void }) {
   const { lang, t } = useApp();
   useEffect(() => {
     const k = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -60,7 +61,9 @@ function Lightbox({ img, onClose }: { img: PlaceImage; onClose: () => void }) {
 }
 
 export function PlacePage({ id, onClose, onShowRealm, onOpenRef, onSelectPlace }: Props) {
-  const { t, lang } = useApp();
+  const { t, lang, go } = useApp();
+  const peopleIndex = usePeopleIndex();
+  const peopleHere = PEOPLE.filter((p) => peopleIndex[p.id]?.places.includes(id));
   const place = findPlace(id);
   const [info, setInfo] = useState<PlaceInfo | null>(null);
   const [failed, setFailed] = useState(false);
@@ -204,6 +207,27 @@ export function PlacePage({ id, onClose, onShowRealm, onOpenRef, onSelectPlace }
                   </li>
                 ))}
               </ol>
+            </section>
+          )}
+
+          {peopleHere.length > 0 && (
+            <section>
+              <h3>👥 {t("ps_here")}</h3>
+              <div className="ref-chips">
+                {peopleHere.map((p) => (
+                  <a
+                    key={p.id}
+                    href={`/person/${p.id}`}
+                    className="chip chip-person"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      go({ name: "person", id: p.id });
+                    }}
+                  >
+                    👤 {p[lang]}
+                  </a>
+                ))}
+              </div>
             </section>
           )}
 

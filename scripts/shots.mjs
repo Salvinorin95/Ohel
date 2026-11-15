@@ -112,6 +112,8 @@ const SHOTS = (demo) => [
   { name: "journey", size: DESK, path: "/journey/jacob", wait: 6000, then: `[...document.querySelectorAll(".journey-dots button")][2]?.click()`, after: 6000 },
   { name: "journey-phone", size: PHONE, path: "/journey/exodus", wait: 6000, then: `[...document.querySelectorAll(".journey-dots button")][2]?.click()`, after: 6000 },
   { name: "week", size: PHONE, path: "/week", wait: 5000 },
+  { name: "person", size: PHONE, path: "/person/david", wait: 5000 },
+  { name: "people", size: DESK, path: "/people", wait: 5000 },
   { name: "room", size: PHONE, path: `/room/${demo.room}`, wait: 5000, signedIn: true },
   { name: "me", size: PHONE, path: "/me", wait: 4000, signedIn: true },
 ];

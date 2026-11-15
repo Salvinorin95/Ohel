@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SaveUser } from "../components/SaveUser.tsx";
 import { BADGES, LEVELS, POINTS, levelFor } from "../../shared/game.ts";
 import { api, type Profile as P } from "../api.ts";
 import { Orb } from "../components/Orb.tsx";
@@ -123,6 +124,12 @@ export function Profile() {
         <p className="fine">
           {t("yourId")}: <code dir="ltr" className="id-code">{me.id}</code>
         </p>
+      </section>
+
+      <section className="glass card">
+        <h2>🔐 {t("saveUserTitle")}</h2>
+        <p className="muted">{t("saveUserHint")}</p>
+        <SaveUser />
       </section>
 
       {me.admin && (

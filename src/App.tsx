@@ -12,6 +12,8 @@ import { Room } from "./views/Room.tsx";
 import { About } from "./views/About.tsx";
 import { Admin } from "./views/Admin.tsx";
 import { WeekPage } from "./views/WeekPage.tsx";
+import { PeoplePage, PersonPage } from "./views/PersonPage.tsx";
+import { usePeopleIndex } from "./placeData.ts";
 import { parseRef } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
 import { lazy, Suspense, useEffect, useState } from "react";
@@ -21,10 +23,12 @@ import type { RoomInfo } from "../shared/protocol.ts";
 
 function Nav() {
   const { t, route, go, me, token, askJoin, lang, setLang } = useApp();
+  const hasPeople = Object.keys(usePeopleIndex()).length > 0;
   const items: { r: Route; label: string; icon: string; on: boolean }[] = [
     { r: { name: "home" }, label: t("navRooms"), icon: "⛺", on: route.name === "home" || route.name === "room" },
     { r: { name: "read", book: "Genesis", chapter: 1 }, label: t("navRead"), icon: "📖", on: route.name === "read" },
     { r: { name: "map" }, label: t("navMap"), icon: "🛰️", on: route.name === "map" },
+    ...(hasPeople ? [{ r: { name: "people" } as Route, label: t("people"), icon: "👥", on: route.name === "people" || route.name === "person" }] : []),
   ];
   const lastRead = () => {
     try {
@@ -150,6 +154,8 @@ export function App() {
           {route.name === "me" && <Profile />}
           {route.name === "about" && <About />}
           {route.name === "week" && <WeekPage />}
+          {route.name === "people" && <PeoplePage />}
+          {route.name === "person" && <PersonPage key={route.id} id={route.id} />}
           {route.name === "admin" && <Admin />}
         </main>
       </div>

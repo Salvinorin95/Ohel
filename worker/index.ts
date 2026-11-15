@@ -3,7 +3,9 @@ import { findPlace, PLACES } from "../shared/places.ts";
 import type { RoomInfo } from "../shared/protocol.ts";
 import { week } from "./week.ts";
 import { findJourney } from "../shared/journeys.ts";
-import { langOf, placeBody, placeJsonLd, placeTitle, placeUrl, robots, sitemap, type BuiltPlace } from "./seo.ts";
+import { langOf, personBody, personJsonLd, personTitle, personUrl, placeBody, placeJsonLd, placeTitle, placeUrl, robots, sitemap, type BuiltPlace } from "./seo.ts";
+import { findPerson, PEOPLE } from "../shared/people.ts";
+import type { PersonInfo } from "../shared/personInfo.ts";
 
 export { Hub } from "./hub.ts";
 
@@ -97,6 +99,33 @@ const twins = (origin: string, id: string) => [
 
 async function metaFor(url: URL, env: Env, ctx: ExecutionContext): Promise<Meta> {
   const p = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  // A person's page, in Hebrew (/person/david) or English (/person/david?lang=en).
+  if (p[0] === "person" && p[1]) {
+    const person = findPerson(p[1]);
+    const res = person ? await env.ASSETS.fetch(new Request(`${url.origin}/data/people/${person.id}.json`)) : null;
+    if (!person || !res?.ok || !(res.headers.get("content-type") ?? "").includes("json")) return { ...HOME, noindex: true };
+    const d = (await res.json()) as PersonInfo;
+    const lang = langOf(url);
+    const cover = d.images[0];
+    return {
+      title: personTitle(person, lang),
+      description: clip(d[lang].summary, 200),
+      image: cover?.thumb ? { url: cover.thumb, width: cover.width, height: cover.height } : undefined,
+      canonical: personUrl(url.origin, person.id, lang),
+      alternates: [
+        { lang: "he", href: personUrl(url.origin, person.id, "he") },
+        { lang: "en", href: personUrl(url.origin, person.id, "en") },
+        { lang: "x-default", href: personUrl(url.origin, person.id, "he") },
+      ],
+      jsonld: personJsonLd(person, d, lang, url.origin),
+      body: personBody(person, d, lang),
+      lang,
+    };
+  }
+  if (p[0] === "people") {
+    const names = PEOPLE.slice(0, 12).map((x) => x.he).join(", ");
+    return { title: "הדמויות של התנ״ך · People of the Bible · אוהל", description: clip(`${names} ועוד: הסיפור של כל דמות, המקומות שלה על מפת לוויין והפסוקים. The people of the Bible, their stories and their places on the map.`, 200) };
+  }
   // A journey played on the map.
   if (p[0] === "journey" && p[1]) {
     const j = findJourney(p[1]);
@@ -184,7 +213,7 @@ async function metaFor(url: URL, env: Env, ctx: ExecutionContext): Promise<Meta>
       };
     }
   }
-  if (p[0] === "me" || p[0] === "admin") return { ...HOME, noindex: true };
+  if (p[0] === "me" || p[0] === "admin" || p[0] === "key") return { ...HOME, noindex: true };
   if (p[0] === "about") return { title: "כללי האוהל ופרטיות · House rules & privacy · אוהל", description: "מה מותר, מה לא, ומה נשמר עליך (כמעט כלום). What's welcome, what isn't, and what we keep about you (almost nothing)." };
   return HOME;
 }
@@ -216,7 +245,8 @@ function withMeta(res: Response, m: Meta, url: URL, env: Env) {
   for (const a of m.alternates ?? []) head += `\n    <link rel="alternate" hreflang="${a.lang}" href="${attr(a.href)}">`;
   if (m.jsonld) head += `\n    <script type="application/ld+json">${JSON.stringify(m.jsonld).replace(/</g, "\\u003c")}</script>`;
   const token: string = env.ANALYTICS_TOKEN;
-  if (token && !local) {
+  // The personal sign-in link (/key#...) is never counted, so its key can't end up in any report.
+  if (token && !local && url.pathname !== "/key") {
     head += `\n    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${attr(JSON.stringify({ token }))}'></script>`;
   }
   let rw = new HTMLRewriter();
@@ -229,11 +259,45 @@ function withMeta(res: Response, m: Meta, url: URL, env: Env) {
     .transform(res);
 }
 
+// ── Staying signed in ──
+// The key lives in the browser's storage; a copy in one sign-in cookie (HttpOnly, sent only to /api/session)
+// brings it back when a browser clears its storage (Safari does after 7 days away). No tracking, nothing else.
+const KEY_COOKIE = "ohel_key";
+const cookieOf = (req: Request, name: string) => {
+  const m = new RegExp(`(?:^|;\\s*)${name}=([^;]+)`).exec(req.headers.get("cookie") ?? "");
+  return m ? decodeURIComponent(m[1]) : null;
+};
+const keyCookie = (v: string, maxAge: number) => `${KEY_COOKIE}=${encodeURIComponent(v)}; Path=/api/session; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
+
+async function session(req: Request, env: Env): Promise<Response> {
+  const hub = env.HUB.get(env.HUB.idFromName("ohel"));
+  const meWith = (token: string) => hub.fetch(new Request("https://hub/api/me", { headers: { authorization: `Bearer ${token}` } }));
+  if (req.method === "POST") {
+    const token = req.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ?? "";
+    if (!token || !(await meWith(token)).ok) return Response.json({ error: "auth" }, { status: 401 });
+    return new Response(null, { status: 204, headers: { "set-cookie": keyCookie(token, 400 * 86_400) } });
+  }
+  if (req.method === "DELETE") return new Response(null, { status: 204, headers: { "set-cookie": keyCookie("", 0) } });
+  const token = cookieOf(req, KEY_COOKIE);
+  if (!token) return Response.json({ error: "none" }, { status: 404 });
+  const res = await meWith(token);
+  if (!res.ok) return Response.json({ error: "none" }, { status: 404, headers: { "set-cookie": keyCookie("", 0) } });
+  const p = (await res.json()) as { me: unknown };
+  return Response.json({ token, me: p.me }, { headers: { "cache-control": "no-store" } });
+}
+
 export default {
   async fetch(req, env, ctx): Promise<Response> {
     const url = new URL(req.url);
     if (url.pathname === "/api/text") return chapterText(req, ctx);
-    if (url.pathname === "/sitemap.xml") return sitemap(url.origin);
+    if (url.pathname === "/sitemap.xml") {
+      const idx = await env.ASSETS.fetch(new Request(`${url.origin}/data/people/index.json`));
+      const people = idx.ok && (idx.headers.get("content-type") ?? "").includes("json") ? Object.keys((await idx.json()) as object) : [];
+      return sitemap(url.origin, new Set(people));
+    }
+    if (url.pathname === "/api/session") return session(req, env);
+    // A form posts here only so the browser offers to save the key in its passwords; nothing is kept.
+    if (url.pathname === "/api/saved") return new Response(null, { status: 204 });
     if (url.pathname === "/api/week") {
       const w = await week(url.origin, env.ASSETS, ctx).catch(() => null);
       return w ? Response.json(w, { headers: { "cache-control": "public, max-age=600" } }) : Response.json({ error: "unavailable" }, { status: 503 });

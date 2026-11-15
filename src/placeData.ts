@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { PersonInfo } from "../shared/personInfo.ts";
 import type { PlaceInfo, RealmId } from "../shared/placeInfo.ts";
 import type { Lang } from "../shared/protocol.ts";
 
@@ -66,4 +67,30 @@ export function yearLabel(y: number, lang: Lang) {
   if (y < 0) return lang === "he" ? `${a} לפנה״ס` : `${a} BCE`;
   if (y < 1000) return lang === "he" ? `${a} לספירה` : `${a} CE`;
   return String(y);
+}
+
+// ── people ──
+export type PeopleIndex = Record<string, { cover?: string; places: string[] }>;
+let peopleP: Promise<PeopleIndex> | null = null;
+const personP = new Map<string, Promise<PersonInfo>>();
+export const loadPeopleIndex = () => (peopleP ??= getJson<PeopleIndex>("/data/people/index.json").catch(() => ({})));
+export function loadPersonInfo(id: string) {
+  let p = personP.get(id);
+  if (!p) {
+    p = getJson<PersonInfo>(`/data/people/${encodeURIComponent(id)}.json`);
+    p.catch(() => personP.delete(id));
+    personP.set(id, p);
+  }
+  return p;
+}
+export function usePeopleIndex() {
+  const [index, setIndex] = useState<PeopleIndex>({});
+  useEffect(() => {
+    let live = true;
+    void loadPeopleIndex().then((i) => live && setIndex(i));
+    return () => {
+      live = false;
+    };
+  }, []);
+  return index;
 }

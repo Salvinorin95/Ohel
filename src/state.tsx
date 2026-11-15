@@ -13,6 +13,8 @@ export type Route =
   | { name: "me" }
   | { name: "about" }
   | { name: "week" }
+  | { name: "people" }
+  | { name: "person"; id: string }
   | { name: "admin" };
 
 export function parseRoute(path: string): Route {
@@ -26,6 +28,8 @@ export function parseRoute(path: string): Route {
   if (p[0] === "me") return { name: "me" };
   if (p[0] === "about") return { name: "about" };
   if (p[0] === "week") return { name: "week" };
+  if (p[0] === "people") return { name: "people" };
+  if (p[0] === "person" && p[1]) return { name: "person", id: p[1] };
   if (p[0] === "admin") return { name: "admin" };
   return { name: "home" };
 }
@@ -45,6 +49,10 @@ export function routePath(r: Route): string {
       return "/about";
     case "week":
       return "/week";
+    case "people":
+      return "/people";
+    case "person":
+      return `/person/${encodeURIComponent(r.id)}`;
     case "admin":
       return "/admin";
     default:
@@ -129,6 +137,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
     else localStorage.removeItem("ohel.token");
     if (m) localStorage.setItem("ohel.me", JSON.stringify(m));
     else localStorage.removeItem("ohel.me");
+    // Keep a copy of the key in the sign-in cookie (or drop it on signing out), so a browser that clears
+    // its storage doesn't turn you into a stranger.
+    void fetch("/api/session", tok ? { method: "POST", headers: { authorization: `Bearer ${tok}` } } : { method: "DELETE" }).catch(() => {});
   }, []);
 
   const refreshMe = useCallback(async () => {
@@ -147,6 +158,34 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     void refreshMe();
   }, [refreshMe]);
+
+  // Coming back: from a personal sign-in link (/key#ohel_...), or from the sign-in cookie when this
+  // browser forgot the key. The link's key is wiped from the address bar before anything else.
+  const welcomed = useRef(false);
+  useEffect(() => {
+    if (welcomed.current) return;
+    welcomed.current = true;
+    const fromLink = location.pathname === "/key" && location.hash.length > 8 ? decodeURIComponent(location.hash.slice(1)) : null;
+    if (location.pathname === "/key") {
+      history.replaceState(null, "", "/");
+      setRoute({ name: "home" });
+    }
+    if (fromLink) {
+      api<Profile>("/api/me", { token: fromLink })
+        .then((p) => {
+          setSession(fromLink, p.me);
+          toast({ kind: "info", text: `${translate(lang, "welcomeBack")}, ${p.me.name}`, glyph: "🔑" });
+        })
+        .catch(() => toast({ kind: "info", text: translate(lang, "keyErr") }));
+      return;
+    }
+    if (token) return;
+    fetch("/api/session")
+      .then((r) => (r.ok ? (r.json() as Promise<{ token: string; me: Me }>) : null))
+      .then((s) => s?.token && setSession(s.token, s.me))
+      .catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toast = useCallback((t: Omit<Toast, "id">) => {
     const id = nextId.current++;
