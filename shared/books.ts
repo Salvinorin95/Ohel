@@ -106,3 +106,13 @@ export function refLabel(s: string, lang: "he" | "en"): string {
   if (lang === "he") return `${b.he} ${hebNum(r.chapter)}${r.verse ? `, ${hebNum(r.verse)}` : ""}`;
   return `${b.en} ${r.chapter}${r.verse ? `:${r.verse}` : ""}`;
 }
+
+/** A reading span as people say it: "Genesis 28:10-32:3" → "בראשית כ״ח, י׳ – ל״ב, ג׳" / "Genesis 28:10–32:3". */
+export function spanLabel(s: string, lang: "he" | "en"): string {
+  const m = /^(.+?)\s+(\d+):(\d+)\s*-\s*(?:(\d+):)?(\d+)$/.exec(s.trim());
+  const b = m && findBook(m[1]);
+  if (!m || !b) return s;
+  const [c1, v1, c2, v2] = [Number(m[2]), Number(m[3]), m[4] ? Number(m[4]) : Number(m[2]), Number(m[5])];
+  if (lang === "he") return `${b.he} ${hebNum(c1)}, ${hebNum(v1)} – ${c2 !== c1 ? `${hebNum(c2)}, ` : ""}${hebNum(v2)}`;
+  return `${b.en} ${c1}:${v1}–${c2 !== c1 ? `${c2}:` : ""}${v2}`;
+}

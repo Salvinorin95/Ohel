@@ -3,7 +3,9 @@ import { refLabel } from "../../shared/books.ts";
 import { findPlace } from "../../shared/places.ts";
 import type { RoomInfo } from "../../shared/protocol.ts";
 import { getBoard, getRooms } from "../api.ts";
+import { DailyCard } from "../components/DailyCard.tsx";
 import { Logo } from "../components/Logo.tsx";
+import { WeekCard } from "../components/WeekCard.tsx";
 import { NewRoomSheet } from "../components/NewRoomSheet.tsx";
 import { Orb } from "../components/Orb.tsx";
 import { useApp } from "../state.tsx";
@@ -85,6 +87,11 @@ export function Home() {
           </button>
         </div>
       </section>
+
+      <div className="today">
+        <WeekCard />
+        <DailyCard />
+      </div>
 
       <section id="rooms" className="rooms">
         <div className="section-head">

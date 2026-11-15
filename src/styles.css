@@ -583,3 +583,46 @@ select option { background: #1a0d33; }
 .ssr-place figcaption, .ssr-crumbs { font-size: 0.85rem; color: var(--muted); }
 .ssr-lede { font-size: 1.1rem; }
 a.chip { text-decoration: none; color: inherit; }
+
+/* ── Today: this week on the map + the question of the day ── */
+.today { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 14px; margin: 6px 0 26px; }
+.week-card, .daily-card { padding: 16px 18px; border-radius: 22px; min-width: 0; }
+.week-card.skeleton { min-height: 220px; }
+.today-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.today-head h2 { font-size: 1.15rem; margin: 0; }
+.week-name { font-size: 1.25rem; margin: 10px 0 2px; }
+.week-name b { font-family: var(--scripture); font-size: 1.5rem; }
+.week-spans { margin: 0 0 12px; }
+.week-places { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; }
+.week-place { flex: none; width: 112px; display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit; scroll-snap-align: start; font-size: 0.85rem; font-weight: 600; }
+.week-place img, .week-place-img { width: 112px; height: 78px; object-fit: cover; border-radius: 14px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line); }
+.week-place:hover img { outline: 2px solid var(--cyan); }
+.credit { margin: 10px 0 0; font-size: 0.75rem; }
+.credit a { color: var(--muted); }
+.daily-q { font-size: 1.08rem; line-height: 1.55; margin: 12px 0; }
+.daily-opts { display: grid; gap: 8px; }
+.daily-opt { text-align: start; padding: 10px 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.06); color: inherit; font: inherit; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.daily-opt:not(:disabled):hover { background: rgba(255, 255, 255, 0.12); border-color: var(--cyan); }
+.daily-opt:disabled { cursor: default; }
+.daily-opt.right { background: rgba(52, 211, 153, 0.22); border-color: rgba(52, 211, 153, 0.8); }
+.daily-opt.wrong { background: rgba(248, 113, 113, 0.18); border-color: rgba(248, 113, 113, 0.7); }
+.daily-opt.dim { opacity: 0.55; }
+.daily-verdict { font-weight: 700; margin: 12px 0 4px; }
+.daily-verdict.right { color: #6ee7b7; }
+.daily-verdict.wrong { color: #fca5a5; }
+.daily-explain { line-height: 1.6; margin: 0 0 10px; color: #ece4ff; }
+.daily-run { background: rgba(251, 146, 60, 0.2); border: 1px solid rgba(251, 146, 60, 0.5); }
+
+/* /week */
+.week-page { max-width: 1100px; margin: 0 auto; padding: 18px 16px 60px; }
+.week-hero { text-align: center; margin: 10px 0 24px; }
+.week-hero h1 { font-family: var(--scripture); font-size: clamp(2rem, 6vw, 3.2rem); margin: 6px 0; }
+.week-hero p { margin: 4px 0; }
+.week-hero .place-actions { justify-content: center; margin-top: 14px; }
+.week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.week-tile { border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+.week-tile img { width: 100%; height: 170px; object-fit: cover; cursor: pointer; }
+.week-tile-body { padding: 12px 14px 14px; }
+.week-tile-body h3 { margin: 0 0 6px; }
+.week-tile-body p { margin: 0 0 10px; line-height: 1.55; color: #ece4ff; }
+a.btn { text-decoration: none; }

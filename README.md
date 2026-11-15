@@ -43,9 +43,13 @@ Live group chat about a story, a question or a place. Attach a verse, a place, o
   <img src="docs/screenshots/en/me.jpg" width="300" alt="Points, level and badges">
 </p>
 
+### 🗓️ This week on the map, and a question a day
+
+The home page shows this week's Torah portion and haftarah (Israel calendar, from Hebcal) with every place on the map that those verses mention, and `/week` is a page made to be sent around on WhatsApp every week. Next to it is the question of the day: the same question for everyone, points for answering, and a badge for seven days in a row.
+
 ### 🌱 Points, levels and badges
 
-Seed → Sprout → Root → Branch → Tree → Forest → Light. 16 badges and a weekly board, for reading, exploring the map, talking, quizzes, helpful answers and lights.
+Seed → Sprout → Root → Branch → Tree → Forest → Light. 17 badges and a weekly board, for reading, exploring the map, talking, quizzes, helpful answers and lights.
 
 ### 🚪 Easy in, easy out
 
@@ -81,6 +85,7 @@ OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:51
 node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
 npm run places     # check content/places/*.json and build public/data/places (image credits from Commons; --offline reuses the last lookup)
 node --max-old-space-size=4096 scripts/build-realms.mjs <cliopatria.geojson>   # realm borders → public/data/realms.json
+node scripts/daily-e2e.mjs http://localhost:5173   # question of the day (11 checks)
 node scripts/shots.mjs http://localhost:5300   # README screenshots (local server only: it posts a demo conversation)
 ```
 

@@ -161,7 +161,7 @@ for (const info of infos) {
 const titles = [...new Set(infos.flatMap((i) => (i.images ?? []).map((m) => m.file)))];
 const found = offline ? new Map<string, Resolved | string>() : await resolveImages(titles);
 
-const index: Record<string, { cover?: string; images: number }> = {};
+const index: Record<string, { cover?: string; images: number; refs: string[] }> = {};
 for (const info of infos) {
   const images: PlaceImage[] = [];
   for (const img of info.images ?? []) {
@@ -180,7 +180,9 @@ for (const info of infos) {
   const built: PlaceInfo = { ...info, images };
   writeFileSync(join(OUT, `${info.id}.json`), JSON.stringify(built));
   const cover = images.find((m) => m.kind === "site") ?? images[0];
-  index[info.id] = { cover: cover?.thumb, images: images.length };
+  // Every verse that mentions the place, for "this week on the map" (the map list's chapters plus the page's verses).
+  const refs = [...new Set([...(findPlace(info.id)?.refs ?? []), ...info.mentions.map((m) => m.ref)])];
+  index[info.id] = { cover: cover?.thumb, images: images.length, refs };
   console.log(`${info.id.padEnd(14)} ${images.length}/${info.images?.length ?? 0} images, ${info.mentions?.length ?? 0} mentions, ${info.rulers?.length ?? 0} rulers`);
 }
 writeFileSync(join(OUT, "index.json"), JSON.stringify(index));

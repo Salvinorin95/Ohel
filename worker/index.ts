@@ -1,6 +1,7 @@
 import { findBook, parseRef, refLabel } from "../shared/books.ts";
 import { findPlace, PLACES } from "../shared/places.ts";
 import type { RoomInfo } from "../shared/protocol.ts";
+import { week } from "./week.ts";
 import { langOf, placeBody, placeJsonLd, placeTitle, placeUrl, robots, sitemap, type BuiltPlace } from "./seo.ts";
 
 export { Hub } from "./hub.ts";
@@ -93,8 +94,23 @@ const twins = (origin: string, id: string) => [
   { lang: "x-default", href: placeUrl(origin, id, "he") },
 ];
 
-async function metaFor(url: URL, env: Env): Promise<Meta> {
+async function metaFor(url: URL, env: Env, ctx: ExecutionContext): Promise<Meta> {
   const p = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  // This week's reading on the map: a link worth sending around every week.
+  if (p[0] === "week") {
+    const w = await week(url.origin, env.ASSETS, ctx).catch(() => null);
+    if (!w) return { title: "השבוע על המפה · This week on the map · אוהל", description: HOME.description };
+    const idx = await env.ASSETS.fetch(new Request(`${url.origin}/data/places/index.json`));
+    const index = idx.ok ? ((await idx.json()) as Record<string, { cover?: string }>) : {};
+    const names = w.places.map((x) => findPlace(x.id)?.he).filter(Boolean).slice(0, 6);
+    const cover = w.places.map((x) => index[x.id]?.cover).find(Boolean);
+    return {
+      title: `פרשת ${w.name.he} על המפה · ${w.name.en} on the map · אוהל`,
+      description: clip(`המקומות של פרשת השבוע על מפת לוויין${names.length ? `: ${names.join(", ")}` : ""}. This week's Torah reading and its places on a 3D map.`, 200),
+      image: cover ? { url: cover } : undefined,
+      canonical: `${url.origin}/week`,
+    };
+  }
   // A place's own page, in Hebrew (/place/gilboa) or English (/place/gilboa?lang=en).
   if (p[0] === "place" && p[1]) {
     const place = findPlace(p[1]);
@@ -202,6 +218,10 @@ export default {
     const url = new URL(req.url);
     if (url.pathname === "/api/text") return chapterText(req, ctx);
     if (url.pathname === "/sitemap.xml") return sitemap(url.origin);
+    if (url.pathname === "/api/week") {
+      const w = await week(url.origin, env.ASSETS, ctx).catch(() => null);
+      return w ? Response.json(w, { headers: { "cache-control": "public, max-age=600" } }) : Response.json({ error: "unavailable" }, { status: 503 });
+    }
     if (url.pathname === "/robots.txt") return robots(url.origin);
     if (url.pathname.startsWith("/api/")) {
       const headers = new Headers(req.headers);
@@ -211,7 +231,7 @@ export default {
     }
     const res = await env.ASSETS.fetch(req);
     if (!(res.headers.get("content-type") ?? "").includes("text/html")) return res;
-    const meta = await metaFor(url, env).catch(() => HOME);
+    const meta = await metaFor(url, env, ctx).catch(() => HOME);
     return withMeta(res, meta, url, env);
   },
 } satisfies ExportedHandler<Env>;

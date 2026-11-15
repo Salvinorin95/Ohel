@@ -12,6 +12,8 @@ export const POINTS = {
   place: 2, // first visit to a place on the map
   room: 5, // opening a room
   dayStreak: 3, // first activity of the day
+  daily: 6, // the question of the day, answered right
+  dailyTry: 2, // the question of the day, answered (not right)
 } as const;
 
 export const DAILY_CAPS: Partial<Record<keyof typeof POINTS, number>> = {
@@ -54,13 +56,16 @@ export interface Stats {
   gilboa: number; // 1 = read I Samuel 31 and visited Gilboa
 }
 
+/** What badges look at: the stored counters plus the longest run of daily-question days. */
+export type BadgeStats = Stats & { daily_best?: number };
+
 export interface BadgeDef {
   id: string;
   glyph: string;
   en: string;
   he: string;
   how: { en: string; he: string };
-  earned: (s: Stats) => boolean;
+  earned: (s: BadgeStats) => boolean;
 }
 
 export const BADGES: BadgeDef[] = [
@@ -80,6 +85,7 @@ export const BADGES: BadgeDef[] = [
   { id: "lantern", glyph: "🏮", en: "Lantern", he: "פנס", how: { en: "Your words lit up others 10 times", he: "המילים שלך האירו לאחרים 10 פעמים" }, earned: (s) => s.lights_got >= 10 },
   { id: "tent_opener", glyph: "⛺", en: "Tent Opener", he: "פותח אוהל", how: { en: "Open a room", he: "לפתוח חדר" }, earned: (s) => s.rooms >= 1 },
   { id: "seven_days", glyph: "🌙", en: "Seven Days", he: "שבעה ימים", how: { en: "Come back 7 days in a row", he: "לחזור 7 ימים ברצף" }, earned: (s) => s.best_streak >= 7 },
+  { id: "daily_seven", glyph: "🔥", en: "Seven Questions", he: "שבע שאלות", how: { en: "Answer the question of the day 7 days in a row", he: "לענות על שאלת היום 7 ימים ברצף" }, earned: (s) => (s.daily_best ?? 0) >= 7 },
 ];
 
 export const findBadge = (id: string) => BADGES.find((b) => b.id === id);

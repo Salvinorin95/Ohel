@@ -309,3 +309,18 @@ export function pickQuestion(book: string | null, recent: string[]): Question {
   const from = near.length && Math.random() < 0.75 ? near : pool;
   return from[Math.floor(Math.random() * from.length)];
 }
+
+/** The question of the day: the same for everyone on a given UTC day, with the same option order.
+ *  Walks the whole bank in a fixed shuffled order before any question comes back. */
+export function dailyQuestion(day: string): { q: Question; order: number[] } {
+  const hash = (s: string) => {
+    let h = 2166136261;
+    for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
+    return h;
+  };
+  const bank = [...QUESTIONS].sort((a, b) => hash(a.id) - hash(b.id));
+  const n = Math.floor(Date.parse(`${day}T00:00:00Z`) / 86_400_000);
+  const q = bank[((n % bank.length) + bank.length) % bank.length];
+  const order = [0, 1, 2, 3].sort((a, b) => hash(`${day}:${a}`) - hash(`${day}:${b}`));
+  return { q, order };
+}

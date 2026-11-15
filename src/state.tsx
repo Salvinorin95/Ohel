@@ -12,6 +12,7 @@ export type Route =
   | { name: "map"; place?: string; open?: boolean }
   | { name: "me" }
   | { name: "about" }
+  | { name: "week" }
   | { name: "admin" };
 
 export function parseRoute(path: string): Route {
@@ -23,6 +24,7 @@ export function parseRoute(path: string): Route {
   if (p[0] === "place" && p[1]) return { name: "map", place: p[1], open: true };
   if (p[0] === "me") return { name: "me" };
   if (p[0] === "about") return { name: "about" };
+  if (p[0] === "week") return { name: "week" };
   if (p[0] === "admin") return { name: "admin" };
   return { name: "home" };
 }
@@ -39,6 +41,8 @@ export function routePath(r: Route): string {
       return "/me";
     case "about":
       return "/about";
+    case "week":
+      return "/week";
     case "admin":
       return "/admin";
     default:

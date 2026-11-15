@@ -1,10 +1,10 @@
 import { DurableObject } from "cloudflare:workers";
-import { BADGES, DAILY_CAPS, POINTS, type Stats } from "../shared/game.ts";
+import { BADGES, DAILY_CAPS, POINTS, type BadgeStats, type Stats } from "../shared/game.ts";
 import { findBook, parseRef, refString } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
 import type { AdminAction, AdminData, AdminMsg, AdminUser, ClientMsg, ErrorCode, MapView, Me, Msg, Person, QuizPublic, RoomInfo, ServerMsg } from "../shared/protocol.ts";
 import { check, checkName, type Severity } from "./moderation.ts";
-import { findQuestion, pickQuestion } from "./quiz.ts";
+import { dailyQuestion, findQuestion, pickQuestion } from "./quiz.ts";
 
 // One Durable Object holds the whole community: people, rooms, messages, points.
 // Each open room is a set of hibernating WebSockets tagged with the room id.
@@ -175,6 +175,7 @@ export class Hub extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS answers (msg INTEGER, uid TEXT, choice INTEGER, correct INTEGER, at INTEGER, PRIMARY KEY (msg, uid));
       CREATE TABLE IF NOT EXISTS bans (ip_hash TEXT PRIMARY KEY, until INTEGER);
       CREATE TABLE IF NOT EXISTS joins (ip_hash TEXT, day TEXT, n INTEGER, PRIMARY KEY (ip_hash, day));
+      CREATE TABLE IF NOT EXISTS dq (uid TEXT, day TEXT, choice INTEGER, correct INTEGER, PRIMARY KEY (uid, day));
     `);
     const salt = this.sql.exec<{ v: string }>("SELECT v FROM meta WHERE k = 'salt'").toArray()[0];
     if (salt) this.salt = salt.v;
@@ -266,7 +267,7 @@ export class Hub extends DurableObject<Env> {
     const have = new Set(this.sql.exec<{ badge: string }>("SELECT badge FROM badges WHERE uid = ?", uid).toArray().map((r) => r.badge));
     const fresh: string[] = [];
     for (const b of BADGES) {
-      if (!have.has(b.id) && b.earned(u)) {
+      if (!have.has(b.id) && b.earned({ ...u, daily_best: this.dailyRuns(uid).best })) {
         this.sql.exec("INSERT INTO badges (uid, badge, at) VALUES (?, ?, ?)", uid, b.id, Date.now());
         fresh.push(b.id);
       }
@@ -425,6 +426,7 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/join" && method === "POST") return this.join(req);
     if (path === "/api/rooms" && method === "GET") return this.listRooms();
     if (path === "/api/leaderboard" && method === "GET") return this.leaderboard();
+    if (path === "/api/daily" && method === "GET") return this.daily((await this.userByToken(auth)) ?? null);
     const roomMatch = /^\/api\/rooms\/([\w-]{1,40})$/.exec(path);
     if (roomMatch && method === "GET") {
       const r = this.room(roomMatch[1]);
@@ -438,6 +440,7 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/rooms" && method === "POST") return this.createRoom(me, req);
     if (path === "/api/read" && method === "POST") return this.read(me, req);
     if (path === "/api/visit" && method === "POST") return this.visit(me, req);
+    if (path === "/api/daily" && method === "POST") return this.answerDaily(me, req);
     if (path.startsWith("/api/admin")) {
       if (!this.isAdmin(me.id)) return fail("forbidden", 403);
       if (path === "/api/admin" && method === "GET") return json(this.adminData());
@@ -484,13 +487,66 @@ export class Hub extends DurableObject<Env> {
 
   private profile(u: UserRow) {
     const badges = this.sql.exec<{ badge: string; at: number }>("SELECT badge, at FROM badges WHERE uid = ? ORDER BY at", u.id).toArray();
-    const stats: Stats = {
+    const stats: BadgeStats = {
       msgs: u.msgs, reads: u.reads, places: u.places, quiz_ok: u.quiz_ok, helpful: u.helpful, lights_got: u.lights_got,
       rooms: u.rooms, questions: u.questions, samuel_reads: u.samuel_reads, best_streak: u.best_streak, gilboa: u.gilboa,
+      daily_best: this.dailyRuns(u.id).best,
     };
     const visited = this.sql.exec<{ place: string }>("SELECT place FROM visits WHERE uid = ?", u.id).toArray().map((r) => r.place);
     const read = this.sql.exec<{ ref: string }>("SELECT ref FROM chapters WHERE uid = ?", u.id).toArray().map((r) => r.ref);
     return json({ me: this.meOf(u), stats, badges, visited, read });
+  }
+
+  // ── The question of the day ──
+  /** How many days in a row this person has answered (counting today, or up to yesterday), and their best run. */
+  private dailyRuns(uid: string): { now: number; best: number } {
+    const days = this.sql.exec<{ day: string }>("SELECT day FROM dq WHERE uid = ? ORDER BY day", uid).toArray().map((r) => r.day);
+    let best = 0;
+    let run = 0;
+    let prev = "";
+    for (const d of days) {
+      run = prev && today(Date.parse(`${prev}T12:00:00Z`) + DAY) === d ? run + 1 : 1;
+      best = Math.max(best, run);
+      prev = d;
+    }
+    const last = days.at(-1);
+    const alive = last === today() || last === today(Date.now() - DAY);
+    return { now: alive ? run : 0, best };
+  }
+
+  private dailyPublic(day: string) {
+    const { q, order } = dailyQuestion(day);
+    const side = (l: "he" | "en") => ({ q: q[l].q, options: order.map((i) => q[l].options[i]) });
+    return { day, id: q.id, ref: q.ref, he: side("he"), en: side("en") };
+  }
+
+  private dailyResult(day: string, choice: number) {
+    const { q, order } = dailyQuestion(day);
+    const answer = order.indexOf(0);
+    return { choice, answer, correct: choice === answer, explain: { he: q.he.explain, en: q.en.explain } };
+  }
+
+  private daily(me: UserRow | null) {
+    const day = today();
+    const mine = me ? this.one<{ choice: number }>("SELECT choice FROM dq WHERE uid = ? AND day = ?", me.id, day) : null;
+    return json({
+      ...this.dailyPublic(day),
+      ...(mine ? { mine: this.dailyResult(day, mine.choice) } : {}),
+      ...(me ? { run: this.dailyRuns(me.id).now } : {}),
+    });
+  }
+
+  private async answerDaily(u: UserRow, req: Request) {
+    const b = await this.body(req);
+    const choice = Number(b.choice);
+    if (!Number.isInteger(choice) || choice < 0 || choice > 3) return fail("bad_request");
+    const day = today();
+    const had = this.one<{ choice: number }>("SELECT choice FROM dq WHERE uid = ? AND day = ?", u.id, day);
+    if (had) return json({ mine: this.dailyResult(day, had.choice), run: this.dailyRuns(u.id).now, again: true });
+    const res = this.dailyResult(day, choice);
+    this.sql.exec("INSERT INTO dq (uid, day, choice, correct) VALUES (?, ?, ?, ?)", u.id, day, choice, res.correct ? 1 : 0);
+    const award = this.award(u.id, res.correct ? "daily" : "dailyTry");
+    return json({ mine: res, run: this.dailyRuns(u.id).now, award });
   }
 
   private deleteMe(u: UserRow) {
@@ -499,7 +555,7 @@ export class Hub extends DurableObject<Env> {
       if (at?.uid === u.id) ws.close(4000, "left");
     }
     this.sql.exec("UPDATE messages SET uid = NULL, name = '' WHERE uid = ?", u.id);
-    for (const t of ["daily", "chapters", "visits", "badges"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
+    for (const t of ["daily", "chapters", "visits", "badges", "dq"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     this.sql.exec("DELETE FROM users WHERE id = ?", u.id);
     return json({ ok: true });
   }

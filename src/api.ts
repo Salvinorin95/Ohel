@@ -1,5 +1,5 @@
-import type { AdminAction, AdminData, AdminUser, Award, Me, RoomInfo } from "../shared/protocol.ts";
-import type { Stats } from "../shared/game.ts";
+import type { AdminAction, AdminData, AdminUser, Award, DailyPublic, DailyResult, Me, RoomInfo, WeekInfo } from "../shared/protocol.ts";
+import type { BadgeStats as Stats } from "../shared/game.ts";
 
 export class ApiError extends Error {
   constructor(public code: string, public status: number, public extra: Record<string, unknown> = {}) {
@@ -44,5 +44,9 @@ export const getBoard = () =>
 export const getText = (ref: string) => api<ChapterText>(`/api/text?ref=${encodeURIComponent(ref)}`);
 export const postRead = (token: string, ref: string) => api<{ award: Award }>("/api/read", { token, body: { ref } });
 export const postVisit = (token: string, place: string) => api<{ award: Award }>("/api/visit", { token, body: { place } });
+export const getWeek = () => api<WeekInfo>("/api/week");
+export const getDaily = (token: string | null) => api<DailyPublic & { mine?: DailyResult; run?: number }>("/api/daily", { token });
+export const postDaily = (token: string, choice: number) =>
+  api<{ mine: DailyResult; run: number; award?: Award; again?: boolean }>("/api/daily", { token, body: { choice } });
 export const adminGet = (token: string) => api<AdminData>("/api/admin", { token });
 export const adminAct = (token: string, a: AdminAction) => api<{ ok: true; user?: AdminUser }>("/api/admin", { token, body: a });

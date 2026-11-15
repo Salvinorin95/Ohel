@@ -109,6 +109,29 @@ export type ServerMsg =
   | { t: "quizResult"; id: number; correct: boolean; choice: number }
   | { t: "pong" };
 
+/** The question of the day, as everyone sees it (the right answer is not included). */
+export interface DailyPublic {
+  day: string;
+  id: string;
+  ref: string;
+  he: { q: string; options: string[] };
+  en: { q: string; options: string[] };
+}
+export interface DailyResult {
+  choice: number;
+  answer: number;
+  correct: boolean;
+  explain: { he: string; en: string };
+}
+/** This week's reading (Israel calendar, from Hebcal) and the places on Ohel's map that it mentions. */
+export interface WeekInfo {
+  date: string;
+  name: { he: string; en: string };
+  torah: string[]; // "Genesis 28:10-32:3"
+  haftarah: string[];
+  places: { id: string; n: number }[];
+}
+
 export interface Award {
   delta: number;
   total: number;

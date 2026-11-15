@@ -1,0 +1,26 @@
+// Question of the day, end to end. LOCAL server only (it signs people up). Usage: node scripts/daily-e2e.mjs http://localhost:5173
+const B = process.argv[2];
+if (!/localhost|127\.0\.0\.1/.test(B)) throw new Error("local only");
+let fails = 0;
+const ok = (c, l) => { console.log(`${c ? "✔" : "✘"} ${l}`); if (!c) fails++; };
+const j = async (path, opts = {}) => { const r = await fetch(B + path, { ...opts, headers: { "content-type": "application/json", ...(opts.token ? { authorization: `Bearer ${opts.token}` } : {}) } }); return { status: r.status, body: await r.json() }; };
+const a = (await j("/api/join", { method: "POST", body: JSON.stringify({ name: "Dq " + (Date.now() % 10000), avatar: 1 }) })).body;
+const pub = (await j("/api/daily")).body;
+ok(pub.he?.options?.length === 4 && pub.en?.options?.length === 4 && !("answer" in pub) && !pub.mine, "anyone sees today's question, without the answer");
+const pub2 = (await j("/api/daily", { token: a.token })).body;
+ok(pub2.id === pub.id && JSON.stringify(pub2.he.options) === JSON.stringify(pub.he.options), "same question and option order for everyone");
+ok(pub2.run === 0 && !pub2.mine, "a new person has no run and no answer yet");
+ok((await j("/api/daily", { method: "POST", body: JSON.stringify({ choice: 1 }) })).status === 401, "answering needs a key");
+ok((await j("/api/daily", { method: "POST", token: a.token, body: JSON.stringify({ choice: 7 }) })).status === 400, "a choice outside 0-3 is refused");
+const r1 = (await j("/api/daily", { method: "POST", token: a.token, body: JSON.stringify({ choice: 2 }) })).body;
+ok(r1.mine && typeof r1.mine.answer === "number" && r1.mine.choice === 2 && r1.mine.explain?.he && r1.run === 1, `answered (${r1.mine.correct ? "right" : "wrong"}), run 1`);
+ok(r1.award && r1.award.delta >= (r1.mine.correct ? 6 : 2), `points: +${r1.award?.delta}`);
+const r2 = (await j("/api/daily", { method: "POST", token: a.token, body: JSON.stringify({ choice: 0 }) })).body;
+ok(r2.again && r2.mine.choice === 2 && !r2.award, "a second answer the same day changes nothing");
+const pub3 = (await j("/api/daily", { token: a.token })).body;
+ok(pub3.mine?.choice === 2 && pub3.run === 1, "coming back shows the answer and the run");
+const me = (await j("/api/me", { token: a.token })).body;
+ok(me.stats?.daily_best === 1, "profile counts the best run");
+ok((await j("/api/me", { method: "DELETE", token: a.token })).status === 200, "leaving deletes the person");
+console.log(fails ? `\n${fails} failed` : "\nall good");
+process.exit(fails ? 1 : 0);

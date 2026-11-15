@@ -11,6 +11,7 @@ import { Reader } from "./views/Reader.tsx";
 import { Room } from "./views/Room.tsx";
 import { About } from "./views/About.tsx";
 import { Admin } from "./views/Admin.tsx";
+import { WeekPage } from "./views/WeekPage.tsx";
 import { parseRef } from "../shared/books.ts";
 import { findPlace } from "../shared/places.ts";
 import { lazy, Suspense, useEffect, useState } from "react";
@@ -146,6 +147,7 @@ export function App() {
           {route.name === "map" && <MapPage place={route.place} open={route.open} />}
           {route.name === "me" && <Profile />}
           {route.name === "about" && <About />}
+          {route.name === "week" && <WeekPage />}
           {route.name === "admin" && <Admin />}
         </main>
       </div>
