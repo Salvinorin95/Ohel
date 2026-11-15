@@ -240,9 +240,9 @@ select option { background: #1a0d33; }
 .people-orbs .orb:first-child { margin-inline-start: 0; }
 .people-count { display: inline-flex; align-items: center; gap: 5px; font-size: 0.85rem; color: var(--green); }
 .room-tabs { display: none; }
-.room-body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(360px, 42%) 1fr; }
-.chat-pane { display: flex; flex-direction: column; min-height: 0; position: relative; border-inline-end: 1px solid var(--line); }
-.study-pane { display: flex; flex-direction: column; min-height: 0; position: relative; }
+.room-body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(360px, 42%) minmax(0, 1fr); }
+.chat-pane { display: flex; flex-direction: column; min-height: 0; min-width: 0; position: relative; border-inline-end: 1px solid var(--line); }
+.study-pane { display: flex; flex-direction: column; min-height: 0; min-width: 0; position: relative; }
 .study-tabs { position: absolute; top: 12px; inset-inline-start: 50%; transform: translateX(-50%); z-index: 6; }
 [dir="rtl"] .study-tabs { transform: translateX(50%); }
 .study-slot { display: none; flex: 1; min-height: 0; }
@@ -255,7 +255,7 @@ select option { background: #1a0d33; }
   .room-tabs { display: flex; gap: 4px; padding: 6px; border-width: 0 0 1px; background: rgba(12, 5, 26, 0.35); }
   .room-tabs button { flex: 1; padding: 8px; border-radius: 12px; color: var(--muted); font-size: 0.9rem; }
   .room-tabs button.on { background: rgba(255, 255, 255, 0.12); color: var(--text); }
-  .room-body { grid-template-columns: 1fr; }
+  .room-body { grid-template-columns: minmax(0, 1fr); }
   .chat-pane, .study-pane { display: none; border: 0; }
   .chat-pane.active, .study-pane.active { display: flex; }
   .study-tabs { display: none; }

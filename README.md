@@ -1,21 +1,55 @@
-# Ohel · אוהל
+<p align="center"><img src="public/icon.svg" width="88" alt=""></p>
+<h1 align="center">Ohel · אוהל</h1>
+<p align="center"><b>An open tent for the Bible.</b><br>Read it, see it on a 3D satellite map, and talk it through together, in Hebrew and English.</p>
+<p align="center"><a href="https://ohel.salvinorinab.workers.dev"><b>Open Ohel →</b></a> &nbsp;·&nbsp; <a href="README.he.md">לקריאה בעברית</a></p>
 
-An open tent for the Bible. Read it, see it on the map, and talk it through together, in Hebrew and English.
+<p align="center">
+  <img src="docs/screenshots/en/home.jpg" width="250" alt="Home">
+  <img src="docs/screenshots/en/place-card.jpg" width="250" alt="Mount Gilboa on the 3D map">
+  <img src="docs/screenshots/en/room.jpg" width="250" alt="A room talking about Saul on Gilboa">
+</p>
 
-The name comes from Abraham's tent, which was open on all four sides so anyone could walk in from any direction. No ads, no religious symbols, no email or password.
+The name comes from Abraham's tent at Mamre, which was open on all four sides so anyone could walk in from any direction. No ads, no religious symbols, no email or password. Jews, Christians, Muslims and people of no faith are all welcome.
 
 ## What's inside
 
-- **Rooms**: live group chat about a story, a question or a place. There are 8 starter rooms (Saul on Gilboa, David the king, Elah, Carmel, Genesis, Ruth, Jonah, and an open room), and anyone can open a new one.
-  - Attach a verse from the reader, a place, or the exact map view you're looking at. Tapping it opens the same spot for everyone.
-  - **Questions** stand out in the room. The person who asked can mark the best answer as helpful.
-  - **✨ Light**: tap a message that lit something up for you.
-  - **⚡ Quiz**: 56 bilingual questions. Everyone in the room answers together, there are bonus points when two or more people get it right, and the quiz ends early once everyone has answered.
-- **Reader**: the whole Tanakh from Sefaria, in Hebrew, English, or both side by side. Vowels and cantillation can be switched on or off, and the ketiv/qere readings are shown. Each chapter lists the places it mentions on the map.
-- **Map**: 3D satellite imagery and terrain (MapLibre with Esri imagery and AWS terrain tiles) with 59 places. Each place is marked as identified, traditional or debated, and comes with a short story and the chapters where it appears.
-  - **Place pages**: every place has a deep page in Hebrew and English: the setting, the peoples who lived there, who ruled it (with that realm's borders drawn on the map), population estimates, archaeology, photos of the site, finds and art (Wikimedia Commons, each with its author and license), a timeline, and every chapter that mentions it. Disputed identifications say so.
-- **Points, levels and badges**: Seed → Sprout → Root → Branch → Tree → Forest → Light. There are 16 badges and a weekly leaderboard. Points come from reading a chapter, exploring the map, talking, answering quizzes, helpful answers and lights.
-- **Easy to go in and out**: you join with a name and a color. A key lets you come back on another device. Step out or delete yourself anytime.
+### 🛰️ The map: 103 places of the Bible in 3D
+
+Satellite imagery and real terrain, from Ur and Babylon to Sinai, Gilboa and the Mount of Olives. Each place is marked as identified, traditional or debated, with a short story and the chapters where it appears.
+
+<img src="docs/screenshots/en/map.jpg" alt="The map of Bible places">
+
+Every place has its own deep page: the setting today, the peoples who lived there, who ruled it, how many people lived there then, archaeology and museum finds, photos and art (Wikimedia Commons, each with its author and license), a timeline, and every chapter that mentions it. Where scholars disagree, the page says so.
+
+<p align="center">
+  <img src="docs/screenshots/en/place-page.jpg" width="640" alt="The place page of Mamre">
+  <img src="docs/screenshots/en/place-page-phone.jpg" width="200" alt="A place page on a phone">
+</p>
+
+**Who ruled here:** a ruler on a place page draws that kingdom's borders on the map, from Egypt and Assyria to Persia (borders from the Seshat databank's Cliopatria).
+
+<img src="docs/screenshots/en/realm.jpg" alt="The Neo-Assyrian Empire's borders on the map">
+
+### 📖 The reader
+
+The whole Tanakh from Sefaria, in Hebrew, English, or side by side. Vowels and cantillation on or off, ketiv/qere shown. Each chapter lists its places on the map.
+
+### 🔥 Rooms
+
+Live group chat about a story, a question or a place. Attach a verse, a place, or the exact map view you are looking at, and it opens the same spot for everyone. Questions stand out, the asker can mark the most helpful answer, ✨ lights thank a message that lit something up, and ⚡ quizzes are answered by the whole room together.
+
+<p align="center">
+  <img src="docs/screenshots/en/read.jpg" width="300" alt="Reading 1 Samuel 31">
+  <img src="docs/screenshots/en/me.jpg" width="300" alt="Points, level and badges">
+</p>
+
+### 🌱 Points, levels and badges
+
+Seed → Sprout → Root → Branch → Tree → Forest → Light. 16 badges and a weekly board, for reading, exploring the map, talking, quizzes, helpful answers and lights.
+
+### 🚪 Easy in, easy out
+
+Join with a name and a colour. A key brings you back on another device. Leave or delete yourself anytime.
 
 ## Keeping it kind
 
@@ -47,7 +81,10 @@ OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:51
 node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
 npm run places     # check content/places/*.json and build public/data/places (image credits from Commons; --offline reuses the last lookup)
 node --max-old-space-size=4096 scripts/build-realms.mjs <cliopatria.geojson>   # realm borders → public/data/realms.json
+node scripts/shots.mjs http://localhost:5300   # README screenshots (local server only: it posts a demo conversation)
 ```
+
+Search engines: every place has its own address in each language, `/place/<id>` and `/place/<id>?lang=en`. The Worker (`worker/seo.ts`) writes the whole page into the HTML with its title, description, canonical and `hreflang` links and schema.org data, and serves `/sitemap.xml` and `/robots.txt`. Rooms, `/me` and `/admin` are `noindex`, so people's messages stay out of search results. For Google Search Console, put the HTML-tag code in `GOOGLE_SITE_VERIFICATION` in `wrangler.jsonc`.
 
 Link previews: pages go through the Worker (`run_worker_first`), which writes a title, description and `og:image` per room, place and chapter, so links shared on WhatsApp look right. Visits are counted with Cloudflare Web Analytics (no cookies); the beacon is added only on the real host, from `ANALYTICS_TOKEN` in `wrangler.jsonc`.
 
@@ -58,9 +95,10 @@ Deploy to Cloudflare Workers with `npm run deploy` (builds, then `wrangler deplo
 ```
 shared/   books (Tanakh), places (map), game (points/levels/badges), protocol (types)
 worker/   index.ts (routes + Sefaria proxy with edge cache), hub.ts (the Durable Object),
-          moderation.ts, quiz.ts
+          seo.ts (place pages for search engines, sitemap), moderation.ts, quiz.ts
 src/      React app: views/Home, Room, Reader, MapView, PlacePage, Profile; components; i18n.ts
 content/  places/<id>.json: the place pages (how to write one: content/places/README.md)
+docs/     screenshots/he, screenshots/en (made by scripts/shots.mjs)
 ```
 
 ## Credits
