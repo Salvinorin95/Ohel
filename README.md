@@ -30,6 +30,10 @@ Every place has its own deep page: the setting today, the peoples who lived ther
 
 <img src="docs/screenshots/en/realm.jpg" alt="The Neo-Assyrian Empire's borders on the map">
 
+### 🧭 Journeys
+
+Six journeys played on the map, stop by stop, with the verse for each stop: Abraham, Jacob, the Exodus (the traditional route, marked as debated), David on the run from Saul, Elijah, and the exile to Babylon and the return. The camera flies from stop to stop while the road draws itself; `/journey/<id>` opens one directly.
+
 ### 📖 The reader
 
 The whole Tanakh from Sefaria, in Hebrew, English, or side by side. Vowels and cantillation on or off, ketiv/qere shown. Each chapter lists its places on the map.

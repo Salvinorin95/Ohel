@@ -9,7 +9,7 @@ export type Route =
   | { name: "home" }
   | { name: "room"; id: string }
   | { name: "read"; book: string; chapter: number }
-  | { name: "map"; place?: string; open?: boolean }
+  | { name: "map"; place?: string; open?: boolean; journey?: string }
   | { name: "me" }
   | { name: "about" }
   | { name: "week" }
@@ -22,6 +22,7 @@ export function parseRoute(path: string): Route {
   if (p[0] === "map") return { name: "map", place: p[1] };
   // A place's own page: the map with that place's page open (this is the address search engines list).
   if (p[0] === "place" && p[1]) return { name: "map", place: p[1], open: true };
+  if (p[0] === "journey" && p[1]) return { name: "map", journey: p[1] };
   if (p[0] === "me") return { name: "me" };
   if (p[0] === "about") return { name: "about" };
   if (p[0] === "week") return { name: "week" };
@@ -36,6 +37,7 @@ export function routePath(r: Route): string {
     case "read":
       return `/read/${r.book.replace(/ /g, "_")}/${r.chapter}`;
     case "map":
+      if (r.journey) return `/journey/${r.journey}`;
       return r.place ? `/${r.open ? "place" : "map"}/${r.place}` : "/map";
     case "me":
       return "/me";

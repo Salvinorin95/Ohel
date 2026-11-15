@@ -183,6 +183,14 @@ const S = {
   weekPlacePage: { en: "The place", he: "לעמוד המקום" },
   weekOnMap: { en: "On the map", he: "על המפה" },
   weekShabbat: { en: "Shabbat", he: "שבת" },
+  // journeys
+  journeys: { en: "Journeys", he: "מסעות" },
+  journeyStops: { en: "stops", he: "תחנות" },
+  journeyRoute: { en: "The whole route", he: "כל הדרך" },
+  journeyPlay: { en: "Travel", he: "לצאת לדרך" },
+  journeyPause: { en: "Pause", he: "עצירה" },
+  journeyNext: { en: "Next stop", he: "לתחנה הבאה" },
+  journeyPrev: { en: "Previous stop", he: "לתחנה הקודמת" },
   // question of the day
   dailyTitle: { en: "Question of the day", he: "שאלת היום" },
   dailyRight: { en: "Right!", he: "נכון!" },

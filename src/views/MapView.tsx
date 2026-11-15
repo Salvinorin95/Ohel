@@ -11,6 +11,8 @@ import { useApp } from "../state.tsx";
 import { REALMS, type RealmId } from "../../shared/placeInfo.ts";
 import { loadRealms, realmColor, usePlaceIndex, yearLabel } from "../placeData.ts";
 import { PlacePage } from "./PlacePage.tsx";
+import { findJourney, JOURNEYS, type Journey } from "../../shared/journeys.ts";
+import { boundsOf, hideJourney, legKm, legsOf, setDone, showJourney, stopName, stopPoint, travel } from "./journeyMap.ts";
 
 setWorkerUrl(workerUrl);
 
@@ -55,9 +57,12 @@ export interface MapProps {
   openPage?: boolean;
   /** Called when a place page opens (id) or closes (null), so the address can follow. */
   onPage?: (id: string | null) => void;
+  /** Start this journey when the map opens (the /journey/<id> address). */
+  journey?: string;
+  onJourney?: (id: string | null) => void;
 }
 
-export function MapView({ place, view, embedded, onShareView, onSharePlace, onOpenRef, onTalk, onSelect, openPage, onPage }: MapProps) {
+export function MapView({ place, view, embedded, onShareView, onSharePlace, onOpenRef, onTalk, onSelect, openPage, onPage, journey: journeyId, onJourney }: MapProps) {
   const { t, lang, token, celebrate } = useApp();
   const box = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
@@ -72,6 +77,16 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   const [realm, setRealm] = useState<{ id: RealmId; year: number; back: string | null } | null>(null);
   const index = usePlaceIndex();
   const selectRef = useRef<(id: string | null, fly?: boolean) => void>(() => {});
+  // A journey being travelled: which one, which stop (-1 = the whole route), playing on its own or not.
+  const [jour, setJour] = useState<Journey | null>(null);
+  const [step, setStep] = useState(-1);
+  const [auto, setAuto] = useState(false);
+  const [moving, setMoving] = useState(false);
+  const [jlist, setJlist] = useState(false);
+  const travelStop = useRef<() => void>(() => {});
+  const stopMarkers = useRef<Marker[]>([]);
+  const journeyIds = useRef<Set<string> | null>(null);
+  const journeyHere = useRef<string | null>(null);
 
   // Create the map once.
   useEffect(() => {
@@ -135,8 +150,10 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   const declutter = () => {
     const map = mapRef.current;
     if (!map || !markers.current.size) return;
-    const showLabels = map.getZoom() >= 8.6;
-    const order = [...PLACES].sort((a, b) => Number(b.id === selected) - Number(a.id === selected) || Number(!!a.minor) - Number(!!b.minor));
+    // On a journey every stop is labelled at any zoom (the current stop first); otherwise labels start at zoom 8.6.
+    const showLabels = map.getZoom() >= 8.6 || !!journeyIds.current;
+    const first = (p: Place) => Number(p.id === selected || p.id === journeyHere.current);
+    const order = [...PLACES].sort((a, b) => first(b) - first(a) || Number(!!a.minor) - Number(!!b.minor));
     type Box = [number, number, number, number];
     const hit = (a: Box, b: Box) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
     const dots: Box[] = [];
@@ -144,9 +161,10 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     for (const p of order) {
       const m = markers.current.get(p.id);
       if (!m) continue;
+      if (journeyIds.current && !journeyIds.current.has(p.id)) continue;
       const { x, y } = map.project([p.lng, p.lat]);
       const dot: Box = [x - 9, y - 9, x + 9, y + 9];
-      const keep = p.id === selected || !dots.some((d) => hit(d, dot));
+      const keep = first(p) === 1 || !dots.some((d) => hit(d, dot));
       m.el.classList.toggle("crowded", !keep);
       if (!keep) continue;
       dots.push(dot);
@@ -154,7 +172,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
       if (!showLabels) continue;
       const w = p[lang].length * (lang === "he" ? 7 : 6.6) + 18;
       const label: Box = [x - w / 2, y + 10, x + w / 2, y + 31];
-      const fits = p.id === selected || !taken.some((d) => hit(d, label));
+      const fits = first(p) === 1 || !taken.some((d) => hit(d, label));
       m.el.classList.toggle("nolabel", !fits);
       if (fits) taken.push(label);
     }
@@ -209,6 +227,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   // The address and the tab title follow what is open: /place/<id> for a page, /map/<id> for a pin.
   useEffect(() => {
     if (page) onPage?.(page);
+    else if (jour) onJourney?.(jour.id);
     else if (selected) onSelect?.(selected);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
@@ -235,6 +254,112 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     if (map.isStyleLoaded()) apply();
     else map.once("load", apply);
   }, [sat]);
+
+  // ── journeys: a route drawn stop by stop, the camera travelling with it ──
+  const panelPad = () => {
+    const h = box.current?.clientHeight ?? 600;
+    return { top: 70, bottom: Math.min(300, h * 0.42), left: 30, right: 30 };
+  };
+  const markJourneyPins = (j: Journey | null, here: string | null) => {
+    journeyIds.current = j ? new Set(j.stops.map((s) => s.place).filter((x): x is string => !!x)) : null;
+    journeyHere.current = here;
+    for (const [id, { el }] of markers.current) {
+      el.classList.toggle("in-journey", !!journeyIds.current?.has(id));
+      el.classList.toggle("journey-here", id === here);
+    }
+    declutterRef.current();
+  };
+  const startJourney = (j: Journey) => {
+    const map = mapRef.current;
+    if (!map) return;
+    travelStop.current();
+    setList(false);
+    setJlist(false);
+    setPage(null);
+    hideRealm();
+    select(null);
+    setJour(j);
+    setStep(-1);
+    setAuto(false);
+    onJourney?.(j.id);
+    const draw = () => {
+      showJourney(map, j);
+      for (const m of stopMarkers.current) m.remove();
+      stopMarkers.current = j.stops
+        .filter((s) => !s.place && s.at)
+        .map((s) => {
+          const el = document.createElement("div");
+          el.className = "pin pin-traditional in-journey pin-point";
+          el.innerHTML = `<span class="pin-dot"></span><span class="pin-label" dir="auto"></span>`;
+          (el.querySelector(".pin-label") as HTMLElement).textContent = s.at![lang];
+          return new Marker({ element: el, anchor: "center" }).setLngLat([s.at!.lng, s.at!.lat]).addTo(map);
+        });
+      markJourneyPins(j, null);
+      map.fitBounds(boundsOf(j), { padding: panelPad(), pitch: 35, bearing: 0, maxZoom: 9, duration: 2200, essential: true, absolutePadding: true });
+    };
+    if (map.isStyleLoaded()) draw();
+    else map.once("idle", draw);
+  };
+  const goStep = (i: number) => {
+    const map = mapRef.current;
+    if (!map || !jour || i < 0 || i >= jour.stops.length) return;
+    travelStop.current();
+    const legs = legsOf(jour);
+    const before = legs.slice(0, i).flatMap((l, k) => (k ? l.slice(1) : l));
+    const s = jour.stops[i];
+    const [lng, lat] = stopPoint(s);
+    // Walking on to the next stop draws the leg as the camera flies; jumping around just shows the route so far.
+    const forward = i === step + 1 && i > 0;
+    const km = legKm(legs[i]);
+    const ms = forward ? Math.min(6500, Math.max(2600, 1600 + km * 4)) : 2200;
+    setStep(i);
+    setMoving(true);
+    markJourneyPins(jour, s.place ?? null);
+    const far = km > 400 || !findPlace(s.place) || ["ur", "haran", "babylon", "riblah", "goshen", "raamses", "redsea", "sinai"].includes(s.place ?? "");
+    map.flyTo({ center: [lng, lat], zoom: far ? 7.2 : 9.6, pitch: three ? 55 : 0, bearing: three ? -12 : 0, duration: ms, essential: true, padding: panelPad() });
+    if (forward) {
+      travelStop.current = travel(map, before, legs[i], ms, () => setMoving(false));
+    } else {
+      setDone(map, [...before, ...(i ? legs[i].slice(1) : legs[i])]);
+      const t = setTimeout(() => setMoving(false), ms);
+      travelStop.current = () => clearTimeout(t);
+    }
+  };
+  const endJourney = () => {
+    travelStop.current();
+    const map = mapRef.current;
+    if (map) hideJourney(map);
+    for (const m of stopMarkers.current) m.remove();
+    stopMarkers.current = [];
+    setJour(null);
+    setStep(-1);
+    setAuto(false);
+    setMoving(false);
+    markJourneyPins(null, null);
+    onJourney?.(null);
+  };
+  // Playing: wait at each stop long enough to read it, then travel on.
+  useEffect(() => {
+    if (!auto || !jour || moving) return;
+    if (step >= jour.stops.length - 1) return setAuto(false);
+    const t = setTimeout(() => goStep(step + 1), step < 0 ? 600 : 6500);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auto, jour, step, moving]);
+  // Opened at /journey/<id>.
+  useEffect(() => {
+    const j = findJourney(journeyId);
+    if (j && j.id !== jour?.id) startJourney(j);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [journeyId]);
+  // Custom stop labels follow the language.
+  useEffect(() => {
+    if (jour) for (const [k, m] of stopMarkers.current.entries()) {
+      const s = jour.stops.filter((x) => !x.place && x.at)[k];
+      const el = m.getElement().querySelector(".pin-label");
+      if (s && el) el.textContent = s.at![lang];
+    }
+  }, [lang, jour]);
 
   // ── who ruled here: a realm's borders drawn on the map ──
   const realmLayers = (map: MLMap, show: boolean) => {
@@ -315,7 +440,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   }, [q]);
 
   return (
-    <div className={`mapwrap${embedded ? " embedded" : ""}${realm ? " has-realm" : ""}`}>
+    <div className={`mapwrap${embedded ? " embedded" : ""}${realm ? " has-realm" : ""}${jour ? " journey-on" : ""}`}>
       <div ref={box} className="map" />
 
       <div className="map-tools">
@@ -326,9 +451,14 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
         <button className={three ? "btn glass small on" : "btn glass small"} onClick={toggle3d}>
           {t("view3d")}
         </button>
-        <button className="btn glass small" onClick={() => setList(!list)}>
+        <button className="btn glass small" onClick={() => (setList(!list), setJlist(false))}>
           📍 {t("places")}
         </button>
+        {!embedded && (
+          <button className={jlist || jour ? "btn glass small on" : "btn glass small"} onClick={() => (setJlist(!jlist), setList(false))}>
+            🧭 {t("journeys")}
+          </button>
+        )}
         {onShareView && (
           <button className="btn btn-glow small" onClick={shareView}>
             💬 {t("shareView")}
@@ -357,7 +487,68 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
         </div>
       )}
 
-      {sel && (
+      {jlist && (
+        <div className="place-list journey-list glass">
+          {JOURNEYS.map((j) => (
+            <button key={j.id} className={jour?.id === j.id ? "place-item on" : "place-item"} onClick={() => startJourney(j)}>
+              <span className="dot" style={{ background: j.color }} />
+              <span>
+                <b>{j[lang]}</b>
+                <span className="muted small journey-list-sub">{j.stops.length} {t("journeyStops")}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {jour && (
+        <div className="journey-panel glass" style={{ "--journey": jour.color } as CSSProperties}>
+          <div className="journey-head">
+            <div>
+              <span className="journey-kicker">🧭 {jour[lang]}</span>
+              <h3 dir="auto">{step < 0 ? t("journeyRoute") : stopName(jour.stops[step], lang)}</h3>
+            </div>
+            <button className="icon-btn" onClick={endJourney} aria-label={t("close")}>
+              ×
+            </button>
+          </div>
+          <p className="journey-text" dir="auto">
+            {step < 0 ? jour.intro[lang] : jour.stops[step][lang]}
+          </p>
+          <div className="journey-dots">
+            {jour.stops.map((s, i) => (
+              <button key={i} className={i === step ? "on" : i < step ? "past" : ""} onClick={() => (setAuto(false), goStep(i))} aria-label={stopName(s, lang)} title={stopName(s, lang)} />
+            ))}
+          </div>
+          <div className="place-actions">
+            <button className="btn small" disabled={step <= 0} onClick={() => (setAuto(false), goStep(step - 1))} aria-label={t("journeyPrev")}>
+              {lang === "he" ? "→" : "←"}
+            </button>
+            {step < jour.stops.length - 1 && (
+              <button className="btn btn-glow small" onClick={() => (auto ? setAuto(false) : step < 0 ? setAuto(true) : (setAuto(false), goStep(step + 1)))}>
+                {auto ? `⏸ ${t("journeyPause")}` : step < 0 ? `▶ ${t("journeyPlay")}` : `${t("journeyNext")} ${lang === "he" ? "←" : "→"}`}
+              </button>
+            )}
+            {step >= 0 && !auto && step < jour.stops.length - 1 && (
+              <button className="btn small" onClick={() => setAuto(true)}>
+                ▶ {t("journeyPlay")}
+              </button>
+            )}
+            {step >= 0 && (
+              <button className="chip" onClick={() => onOpenRef?.(jour.stops[step].ref)}>
+                📖 {refLabel(jour.stops[step].ref, lang)}
+              </button>
+            )}
+            {step >= 0 && jour.stops[step].place && (
+              <button className="chip chip-place" onClick={() => setPage(jour.stops[step].place!)}>
+                📜 {t("weekPlacePage")}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {sel && !jour && (
         <div className={index[sel.id]?.cover ? "place-card glass has-img" : "place-card glass"} key={sel.id}>
           {index[sel.id]?.cover && <img className="place-card-img" src={index[sel.id].cover} alt="" loading="lazy" onClick={() => setPage(sel.id)} />}
           <div className="place-card-head">

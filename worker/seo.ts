@@ -3,6 +3,7 @@
 // The app replaces this HTML as soon as it starts, and shows the same text in the place page.
 import { parseRef, refLabel } from "../shared/books.ts";
 import { PLACES, findPlace, type Place } from "../shared/places.ts";
+import { JOURNEYS } from "../shared/journeys.ts";
 
 type Lang = "he" | "en";
 type L = { he: string; en: string };
@@ -143,6 +144,7 @@ export function sitemap(origin: string) {
   const alt = (id: string) =>
     `<xhtml:link rel="alternate" hreflang="he" href="${placeUrl(origin, id, "he")}"/><xhtml:link rel="alternate" hreflang="en" href="${placeUrl(origin, id, "en")}"/><xhtml:link rel="alternate" hreflang="x-default" href="${placeUrl(origin, id, "he")}"/>`;
   const urls = [`${origin}/`, `${origin}/map`, `${origin}/week`, `${origin}/about`].map((u) => `<url><loc>${u}</loc></url>`);
+  for (const j of JOURNEYS) urls.push(`<url><loc>${origin}/journey/${j.id}</loc></url>`);
   for (const p of PLACES) for (const l of ["he", "en"] as const) urls.push(`<url><loc>${placeUrl(origin, p.id, l)}</loc>${alt(p.id)}</url>`);
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`,

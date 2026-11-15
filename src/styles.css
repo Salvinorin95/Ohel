@@ -626,3 +626,23 @@ a.chip { text-decoration: none; color: inherit; }
 .week-tile-body h3 { margin: 0 0 6px; }
 .week-tile-body p { margin: 0 0 10px; line-height: 1.55; color: #ece4ff; }
 a.btn { text-decoration: none; }
+
+/* ── journeys ── */
+.mapwrap.journey-on .pin:not(.in-journey):not(.on) { display: none; }
+.pin.in-journey .pin-label { display: block; }
+.mapwrap.journey-on .pin.in-journey.nolabel:not(.journey-here):not(:hover) .pin-label { display: none; }
+.pin.journey-here .pin-dot { transform: scale(1.5); animation: beacon 1.8s ease-in-out infinite; }
+.pin-point { pointer-events: none; }
+.journey-list { max-height: 60vh; }
+.journey-list .place-item { align-items: flex-start; text-align: start; }
+.journey-list .place-item > span:last-child { display: flex; flex-direction: column; }
+.journey-list-sub { font-weight: 400; }
+.journey-panel { position: absolute; inset-inline: 12px; bottom: 12px; max-width: 520px; margin-inline: auto; padding: 14px 16px; border-radius: 22px; border: 1px solid color-mix(in srgb, var(--journey) 55%, transparent); box-shadow: 0 0 30px color-mix(in srgb, var(--journey) 25%, transparent); z-index: 5; }
+.journey-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.journey-kicker { font-size: 0.8rem; color: var(--journey); font-weight: 700; }
+.journey-head h3 { margin: 2px 0 0; font-family: var(--scripture); font-size: 1.45rem; }
+.journey-text { line-height: 1.6; margin: 8px 0 10px; color: #ece4ff; min-height: 3.2em; }
+.journey-dots { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.journey-dots button { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--journey); background: transparent; padding: 0; cursor: pointer; }
+.journey-dots button.past { background: color-mix(in srgb, var(--journey) 55%, transparent); }
+.journey-dots button.on { background: var(--journey); box-shadow: 0 0 10px var(--journey); transform: scale(1.25); }

@@ -2,6 +2,7 @@ import { findBook, parseRef, refLabel } from "../shared/books.ts";
 import { findPlace, PLACES } from "../shared/places.ts";
 import type { RoomInfo } from "../shared/protocol.ts";
 import { week } from "./week.ts";
+import { findJourney } from "../shared/journeys.ts";
 import { langOf, placeBody, placeJsonLd, placeTitle, placeUrl, robots, sitemap, type BuiltPlace } from "./seo.ts";
 
 export { Hub } from "./hub.ts";
@@ -96,6 +97,21 @@ const twins = (origin: string, id: string) => [
 
 async function metaFor(url: URL, env: Env, ctx: ExecutionContext): Promise<Meta> {
   const p = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  // A journey played on the map.
+  if (p[0] === "journey" && p[1]) {
+    const j = findJourney(p[1]);
+    if (j) {
+      const idx = await env.ASSETS.fetch(new Request(`${url.origin}/data/places/index.json`));
+      const index = idx.ok ? ((await idx.json()) as Record<string, { cover?: string }>) : {};
+      const cover = j.stops.map((s) => (s.place ? index[s.place]?.cover : undefined)).find(Boolean);
+      return {
+        title: `${j.he} על המפה · ${j.en} · אוהל`,
+        description: clip(`${j.intro.he} ${j.intro.en}`, 200),
+        image: cover ? { url: cover } : undefined,
+        canonical: `${url.origin}/journey/${j.id}`,
+      };
+    }
+  }
   // This week's reading on the map: a link worth sending around every week.
   if (p[0] === "week") {
     const w = await week(url.origin, env.ASSETS, ctx).catch(() => null);

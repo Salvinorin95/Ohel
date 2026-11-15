@@ -109,6 +109,9 @@ const SHOTS = (demo) => [
   { name: "place-page-phone", size: PHONE, path: "/place/eingedi", wait: 7000 },
   { name: "realm", size: DESK, path: "/place/nineveh", wait: 7000, then: `[...document.querySelectorAll(".pp-rulers li")].find((li) => /אשור|Assyri/.test(li.textContent))?.querySelector("button")?.click()`, after: 7000 },
   { name: "read", size: PHONE, path: "/read/I_Samuel/31", wait: 6000 },
+  { name: "journey", size: DESK, path: "/journey/jacob", wait: 6000, then: `[...document.querySelectorAll(".journey-dots button")][2]?.click()`, after: 6000 },
+  { name: "journey-phone", size: PHONE, path: "/journey/exodus", wait: 6000, then: `[...document.querySelectorAll(".journey-dots button")][2]?.click()`, after: 6000 },
+  { name: "week", size: PHONE, path: "/week", wait: 5000 },
   { name: "room", size: PHONE, path: `/room/${demo.room}`, wait: 5000, signedIn: true },
   { name: "me", size: PHONE, path: "/me", wait: 4000, signedIn: true },
 ];

@@ -100,7 +100,7 @@ function ReadPage({ book, chapter }: { book: string; chapter: number }) {
   );
 }
 
-function MapPage({ place, open }: { place?: string; open?: boolean }) {
+function MapPage({ place, open, journey }: { place?: string; open?: boolean; journey?: string }) {
   const { go, t, token, askJoin, lang } = useApp();
   const [rooms, setRooms] = useState<RoomInfo[]>([]);
   const [newFor, setNewFor] = useState<string | null>(null);
@@ -115,6 +115,8 @@ function MapPage({ place, open }: { place?: string; open?: boolean }) {
         openPage={open}
         onSelect={(id) => history.replaceState(null, "", id ? `/map/${id}` : "/map")}
         onPage={(id) => id && history.replaceState(null, "", `/place/${id}`)}
+        journey={journey}
+        onJourney={(id) => history.replaceState(null, "", id ? `/journey/${id}` : "/map")}
         onOpenRef={(r) => {
           const p = parseRef(r);
           if (p) go({ name: "read", book: p.book, chapter: p.chapter });
@@ -144,7 +146,7 @@ export function App() {
           {route.name === "home" && <Home />}
           {route.name === "room" && <Room key={route.id} id={route.id} />}
           {route.name === "read" && <ReadPage book={route.book} chapter={route.chapter} />}
-          {route.name === "map" && <MapPage place={route.place} open={route.open} />}
+          {route.name === "map" && <MapPage place={route.place} open={route.open} journey={route.journey} />}
           {route.name === "me" && <Profile />}
           {route.name === "about" && <About />}
           {route.name === "week" && <WeekPage />}
