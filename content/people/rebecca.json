@@ -40,7 +40,7 @@
     "traditions": [
       {
         "name": "ביהדות",
-        "text": "רבקה היא השנייה מארבע האמהות. המדרש, שמזכיר שאביה ואחיה היו רמאים, משווה אותה ל״שושנה בין החוחים״, ומספר שכשנכנסה לאוהל שרה חזרו הנר, הברכה בעיסה והענן, שנעלמו במות שרה. בחתונה אשכנזית החתן מכסה את פני הכלה בהינומה, לזכר הצעיף של רבקה, ומברכים אותה בברכה שנאמרה לרבקה, ״אחותנו, את היי לאלפי רבבה״. בליל שבת הורים מברכים את בנותיהם ״ישימך אלהים כשרה, רבקה, רחל ולאה״."
+        "text": "רבקה היא השנייה מארבע האמהות. המדרש, שמזכיר שאביה ואחיה היו רמאים, משווה אותה ל״שושנה בין החוחים״, ומספר שכשנכנסה לאוהל שרה חזרו הנר, הברכה בעיסה והענן, שנעלמו במות שרה. לפני החופה מכסים את פני הכלה בהינומה, לזכר הצעיף של רבקה, ולעיתים קרובות מברכים אותה בברכה שנאמרה לרבקה, ״אחותנו, את היי לאלפי רבבה״. בליל שבת הורים מברכים את בנותיהם ״ישימך אלהים כשרה, רבקה, רחל ולאה״."
       },
       {
         "name": "בנצרות",
@@ -89,7 +89,7 @@
     "traditions": [
       {
         "name": "In Judaism",
-        "text": "Rebecca is the second of the four matriarchs. The midrash, noting that her father and brother were tricksters, calls her \"a lily among thorns\", and says that when she entered Sarah's tent, the lamp, the blessed dough and the cloud that had vanished at Sarah's death returned. At Ashkenazi weddings the groom veils the bride, recalling Rebecca's veil, and she is blessed with the words said to Rebecca: \"Our sister, may you become thousands of ten thousands.\" On Friday nights parents bless their daughters to be like Sarah, Rebecca, Rachel and Leah."
+        "text": "Rebecca is the second of the four matriarchs. The midrash, noting that her father and brother were tricksters, calls her \"a lily among thorns\", and says that when she entered Sarah's tent, the lamp, the blessed dough and the cloud that had vanished at Sarah's death returned. Before the wedding canopy the bride is veiled, recalling Rebecca's veil, and she is often blessed with the words said to Rebecca: \"Our sister, may you become thousands of ten thousands.\" On Friday nights parents bless their daughters to be like Sarah, Rebecca, Rachel and Leah."
       },
       {
         "name": "In Christianity",
@@ -144,8 +144,8 @@
     { "title": "Genesis 24 (Sefaria)", "url": "https://www.sefaria.org/Genesis.24" },
     { "title": "Bereshit Rabbah 63:4, a lily among thorns (Sefaria)", "url": "https://www.sefaria.org/Bereshit_Rabbah.63.4" },
     { "title": "Bereshit Rabbah 60:16 (Sefaria)", "url": "https://www.sefaria.org/Bereshit_Rabbah.60.16" },
-    { "title": "Badeken (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Badeken" },
-    { "title": "The Form of Solemnization of Matrimony, Book of Common Prayer (Church of England)", "url": "https://www.churchofengland.org/node/391/printable/print" },
+    { "title": "Before the Jewish wedding ceremony: the bedeken (My Jewish Learning)", "url": "https://www.myjewishlearning.com/article/before-the-jewish-wedding-ceremony/" },
+    { "title": "The Form of Solemnization of Matrimony, Book of Common Prayer (Church of England)", "url": "https://www.churchofengland.org/liturgy/book-of-common-prayer/form-solemnization-matrimony" },
     { "title": "Nahor (Encyclopedia.com, from the Encyclopaedia Judaica)", "url": "https://encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/nahor" }
   ]
 }

@@ -2,50 +2,90 @@
   "id": "david",
   "he": {
     "name": "דוד",
-    "aka": ["דוד בן ישי", "דוד המלך", "נעים זמירות ישראל", "דאוד (באסלאם)"],
+    "aka": [
+      "דוד בן ישי",
+      "דוד המלך",
+      "נעים זמירות ישראל",
+      "דאוד (באסלאם)"
+    ],
     "summary": "דוד, הבן הצעיר של ישי מבית לחם, היה רועה, נגן, לוחם ומשורר, ונעשה למלך ישראל שבחר בירושלים לבירתו. התנ״ך מספר את סיפורו בגלוי, עם הגבורה, האמונה והחטאים הקשים, ורואה בו את המלך שה׳ הבטיח לו שושלת לעולם. ליהודים, לנוצרים ולמוסלמים הוא דמות יסוד: משורר התהלים, אבי המשיח, ונביא.",
     "story": [
       {
         "title": "הרועה מבית לחם",
         "text": "שמואל בא לבית ישי בבית לחם, ושבעה בנים עוברים לפניו. הצעיר, דוד, רועה את הצאן. מביאים אותו, ״והוא אדמוני עם יפה עיניים וטוב רואי״, וה׳ אומר: ״קום משחהו, כי זה הוא״. שמואל מושח אותו בקרב אחיו, אבל דוד חוזר אל הצאן. בינתיים שאול מחפש נגן שירגיע את רוחו הרעה, ואחד הנערים ממליץ על בן ישי: ״יודע נגן, וגיבור חיל... ונבון דבר, ואיש תואר, וה׳ עמו״. כשדוד מנגן בכינור, רוחו של שאול נרגעת.",
-        "refs": ["I Samuel 16:12", "I Samuel 16:13", "I Samuel 16:18", "I Samuel 16:23"]
+        "refs": [
+          "I Samuel 16:12",
+          "I Samuel 16:13",
+          "I Samuel 16:18",
+          "I Samuel 16:23"
+        ]
       },
       {
         "title": "מול גוליית",
         "text": "בעמק האלה עומדים ישראל מול הפלשתים, וגוליית מגת מחרף את מערכות ישראל ארבעים יום. דוד, שבא להביא אוכל לאחיו, מתנדב להילחם בו. כרועה, הוא אומר לשאול, הציל שה מפי ארי ודוב. הוא מסרב לשריון ויוצא עם מקל, קלע וחמש אבנים חלוקות: ״אתה בא אליי בחרב ובחנית ובכידון, ואנוכי בא אליך בשם ה׳ צבאות״. האבן פוגעת במצחו של גוליית, והוא נופל. הנשים שרות ״הכה שאול באלפיו, ודוד ברבבותיו״, ויהונתן קושר את נפשו בנפשו.",
-        "refs": ["I Samuel 17:34", "I Samuel 17:45", "I Samuel 17:49", "I Samuel 18:7"]
+        "refs": [
+          "I Samuel 17:34",
+          "I Samuel 17:45",
+          "I Samuel 17:49",
+          "I Samuel 18:7"
+        ]
       },
       {
         "title": "שנות הנדודים",
         "text": "קנאת שאול הופכת אותו לנרדף. מיכל אשתו מורידה אותו בעד החלון, והוא בורח לשמואל ברמה, ולגת, שבה הוא מעמיד פני משוגע. במערת עדולם מתקבצים אליו ״כל איש מצוק וכל איש אשר לו נושה וכל איש מר נפש״, כארבע מאות איש. פעמיים יש לו הזדמנות להרוג את שאול, והוא מסרב: ״חלילה לי... לשלוח ידי בו, כי משיח ה׳ הוא״. אביגיל עוצרת אותו מנקמה בנבל. לבסוף הוא מוצא מקלט אצל אכיש, מלך גת, שנותן לו את צקלג.",
-        "refs": ["I Samuel 19:12", "I Samuel 22:2", "I Samuel 24:7", "I Samuel 27:6"]
+        "refs": [
+          "I Samuel 19:12",
+          "I Samuel 22:2",
+          "I Samuel 24:7",
+          "I Samuel 27:6"
+        ]
       },
       {
         "title": "מלך בחברון ובירושלים",
         "text": "כשמגיעה הידיעה מן הגלבוע, דוד מקונן על שאול ועל יהונתן: ״איך נפלו גיבורים״. אנשי יהודה מושחים אותו למלך בחברון, ושבע שנים וחצי אחר כך באים כל זקני ישראל וכורתים איתו ברית. הוא כובש את מצודת ציון, היא עיר דוד, ומעלה אליה את ארון הברית, ״מכרכר בכל עוז לפני ה׳״, ומיכל בזה לו בלבה. דוד רוצה לבנות בית לה׳, והנביא נתן מביא לו הבטחה גדולה יותר: ה׳ יבנה לו ״בית״, שושלת: ״ונאמן ביתך וממלכתך עד עולם לפניך״.",
-        "refs": ["II Samuel 1:17", "II Samuel 5:3", "II Samuel 6:14", "II Samuel 7:16"]
+        "refs": [
+          "II Samuel 1:17",
+          "II Samuel 5:3",
+          "II Samuel 6:14",
+          "II Samuel 7:16"
+        ]
       },
       {
         "title": "בת שבע ונתן",
         "text": "בעונה שבה המלכים יוצאים למלחמה, הצבא צר על רבת בני עמון, ודוד נשאר בירושלים. מגג הארמון הוא רואה אישה יפה, בת שבע, אשתו של אוריה החתי, הלוחם בצבאו. הוא לוקח אותה, והיא נכנסת להיריון. כדי להסתיר זאת דוד שולח את אוריה אל המקום הקשה בקרב, ואוריה נהרג. הנביא נתן מספר לו משל על עשיר שלקח את כבשת הרש, ודוד מתמלא זעם, עד שנתן אומר: ״אתה האיש!״ דוד לא מתגונן: ״חטאתי לה׳״. הילד מת. בן אחר נולד להם, שלמה, ״וה׳ אהבו״.",
-        "refs": ["II Samuel 11:1", "II Samuel 11:15", "II Samuel 12:7", "II Samuel 12:13"]
+        "refs": [
+          "II Samuel 11:1",
+          "II Samuel 11:15",
+          "II Samuel 12:7",
+          "II Samuel 12:13"
+        ]
       },
       {
         "title": "אבשלום בני",
         "text": "מאז החרב אינה סרה מביתו. אמנון בנו פוגע באחותו תמר, ואבשלום אחיה הורג את אמנון. שנים אחר כך אבשלום מורד באביו ומומלך בחברון. דוד בורח מירושלים, עולה במעלה הזיתים ״עולה ובוכה, וראש לו חפוי, והוא הולך יחף״, ומגיע עד מחניים שבעבר הירדן. לפני הקרב הוא מצווה את מפקדיו: ״לאט לי לנער לאבשלום״. אבשלום נהרג בכל זאת. כשהבשורה מגיעה, דוד עולה לעליית השער ובוכה: ״בני אבשלום, בני בני אבשלום, מי ייתן מותי אני תחתיך״.",
-        "refs": ["II Samuel 15:30", "II Samuel 17:24", "II Samuel 18:5", "II Samuel 19:1"]
+        "refs": [
+          "II Samuel 15:30",
+          "II Samuel 17:24",
+          "II Samuel 18:5",
+          "II Samuel 19:1"
+        ]
       },
       {
         "title": "נעים זמירות ישראל",
         "text": "בסוף ימיו דוד שר שירת הודיה, וב״דברי דוד האחרונים״ הוא מכנה את עצמו ״נעים זמירות ישראל״. אחרי מפקד שנעשה בניגוד לרצון ה׳ פורצת מגפה. הנביא גד מורה לו להקים מזבח בגורן של ארוונה היבוסי. דוד מתעקש לשלם: ״לא אעלה לה׳ אלוהיי עולות חינם״. הוא קונה את הגורן, והמגפה נעצרת. לפי דברי הימים, שם ייבנה המקדש. זקן וחלש, דוד ממליך את שלמה ומצווה אותו. הוא מת אחרי ארבעים שנות מלוכה, שבע בחברון ושלושים ושלוש בירושלים, ונקבר בעיר דוד.",
-        "refs": ["II Samuel 23:1", "II Samuel 24:24", "I Kings 2:10", "I Kings 2:11"]
+        "refs": [
+          "II Samuel 23:1",
+          "II Samuel 24:24",
+          "I Kings 2:10",
+          "I Kings 2:11"
+        ]
       }
     ],
     "character": "דוד הוא אולי הדמות המורכבת ביותר בתנ״ך. הוא מוכשר בכל דבר: רועה אמיץ, נגן ומשורר, לוחם ומנהיג שאנשים נמשכים אליו, ממיכל ויהונתן ועד ארבע מאות הנרדפים בעדולם. הוא מאמין עמוק, ״ויתחזק דוד בה׳ אלוהיו״ ברגע הקשה בצקלג, ונדיב כלפי שאול שרדף אותו. אבל הוא גם מסוגל לחטא נורא, לקחת את בת שבע ולשלוח את אוריה אל מותו. גדולתו היא שהוא יודע לומר ״חטאתי״. כאב הוא אוהב וחלש, לא עוצר את בניו, ומשלם על כך בצער גדול. התנ״ך לא מסתיר דבר.",
     "traditions": [
       {
         "name": "ביהדות",
-        "text": "לפי התלמוד, דוד כתב את ספר תהלים בעזרת עשרה זקנים, ומזמוריו הם לב התפילה היהודית. המשיח יבוא מזרעו, ובתפילת העמידה ובברכת המזון מתפללים על ״צמח דוד״. המשפט ״דוד מלך ישראל חי וקיים״ הופיע בתלמוד כסימן סודי לקידוש החודש, וכיום הוא שיר עם. לפי מסורת בתלמוד הירושלמי דוד מת בחג השבועות, ולכן קוראים בו את מגילת רות, שמסתיימת ביוחסין שלו. ״קבר דוד״ שבהר ציון הוא מסורת מימי הביניים; לפי המקרא נקבר בעיר דוד."
+        "text": "לפי התלמוד, דוד כתב את ספר תהלים בעזרת עשרה זקנים, ומזמוריו הם לב התפילה היהודית. המשיח יבוא מזרעו, ובתפילת העמידה מבקשים ״את צמח דוד עבדך מהרה תצמיח״. המשפט ״דוד מלך ישראל חי וקיים״ הופיע בתלמוד כסימן סודי לקידוש החודש, וכיום הוא שיר עם. לפי התלמוד הירושלמי דוד מת בחג השבועות, ואחד הטעמים לקריאת מגילת רות בחג הוא שהיא מסתיימת ביוחסין שלו. ״קבר דוד״ שבהר ציון הוא מסורת מימי הביניים; לפי המקרא נקבר בעיר דוד."
       },
       {
         "name": "בנצרות",
@@ -56,54 +96,94 @@
         "text": "דאוד הוא נביא ומלך. הקוראן מספר שהרג את ג׳אלות, ושאללה נתן לו מלכות וחוכמה (2:251) ואת הזבור, ספר התהלים (4:163). ההרים והציפורים שיבחו את אללה יחד איתו, ואללה ריכך לו את הברזל כדי שיעשה שריונות קשקשים (34:10–11). בסורה 38 שני בעלי דין מטפסים אל חדר תפילתו, והוא מבין שנוסה ומבקש מחילה. לפי החדית׳, הצום האהוב ביותר על אללה הוא ״צום דאוד״, יום כן ויום לא."
       }
     ],
-    "history": "״בית דוד״ מוזכר בכתובת תל דן, אסטלה ארמית מן המאה ה־9 לפנה״ס שנמצאה ב־1993–1994. כותבה, כנראה חזאל מלך ארם, מתפאר שהרג את מלך ישראל ואת מלך ״בית דוד״. כלומר, כמאה וחמישים שנה אחריו כבר נקראה שושלת יהודה על שמו. זה אינו מוכיח פרטים מחייו. על גודל ממלכתו יש ויכוח: ״מקסימליסטים״ כמו יוסף גרפינקל, שחפר את חרבת קייאפה המבוצרת מסביבות 1000 לפנה״ס, ואילת מזר, שזיהתה מבנה גדול בעיר דוד כארמונו, רואים בה מדינה של ממש. ״מינימליסטים״ כמו ישראל פינקלשטיין רואים בדוד ראש שבט בממלכה הררית קטנה. רבים, כמו עמיחי מזר, באמצע."
+    "history": "״בית דוד״ מוזכר בכתובת תל דן, אסטלה ארמית מן המאה ה־9 לפנה״ס שנמצאה ב־1993–1994. כותבה, כנראה חזאל מלך ארם, מתפאר שהרג את מלך ישראל ואת מלך ״בית דוד״. כלומר, כמאה וחמישים שנה אחרי דוד כבר נקראה שושלת יהודה על שמו, אף שהכתובת אינה מספרת דבר על חייו. על גודל ממלכתו יש ויכוח. ״מקסימליסטים״, כמו יוסף גרפינקל, שחפר את העיר המבוצרת חרבת קייאפה מסביבות 1000 לפנה״ס, ואילת מזר, שזיהתה מבנה גדול בעיר דוד כארמונו, רואים בה מדינה של ממש. ״מינימליסטים״, כמו ישראל פינקלשטיין, רואים בדוד ראש שבט בממלכה הררית קטנה. רבים, כמו עמיחי מזר, עומדים באמצע."
   },
   "en": {
     "name": "David",
-    "aka": ["David son of Jesse", "King David", "the sweet singer of Israel", "Dawud (in Islam)"],
+    "aka": [
+      "David son of Jesse",
+      "King David",
+      "the sweet singer of Israel",
+      "Dawud (in Islam)"
+    ],
     "summary": "David, the youngest son of Jesse of Bethlehem, was a shepherd, musician, warrior and poet who became king of Israel and made Jerusalem his capital. The Bible tells his story openly, courage, faith and grave sins together, and sees him as the king to whom God promised a lasting dynasty. For Jews, Christians and Muslims he is a founding figure: the psalmist, the ancestor of the Messiah, and a prophet.",
     "story": [
       {
         "title": "The shepherd of Bethlehem",
         "text": "Samuel comes to Jesse's house in Bethlehem, and seven sons pass before him. The youngest, David, is out with the sheep. They fetch him, \"ruddy, with beautiful eyes and a fine appearance\", and the LORD says, \"Rise and anoint him, for this is the one.\" Samuel anoints him among his brothers, but David goes back to the flock. Meanwhile Saul needs a musician to calm his dark spirit, and a servant suggests Jesse's son: \"skilled at playing, a brave man, a warrior, wise in speech, good-looking, and the LORD is with him.\" When David plays the lyre, Saul's spirit is soothed.",
-        "refs": ["I Samuel 16:12", "I Samuel 16:13", "I Samuel 16:18", "I Samuel 16:23"]
+        "refs": [
+          "I Samuel 16:12",
+          "I Samuel 16:13",
+          "I Samuel 16:18",
+          "I Samuel 16:23"
+        ]
       },
       {
         "title": "Against Goliath",
         "text": "In the Valley of Elah, Israel faces the Philistines, and Goliath of Gath taunts Israel's ranks for forty days. David, sent to bring food to his brothers, offers to fight him. As a shepherd, he tells Saul, he has rescued lambs from a lion and a bear. He refuses armour and goes out with his staff, a sling and five smooth stones: \"You come to me with sword and spear and javelin, but I come to you in the name of the LORD of hosts.\" The stone strikes Goliath's forehead, and he falls. The women sing \"Saul has slain his thousands, and David his tens of thousands\", and Jonathan's soul is bound to his.",
-        "refs": ["I Samuel 17:34", "I Samuel 17:45", "I Samuel 17:49", "I Samuel 18:7"]
+        "refs": [
+          "I Samuel 17:34",
+          "I Samuel 17:45",
+          "I Samuel 17:49",
+          "I Samuel 18:7"
+        ]
       },
       {
         "title": "Years on the run",
         "text": "Saul's jealousy turns David into a fugitive. His wife Michal lets him down through a window, and he flees to Samuel at Ramah, then to Gath, where he pretends to be mad. At the cave of Adullam about four hundred men gather to him, \"everyone in distress, everyone in debt, everyone bitter of soul.\" Twice he could kill Saul, and twice he refuses: \"Far be it from me to raise my hand against him, for he is the LORD's anointed.\" Abigail stops him from taking revenge on Nabal. At last he finds refuge with Achish, king of Gath, who gives him Ziklag.",
-        "refs": ["I Samuel 19:12", "I Samuel 22:2", "I Samuel 24:7", "I Samuel 27:6"]
+        "refs": [
+          "I Samuel 19:12",
+          "I Samuel 22:2",
+          "I Samuel 24:7",
+          "I Samuel 27:6"
+        ]
       },
       {
         "title": "King in Hebron and Jerusalem",
         "text": "When the news comes from Gilboa, David laments Saul and Jonathan: \"How the mighty have fallen.\" The men of Judah anoint him king in Hebron, and seven and a half years later all the elders of Israel come and make a covenant with him. He captures the stronghold of Zion, the City of David, and brings the Ark of the Covenant up to it, \"dancing before the LORD with all his might\", while Michal despises him in her heart. David wants to build a house for God, and the prophet Nathan brings him a greater promise: God will build David a \"house\", a dynasty: \"Your house and your kingdom shall endure forever before me.\"",
-        "refs": ["II Samuel 1:17", "II Samuel 5:3", "II Samuel 6:14", "II Samuel 7:16"]
+        "refs": [
+          "II Samuel 1:17",
+          "II Samuel 5:3",
+          "II Samuel 6:14",
+          "II Samuel 7:16"
+        ]
       },
       {
         "title": "Bathsheba and Nathan",
         "text": "In the season when kings go to war, the army besieges Rabbah of the Ammonites while David stays in Jerusalem. From the palace roof he sees a beautiful woman, Bathsheba, wife of Uriah the Hittite, a soldier in his army. He takes her, and she becomes pregnant. To hide it, David has Uriah sent where the fighting is fiercest, and Uriah is killed. The prophet Nathan tells him a parable about a rich man who took a poor man's only lamb, and David burns with anger, until Nathan says: \"You are the man!\" David makes no excuses: \"I have sinned against the LORD.\" The child dies. Another son is born to them, Solomon, \"and the LORD loved him.\"",
-        "refs": ["II Samuel 11:1", "II Samuel 11:15", "II Samuel 12:7", "II Samuel 12:13"]
+        "refs": [
+          "II Samuel 11:1",
+          "II Samuel 11:15",
+          "II Samuel 12:7",
+          "II Samuel 12:13"
+        ]
       },
       {
         "title": "Absalom, my son",
         "text": "From then on the sword never leaves his house. His son Amnon wrongs his sister Tamar, and her brother Absalom kills Amnon. Years later Absalom rebels against his father and is proclaimed king in Hebron. David flees Jerusalem, climbing the Mount of Olives \"weeping as he went, his head covered and barefoot\", and reaches Mahanaim across the Jordan. Before the battle he orders his commanders: \"Deal gently, for my sake, with the young man Absalom.\" Absalom is killed all the same. When the news comes, David goes up to the room over the gate and weeps: \"O my son Absalom, my son, my son Absalom! If only I had died instead of you.\"",
-        "refs": ["II Samuel 15:30", "II Samuel 17:24", "II Samuel 18:5", "II Samuel 19:1"]
+        "refs": [
+          "II Samuel 15:30",
+          "II Samuel 17:24",
+          "II Samuel 18:5",
+          "II Samuel 19:1"
+        ]
       },
       {
         "title": "The sweet singer of Israel",
         "text": "Near the end David sings a song of thanksgiving, and in his \"last words\" he calls himself \"the sweet singer of Israel.\" After a census taken against God's will, a plague breaks out. The prophet Gad tells him to build an altar on the threshing floor of Araunah the Jebusite. David insists on paying: \"I will not offer to the LORD my God offerings that cost me nothing.\" He buys the threshing floor, and the plague stops; by Chronicles, the Temple will stand there. Old and frail, David makes Solomon king and gives him his charge. He dies after forty years on the throne, seven in Hebron and thirty-three in Jerusalem, and is buried in the City of David.",
-        "refs": ["II Samuel 23:1", "II Samuel 24:24", "I Kings 2:10", "I Kings 2:11"]
+        "refs": [
+          "II Samuel 23:1",
+          "II Samuel 24:24",
+          "I Kings 2:10",
+          "I Kings 2:11"
+        ]
       }
     ],
-    "character": "David may be the most complex figure in the Bible. He is gifted at everything: a brave shepherd, a musician and poet, a warrior and a leader people are drawn to, from Michal and Jonathan to the four hundred outcasts at Adullam. His faith runs deep (at the worst moment in Ziklag, \"David strengthened himself in the LORD his God\"), and he is generous to Saul who hunted him. Yet he is capable of terrible wrong: taking Bathsheba and sending Uriah to his death. His greatness is that he can say \"I have sinned.\" As a father he is loving and weak, does not restrain his sons, and pays in great grief. The Bible hides nothing.",
+    "character": "David may be the Bible's most complex figure. He is gifted at everything: brave shepherd, musician and poet, warrior and a leader people are drawn to, from Michal and Jonathan to the four hundred outcasts at Adullam. His faith runs deep (at his worst moment, in Ziklag, \"David strengthened himself in the LORD his God\"), and he is generous to Saul, who hunted him. Yet he is capable of terrible wrong: taking Bathsheba and sending Uriah to his death. His greatness is that he can say \"I have sinned.\" As a father he is loving but weak, and pays in great grief. The Bible hides nothing.",
     "traditions": [
       {
         "name": "In Judaism",
-        "text": "By the Talmud, David wrote the book of Psalms with the help of ten elders, and his psalms are the heart of Jewish prayer. The Messiah will come from his line, and in the Amidah and the Grace after Meals Jews pray for \"the sprout of David\". The phrase \"David, king of Israel, lives and endures\" appears in the Talmud as a secret signal for sanctifying the new moon, and today it is a folk song. By a tradition in the Jerusalem Talmud David died on Shavuot, so the book of Ruth, which ends with his genealogy, is read then. \"David's Tomb\" on Mount Zion is a medieval tradition; the Bible buries him in the City of David."
+        "text": "By the Talmud, David wrote the Psalms with ten elders; they are the heart of Jewish prayer. The Messiah will come from his line: the Amidah asks God to make \"the sprout of David\" flourish. \"David, king of Israel, lives and endures\" was a Talmudic password and is now a folk song. By the Jerusalem Talmud he died on Shavuot; Ruth, read then, ends with his genealogy. \"David's Tomb\" on Mount Zion is a medieval tradition; the Bible buries him in the City of David."
       },
       {
         "name": "In Christianity",
@@ -114,59 +194,379 @@
         "text": "Dawud is a prophet and king. The Quran tells that he killed Jalut and that God gave him kingship and wisdom (2:251), and the Zabur, the Psalms (4:163). The mountains and the birds glorified God with him, and God softened iron for him to make coats of mail (34:10–11). In Sura 38 two litigants climb into his prayer chamber, and he realises he has been tested and asks forgiveness. By the hadith, the fast most beloved to God is \"the fast of Dawud\": one day on, one day off."
       }
     ],
-    "history": "The \"House of David\" appears in the Tel Dan inscription, an Aramaic stele of the 9th century BCE found in 1993–1994. Its author, probably Hazael of Aram, boasts of killing the king of Israel and the king of the \"House of David\": about 150 years after David, Judah's royal line was already named after him. That proves nothing about the details of his life. The size of his kingdom is debated: \"maximalists\" such as Yosef Garfinkel, who dug the fortified town of Khirbet Qeiyafa from around 1000 BCE, and Eilat Mazar, who identified a large building in the City of David as his palace, see a real state. \"Minimalists\" such as Israel Finkelstein see David as a chieftain of a small highland kingdom. Many, like Amihai Mazar, stand between."
+    "history": "The \"House of David\" appears in the Tel Dan inscription, a 9th-century BCE Aramaic stele found in 1993–1994, whose author, probably Hazael of Aram, boasts of killing the kings of Israel and of the \"House of David\". About 150 years after David, then, Judah's royal line bore his name, though the stele says nothing of his life. His kingdom's size is debated. \"Maximalists\" such as Yosef Garfinkel, excavator of the fortified town of Khirbet Qeiyafa (c. 1000 BCE), and Eilat Mazar, who identified David's palace in the City of David, see a real state; \"minimalists\" such as Israel Finkelstein see a highland chiefdom. Many, like Amihai Mazar, stand between."
   },
-  "era": { "he": "לפי הכרונולוגיה המקראית, בערך 1000 לפנה״ס (מסורתית מלך בערך 1010–970 לפנה״ס)", "en": "By the biblical chronology, around 1000 BCE (traditionally reigned c. 1010–970 BCE)" },
+  "era": {
+    "he": "לפי הכרונולוגיה המקראית, בערך 1000 לפנה״ס (מסורתית מלך בערך 1010–970 לפנה״ס)",
+    "en": "By the biblical chronology, around 1000 BCE (traditionally reigned c. 1010–970 BCE)"
+  },
   "places": [
-    { "place": "bethlehem", "what": { "he": "עיר הולדתו; כאן שמואל מושח אותו", "en": "His home town; here Samuel anoints him" } },
-    { "place": "elah", "what": { "he": "הוא מנצח את גוליית בקלע ובאבן", "en": "He defeats Goliath with a sling and a stone" } },
-    { "place": "adullam", "what": { "he": "במערה מתקבצים אליו ארבע מאות נרדפים", "en": "In the cave four hundred outcasts gather to him" } },
-    { "place": "eingedi", "what": { "he": "הוא כורת את כנף מעיל שאול וחס על חייו", "en": "He cuts the corner of Saul's robe and spares his life" } },
-    { "place": "ziklag", "what": { "he": "המקלט שאכיש נותן לו בארץ הפלשתים", "en": "His refuge, given him by Achish in Philistine country" } },
-    { "place": "hebron", "what": { "he": "כאן נמשח למלך, תחילה על יהודה ואחר כך על כל ישראל", "en": "Anointed king here, first over Judah, then over all Israel" } },
-    { "place": "cityofdavid", "what": { "he": "הוא כובש את מצודת ציון ומעלה אליה את הארון", "en": "He takes the stronghold of Zion and brings up the Ark" } },
-    { "place": "rabbah", "what": { "he": "בזמן המצור על העיר מתרחש סיפור בת שבע ואוריה", "en": "During its siege the story of Bathsheba and Uriah unfolds" } },
-    { "place": "mahanaim", "what": { "he": "מקלטו בזמן מרד אבשלום, ושם הוא בוכה על בנו", "en": "His refuge in Absalom's revolt, where he weeps for his son" } },
-    { "place": "moriah", "what": { "he": "הוא קונה את גורן ארוונה ובונה שם מזבח", "en": "He buys Araunah's threshing floor and builds an altar there" } }
+    {
+      "place": "bethlehem",
+      "what": {
+        "he": "עיר הולדתו; כאן שמואל מושח אותו",
+        "en": "His home town; here Samuel anoints him"
+      }
+    },
+    {
+      "place": "elah",
+      "what": {
+        "he": "הוא מנצח את גוליית בקלע ובאבן",
+        "en": "He defeats Goliath with a sling and a stone"
+      }
+    },
+    {
+      "place": "adullam",
+      "what": {
+        "he": "במערה מתקבצים אליו ארבע מאות נרדפים",
+        "en": "In the cave four hundred outcasts gather to him"
+      }
+    },
+    {
+      "place": "eingedi",
+      "what": {
+        "he": "הוא כורת את כנף מעיל שאול וחס על חייו",
+        "en": "He cuts the corner of Saul's robe and spares his life"
+      }
+    },
+    {
+      "place": "ziklag",
+      "what": {
+        "he": "המקלט שאכיש נותן לו בארץ הפלשתים",
+        "en": "His refuge, given him by Achish in Philistine country"
+      }
+    },
+    {
+      "place": "hebron",
+      "what": {
+        "he": "כאן נמשח למלך, תחילה על יהודה ואחר כך על כל ישראל",
+        "en": "Anointed king here, first over Judah, then over all Israel"
+      }
+    },
+    {
+      "place": "cityofdavid",
+      "what": {
+        "he": "הוא כובש את מצודת ציון ומעלה אליה את הארון",
+        "en": "He takes the stronghold of Zion and brings up the Ark"
+      }
+    },
+    {
+      "place": "rabbah",
+      "what": {
+        "he": "בזמן המצור על העיר מתרחש סיפור בת שבע ואוריה",
+        "en": "During its siege the story of Bathsheba and Uriah unfolds"
+      }
+    },
+    {
+      "place": "mahanaim",
+      "what": {
+        "he": "מקלטו בזמן מרד אבשלום, ושם הוא בוכה על בנו",
+        "en": "His refuge in Absalom's revolt, where he weeps for his son"
+      }
+    },
+    {
+      "place": "moriah",
+      "what": {
+        "he": "הוא קונה את גורן ארוונה ובונה שם מזבח",
+        "en": "He buys Araunah's threshing floor and builds an altar there"
+      }
+    }
   ],
   "journey": "david",
   "family": [
-    { "person": null, "name": { "he": "ישי", "en": "Jesse" }, "relation": { "he": "אביו, מבית לחם", "en": "his father, of Bethlehem" } },
-    { "person": "ruth", "name": { "he": "רות", "en": "Ruth" }, "relation": { "he": "סבתא רבתא שלו, המואבייה", "en": "his great-grandmother, the Moabite" } },
-    { "person": "saul", "name": { "he": "שאול", "en": "Saul" }, "relation": { "he": "חותנו, המלך שרדף אותו", "en": "his father-in-law, the king who hunted him" } },
-    { "person": null, "name": { "he": "מיכל", "en": "Michal" }, "relation": { "he": "אשתו הראשונה, בת שאול", "en": "his first wife, Saul's daughter" } },
-    { "person": null, "name": { "he": "אביגיל", "en": "Abigail" }, "relation": { "he": "אשתו, שעצרה אותו מנקמה", "en": "his wife, who stopped him from revenge" } },
-    { "person": null, "name": { "he": "בת שבע", "en": "Bathsheba" }, "relation": { "he": "אשתו, אם שלמה", "en": "his wife, Solomon's mother" } },
-    { "person": null, "name": { "he": "אבשלום", "en": "Absalom" }, "relation": { "he": "בנו, שמרד בו", "en": "his son, who rebelled against him" } },
-    { "person": "solomon", "name": { "he": "שלמה", "en": "Solomon" }, "relation": { "he": "בנו ויורשו", "en": "his son and heir" } }
+    {
+      "person": null,
+      "name": {
+        "he": "ישי",
+        "en": "Jesse"
+      },
+      "relation": {
+        "he": "אביו, מבית לחם",
+        "en": "his father, of Bethlehem"
+      }
+    },
+    {
+      "person": "ruth",
+      "name": {
+        "he": "רות",
+        "en": "Ruth"
+      },
+      "relation": {
+        "he": "סבתא רבתא שלו, המואבייה",
+        "en": "his great-grandmother, the Moabite"
+      }
+    },
+    {
+      "person": "saul",
+      "name": {
+        "he": "שאול",
+        "en": "Saul"
+      },
+      "relation": {
+        "he": "חותנו, המלך שרדף אותו",
+        "en": "his father-in-law, the king who hunted him"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "מיכל",
+        "en": "Michal"
+      },
+      "relation": {
+        "he": "אשתו הראשונה, בת שאול",
+        "en": "his first wife, Saul's daughter"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "אביגיל",
+        "en": "Abigail"
+      },
+      "relation": {
+        "he": "אשתו, שעצרה אותו מנקמה",
+        "en": "his wife, who stopped him from revenge"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "בת שבע",
+        "en": "Bathsheba"
+      },
+      "relation": {
+        "he": "אשתו, אם שלמה",
+        "en": "his wife, Solomon's mother"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "אבשלום",
+        "en": "Absalom"
+      },
+      "relation": {
+        "he": "בנו, שמרד בו",
+        "en": "his son, who rebelled against him"
+      }
+    },
+    {
+      "person": "solomon",
+      "name": {
+        "he": "שלמה",
+        "en": "Solomon"
+      },
+      "relation": {
+        "he": "בנו ויורשו",
+        "en": "his son and heir"
+      }
+    }
   ],
   "mentions": [
-    { "ref": "I Samuel 16:12", "note": { "he": "״אדמוני עם יפה עיניים... קום משחהו, כי זה הוא״", "en": "\"Ruddy, with beautiful eyes... anoint him, for this is the one\"" } },
-    { "ref": "I Samuel 17:45", "note": { "he": "״ואנוכי בא אליך בשם ה׳ צבאות״", "en": "\"But I come to you in the name of the LORD of hosts\"" } },
-    { "ref": "I Samuel 24:7", "note": { "he": "״חלילה לי... לשלוח ידי בו, כי משיח ה׳ הוא״", "en": "\"Far be it from me to raise my hand against the LORD's anointed\"" } },
-    { "ref": "II Samuel 1:19", "note": { "he": "קינת דוד: ״איך נפלו גיבורים״", "en": "David's lament: \"How the mighty have fallen\"" } },
-    { "ref": "II Samuel 6:14", "note": { "he": "״ודוד מכרכר בכל עוז לפני ה׳״", "en": "\"David danced before the LORD with all his might\"" } },
-    { "ref": "II Samuel 7:16", "note": { "he": "הבטחת נתן: ״ונאמן ביתך וממלכתך עד עולם״", "en": "Nathan's promise: \"Your house and kingdom shall endure forever\"" } },
-    { "ref": "II Samuel 12:7", "note": { "he": "״אתה האיש!״", "en": "\"You are the man!\"" } },
-    { "ref": "II Samuel 19:1", "note": { "he": "״בני אבשלום, בני בני אבשלום״", "en": "\"O my son Absalom, my son, my son Absalom\"" } },
-    { "ref": "II Samuel 23:1", "note": { "he": "״נאום דוד בן ישי... ונעים זמירות ישראל״", "en": "\"The oracle of David son of Jesse... the sweet singer of Israel\"" } },
-    { "ref": "I Kings 2:10", "note": { "he": "דוד מת ונקבר בעיר דוד", "en": "David dies and is buried in the City of David" } },
-    { "ref": "Isaiah 11:1", "note": { "he": "״ויצא חוטר מגזע ישי״: המלך העתידי מזרעו", "en": "\"A shoot shall come out from the stump of Jesse\": the future king of his line" } },
-    { "ref": "Ezekiel 34:23", "note": { "he": "״את עבדי דוד, הוא ירעה אותם״", "en": "\"My servant David, he shall feed them\"" } },
-    { "ref": "Amos 9:11", "note": { "he": "״אקים את סוכת דוד הנופלת״", "en": "\"I will raise up the fallen booth of David\"" } },
-    { "ref": "Psalms 51:2", "note": { "he": "מזמור החרטה, ״בבוא אליו נתן הנביא״", "en": "The psalm of repentance, \"when Nathan the prophet came to him\"" } },
-    { "ref": "Ruth 4:17", "note": { "he": "עובד, בן רות, ״הוא אבי ישי אבי דוד״", "en": "Obed, Ruth's son, \"father of Jesse, the father of David\"" } }
+    {
+      "ref": "I Samuel 16:12",
+      "note": {
+        "he": "״אדמוני עם יפה עיניים... קום משחהו, כי זה הוא״",
+        "en": "\"Ruddy, with beautiful eyes... anoint him, for this is the one\""
+      }
+    },
+    {
+      "ref": "I Samuel 17:45",
+      "note": {
+        "he": "״ואנוכי בא אליך בשם ה׳ צבאות״",
+        "en": "\"But I come to you in the name of the LORD of hosts\""
+      }
+    },
+    {
+      "ref": "I Samuel 24:7",
+      "note": {
+        "he": "״חלילה לי... לשלוח ידי בו, כי משיח ה׳ הוא״",
+        "en": "\"Far be it from me to raise my hand against the LORD's anointed\""
+      }
+    },
+    {
+      "ref": "II Samuel 1:19",
+      "note": {
+        "he": "קינת דוד: ״איך נפלו גיבורים״",
+        "en": "David's lament: \"How the mighty have fallen\""
+      }
+    },
+    {
+      "ref": "II Samuel 6:14",
+      "note": {
+        "he": "״ודוד מכרכר בכל עוז לפני ה׳״",
+        "en": "\"David danced before the LORD with all his might\""
+      }
+    },
+    {
+      "ref": "II Samuel 7:16",
+      "note": {
+        "he": "הבטחת נתן: ״ונאמן ביתך וממלכתך עד עולם״",
+        "en": "Nathan's promise: \"Your house and kingdom shall endure forever\""
+      }
+    },
+    {
+      "ref": "II Samuel 12:7",
+      "note": {
+        "he": "״אתה האיש!״",
+        "en": "\"You are the man!\""
+      }
+    },
+    {
+      "ref": "II Samuel 19:1",
+      "note": {
+        "he": "״בני אבשלום, בני בני אבשלום״",
+        "en": "\"O my son Absalom, my son, my son Absalom\""
+      }
+    },
+    {
+      "ref": "II Samuel 23:1",
+      "note": {
+        "he": "״נאום דוד בן ישי... ונעים זמירות ישראל״",
+        "en": "\"The oracle of David son of Jesse... the sweet singer of Israel\""
+      }
+    },
+    {
+      "ref": "I Kings 2:10",
+      "note": {
+        "he": "דוד מת ונקבר בעיר דוד",
+        "en": "David dies and is buried in the City of David"
+      }
+    },
+    {
+      "ref": "Isaiah 11:1",
+      "note": {
+        "he": "״ויצא חוטר מגזע ישי״: המלך העתידי מזרעו",
+        "en": "\"A shoot shall come out from the stump of Jesse\": the future king of his line"
+      }
+    },
+    {
+      "ref": "Ezekiel 34:23",
+      "note": {
+        "he": "״את עבדי דוד, הוא ירעה אותם״",
+        "en": "\"My servant David, he shall feed them\""
+      }
+    },
+    {
+      "ref": "Amos 9:11",
+      "note": {
+        "he": "״אקים את סוכת דוד הנופלת״",
+        "en": "\"I will raise up the fallen booth of David\""
+      }
+    },
+    {
+      "ref": "Psalms 51:2",
+      "note": {
+        "he": "מזמור החרטה, ״בבוא אליו נתן הנביא״",
+        "en": "The psalm of repentance, \"when Nathan the prophet came to him\""
+      }
+    },
+    {
+      "ref": "Ruth 4:17",
+      "note": {
+        "he": "עובד, בן רות, ״הוא אבי ישי אבי דוד״",
+        "en": "Obed, Ruth's son, \"father of Jesse, the father of David\""
+      }
+    }
   ],
-  "images": [],
-  "wiki": { "he": "דוד המלך", "en": "David" },
-  "related": ["samuel", "saul", "jonathan", "solomon", "ruth"],
+  "images": [
+    {
+      "file": "File:Gerard van Honthorst - King David Playing the Harp - Google Art Project.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "דוד המלך מנגן בנבל, חררד ואן הונטהורסט, 1622",
+        "en": "King David playing the harp, Gerard van Honthorst, 1622"
+      }
+    },
+    {
+      "file": "File:Psautier de Paris, Zalving van David.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "שמואל מושח את דוד בין אחיו, מזמורי פריז, כתב יד ביזנטי מהמאה ה־10",
+        "en": "Samuel anoints David among his brothers, Paris Psalter, Byzantine manuscript, 10th century"
+      }
+    },
+    {
+      "file": "File:Claude Lorrain 016.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "נוף עם דוד במערת עדולם, קלוד לורן, 1658",
+        "en": "Landscape with David at the cave of Adullam, Claude Lorrain, 1658"
+      }
+    },
+    {
+      "file": "File:Paris psaulter gr139 fol136v.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "נתן הנביא מוכיח את דוד, ודוד משתחווה בחרטה, מזמורי פריז, המאה ה־10",
+        "en": "Nathan rebukes David, and David bows in repentance, Paris Psalter, 10th century"
+      }
+    },
+    {
+      "file": "File:Paris psaulter gr139 fol7v.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "דוד המלך בין החוכמה לנבואה, מזמורי פריז, המאה ה־10",
+        "en": "King David between Wisdom and Prophecy, Paris Psalter, 10th century"
+      }
+    },
+    {
+      "file": "File:Hendrick ter Brugghen - King David playing the harp among angels - M.Ob.529 MNW - National Museum in Warsaw.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "דוד מנגן בנבל בין מלאכים, הנדריק טר ברוחן, 1628 (המוזיאון הלאומי בוורשה)",
+        "en": "King David playing the harp among angels, Hendrick ter Brugghen, 1628 (National Museum in Warsaw)"
+      }
+    },
+    {
+      "file": "File:JRSLM 300116 Tel Dan Stele 01.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "כתובת תל דן, שבה המילים ״בית דוד״, המאה ה־9 לפנה״ס (מוזיאון ישראל)",
+        "en": "The Tel Dan stele with the words \"House of David\", 9th century BCE (Israel Museum)"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "דוד המלך",
+    "en": "David"
+  },
+  "related": [
+    "samuel",
+    "saul",
+    "jonathan",
+    "solomon",
+    "ruth"
+  ],
   "sources": [
-    { "title": "I Samuel 16 – I Kings 2, Hebrew text (Sefaria)", "url": "https://www.sefaria.org/I_Samuel.16" },
-    { "title": "Tel Dan stele (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele" },
-    { "title": "David: historicity and archaeology; Islam (Wikipedia)", "url": "https://en.wikipedia.org/wiki/David" },
-    { "title": "Rosh Hashanah 25a: 'David, king of Israel, lives and endures' (Sefaria)", "url": "https://www.sefaria.org/Rosh_Hashanah.25a" },
-    { "title": "Jerusalem Talmud Chagigah 2:3: David died on Shavuot (Sefaria)", "url": "https://www.sefaria.org/Jerusalem_Talmud_Chagigah.2.3" },
-    { "title": "David's Tomb (Wikipedia)", "url": "https://en.wikipedia.org/wiki/David%27s_Tomb" },
-    { "title": "Quran 34:10–11, Dawud and the mountains, birds and iron (Quran.com)", "url": "https://quran.com/34/10-11" }
+    {
+      "title": "I Samuel 16 – I Kings 2, Hebrew text (Sefaria)",
+      "url": "https://www.sefaria.org/I_Samuel.16"
+    },
+    {
+      "title": "Tel Dan stele (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+    },
+    {
+      "title": "David: historicity and archaeology; Islam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/David"
+    },
+    {
+      "title": "Rosh Hashanah 25a: 'David, king of Israel, lives and endures' (Sefaria)",
+      "url": "https://www.sefaria.org/Rosh_Hashanah.25a"
+    },
+    {
+      "title": "Jerusalem Talmud Chagigah 2:3: David died on Shavuot (Sefaria)",
+      "url": "https://www.sefaria.org/Jerusalem_Talmud_Chagigah.2.3"
+    },
+    {
+      "title": "David's Tomb (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/David%27s_Tomb"
+    },
+    {
+      "title": "Quran 34:10–11, Dawud and the mountains, birds and iron (Quran.com)",
+      "url": "https://quran.com/34/10-11"
+    }
   ]
 }

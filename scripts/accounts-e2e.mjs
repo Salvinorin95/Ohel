@@ -1,4 +1,4 @@
-// Accounts and profiles, end to end. LOCAL server only (it signs people up). Usage: node --experimental-strip-types scripts/accounts-e2e.mjs http://localhost:5173
+// Accounts and profiles (API), end to end. LOCAL server only (it signs people up). Usage: node --experimental-strip-types scripts/accounts-e2e.mjs http://localhost:5173
 import { stretch } from "../shared/stretch.ts";
 const B = process.argv[2];
 if (!/localhost|127\.0\.0\.1/.test(B)) throw new Error("local only");

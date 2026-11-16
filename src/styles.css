@@ -184,7 +184,9 @@ p { margin: 0; }
 }
 .field input:focus, select:focus { outline: none; border-color: var(--violet); box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25); }
 select option { background: #1a0d33; }
-.orb-pick { display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; justify-items: center; }
+.orb-pick { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 2px; justify-items: center; }
+/* Eight colours don't fit a narrow phone in one row: two rows of four. */
+@media (max-width: 440px) { .orb-pick { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 6px; } }
 .orb-choice { padding: 4px; border-radius: 50%; border: 2px solid transparent; }
 .orb-choice.on { border-color: #fff; }
 
