@@ -44,7 +44,7 @@ const S = {
   joinNamePh: { en: "A name or a nickname", he: "שם או כינוי" },
   joinOrb: { en: "Pick your light", he: "לבחור את האור שלך" },
   joinGo: { en: "Enter", he: "להיכנס" },
-  joinNoEmail: { en: "No email, no password. You can leave and delete everything anytime.", he: "בלי מייל ובלי סיסמה. אפשר לצאת ולמחוק הכל בכל רגע." },
+  joinNoEmail: { en: "No email needed. You can leave and delete everything anytime.", he: "בלי מייל. אפשר לצאת ולמחוק הכל בכל רגע." },
   haveKey: { en: "I have a key from another device", he: "יש לי מפתח ממכשיר אחר" },
   keyPh: { en: "Paste your key", he: "להדביק את המפתח" },
   useKey: { en: "Use this key", he: "להשתמש במפתח" },
