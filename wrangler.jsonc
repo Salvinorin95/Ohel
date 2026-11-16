@@ -13,7 +13,7 @@
     // Cloudflare Web Analytics (no cookies). Empty = no beacon.
     "ANALYTICS_TOKEN": "543355d1bcb34ebb945ccba7570509e1",
     // Google Search Console's HTML-tag code for this site (only the content="..." part). Empty = no tag.
-    "GOOGLE_SITE_VERIFICATION": ""
+    "GOOGLE_SITE_VERIFICATION": "qokVmd1Syeto2Eorvyl7X3hfsEY-jOWn9YHKmuq3t10"
   },
   "durable_objects": {
     "bindings": [{ "name": "HUB", "class_name": "Hub" }]
