@@ -114,7 +114,7 @@
         "text": "In Islam Ibrahim is a great prophet and Khalil Allah, \"the Friend of God\" (4:125), a hanif, a pure believer in one God who \"was neither a Jew nor a Christian\" (3:67). The Quran tells how he broke his people's idols and was thrown into a fire that God commanded to be \"coolness and safety\" (21:69), and how he and Ismail raised the foundations of the Kaaba (2:127). The Hajj pilgrimage recalls Ibrahim, Hajar and Ismail, and Eid al-Adha his readiness to sacrifice his son."
       }
     ],
-    "history": "There is no evidence for Abraham outside the Bible. In the mid-20th century, scholars led by William F. Albright placed the patriarchs in the early 2nd millennium BCE, pointing to names and customs in ancient tablets. In the 1970s Thomas L. Thompson and John Van Seters showed that those parallels fit later periods just as well, and many scholars now see the stories as written in the 1st millennium BCE. Details like domesticated camels, common in the region only from around the 10th century BCE, and the Chaldeans, a people known only in the 1st millennium, seem to reflect the writers' own age. Others think the stories keep older memories of herding clans, passed down by word of mouth for generations."
+    "history": "There is no evidence for Abraham outside the Bible. In the mid-20th century, scholars led by William F. Albright placed the patriarchs in the early 2nd millennium BCE, citing names and customs in ancient tablets. In the 1970s Thomas L. Thompson and John Van Seters showed that those parallels fit later periods just as well, and many now see the stories as written in the 1st millennium BCE. Domesticated camels, common in the region only from about the 10th century BCE, and the Chaldeans, known only in the 1st millennium, seem to reflect the writers' own age. Others think the stories keep older memories of herding clans, handed down orally."
   },
   "era": {
     "he": "לפי מספרי המקרא, ראשית האלף ה־2 לפנה״ס (לפי המניין היהודי המסורתי נולד בשנת 1948 לבריאה, בערך 1812 לפנה״ס); ההיסטוריה אינה יכולה לתארך אותו",
@@ -159,7 +159,15 @@
     { "ref": "Nehemiah 9:7", "note": { "he": "״אשר בחרת באברם והוצאתו מאור כשדים, ושמת שמו אברהם״.", "en": "\"You chose Abram, brought him out of Ur of the Chaldeans, and named him Abraham.\"" } },
     { "ref": "II Chronicles 20:7", "note": { "he": "יהושפט מתפלל על הארץ שניתנה ״לזרע אברהם אוהבך לעולם״.", "en": "Jehoshaphat prays about the land given \"to the offspring of Abraham your friend for ever\"." } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:(Venice) The Three Angels appearing to Abraham by Giandomenico Tiepolo - Gallerie Accademia.jpg", "kind": "art", "caption": {"he": "שלושת המלאכים נגלים לאברהם, ג׳נדומניקו טייפולו, המאה ה־18, גלריה דל אקדמיה בוונציה", "en": "The three angels appear to Abraham, Giandomenico Tiepolo, 18th century, Gallerie dell'Accademia, Venice"}},
+    {"file": "File:Abraham Journeying into the Land of Canaan (89393798).jpg", "kind": "art", "caption": {"he": "אברהם בדרכו לארץ כנען, גוסטב דורה, 1866", "en": "Abraham journeying into the land of Canaan, Gustave Doré, 1866"}},
+    {"file": "File:Andrey Rublev - Св. Троица - Google Art Project.jpg", "kind": "art", "caption": {"he": "״הכנסת האורחים של אברהם״, איקונת השילוש של אנדריי רובליוב, תחילת המאה ה־15, גלריית טרטיאקוב במוסקבה", "en": "The Hospitality of Abraham, Andrei Rublev's Trinity icon, early 15th century, Tretyakov Gallery, Moscow"}},
+    {"file": "File:Rembrandt van Rijn, Abraham Casting Out Hagar and Ishmael, 1637, NGA 10033.jpg", "kind": "art", "caption": {"he": "אברהם משלח את הגר וישמעאל, תחריט של רמברנדט, 1637", "en": "Abraham sends away Hagar and Ishmael, etching by Rembrandt, 1637"}},
+    {"file": "File:Rembrandt Abraham's Sacrifice (Hermitage).jpg", "kind": "art", "caption": {"he": "עקדת יצחק, רמברנדט, 1635, מוזיאון ההרמיטאז׳ בסנקט פטרבורג", "en": "The binding of Isaac, Rembrandt, 1635, Hermitage Museum, St Petersburg"}},
+    {"file": "File:Western Wall of Hebron (Cave of the Patriarchs) SDC10426.JPG", "kind": "site", "caption": {"he": "החומות מימי הבית השני מעל מערת המכפלה בחברון", "en": "The Second Temple-period walls over the cave of Machpelah in Hebron"}},
+    {"file": "File:Holy Land 2022 (1) P188 Hebron Cave of the Patriarchs Ibrahimi Mosque Abraham Cenotaph.jpg", "kind": "site", "caption": {"he": "מצבת הזיכרון של אברהם במסגד אל־איברהימי, מערת המכפלה", "en": "Abraham's cenotaph in the Ibrahimi Mosque, cave of Machpelah"}}
+  ],
   "wiki": { "he": "אברהם", "en": "Abraham" },
   "related": ["sarah", "isaac", "jacob", "noah"],
   "sources": [

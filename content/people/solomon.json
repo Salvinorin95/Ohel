@@ -86,7 +86,7 @@
         "text": "סולימאן הוא נביא ומלך שירש את דאוד. לפי הקוראן הוא לימד את שפת הציפורים, שמע נמלה מזהירה את חברותיה מפני צבאו, ושלח את הדוכיפת אל מלכת שבא, שקיבלה את האמונה באללה (סורה 27). הרוח נשמעה לו, והג׳ינים בנו בשבילו (34:12). כשמת, נשען על מקלו, והג׳ינים לא ידעו שמת עד שיצור של האדמה כרסם את המקל (34:14). לפי האסלאם, סולימאן מעולם לא עבד אלילים."
       }
     ],
-    "history": "שום כתובת אינה מזכירה את שלמה, ושרידי המקדש והארמון שלו לא נמצאו; בהר הבית אין חפירות. מלכים א ט מונה את חצור, מגידו וגזר, ובשנות ה־50 וה־60 זיהה יגאל ידין בשלושתן שערים בני שישה תאים, כמעט זהים, וייחס אותם לשלמה. ישראל פינקלשטיין הקדים אותם למאה ה־9, לימי בית עמרי, ותיארוכי פחמן 14 עדיין לא הכריעו. מכרות הנחושת בתמנע ובפינאן פעלו בעוצמה במאה ה־10, אבל הפעילו אותם כנראה שבטים מקומיים, אדומים, ואין דבר הקושר אותם לשלמה. רוב החוקרים מקבלים ששלמה היה דמות היסטורית, אבל רואים בתיאור הפאר הגזמה."
+    "history": "שום כתובת אינה מזכירה את שלמה, ושרידי המקדש והארמון שלו לא נמצאו; בהר הבית אין חפירות. מלכים א ט מונה את חצור, מגידו וגזר, ובשנות ה־50 וה־60 זיהה יגאל ידין בשלושתן שערים בני שישה תאים, כמעט זהים, וייחס אותם לשלמה. ישראל פינקלשטיין הקדים אותם למאה ה־9, לימי בית עמרי, ותיארוכי פחמן 14 עדיין לא הכריעו. מכרות הנחושת בתמנע ובפינאן פעלו בעוצמה במאות ה־11 עד ה־9, כלומר גם בימיו, אבל הפעילו אותם כנראה שבטים מקומיים, אדומים, ואין דבר הקושר אותם לשלמה. רוב החוקרים מקבלים ששלמה היה דמות היסטורית, אבל רואים בתיאור הפאר הגזמה."
   },
   "en": {
     "name": "Solomon",
@@ -130,7 +130,7 @@
       },
       {
         "title": "A house for God",
-        "text": "In Solomon's days Judah and Israel live in safety, \"everyone under their own vine and fig tree.\" Hiram king of Tyre sends him cedars of Lebanon and builders, and the two make a treaty. In the fourth year of his reign Solomon begins the house of the LORD on Mount Moriah. The stones are dressed at the quarry, so that \"no iron tool was heard in the house while it was being built.\" The work takes seven years. When the priests bring in the Ark, a cloud fills the house. In his dedication prayer Solomon says, \"Heaven and the highest heaven cannot contain you, how much less this house,\" and prays even for the foreigner who comes from a distant land.",
+        "text": "In Solomon's days Judah and Israel live in safety, \"everyone under their own vine and fig tree.\" Hiram king of Tyre sends him cedars and builders, and the two make a treaty. In the fourth year of his reign Solomon begins the house of the LORD on Mount Moriah. The stones are dressed at the quarry, so that \"no iron tool was heard in the house while it was being built.\" The work takes seven years. When the priests bring in the Ark, a cloud fills the house. In his dedication prayer Solomon says, \"Heaven and the highest heaven cannot contain you, how much less this house,\" and prays even for the foreigner who comes from a distant land.",
         "refs": [
           "I Kings 5:5",
           "I Kings 6:7",
@@ -174,7 +174,7 @@
         "text": "Sulayman is a prophet and king who inherited from Dawud. In the Quran he is taught the speech of birds, hears an ant warn her fellows of his army, and sends the hoopoe to the Queen of Sheba, who comes to believe in God (Sura 27). The wind obeys him and the jinn build for him (34:12). When he died leaning on his staff, the jinn did not know until a creature of the earth gnawed through it (34:14). In Islam, Sulayman never worshipped idols."
       }
     ],
-    "history": "No inscription names Solomon, and no remains of his Temple or palace have been found; the Temple Mount is not excavated. I Kings 9 names Hazor, Megiddo and Gezer, and in the 1950s and 60s Yigael Yadin identified almost identical six-chambered gates at all three and credited them to Solomon. Israel Finkelstein redated them to the 9th century, the time of Omri's dynasty, and radiocarbon dating has not settled it. The Timna and Faynan copper mines were busy in the 10th century, but were probably run by local, Edomite groups; nothing ties them to Solomon. Most scholars think Solomon was historical, but his splendour exaggerated."
+    "history": "No inscription names Solomon, and no remains of his Temple or palace have been found; the Temple Mount is not excavated. I Kings 9 names Hazor, Megiddo and Gezer, and in the 1950s and 60s Yigael Yadin identified almost identical six-chambered gates at all three and credited them to Solomon. Israel Finkelstein redated them to the 9th century, the time of Omri's dynasty, and radiocarbon dating has not settled it. The Timna and Faynan copper mines were busy in the 11th to 9th centuries, his era included, but were probably run by local, Edomite groups; nothing ties them to Solomon. Most scholars think Solomon was historical, but his splendour exaggerated."
   },
   "era": {
     "he": "לפי הכרונולוגיה המקראית, המאה ה־10 לפנה״ס (מסורתית מלך בערך 970–931 לפנה״ס)",
@@ -432,7 +432,56 @@
       }
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "file": "File:Lorenzo Ghiberti-Solomon and the Queen of Sheba -The Gates of Paradise-Original-Museo dell'Opera del Duomo.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "שלמה מקבל את מלכת שבא, לורנצו גיברטי, ״שערי גן העדן״ של בית הטבילה בפירנצה, המאה ה־15",
+        "en": "Solomon receives the Queen of Sheba, Lorenzo Ghiberti, the Gates of Paradise of the Florence Baptistery, 15th century"
+      }
+    },
+    {
+      "file": "File:Le Jugement de Salomon - 1649 - Nicolas Poussin - Louvre - INV 7277 ; MR 2316.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "משפט שלמה, ניקולא פוסן, 1649 (הלובר)",
+        "en": "The Judgment of Solomon, Nicolas Poussin, 1649 (Louvre)"
+      }
+    },
+    {
+      "file": "File:Soloman (Sulayman) and the Queen of Sheba (Bilqis) enthroned together attended by angels, demons, animals, birds, and Asaf the vizier.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "סולימאן ומלכת שבא (בלקיס) על כס המלוכה, מוקפים מלאכים, ג׳ינים, חיות וציפורים, מליכ חוסיין אספהאני, בערך 1648 (האוסף המלכותי הבריטי)",
+        "en": "Sulayman and the Queen of Sheba (Bilqis) enthroned among angels, jinn, beasts and birds, Malik Husayn Isfahani, c. 1648 (Royal Collection)"
+      }
+    },
+    {
+      "file": "File:Visit of the Queen of Sheba to Solomon by L. Fontana (c. 1600, NGI).jpg",
+      "kind": "art",
+      "caption": {
+        "he": "ביקור מלכת שבא אצל שלמה, לוויניה פונטנה, בערך 1600 (הגלריה הלאומית של אירלנד)",
+        "en": "The visit of the Queen of Sheba to Solomon, Lavinia Fontana, c. 1600 (National Gallery of Ireland)"
+      }
+    },
+    {
+      "file": "File:Six-chambered gate at Tel Gezer (5751873295).jpg",
+      "kind": "site",
+      "caption": {
+        "he": "השער בן ששת התאים בתל גזר, במרכז הוויכוח על מפעלי הבנייה של שלמה",
+        "en": "The six-chambered gate at Tel Gezer, at the heart of the debate over Solomon's building works"
+      }
+    },
+    {
+      "file": "File:Hatzor-SolomonicGate.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "השער בן ששת התאים והחומה הכפולה בחצור, שידין ייחס לשלמה",
+        "en": "The six-chambered gate and casemate wall at Hazor, which Yadin credited to Solomon"
+      }
+    }
+  ],
   "wiki": {
     "he": "שלמה המלך",
     "en": "Solomon"
@@ -461,6 +510,10 @@
     {
       "title": "Quran 34:12–14, Sulayman, the jinn and his staff (Quran.com)",
       "url": "https://quran.com/34/12-14"
+    },
+    {
+      "title": "New dates on 'King Solomon-era' copper mines (Archaeology Magazine)",
+      "url": "https://archaeology.org/news/2013/09/03/130903-new-dates-on-ancient-edomite-copper-mines/"
     }
   ]
 }

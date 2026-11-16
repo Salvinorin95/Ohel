@@ -56,7 +56,7 @@
         "text": "באסלאם יעקוב הוא נביא, בנו של אסחאק ונכדו של איברהים, שניתן לאיברהים במתנה (6:84; 19:49). הקוראן קורא לו גם ישראיל (3:93). על ערש מותו הוא שואל את בניו ״את מי תעבדו אחריי?״, והם עונים: את אלוהי אבותיך (2:133). בסורת יוסף עיניו מלבינות מצער על בנו האבוד (12:84), אבל הוא נאחז ב״סבלנות יפה״ (12:18), וראייתו חוזרת כשכותונת יוסף מונחת על פניו."
       }
     ],
-    "history": "אין עדות ליעקב עצמו מחוץ לתנ״ך. השם עצמו עתיק: שמות כמו ״יעקב־אל״ מופיעים בכתב היתדות כבר בסביבות 1800 לפנה״ס, ״יעקב־הר״ מופיע ברשימת מקומות של תחותמס השלישי ובשמו של שליט היקסוס, אבל כל זה לא אומר דבר על האב הקדמון. חוקרים רבים, ובהם ישראל פינקלשטיין, סבורים שסיפורי יעקב צמחו בממלכת ישראל הצפונית, סביב בית אל, שכם והגלעד, ושסיפור יעקב ולבן משקף את המאה ה־8 לפנה״ס, ורק אחר כך חוברו למסורות אברהם ויצחק מן הדרום. הנביא הושע, במאה ה־8, כבר מכיר את העקב, את המאבק ואת העבודה בשביל אישה. אחרים מוצאים בסיפורים רקע מן האלף ה־2. השאלה אם עומד מאחוריהם אדם אמיתי פתוחה."
+    "history": "אין עדות ליעקב עצמו מחוץ לתנ״ך. השם עתיק: ״יעקב־אל״ מופיע בכתב היתדות כבר בסביבות 1800 לפנה״ס, ו״יעקב־הר״ ברשימה של תחותמס השלישי ובשמו של שליט היקסוס, אבל זה לא אומר דבר על האב הקדמון. חוקרים רבים, ובהם ישראל פינקלשטיין, סבורים שסיפורי יעקב צמחו בממלכת ישראל הצפונית, סביב בית אל, שכם והגלעד, ורק אחר כך חוברו למסורות אברהם ויצחק מן הדרום. הנביא הושע, במאה ה־8 לפנה״ס, כבר מכיר את העקב, את המאבק ואת העבודה בשביל אישה. אחרים מוצאים בסיפורים רקע מן האלף ה־2. השאלה אם עומד מאחוריהם אדם אמיתי נשארת פתוחה."
   },
   "en": {
     "name": "Jacob",
@@ -114,7 +114,7 @@
         "text": "In Islam Yaqub is a prophet, the son of Ishaq and grandson of Ibrahim, given to Ibrahim as a gift (6:84; 19:49). The Quran also calls him Isra'il (3:93). On his deathbed he asks his sons, \"What will you worship after me?\" and they answer: the God of your fathers (2:133). In the sura of Yusuf his eyes turn white from grief for his lost son (12:84), yet he holds on to \"beautiful patience\" (12:18), and his sight returns when Yusuf's shirt is laid on his face."
       }
     ],
-    "history": "There is no evidence for Jacob himself outside the Bible. The name is old: names like Yaqub-el appear in cuneiform around 1800 BCE, and Yaqub-har in a list of places of Thutmose III and as the name of a Hyksos ruler, but none of this says anything about the patriarch. Many scholars, among them Israel Finkelstein, think the Jacob stories grew up in the northern kingdom of Israel, around Bethel, Shechem and Gilead, with the Jacob and Laban story reflecting the 8th century BCE, and were only later joined to the southern Abraham and Isaac traditions. The prophet Hosea, in the 8th century, already knows the heel, the wrestling and the service for a wife. Others find a 2nd-millennium background in the stories. Whether a real man stands behind them remains open."
+    "history": "There is no evidence for Jacob himself outside the Bible. The name is old: Yaqub-el appears in cuneiform around 1800 BCE, and Yaqub-har in a list of Thutmose III and as a Hyksos ruler's name, but this says nothing about the patriarch. Many scholars, Israel Finkelstein among them, think the Jacob stories grew up in the northern kingdom of Israel, around Bethel, Shechem and Gilead, and were later joined to the southern Abraham and Isaac traditions. The 8th-century prophet Hosea already knows the heel, the wrestling and the service for a wife. Others find a 2nd-millennium background. Whether a real man stands behind the stories remains open."
   },
   "era": {
     "he": "לפי מספרי המקרא, המחצית הראשונה של האלף ה־2 לפנה״ס (לפי המניין היהודי המסורתי נולד בערך ב־1652 לפנה״ס); ההיסטוריה אינה יכולה לתארך אותו",
@@ -158,7 +158,13 @@
     { "ref": "Malachi 1:2", "note": { "he": "״הלוא אח עשו ליעקב… ואוהב את יעקב״.", "en": "\"Was not Esau Jacob's brother? Yet I loved Jacob.\"" } },
     { "ref": "Psalms 46:8", "note": { "he": "״ה׳ צבאות עמנו, משגב לנו אלהי יעקב״.", "en": "\"The LORD of hosts is with us; the God of Jacob is our refuge.\"" } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:Blake jacobsladder.jpg", "kind": "art", "caption": {"he": "סולם יעקב, ויליאם בלייק, בערך 1805, המוזיאון הבריטי", "en": "Jacob's Ladder, William Blake, c. 1805, British Museum"}},
+    {"file": "File:Eugène Ferdinand Victor Delacroix 061.jpg", "kind": "art", "caption": {"he": "יעקב נאבק במלאך, אז׳ן דלקרואה, 1861, כנסיית סן סולפיס בפריז", "en": "Jacob wrestling with the angel, Eugène Delacroix, 1861, Saint-Sulpice, Paris"}},
+    {"file": "File:Erwin Speckter - Jakob und Rahel (1827).jpg", "kind": "art", "caption": {"he": "יעקב ורחל ליד הבאר, ארווין שפקטר, 1827", "en": "Jacob and Rachel at the well, Erwin Speckter, 1827"}},
+    {"file": "File:De verzoening van Jacob en Ezau Rijksmuseum SK-A-346.jpeg", "kind": "art", "caption": {"he": "יעקב ועשו מתפייסים, ציור הולנדי של אמן לא ידוע, הרייקסמוזיאום", "en": "The reconciliation of Jacob and Esau, Dutch painting by an unknown artist, Rijksmuseum"}},
+    {"file": "File:Rembrandt van Rijn - Jacob blessing Ephraim and Manasseh (Gemäldegalerie Alte Meister Kassel).jpg", "kind": "art", "caption": {"he": "יעקב מברך את אפרים ומנשה, רמברנדט, 1656, הגלריה למאסטרים ישנים בקאסל", "en": "Jacob blessing Ephraim and Manasseh, Rembrandt, 1656, Gemäldegalerie Alte Meister, Kassel"}}
+  ],
   "wiki": { "he": "יעקב", "en": "Jacob" },
   "related": ["isaac", "rebecca", "rachel", "joseph", "abraham"],
   "sources": [

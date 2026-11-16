@@ -137,7 +137,14 @@
     { "ref": "Genesis 27:45", "note": { "he": "״למה אשכל גם שניכם יום אחד?״", "en": "\"Why should I lose you both in one day?\"" } },
     { "ref": "Genesis 49:31", "note": { "he": "״שמה קברו את יצחק ואת רבקה אשתו״.", "en": "\"There they buried Isaac and Rebecca his wife.\"" } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:Bartolomé Esteban Perez Murillo 022.jpg", "kind": "art", "caption": {"he": "רבקה ואליעזר ליד הבאר, ברטולומה אסטבן מורייו, בערך 1660, מוזיאון הפרדו", "en": "Rebecca and Eliezer at the well, Bartolomé Esteban Murillo, c. 1660, Prado Museum"}},
+    {"file": "File:Meister der Wiener Genesis 002.jpg", "kind": "art", "caption": {"he": "רבקה ליד הבאר משקה את הגמלים, ״בראשית של וינה״, המאה ה־6", "en": "Rebecca waters the camels at the well, the Vienna Genesis, 6th century"}},
+    {"file": "File:Giovanni Battista Piazzetta, 1740c - Rebecca at the Well.jpg", "kind": "art", "caption": {"he": "רבקה ליד הבאר, ג׳ובני בטיסטה פיאצטה, בערך 1740, פינקוטקת בררה במילאנו", "en": "Rebecca at the well, Giovanni Battista Piazzetta, c. 1740, Pinacoteca di Brera, Milan"}},
+    {"file": "File:James Jacques Joseph Tissot - Rebecca Meets Isaac by the Way - Google Art Project.jpg", "kind": "art", "caption": {"he": "רבקה פוגשת את יצחק בדרך, ג׳יימס טיסו, בערך 1896–1902, המוזיאון היהודי בניו יורק", "en": "Rebecca meets Isaac by the way, James Tissot, c. 1896–1902, Jewish Museum, New York"}},
+    {"file": "File:José de Ribera 012.jpg", "kind": "art", "caption": {"he": "יצחק מברך את יעקב ורבקה עומדת מאחור, חוסה דה ריברה, 1637, מוזיאון הפרדו", "en": "Isaac blesses Jacob as Rebecca stands behind, Jusepe de Ribera, 1637, Prado Museum"}},
+    {"file": "File:Veronese, Rebecca at the Well, 1580-1585, NGA 41697.jpg", "kind": "art", "caption": {"he": "רבקה ליד הבאר, פאולו ורונזה, 1580–1585, הגלריה הלאומית לאמנות בוושינגטון", "en": "Rebecca at the well, Paolo Veronese, 1580–85, National Gallery of Art, Washington"}}
+  ],
   "wiki": { "he": "רבקה", "en": "Rebecca" },
   "related": ["isaac", "jacob", "sarah", "rachel"],
   "sources": [

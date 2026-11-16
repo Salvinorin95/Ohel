@@ -31,7 +31,8 @@ function checkText(id: string, lang: string, t: PersonText | undefined) {
   for (const k of ["name", "summary", "character", "history"] as const) if (typeof t[k] !== "string" || !t[k].trim()) warn(id, `${lang}.${k} missing`);
   if (!Array.isArray(t.aka)) warn(id, `${lang}.aka missing`);
   if (!Array.isArray(t.story) || t.story.length < 3 || t.story.some((s) => !s.title?.trim() || !s.text?.trim())) warn(id, `${lang}.story incomplete`);
-  for (const s of t.story ?? []) for (const r of s.refs ?? []) if (!parseRef(r)) warn(id, `bad story ref "${r}"`);
+  // Story refs may be ranges ("Genesis 16:1-6", "Genesis 16:1-17:3"); the start must be a real verse.
+  for (const s of t.story ?? []) for (const r of s.refs ?? []) if (!parseRef(r.replace(/-.*$/, "")) || (r.includes("-") && !/^.+ \d+:\d+-(\d+:)?\d+$/.test(r))) warn(id, `bad story ref "${r}"`);
   if (!Array.isArray(t.traditions) || t.traditions.some((x) => !x.name?.trim() || !x.text?.trim())) warn(id, `${lang}.traditions incomplete`);
 }
 

@@ -34,6 +34,11 @@ Every place has its own deep page: the setting today, the peoples who lived ther
 
 31 people have their own page, from Noah and Abraham to Esther and Nehemiah: their story chapter by chapter with the verses, the places of their life on the map (and their journey, where there is one), family, who they were, how Jews, Christians and Muslims remember them, and what history and archaeology can and can't say. Every place page lists the people whose story passes through it.
 
+<p align="center">
+  <img src="docs/screenshots/en/people.jpg" width="560" alt="People of the Bible">
+  <img src="docs/screenshots/en/person.jpg" width="220" alt="David's page">
+</p>
+
 ### 🧭 Journeys
 
 Six journeys played on the map, stop by stop, with the verse for each stop: Abraham, Jacob, the Exodus (the traditional route, marked as debated), David on the run from Saul, Elijah, and the exile to Babylon and the return. The camera flies from stop to stop while the road draws itself; `/journey/<id>` opens one directly.

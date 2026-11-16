@@ -143,7 +143,13 @@
     { "ref": "Amos 7:16", "note": { "he": "אמציה אוסר על עמוס להטיף ״על בית ישחק״.", "en": "Amaziah forbids Amos to preach \"against the house of Isaac\"." } },
     { "ref": "Psalms 105:9", "note": { "he": "הברית שכרת אלוהים עם אברהם, ״ושבועתו לישחק״.", "en": "The covenant God made with Abraham, \"and his oath to Isaac\"." } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:Isaak zegent Jakob Rijksmuseum SK-A-110.jpeg", "kind": "art", "caption": {"he": "יצחק מברך את יעקב, חוברט פלינק, 1638, הרייקסמוזיאום באמסטרדם", "en": "Isaac blessing Jacob, Govert Flinck, 1638, Rijksmuseum, Amsterdam"}},
+    {"file": "File:Sacrifice of Isaac-Caravaggio (Uffizi).jpg", "kind": "art", "caption": {"he": "עקדת יצחק, קרווג׳ו, בערך 1603, גלריית אופיצי בפירנצה", "en": "The binding of Isaac, Caravaggio, c. 1603, Uffizi Gallery, Florence"}},
+    {"file": "File:Rembrandt Harmensz. van Rijn - Het Joodse bruidje.jpg", "kind": "art", "caption": {"he": "״הכלה היהודייה״ של רמברנדט, בערך 1665–1669; לרוב מזהים את בני הזוג עם יצחק ורבקה", "en": "Rembrandt's \"Jewish Bride\", c. 1665–69; the couple is often identified as Isaac and Rebecca"}},
+    {"file": "File:Beit Alfa Synagogue Mosaic.jpg", "kind": "art", "caption": {"he": "רצפת הפסיפס של בית הכנסת בבית אלפא, המאה ה־6; עקדת יצחק בלוח התחתון", "en": "The mosaic floor of the Beit Alfa synagogue, 6th century; the binding of Isaac is in the lowest panel"}},
+    {"file": "File:Tell Be'ersheva Brunnen.jpg", "kind": "site", "caption": {"he": "הבאר הקדומה מול שער העיר בתל באר שבע", "en": "The ancient well outside the city gate at Tel Beersheba"}}
+  ],
   "wiki": { "he": "יצחק", "en": "Isaac" },
   "related": ["abraham", "sarah", "rebecca", "jacob"],
   "sources": [

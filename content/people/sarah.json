@@ -144,7 +144,13 @@
     { "ref": "Genesis 24:67", "note": { "he": "יצחק מביא את רבקה ״האהלה שרה אמו… וינחם יצחק אחרי אמו״.", "en": "Isaac brings Rebecca into \"the tent of Sarah his mother… and was comforted after his mother\"." } },
     { "ref": "Isaiah 51:2", "note": { "he": "״הביטו אל אברהם אביכם ואל שרה תחוללכם״.", "en": "\"Look to Abraham your father, and to Sarah who bore you.\"" } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:Udine Palazzo Patriarcale - Sarah.jpg", "kind": "art", "caption": {"he": "המלאך מבשר לשרה, פרסקו של ג׳ובני בטיסטה טייפולו, 1726–1729, ארמון הפטריארך באודינה", "en": "The angel appears to Sarah, fresco by Giovanni Battista Tiepolo, 1726–29, Patriarchal Palace, Udine"}},
+    {"file": "File:Provost, Jan - L'Ange annonçant à Abraham la naissance d'un fils, RF 1989 35.jpg", "kind": "art", "caption": {"he": "המלאך מבשר לאברהם על בן, ושרה מקשיבה בפתח, יאן פרובוסט, בערך 1520, הלובר", "en": "The angel promises Abraham a son while Sarah listens at the door, Jan Provoost, c. 1520, Louvre"}},
+    {"file": "File:017.The Burial of Sarah.jpg", "kind": "art", "caption": {"he": "קבורת שרה, גוסטב דורה, 1866", "en": "The burial of Sarah, Gustave Doré, 1866"}},
+    {"file": "File:Holy Land 2022 (1) P196 Hebron Cave of the Patriarchs Ibrahimi Mosque Sarah Cenotaph.jpg", "kind": "site", "caption": {"he": "מצבת הזיכרון של שרה, מצד המסגד במערת המכפלה", "en": "Sarah's cenotaph, seen from the mosque side of the cave of Machpelah"}},
+    {"file": "File:PikiWiki Israel 43144 Cave of the Patriarchs - cenotaph of Sarah.JPG", "kind": "site", "caption": {"he": "מצבת הזיכרון של שרה, מצד בית הכנסת במערת המכפלה", "en": "Sarah's cenotaph, seen from the synagogue side of the cave of Machpelah"}}
+  ],
   "wiki": { "he": "שרה", "en": "Sarah" },
   "related": ["abraham", "isaac", "rebecca"],
   "sources": [

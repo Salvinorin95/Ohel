@@ -142,7 +142,13 @@
     { "ref": "Jeremiah 31:16", "note": { "he": "״מנעי קולך מבכי… ושבו מארץ אויב״.", "en": "\"Keep your voice from weeping… they shall come back from the land of the enemy.\"" } },
     { "ref": "Ruth 4:11", "note": { "he": "ברכת העם לרות: ״כרחל וכלאה, אשר בנו שתיהם את בית ישראל״.", "en": "The blessing for Ruth: \"like Rachel and Leah, who together built the house of Israel\"." } }
   ],
-  "images": [],
+  "images": [
+    {"file": "File:Palma il Vecchio 001.jpg", "kind": "art", "caption": {"he": "יעקב ורחל, פלמה וקיו, בערך 1520–1525, הגלריה למאסטרים ישנים בדרזדן", "en": "Jacob and Rachel, Palma Vecchio, c. 1520–25, Gemäldegalerie Alte Meister, Dresden"}},
+    {"file": "File:William Dyce - The meeting of Jacob and Rachel.jpg", "kind": "art", "caption": {"he": "פגישת יעקב ורחל, ויליאם דייס, אמצע המאה ה־19", "en": "The meeting of Jacob and Rachel, William Dyce, mid-19th century"}},
+    {"file": "File:Giovanni Battista Tiepolo - Rachel Hiding the Idols from her Father Laban - WGA22245.jpg", "kind": "art", "caption": {"he": "רחל מסתירה את התרפים מלבן אביה, פרסקו של ג׳ובני בטיסטה טייפולו, 1726–1729, ארמון הפטריארך באודינה", "en": "Rachel hides the idols from her father Laban, fresco by Giovanni Battista Tiepolo, 1726–29, Patriarchal Palace, Udine"}},
+    {"file": "File:Graf van Rachel bij Bethlehem Palestine - Tombeau de Rachel, pres de Bethléhem (titel op object), RP-F-F01089-AL.jpg", "kind": "site", "caption": {"he": "קבר רחל ליד בית לחם, תצלום מהמאה ה־19, הרייקסמוזיאום", "en": "Rachel's Tomb near Bethlehem, 19th-century photograph, Rijksmuseum"}},
+    {"file": "File:114278 rachels tomb - north of bethlehem PikiWiki Israel.jpg", "kind": "site", "caption": {"he": "קבר רחל, מצפון לבית לחם", "en": "Rachel's Tomb, north of Bethlehem"}}
+  ],
   "wiki": { "he": "רחל", "en": "Rachel" },
   "related": ["jacob", "joseph", "rebecca", "jeremiah"],
   "sources": [

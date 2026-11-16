@@ -1,0 +1,521 @@
+{
+  "id": "hezekiah",
+  "he": {
+    "name": "חזקיהו",
+    "aka": [
+      "חזקיהו מלך יהודה",
+      "חזקיה בן אחז",
+      "יחזקיהו"
+    ],
+    "summary": "חזקיהו בן אחז, מלך יהודה, ניהל רפורמה דתית גדולה, ראה את נפילת ממלכת ישראל בצפון, ומרד באשור, המעצמה של זמנו. כשסנחריב כבש את ערי יהודה ועמד מול ירושלים, העיר לא נפלה. הוא אחד המלכים המתועדים ביותר בתנ״ך: שמו מופיע בכתובות האשוריות, ונמצאה אפילו טביעת חותמו.",
+    "story": [
+      {
+        "title": "המלך המתקן",
+        "text": "חזקיהו מולך אחרי אביו אחז, בן עשרים וחמש, ומולך עשרים ותשע שנה בירושלים. ״ויעש הישר בעיני ה׳, ככל אשר עשה דוד אביו״. הוא מסיר את הבמות, שובר את המצבות וכורת את האשרה. הוא אפילו מנפץ את נחש הנחושת שעשה משה במדבר, כי עד אז העם הקטיר לו, וקורא לו בבוז ״נחושתן״. לפי דברי הימים, כבר בחודש הראשון למלכותו הוא פותח את דלתות המקדש שאביו סגר, והכוהנים והלוויים מטהרים אותו ומוציאים את הטומאה אל נחל קדרון. ״ובה׳ אלוהי ישראל בטח, ואחריו לא היה כמוהו״.",
+        "refs": [
+          "II Kings 18:3",
+          "II Kings 18:4",
+          "II Kings 18:5",
+          "II Chronicles 29:3"
+        ]
+      },
+      {
+        "title": "פסח לכל ישראל",
+        "text": "בשנה השישית למלכותו נכבשת שומרון בידי אשור, ותושבי ממלכת ישראל מוגלים. חזקיהו שולח רצים עם איגרות גם לשרידי השבטים בצפון, אפרים ומנשה, ומזמין אותם לבוא לירושלים ולעשות פסח. רבים לועגים לרצים, אבל אחרים באים. הם מסירים מן העיר את המזבחות הזרים ומשליכים אותם לנחל קדרון. רבים אוכלים את הפסח בלי שהיטהרו כדין, וחזקיהו מתפלל בעדם: ״ה׳ הטוב יכפר״. ״ותהי שמחה גדולה בירושלים, כי מימי שלמה בן דוד... לא כזאת בירושלים״.",
+        "refs": [
+          "II Kings 18:10",
+          "II Chronicles 30:1",
+          "II Chronicles 30:18",
+          "II Chronicles 30:26"
+        ]
+      },
+      {
+        "title": "המים והחומה",
+        "text": "חזקיהו מורד במלך אשור ומפסיק להעלות לו מס, ומכה בפלשתים עד עזה. הוא יודע שאשור תבוא. עם שריו הוא סותם את המעיינות שמחוץ לעיר, ״למה יבואו מלכי אשור ומצאו מים רבים?״, בונה את החומה הפרוצה ומוסיף חומה נוספת מבחוץ. את מימי הגיחון העליון הוא מעביר ״למטה מערבה לעיר דוד״, בנקבה שנחצבה בסלע. לעם הוא אומר: ״חזקו ואמצו... עמו זרוע בשר, ועמנו ה׳ אלוהינו לעזרנו״.",
+        "refs": [
+          "II Kings 18:7",
+          "II Chronicles 32:4",
+          "II Chronicles 32:8",
+          "II Chronicles 32:30"
+        ]
+      },
+      {
+        "title": "סנחריב בשערים",
+        "text": "בשנת ארבע עשרה לחזקיהו עולה סנחריב מלך אשור על כל ערי יהודה הבצורות ולוכד אותן. חזקיהו שולח אליו ללכיש: ״חטאתי... את אשר תיתן עליי אשא״. סנחריב דורש שלוש מאות כיכר כסף ושלושים כיכר זהב, וחזקיהו אף מקצץ את ציפוי הזהב מדלתות ההיכל. ובכל זאת אשור שולחת צבא לירושלים. הרבשקה עומד ליד תעלת הבריכה העליונה ולועג: ״מה הביטחון הזה אשר בטחת?״ שרי חזקיהו מבקשים שידבר ארמית, ״ואל תדבר עמנו יהודית באוזני העם אשר על החומה״, אבל הוא צועק ביהודית אל העם.",
+        "refs": [
+          "II Kings 18:13",
+          "II Kings 18:14",
+          "II Kings 18:19",
+          "II Kings 18:26"
+        ]
+      },
+      {
+        "title": "המכתב שנפרש לפני ה׳",
+        "text": "חזקיהו קורע את בגדיו, מתכסה בשק ונכנס לבית ה׳, ושולח את שריו אל ישעיהו הנביא. כשמגיע מכתב איום ממלך אשור, הוא עולה למקדש ופורש אותו לפני ה׳: ״אתה הוא האלוהים לבדך לכל ממלכות הארץ... הושיענו נא מידו״. ישעיהו משיב: ״וגנותי אל העיר הזאת להושיעה, למעני ולמען דוד עבדי״. באותו לילה, לפי הסיפור, מלאך ה׳ מכה במחנה אשור מאה שמונים וחמשה אלף. סנחריב חוזר לנינוה, ושם, בשעה שהוא משתחווה לאלוהיו, בניו הורגים אותו.",
+        "refs": [
+          "II Kings 19:1",
+          "II Kings 19:14",
+          "II Kings 19:34",
+          "II Kings 19:36"
+        ]
+      },
+      {
+        "title": "״ראיתי את דמעתך״",
+        "text": "״בימים ההם חלה חזקיהו למות״. ישעיהו בא אליו: ״צו לביתך, כי מת אתה״. חזקיהו מסב את פניו אל הקיר, מתפלל ובוכה בכי גדול. ישעיהו עוד לא יצא מן החצר, וה׳ שולח אותו בחזרה: ״שמעתי את תפילתך, ראיתי את דמעתך, הנני רופא לך״, וחמש עשרה שנה נוספות. מניחים דבלת תאנים על השחין, וכאות הצל חוזר עשר מעלות לאחור במעלות אחז. אחרי שהחלים כתב חזקיהו שיר תודה: ״חי חי הוא יודך כמוני היום״.",
+        "refs": [
+          "II Kings 20:1",
+          "II Kings 20:3",
+          "II Kings 20:5",
+          "Isaiah 38:19"
+        ]
+      },
+      {
+        "title": "השליחים מבבל",
+        "text": "מרודך בלאדן, מלך בבל, שומע שחזקיהו חלה ושולח אליו שליחים ומנחה. חזקיהו מראה להם את כל אוצרותיו, ״לא היה דבר אשר לא הראם חזקיהו״. ישעיהו מזהיר: יבואו ימים וכל זה יינשא בבלה. תשובת המלך מפתיעה: ״הלוא אם שלום ואמת יהיה בימיי״. דברי הימים מספר שגבה לבו, ואחר כך נכנע. חזקיהו מת, ״כל יהודה ויושבי ירושלים״ חולקים לו כבוד, והוא נקבר במעלה קברי בני דוד. מנשה בנו מולך תחתיו.",
+        "refs": [
+          "II Kings 20:12",
+          "II Kings 20:13",
+          "II Kings 20:19",
+          "II Chronicles 32:33"
+        ]
+      }
+    ],
+    "character": "חזקיהו הוא מלך של אמונה ושל מעשה גם יחד. הוא מתקן את הפולחן באומץ, ולא חוסך אפילו את נחש הנחושת של משה. הוא מתכונן למצור כמו מהנדס, בונה חומות וחוצב נקבה, ומתפלל לפני ה׳ כשהמכתב המאיים פרוש לפניו. הוא גם פוליטיקאי מציאותי: מורד באשור, ואחר כך מודה ״חטאתי״, משלם ומפשיט את דלתות המקדש. כשהוא חולה הוא בוכה, מתחנן לחיים ונענה. ובסוף, מול שליחי בבל, הוא מתגאה באוצרותיו ומסתפק בשלום שבימיו. לא גיבור מושלם, אבל מלך שהתנ״ך אומר עליו ״ואחריו לא היה כמוהו״.",
+    "traditions": [
+      {
+        "name": "ביהדות",
+        "text": "לפי התלמוד (סנהדרין צד ע״א), הקב״ה רצה לעשות את חזקיהו משיח ואת סנחריב גוג ומגוג, אבל חזקיהו לא אמר שירה על הנס. בימיו, מספר התלמוד, חיפשו מדן ועד באר שבע ולא מצאו עם הארץ. בברכות (י ע״א) חזקיהו עונה לישעיהו: ״אפילו חרב חדה מונחת על צווארו של אדם, אל ימנע עצמו מן הרחמים״. לפי בבא בתרא (טו ע״א), ״חזקיה וסיעתו״ כתבו את ישעיהו, משלי, שיר השירים וקהלת."
+      },
+      {
+        "name": "בנצרות",
+        "text": "חזקיהו מופיע ברשימת היוחסין של ישוע בבשורה על פי מתי. שיר ההודיה שכתב אחרי מחלתו (ישעיהו לח 10–20), ״אני אמרתי בדמי ימיי״, מוכר בכנסייה בשם ״שירת חזקיהו״ (Ego dixi), ונאמר בתפילת הבוקר בימי שלישי בספר התפילות הקתולי, וגם בתפילה לזכר המתים."
+      }
+    ],
+    "history": "מנסרות סנחריב (בלונדון, בירושלים ובשיקגו) מתארות את המסע של 701 לפנה״ס: 46 ערים בצורות של ״חזקיהו היהודי״ נכבשו, והמלך נסגר בירושלים ״כציפור בכלוב״, אבל סנחריב אינו טוען שכבש את העיר. המס: 30 כיכר זהב, כמו במקרא, אבל 800 כיכר כסף ולא 300. תבליטי לכיש מארמונו מתארים את המצור על לכיש. נקבת השילוח וכתובת השילוח מתאימות לימיו, אף שאין בה שם של מלך. טביעת חותם ״לחזקיהו [בן] אחז מלך יהודה״ מחפירות העופל של אילת מזר פורסמה ב־2015."
+  },
+  "en": {
+    "name": "Hezekiah",
+    "aka": [
+      "Hezekiah king of Judah",
+      "Hezekiah son of Ahaz",
+      "Yehizkiyahu"
+    ],
+    "summary": "Hezekiah son of Ahaz, king of Judah, led a great religious reform, saw the northern kingdom of Israel fall, and rebelled against Assyria, the superpower of his day. When Sennacherib took the towns of Judah and stood before Jerusalem, the city did not fall. He is one of the best-documented kings of the Bible: his name appears in Assyrian inscriptions, and even the impression of his seal has been found.",
+    "story": [
+      {
+        "title": "The reforming king",
+        "text": "Hezekiah succeeds his father Ahaz at twenty-five and reigns twenty-nine years in Jerusalem. \"He did what was right in the eyes of the LORD, just as his father David had done.\" He removes the high places, smashes the sacred pillars and cuts down the Asherah. He even breaks up the bronze serpent Moses made in the desert, because people had been burning incense to it, and calls it, scornfully, \"Nehushtan.\" By Chronicles, in the very first month of his reign he reopens the Temple doors his father had shut, and the priests and Levites cleanse it and carry the impurity out to the Kidron. \"He trusted in the LORD, the God of Israel; there was none like him.\"",
+        "refs": [
+          "II Kings 18:3",
+          "II Kings 18:4",
+          "II Kings 18:5",
+          "II Chronicles 29:3"
+        ]
+      },
+      {
+        "title": "A Passover for all Israel",
+        "text": "In the sixth year of his reign Samaria falls to Assyria, and the people of the kingdom of Israel are carried into exile. Hezekiah sends runners with letters even to the remnants of the northern tribes, Ephraim and Manasseh, inviting them to Jerusalem to keep Passover. Many mock the runners, but others come. They clear the foreign altars out of the city and throw them into the Kidron. Many eat the Passover without being properly purified, and Hezekiah prays for them: \"May the good LORD pardon.\" \"There was great joy in Jerusalem, for since the days of Solomon son of David there had been nothing like it.\"",
+        "refs": [
+          "II Kings 18:10",
+          "II Chronicles 30:1",
+          "II Chronicles 30:18",
+          "II Chronicles 30:26"
+        ]
+      },
+      {
+        "title": "Water and walls",
+        "text": "Hezekiah rebels against the king of Assyria and stops paying tribute, and strikes the Philistines as far as Gaza. He knows Assyria will come. With his officers he blocks the springs outside the city (\"Why should the kings of Assyria come and find plenty of water?\"), repairs the broken wall and builds another wall outside it. He brings the waters of the upper Gihon \"down to the west side of the City of David\" through a channel cut in the rock. To the people he says: \"Be strong and courageous... with him is an arm of flesh, but with us is the LORD our God, to help us.\"",
+        "refs": [
+          "II Kings 18:7",
+          "II Chronicles 32:4",
+          "II Chronicles 32:8",
+          "II Chronicles 32:30"
+        ]
+      },
+      {
+        "title": "Sennacherib at the gates",
+        "text": "In Hezekiah's fourteenth year Sennacherib king of Assyria comes up against all the fortified towns of Judah and takes them. Hezekiah sends word to him at Lachish: \"I have done wrong... whatever you impose on me I will bear.\" Sennacherib demands three hundred talents of silver and thirty talents of gold, and Hezekiah even strips the gold from the Temple doors. Still Assyria sends an army to Jerusalem. The Rabshakeh stands by the conduit of the upper pool and jeers: \"What is this confidence of yours?\" Hezekiah's officials ask him to speak Aramaic, \"not in Judean, in the hearing of the people on the wall,\" but he shouts to them in Judean.",
+        "refs": [
+          "II Kings 18:13",
+          "II Kings 18:14",
+          "II Kings 18:19",
+          "II Kings 18:26"
+        ]
+      },
+      {
+        "title": "A letter spread before God",
+        "text": "Hezekiah tears his clothes, puts on sackcloth and goes into the house of the LORD, and sends his officials to the prophet Isaiah. When a threatening letter arrives from the king of Assyria, he goes up to the Temple and spreads it out before the LORD: \"You alone are God over all the kingdoms of the earth... save us from his hand.\" Isaiah answers: \"I will defend this city to save it, for my own sake and for the sake of my servant David.\" That night, the story says, the angel of the LORD strikes down a hundred and eighty-five thousand in the Assyrian camp. Sennacherib goes home to Nineveh, where his sons kill him as he worships his god.",
+        "refs": [
+          "II Kings 19:1",
+          "II Kings 19:14",
+          "II Kings 19:34",
+          "II Kings 19:36"
+        ]
+      },
+      {
+        "title": "\"I have seen your tears\"",
+        "text": "\"In those days Hezekiah became mortally ill.\" Isaiah comes to him: \"Set your house in order, for you will die.\" Hezekiah turns his face to the wall, prays and weeps bitterly. Before Isaiah has left the courtyard, God sends him back: \"I have heard your prayer, I have seen your tears; I will heal you,\" and adds fifteen years to his life. A cake of figs is laid on his boil, and as a sign the shadow goes back ten steps on the stairway of Ahaz. When he recovers, Hezekiah writes a song of thanks: \"The living, the living, they praise you, as I do today.\"",
+        "refs": [
+          "II Kings 20:1",
+          "II Kings 20:3",
+          "II Kings 20:5",
+          "Isaiah 38:19"
+        ]
+      },
+      {
+        "title": "The envoys from Babylon",
+        "text": "Merodach-baladan, king of Babylon, hears that Hezekiah has been ill and sends envoys with a gift. Hezekiah shows them all his treasures; \"there was nothing he did not show them.\" Isaiah warns: days will come when all of it will be carried off to Babylon. The king's reply is startling: \"Why not, if there will be peace and security in my days?\" Chronicles says his heart grew proud, and that afterwards he humbled himself. Hezekiah dies, \"all Judah and the people of Jerusalem\" honour him, and he is buried in the upper tombs of David's descendants. His son Manasseh reigns after him.",
+        "refs": [
+          "II Kings 20:12",
+          "II Kings 20:13",
+          "II Kings 20:19",
+          "II Chronicles 32:33"
+        ]
+      }
+    ],
+    "character": "Hezekiah is a king of faith and action. He reforms worship boldly, sparing not even Moses' bronze serpent. He prepares for a siege like an engineer, building walls and cutting a tunnel, and prays with the threatening letter spread before God. He is also a realist: he rebels against Assyria, then says \"I have done wrong\", pays, and strips the Temple doors. Ill, he weeps, pleads for life and is answered. At the end, before Babylon's envoys, he shows off his treasures and settles for peace in his own days. Not a flawless hero, but a king of whom the Bible says, \"there was none like him.\"",
+    "traditions": [
+      {
+        "name": "In Judaism",
+        "text": "By the Talmud (Sanhedrin 94a), God wished to make Hezekiah the Messiah and Sennacherib Gog and Magog, but Hezekiah sang no song of praise for the miracle. In his days, it says, no one from Dan to Beersheba was ignorant of the Torah. In Berakhot (10a) he tells Isaiah: \"Even if a sharp sword rests on a person's neck, he should not give up on mercy.\" By Bava Batra (15a), \"Hezekiah and his colleagues\" wrote down Isaiah, Proverbs, the Song of Songs and Ecclesiastes."
+      },
+      {
+        "name": "In Christianity",
+        "text": "Hezekiah appears in the genealogy of Jesus in the Gospel of Matthew. The song of thanks he wrote after his illness (Isaiah 38:10–20), \"I said, in the noontide of my days\", is known in the Church as the Canticle of Hezekiah (Ego dixi). It is sung at Tuesday morning prayer in the Catholic Liturgy of the Hours, and in the Office of the Dead."
+      }
+    ],
+    "history": "Sennacherib's prisms (in London, Jerusalem and Chicago) describe the 701 BCE campaign: 46 walled towns of \"Hezekiah the Judahite\" taken, and the king shut up in Jerusalem \"like a bird in a cage\", with no claim to have taken the city. The tribute: 30 talents of gold, as in the Bible, but 800 of silver, not 300. The Lachish reliefs from his palace show Lachish under siege. The Siloam tunnel and its inscription fit his reign, though no king is named. A seal impression \"of Hezekiah [son of] Ahaz king of Judah\" from Eilat Mazar's Ophel dig was published in 2015."
+  },
+  "era": {
+    "he": "סוף המאה ה־8 ותחילת המאה ה־7 לפנה״ס (מלך בערך 715–686 לפנה״ס; יש המקדימים את עלייתו ל־727)",
+    "en": "Late 8th to early 7th century BCE (reigned c. 715–686 BCE; some date his accession to 727)"
+  },
+  "places": [
+    {
+      "place": "moriah",
+      "what": {
+        "he": "הוא פותח ומטהר את המקדש, ופורש בו את מכתב סנחריב",
+        "en": "He reopens and cleanses the Temple, and spreads Sennacherib's letter there"
+      }
+    },
+    {
+      "place": "kidron",
+      "what": {
+        "he": "לכאן מושלכים המזבחות הזרים והטומאה מן המקדש",
+        "en": "The foreign altars and the Temple's impurity are thrown here"
+      }
+    },
+    {
+      "place": "samaria",
+      "what": {
+        "he": "בירת ישראל נופלת לאשור בשנה השישית למלכותו",
+        "en": "Israel's capital falls to Assyria in his sixth year"
+      }
+    },
+    {
+      "place": "gaza",
+      "what": {
+        "he": "הוא מכה בפלשתים עד עזה",
+        "en": "He strikes the Philistines as far as Gaza"
+      }
+    },
+    {
+      "place": "cityofdavid",
+      "what": {
+        "he": "נקבת השילוח מביאה את מי הגיחון אל תוך העיר",
+        "en": "The Siloam tunnel brings the Gihon's water inside the city"
+      }
+    },
+    {
+      "place": "lachish",
+      "what": {
+        "he": "המטה של סנחריב, שאליו שולח חזקיהו את הכניעה",
+        "en": "Sennacherib's headquarters, to which Hezekiah sends his surrender"
+      }
+    },
+    {
+      "place": "nineveh",
+      "what": {
+        "he": "סנחריב חוזר לכאן ונרצח בידי בניו",
+        "en": "Sennacherib returns here and is killed by his sons"
+      }
+    },
+    {
+      "place": "babylon",
+      "what": {
+        "he": "משם באים השליחים, ולשם ישעיהו צופה את הגלות",
+        "en": "The envoys come from here, and Isaiah foresees exile to it"
+      }
+    }
+  ],
+  "journey": null,
+  "family": [
+    {
+      "person": null,
+      "name": {
+        "he": "אחז",
+        "en": "Ahaz"
+      },
+      "relation": {
+        "he": "אביו, מלך יהודה",
+        "en": "his father, king of Judah"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "אבי (אביה) בת זכריה",
+        "en": "Abi (Abijah) daughter of Zechariah"
+      },
+      "relation": {
+        "he": "אמו",
+        "en": "his mother"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "חפצי־בה",
+        "en": "Hephzibah"
+      },
+      "relation": {
+        "he": "אשתו, אם מנשה",
+        "en": "his wife, Manasseh's mother"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "מנשה",
+        "en": "Manasseh"
+      },
+      "relation": {
+        "he": "בנו, שמלך אחריו חמישים וחמש שנה",
+        "en": "his son, who reigned after him for fifty-five years"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "יאשיהו",
+        "en": "Josiah"
+      },
+      "relation": {
+        "he": "נינו, המלך המתקן הגדול הבא",
+        "en": "his great-grandson, the next great reforming king"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "II Kings 18:4",
+      "note": {
+        "he": "הוא כותת את נחש הנחושת, ״ויקרא לו נחושתן״",
+        "en": "He breaks the bronze serpent and calls it \"Nehushtan\""
+      }
+    },
+    {
+      "ref": "II Kings 18:5",
+      "note": {
+        "he": "״ובה׳ אלוהי ישראל בטח, ואחריו לא היה כמוהו״",
+        "en": "\"He trusted in the LORD... there was none like him\""
+      }
+    },
+    {
+      "ref": "II Kings 18:13",
+      "note": {
+        "he": "סנחריב עולה על ערי יהודה הבצורות",
+        "en": "Sennacherib comes up against the fortified towns of Judah"
+      }
+    },
+    {
+      "ref": "II Kings 18:14",
+      "note": {
+        "he": "שלוש מאות כיכר כסף ושלושים כיכר זהב",
+        "en": "Three hundred talents of silver and thirty of gold"
+      }
+    },
+    {
+      "ref": "II Kings 19:15",
+      "note": {
+        "he": "תפילת חזקיהו: ״אתה הוא האלוהים לבדך״",
+        "en": "Hezekiah's prayer: \"You alone are God\""
+      }
+    },
+    {
+      "ref": "II Kings 20:5",
+      "note": {
+        "he": "״שמעתי את תפילתך, ראיתי את דמעתך״",
+        "en": "\"I have heard your prayer, I have seen your tears\""
+      }
+    },
+    {
+      "ref": "II Kings 20:11",
+      "note": {
+        "he": "הצל חוזר עשר מעלות לאחור",
+        "en": "The shadow goes back ten steps"
+      }
+    },
+    {
+      "ref": "II Kings 20:20",
+      "note": {
+        "he": "״ואשר עשה את הברכה ואת התעלה, ויבא את המים העירה״",
+        "en": "\"How he made the pool and the conduit and brought water into the city\""
+      }
+    },
+    {
+      "ref": "Isaiah 38:9",
+      "note": {
+        "he": "״מכתב לחזקיהו מלך יהודה בחלותו ויחי מחליו״",
+        "en": "\"A writing of Hezekiah king of Judah, when he had been sick and recovered\""
+      }
+    },
+    {
+      "ref": "Jeremiah 26:19",
+      "note": {
+        "he": "דורות אחר כך זוכרים שחזקיהו לא המית את מיכה הנביא, אלא ירא את ה׳",
+        "en": "A century later people recall that Hezekiah did not kill the prophet Micah, but feared God"
+      }
+    },
+    {
+      "ref": "Micah 1:1",
+      "note": {
+        "he": "מיכה המורשתי ניבא בימי יותם, אחז ויחזקיה",
+        "en": "Micah of Moresheth prophesied in the days of Jotham, Ahaz and Hezekiah"
+      }
+    },
+    {
+      "ref": "Proverbs 25:1",
+      "note": {
+        "he": "״גם אלה משלי שלמה אשר העתיקו אנשי חזקיה״",
+        "en": "\"These too are proverbs of Solomon, copied by the men of Hezekiah\""
+      }
+    },
+    {
+      "ref": "II Chronicles 30:1",
+      "note": {
+        "he": "הוא מזמין גם את אפרים ומנשה לפסח בירושלים",
+        "en": "He invites even Ephraim and Manasseh to Passover in Jerusalem"
+      }
+    },
+    {
+      "ref": "II Chronicles 32:7",
+      "note": {
+        "he": "״חזקו ואמצו, אל תיראו ואל תיחתו מפני מלך אשור״",
+        "en": "\"Be strong and courageous; do not fear the king of Assyria\""
+      }
+    },
+    {
+      "ref": "II Chronicles 32:30",
+      "note": {
+        "he": "הוא סותם את מוצא הגיחון ומיישר את המים מערבה לעיר דוד",
+        "en": "He blocks the Gihon's outlet and channels the water west into the City of David"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Paris psaulter gr139 fol446v.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "חזקיהו החולה וישעיהו הנביא, מזמורי פריז, כתב יד ביזנטי מהמאה ה־10",
+        "en": "The sick Hezekiah and the prophet Isaiah, Paris Psalter, Byzantine manuscript, 10th century"
+      }
+    },
+    {
+      "file": "File:Hezekiah's Tunnel enlightened.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "המים זורמים בנקבת השילוח, ״נקבת חזקיהו״",
+        "en": "Water flowing through the Siloam Tunnel, \"Hezekiah's Tunnel\""
+      }
+    },
+    {
+      "file": "File:Siloam Inscription from Hezekiahs Tunnel Istanbul Archaeology Museums.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "כתובת השילוח, שמספרת על פגישת שני צוותי החוצבים, מוזיאוני הארכאולוגיה של איסטנבול",
+        "en": "The Siloam inscription, telling how the two teams of diggers met, Istanbul Archaeology Museums"
+      }
+    },
+    {
+      "file": "File:Sennacherib's Prism in the Israel Museum (2).JPG",
+      "kind": "artifact",
+      "caption": {
+        "he": "מנסרת סנחריב, שבה מוזכר חזקיהו, במוזיאון ישראל",
+        "en": "Sennacherib's prism, which names Hezekiah, in the Israel Museum"
+      }
+    },
+    {
+      "file": "File:Judaean people are being deported into exile after the capture of Lachish.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "משפחה מלכיש יוצאת לגלות בעגלה, תבליט מארמון סנחריב, בערך 700 לפנה״ס (המוזיאון הבריטי)",
+        "en": "A family from Lachish goes into exile by cart, relief from Sennacherib's palace, c. 700 BCE (British Museum)"
+      }
+    },
+    {
+      "file": "File:טביעת חותם המלך חזקיהו.jpg",
+      "kind": "artifact",
+      "caption": {
+        "he": "טביעת חותם ״לחזקיהו [בן] אחז מלך יהודה״ מאוסף פרטי, במוזיאון ישראל; טביעה מאותו חותם נמצאה בחפירות העופל",
+        "en": "A seal impression \"of Hezekiah [son of] Ahaz king of Judah\" from a private collection, Israel Museum; one from the same seal was found in the Ophel excavations"
+      }
+    },
+    {
+      "file": "File:Jerusalem-Broad-Wall-763.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "״החומה הרחבה״ ברובע היהודי, ככל הנראה מימי ההכנות של חזקיהו למצור",
+        "en": "The Broad Wall in the Jewish Quarter, probably from Hezekiah's preparations for the siege"
+      }
+    },
+    {
+      "file": "File:LMLK seal (Hebron). Israel Museum, Jerusalem.JPG",
+      "kind": "artifact",
+      "caption": {
+        "he": "ידית קנקן חתומה ״למלך חברן״, מסוג הקנקנים הקשורים להכנות למסע סנחריב (מוזיאון ישראל)",
+        "en": "A jar handle stamped \"for the king, Hebron\", of the type linked to the preparations for Sennacherib's campaign (Israel Museum)"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "חזקיהו",
+    "en": "Hezekiah"
+  },
+  "related": [
+    "isaiah",
+    "solomon",
+    "david"
+  ],
+  "sources": [
+    {
+      "title": "II Kings 18–20, Isaiah 36–39, II Chronicles 29–32, Hebrew text (Sefaria)",
+      "url": "https://www.sefaria.org/II_Kings.18"
+    },
+    {
+      "title": "Sennacherib's Annals (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sennacherib%27s_Annals"
+    },
+    {
+      "title": "Lachish reliefs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lachish_reliefs"
+    },
+    {
+      "title": "Siloam tunnel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siloam_tunnel"
+    },
+    {
+      "title": "Siloam inscription (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siloam_inscription"
+    },
+    {
+      "title": "King Hezekiah bulla (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/King_Hezekiah_bulla"
+    },
+    {
+      "title": "Sanhedrin 94a: Hezekiah and the Messiah (Sefaria)",
+      "url": "https://www.sefaria.org/Sanhedrin.94a"
+    }
+  ]
+}
