@@ -1,0 +1,559 @@
+{
+  "id": "moses",
+  "he": {
+    "name": "משה",
+    "aka": [
+      "משה רבנו",
+      "איש האלוהים",
+      "מוסא (באסלאם)"
+    ],
+    "summary": "משה הוא המנהיג שהוציא את בני ישראל מעבדות במצרים, קיבל את התורה בהר סיני והוביל את העם ארבעים שנה במדבר, עד שמת מול הארץ המובטחת בלי להיכנס אליה. התורה קוראת לו הנביא הגדול מכולם, זה שאלוהים הכיר ״פנים אל פנים״, ויהודים, נוצרים ומוסלמים זוכרים אותו כאחד מגדולי שליחי האל.",
+    "story": [
+      {
+        "title": "תיבה בין הסוף",
+        "text": "פרעה מצווה להשליך ליאור כל בן עברי שנולד. אישה משבט לוי מסתירה את בנה שלושה חודשים, ואז מניחה אותו בתיבת גומא מצופה בחמר ובזפת ושמה אותה בין הסוף על שפת היאור. אחותו עומדת מרחוק לראות מה ייעשה לו. בת פרעה יורדת לרחוץ, רואה את התינוק הבוכה ומרחמת עליו. האחות מציעה להביא מינקת עברייה, ומביאה את אמו של התינוק עצמו. כשהילד גדל, בת פרעה מאמצת אותו וקוראת לו משה, ״כי מן המים משיתהו״.",
+        "refs": [
+          "Exodus 1:22",
+          "Exodus 2:3",
+          "Exodus 2:10"
+        ]
+      },
+      {
+        "title": "בורח למדיין",
+        "text": "משה גדל בארמון, אבל יוצא אל אחיו ורואה את סבלם. כשהוא רואה מצרי מכה עברי, הוא פונה כה וכה, הורג את המצרי וטומן אותו בחול. הדבר נודע, פרעה מבקש להרוג אותו, ומשה בורח לארץ מדיין. ליד באר הוא מגרש רועים שמציקים לשבע אחיות, ואביהן, כוהן מדיין, מכניס אותו לביתו. הוא נושא לאישה את צפורה וקורא לבנו גרשום, ״כי אמר גר הייתי בארץ נכריה״.",
+        "refs": [
+          "Exodus 2:12",
+          "Exodus 2:15",
+          "Exodus 2:22"
+        ]
+      },
+      {
+        "title": "הסנה הבוער",
+        "text": "משה רועה את צאן יתרו חותנו ומגיע לחורב, הר האלוהים. שם הוא רואה סנה בוער באש, והסנה איננו אוכל. קול קורא לו בשמו, אומר לו לחלוץ את נעליו ושולח אותו אל פרעה להוציא את ישראל. משה מסרב שוב ושוב: מי אני? מה שמך? הם לא יאמינו לי; אני כבד פה. אלוהים עונה ״אהיה אשר אהיה״, נותן לו אותות, ואת אהרן אחיו שידבר בשמו.",
+        "refs": [
+          "Exodus 3:2",
+          "Exodus 3:14",
+          "Exodus 4:10"
+        ]
+      },
+      {
+        "title": "שלח את עמי",
+        "text": "משה ואהרן עומדים לפני פרעה: ״כה אמר ה׳ אלהי ישראל, שלח את עמי״. פרעה מסרב ומכביד את העבודה על העבדים. באות המכות: היאור הופך לדם, ואחריו צפרדעים, כינים, ערוב, דבר, שחין, ברד, ארבה וחושך. בכל פעם פרעה מתרכך ואז מקשה את לבו שוב. בליל הפסח הראשון, כשבכורי מצרים מתים, פרעה קורא למשה ולאהרן באמצע הלילה ואומר להם: קומו, צאו מתוך עמי.",
+        "refs": [
+          "Exodus 5:1",
+          "Exodus 7:20",
+          "Exodus 12:31"
+        ]
+      },
+      {
+        "title": "קריעת ים סוף",
+        "text": "פרעה מתחרט ורודף אחריהם ברכבו, ובני ישראל לכודים מול הים. העם נבהל. משה אומר להם לעמוד ולראות, נוטה את ידו על הים, ורוח קדים עזה נושבת כל הלילה עד שהמים נבקעים והם עוברים ביבשה. המים חוזרים ומכסים את המצרים הרודפים. ״ויאמינו בה׳ ובמשה עבדו״, ומשה ובני ישראל שרים את שירת הים.",
+        "refs": [
+          "Exodus 14:21",
+          "Exodus 14:31",
+          "Exodus 15:1"
+        ]
+      },
+      {
+        "title": "בהר סיני",
+        "text": "בסיני אלוהים משמיע לעם את עשרת הדברות, ומשה עולה אל הענן לארבעים יום. למטה העם עושה עגל זהב. משה יורד, רואה את המחולות, משליך את הלוחות ושובר אותם תחת ההר. ואז הוא מתחנן על העם: ״אם תשא חטאתם, ואם אין מחני נא מספרך״. הוא מבקש לראות את כבוד אלוהים, ורואה רק את ״אחוריו״. הוא מביא לוחות חדשים, וכשהוא יורד שוב ״קרן עור פניו״, והעם מפחד לגשת אליו.",
+        "refs": [
+          "Exodus 19:20",
+          "Exodus 32:19",
+          "Exodus 32:32",
+          "Exodus 34:29"
+        ]
+      },
+      {
+        "title": "ארבעים שנה והר נבו",
+        "text": "ארבעים שנה משה מנהיג עם שמתלונן על האוכל, על המים ועל ההנהגה שלו. במי מריבה הוא נצטווה לדבר אל הסלע, ובמקום זה מכה בו פעמיים, והמים פורצים; אלוהים אומר לו שבגלל זה לא יביא את העם אל הארץ. בערבות מואב הוא נושא את נאומי הפרידה, ספר דברים, ואז עולה להר נבו ורואה את כל הארץ, מהגלעד עד דן. הוא מת שם בן מאה ועשרים, ״לא כהתה עינו״, ואיש לא יודע את מקום קבורתו.",
+        "refs": [
+          "Numbers 20:11",
+          "Numbers 20:12",
+          "Deuteronomy 34:1",
+          "Deuteronomy 34:6",
+          "Deuteronomy 34:7"
+        ]
+      }
+    ],
+    "character": "התורה אומרת ש״האיש משה עניו מאד מכל האדם״, אבל הוא לא איש רך. יש לו מזג חם: הוא הורג נוגש, שובר את הלוחות ומכה בסלע בכעס. הוא מפקפק בעצמו, מתווכח עם אלוהים ליד הסנה, ולפעמים קורס תחת העומס: ״לא אוכל אנכי לבדי לשאת את כל העם הזה״. ובכל זאת, שוב ושוב הוא עומד בין העם לבין כעס אלוהים, ומוכן שימחקו את שמו ובלבד שהעם יינצל. והוא לא נאחז בכוח: כשאחרים מתנבאים במחנה, הוא אומר ״ומי יתן כל עם ה׳ נביאים״.",
+    "traditions": [
+      {
+        "name": "ביהדות",
+        "text": "הוא משה רבנו, והתורה נקראת ״תורת משה״. המשנה פותחת בו את שרשרת המסורת: ״משה קיבל תורה מסיני ומסרה ליהושע״. הרמב״ם מנה בין עיקרי האמונה שנבואתו של משה גבוהה מכל נבואה אחרת. לפי התלמוד הוא נולד ומת בז׳ באדר; ביום הזה יש קהילות שמתענות, וחברות קדישא נוהגות לערוך בו סעודה. ובהגדה של פסח, באופן בולט, הוא כמעט לא מוזכר."
+      },
+      {
+        "name": "בנצרות",
+        "text": "הברית החדשה מזכירה את משה יותר מכל דמות אחרת מהתנ״ך. בבשורות הוא נראה עם אליהו לצד ישו בהתגלות על ההר, ובספר מעשי השליחים ההבטחה ״נביא... כמוני״ מתפרשת כרמז לישו. כנסיות רבות, אורתודוקסיות, קתולית ולותרנית, מציינות אותו כנביא ב־4 בספטמבר. בתרגום הלטיני ״קרן עור פניו״ הפך ל״פניו היו בעלות קרניים״, ולכן לפסל המפורסם של מיכלאנג׳לו ברומא יש שתי קרניים."
+      },
+      {
+        "name": "באסלאם",
+        "text": "מוסא מוזכר בקוראן 136 פעמים, יותר מכל נביא אחר, וסיפורו מול פרעה חוזר בסורות רבות. הוא ״כלים אללה״, זה שאלוהים דיבר אליו ישירות, ואחד מחמשת הנביאים הגדולים ״בעלי הנחישות״. אלוהים נתן לו את התורה (״תוראה״). לפי החדית׳, בליל המסע הלילי יעץ למוחמד לבקש פחות תפילות, עד שחמישים נעשו חמש. מקאם נבי מוסא, שנבנה בימי הסולטן בייברס בשנת 1270, עומד מדרום ליריחו."
+      }
+    ],
+    "history": "אין עדות ישירה למשה מחוץ לתנ״ך. שום מסמך מצרי לא מזכיר אותו או בריחה המונית של עבדים, ובסיני לא נמצאו עקבות של מחנה עצום. החוקרים חלוקים מאוד. רבים חושבים שהסיפור צמח סביב זיכרון אמיתי, אולי של קבוצה קטנה שיצאה ממצרים במאה ה־13 לפנה״ס, ומציינים שהשם משה אולי מצרי, כמו הסיומת בשם תחותמס. אחרים רואים בו בעיקר דמות ספרותית שעוצבה במשך דורות, ומיעוט מגן על אמינות הסיפור כולו. הכרונולוגיה המסורתית מצביעה על המאה ה־15 או ה־13 לפנה״ס, ומיקומו של הר סיני אינו ידוע."
+  },
+  "en": {
+    "name": "Moses",
+    "aka": [
+      "Moshe Rabbenu (Moses our teacher)",
+      "The man of God",
+      "Musa (in Islam)"
+    ],
+    "summary": "Moses is the leader who brought Israel out of slavery in Egypt, received the Torah at Sinai and led the people for forty years through the wilderness, dying within sight of the promised land. The Torah calls him the greatest of prophets, the one God knew \"face to face,\" and Jews, Christians and Muslims all remember him as one of God's greatest messengers.",
+    "story": [
+      {
+        "title": "A basket among the reeds",
+        "text": "Pharaoh orders every newborn Hebrew boy thrown into the Nile. A Levite woman hides her son for three months, then lays him in a papyrus basket sealed with tar and pitch and sets it among the reeds at the river's edge, while his sister watches from a distance. Pharaoh's daughter comes down to bathe, sees the crying baby and pities him. The sister offers to find a Hebrew nurse and brings the baby's own mother. When the boy is grown, the princess adopts him and names him Moses, \"because I drew him out of the water.\"",
+        "refs": [
+          "Exodus 1:22",
+          "Exodus 2:3",
+          "Exodus 2:10"
+        ]
+      },
+      {
+        "title": "Flight to Midian",
+        "text": "Raised in the palace, Moses goes out to his own people and sees their forced labor. Seeing an Egyptian beating a Hebrew, he looks this way and that, kills the Egyptian and hides him in the sand. The deed becomes known, Pharaoh seeks his life, and Moses flees to the land of Midian. At a well he drives off shepherds who are bullying seven sisters, and their father, the priest of Midian, takes him in. He marries Zipporah and names his son Gershom: \"I have been a stranger in a foreign land.\"",
+        "refs": [
+          "Exodus 2:12",
+          "Exodus 2:15",
+          "Exodus 2:22"
+        ]
+      },
+      {
+        "title": "The burning bush",
+        "text": "Tending the flock of his father-in-law Jethro, Moses comes to Horeb, the mountain of God, and sees a bush on fire that is not burned up. A voice calls him by name, tells him to take off his sandals, and sends him to Pharaoh to bring Israel out. Moses objects again and again: Who am I? What is your name? They will not believe me; I am slow of speech. God answers \"I will be what I will be,\" gives him signs, and gives him his brother Aaron to speak for him.",
+        "refs": [
+          "Exodus 3:2",
+          "Exodus 3:14",
+          "Exodus 4:10"
+        ]
+      },
+      {
+        "title": "Let my people go",
+        "text": "With Aaron, Moses stands before Pharaoh: \"Thus says the LORD, the God of Israel: Let my people go.\" Pharaoh refuses and makes the slaves' work harder. The plagues follow: the Nile turned to blood, then frogs, lice, swarms, the death of livestock, boils, hail, locusts and darkness. Each time Pharaoh softens, then hardens his heart again. On the night of the first Passover, when the firstborn of Egypt die, Pharaoh summons Moses and Aaron in the middle of the night and tells them to go.",
+        "refs": [
+          "Exodus 5:1",
+          "Exodus 7:20",
+          "Exodus 12:31"
+        ]
+      },
+      {
+        "title": "Through the sea",
+        "text": "Pharaoh changes his mind and chases them with his chariots, trapping the Israelites against the sea. The people panic. Moses tells them to stand firm and watch, stretches out his hand over the water, and a strong east wind blows all night until the sea splits and they cross on dry ground. The waters come back over the pursuing Egyptians. \"The people believed in the LORD and in his servant Moses,\" and Moses and Israel sing the Song of the Sea.",
+        "refs": [
+          "Exodus 14:21",
+          "Exodus 14:31",
+          "Exodus 15:1"
+        ]
+      },
+      {
+        "title": "At Sinai",
+        "text": "At Sinai God speaks the Ten Commandments to the people, and Moses climbs into the cloud for forty days. Below, the people make a golden calf. Moses comes down, sees the dancing, and smashes the tablets at the foot of the mountain. Then he pleads for them: \"Forgive their sin, and if not, blot me out of your book.\" He asks to see God's glory and is shown only God's back. He brings new tablets, and when he comes down again his face shines so that the people are afraid to come near him.",
+        "refs": [
+          "Exodus 19:20",
+          "Exodus 32:19",
+          "Exodus 32:32",
+          "Exodus 34:29"
+        ]
+      },
+      {
+        "title": "Forty years, and Mount Nebo",
+        "text": "For forty years Moses leads a people that complains about food, water and his leadership. At Meribah, told to speak to a rock, he strikes it twice instead and water gushes out; God tells him that for this he will not bring the people into the land. On the plains of Moab he gives his farewell speeches, the book of Deuteronomy, then climbs Mount Nebo and sees the whole land, from Gilead to Dan. He dies there at 120, his eyes still undimmed, and no one knows where he is buried.",
+        "refs": [
+          "Numbers 20:11",
+          "Numbers 20:12",
+          "Deuteronomy 34:1",
+          "Deuteronomy 34:6",
+          "Deuteronomy 34:7"
+        ]
+      }
+    ],
+    "character": "The Torah calls Moses \"very humble, more than anyone on the face of the earth,\" yet he is no meek man. He has a fierce temper: he kills a taskmaster, smashes the tablets and strikes the rock in anger. He doubts himself, argues with God at the bush, and at times breaks under the load: \"I cannot carry all this people alone.\" Yet again and again he stands between the people and God's anger, ready to have his own name blotted out to save them. And he does not cling to power: when others prophesy in the camp, he wishes that all the LORD's people were prophets.",
+    "traditions": [
+      {
+        "name": "In Judaism",
+        "text": "He is Moshe Rabbenu, \"Moses our teacher,\" and the Torah is called the Torah of Moses. The Mishnah begins the chain of tradition with him: \"Moses received the Torah at Sinai and handed it on to Joshua.\" Maimonides counted the unique rank of his prophecy among the principles of faith. The Talmud says he was born and died on the 7th of Adar, a day when some communities fast and burial societies hold a yearly meal. Strikingly, the Passover Haggadah hardly mentions him."
+      },
+      {
+        "name": "In Christianity",
+        "text": "The New Testament names Moses more than any other figure of the Hebrew Bible. In the Gospels he appears with Elijah beside Jesus at the Transfiguration, and the Book of Acts reads his promise of \"a prophet like me\" as pointing to Jesus. Orthodox, Catholic and Lutheran churches honor him as a prophet on 4 September. Jerome's Latin Bible rendered his shining face in Exodus 34:29 as \"horned,\" which is why Michelangelo's famous statue in Rome has two horns."
+      },
+      {
+        "name": "In Islam",
+        "text": "Musa is named in the Quran 136 times, more than any other prophet, and his struggle with Pharaoh is told in many suras. He is Kalim Allah, the one to whom God spoke directly, and one of the five great prophets of resolve. God gave him the Torah (Tawrat). Hadith tell that on the Night Journey he urged Muhammad to ask for fewer daily prayers, until fifty became five. The shrine of Nabi Musa, built under Sultan Baybars in 1270, stands south of Jericho."
+      }
+    ],
+    "history": "There is no direct evidence for Moses outside the Bible. No Egyptian record mentions him or a mass escape of slaves, and no trace of a vast camp has been found in Sinai. Scholars differ widely. Many think the story grew around a real memory, perhaps of a small group that left Egypt in the 13th century BCE, and note that the name Moses may be Egyptian, as in Thutmose. Others see him as a largely literary figure shaped over centuries, while a minority defend the account as broadly reliable. Traditional chronology points to the 15th or 13th century BCE, and the true Mount Sinai is unknown."
+  },
+  "era": {
+    "he": "לפי הכרונולוגיה המקראית, המאה ה־15 או ה־13 לפנה״ס; אין עדות חיצונית שקובעת תאריך",
+    "en": "By the biblical chronology, the 15th or 13th century BCE; no outside evidence fixes a date"
+  },
+  "places": [
+    {
+      "place": "nile",
+      "what": {
+        "he": "תינוק בתיבה בין הסוף, על שפת היאור",
+        "en": "As a baby he is hidden in a basket among the reeds of the Nile"
+      }
+    },
+    {
+      "place": "sinai",
+      "what": {
+        "he": "בחורב הוא רואה את הסנה הבוער, ושם הוא מקבל אחר כך את התורה והלוחות",
+        "en": "At Horeb he sees the burning bush, and later receives the Torah and the tablets"
+      }
+    },
+    {
+      "place": "raamses",
+      "what": {
+        "he": "מכאן יוצאים בני ישראל, מהעיר שבנו כעבדים",
+        "en": "The Israelites set out from here, the city they had built as slaves"
+      }
+    },
+    {
+      "place": "redsea",
+      "what": {
+        "he": "הוא נוטה את ידו על הים, והעם עובר ביבשה",
+        "en": "He stretches his hand over the sea and the people cross on dry ground"
+      }
+    },
+    {
+      "place": "kadesh",
+      "what": {
+        "he": "המרגלים חוזרים לכאן, ובמי מריבה שבקדש הוא מכה בסלע",
+        "en": "The spies report back here; at the waters of Meribah in Kadesh he strikes the rock"
+      }
+    },
+    {
+      "place": "mounthor",
+      "what": {
+        "he": "הוא מעלה את אהרן להר, מלביש את אלעזר בבגדיו, ואהרן מת שם",
+        "en": "He takes Aaron up the mountain, dresses Eleazar in his robes, and Aaron dies there"
+      }
+    },
+    {
+      "place": "heshbon",
+      "what": {
+        "he": "בהנהגתו ישראל מנצחים את סיחון וכובשים את עירו",
+        "en": "Under his leadership Israel defeats Sihon and takes his city"
+      }
+    },
+    {
+      "place": "shittim",
+      "what": {
+        "he": "בערבות מואב, מול יריחו, הוא נושא את נאומי הפרידה",
+        "en": "On the plains of Moab, across from Jericho, he gives his farewell speeches"
+      }
+    },
+    {
+      "place": "nebo",
+      "what": {
+        "he": "הוא רואה מהפסגה את כל הארץ, ומת שם",
+        "en": "He sees the whole land from the summit, and dies there"
+      }
+    }
+  ],
+  "journey": "exodus",
+  "family": [
+    {
+      "person": null,
+      "name": {
+        "he": "עמרם",
+        "en": "Amram"
+      },
+      "relation": {
+        "he": "אביו",
+        "en": "his father"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "יוכבד",
+        "en": "Jochebed"
+      },
+      "relation": {
+        "he": "אמו",
+        "en": "his mother"
+      }
+    },
+    {
+      "person": "aaron",
+      "name": {
+        "he": "אהרן",
+        "en": "Aaron"
+      },
+      "relation": {
+        "he": "אחיו הגדול, מבוגר ממנו בשלוש שנים",
+        "en": "his older brother, three years his senior"
+      }
+    },
+    {
+      "person": "miriam",
+      "name": {
+        "he": "מרים",
+        "en": "Miriam"
+      },
+      "relation": {
+        "he": "אחותו",
+        "en": "his sister"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "בת פרעה",
+        "en": "Pharaoh's daughter"
+      },
+      "relation": {
+        "he": "אמו המאמצת",
+        "en": "his adoptive mother"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "צפורה",
+        "en": "Zipporah"
+      },
+      "relation": {
+        "he": "אשתו, בת יתרו",
+        "en": "his wife, Jethro's daughter"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "גרשום ואליעזר",
+        "en": "Gershom and Eliezer"
+      },
+      "relation": {
+        "he": "בניו",
+        "en": "his sons"
+      }
+    },
+    {
+      "person": null,
+      "name": {
+        "he": "יתרו",
+        "en": "Jethro"
+      },
+      "relation": {
+        "he": "חותנו, כוהן מדיין",
+        "en": "his father-in-law, priest of Midian"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "ref": "Exodus 2:10",
+      "note": {
+        "he": "בת פרעה קוראת לו משה, ״כי מן המים משיתהו״",
+        "en": "Pharaoh's daughter names him Moses, \"for I drew him out of the water\""
+      }
+    },
+    {
+      "ref": "Exodus 3:14",
+      "note": {
+        "he": "בסנה: ״אהיה אשר אהיה״",
+        "en": "At the bush: \"I will be what I will be\""
+      }
+    },
+    {
+      "ref": "Exodus 14:31",
+      "note": {
+        "he": "אחרי קריעת הים: ״ויאמינו בה׳ ובמשה עבדו״",
+        "en": "After the sea: they believed in the LORD and in his servant Moses"
+      }
+    },
+    {
+      "ref": "Exodus 33:11",
+      "note": {
+        "he": "אלוהים מדבר אליו ״פנים אל פנים, כאשר ידבר איש אל רעהו״",
+        "en": "God speaks to him face to face, as one speaks to a friend"
+      }
+    },
+    {
+      "ref": "Exodus 34:29",
+      "note": {
+        "he": "״קרן עור פניו״ כשהוא יורד מההר",
+        "en": "His face shines as he comes down the mountain"
+      }
+    },
+    {
+      "ref": "Numbers 12:3",
+      "note": {
+        "he": "״והאיש משה עניו מאד מכל האדם״",
+        "en": "\"Moses was very humble, more than anyone on earth\""
+      }
+    },
+    {
+      "ref": "Numbers 12:8",
+      "note": {
+        "he": "״פה אל פה אדבר בו״: מעמדו המיוחד בין הנביאים",
+        "en": "\"With him I speak mouth to mouth\": his unique place among prophets"
+      }
+    },
+    {
+      "ref": "Deuteronomy 18:15",
+      "note": {
+        "he": "״נביא מקרבך מאחיך כמני יקים לך ה׳״",
+        "en": "\"The LORD will raise up for you a prophet like me\""
+      }
+    },
+    {
+      "ref": "Deuteronomy 34:10",
+      "note": {
+        "he": "״ולא קם נביא עוד בישראל כמשה״",
+        "en": "\"Never again has there arisen in Israel a prophet like Moses\""
+      }
+    },
+    {
+      "ref": "Joshua 1:2",
+      "note": {
+        "he": "״משה עבדי מת, ועתה קום עבור את הירדן הזה״",
+        "en": "\"Moses my servant is dead; now arise, cross this Jordan\""
+      }
+    },
+    {
+      "ref": "Jeremiah 15:1",
+      "note": {
+        "he": "״אם יעמד משה ושמואל לפני״: משה כסמל של מתפלל על העם",
+        "en": "\"Even if Moses and Samuel stood before me\": Moses as the great intercessor"
+      }
+    },
+    {
+      "ref": "Micah 6:4",
+      "note": {
+        "he": "״ואשלח לפניך את משה אהרן ומרים״",
+        "en": "\"I sent before you Moses, Aaron and Miriam\""
+      }
+    },
+    {
+      "ref": "Malachi 3:22",
+      "note": {
+        "he": "סוף ספר הנביאים: ״זכרו תורת משה עבדי״",
+        "en": "The last words of the Prophets: \"Remember the Torah of Moses my servant\""
+      }
+    },
+    {
+      "ref": "Psalms 90:1",
+      "note": {
+        "he": "״תפלה למשה איש האלהים״",
+        "en": "\"A prayer of Moses, the man of God\""
+      }
+    },
+    {
+      "ref": "Psalms 106:23",
+      "note": {
+        "he": "משה ״עמד בפרץ לפניו להשיב חמתו מהשחית״",
+        "en": "Moses \"stood in the breach\" to turn away God's anger"
+      }
+    }
+  ],
+  "images": [
+    {
+      "file": "File:Rembrandt - Moses with the Ten Commandments - Google Art Project.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "משה עם לוחות הברית, רמברנדט, 1659",
+        "en": "Moses with the Ten Commandments, Rembrandt, 1659"
+      }
+    },
+    {
+      "file": "File:The finding of Moses, by Lawrence Alma Tadema.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "מציאת משה, לורנס אלמה־טדמה, 1904",
+        "en": "The Finding of Moses, Lawrence Alma-Tadema, 1904"
+      }
+    },
+    {
+      "file": "File:Moses & Bush Icon Sinai c12th century.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "משה והסנה הבוער, איקונה ממנזר סנטה קתרינה בסיני, המאה ה־12 בערך",
+        "en": "Moses and the burning bush, icon from St. Catherine's Monastery, Sinai, c. 12th century"
+      }
+    },
+    {
+      "file": "File:Moses splitting the sea 2.jpeg",
+      "kind": "art",
+      "caption": {
+        "he": "משה וקריעת ים סוף, ציור קיר בבית הכנסת של דורה אירופוס, בערך 245 לספירה",
+        "en": "Moses and the crossing of the sea, wall painting from the Dura-Europos synagogue, c. 245 CE"
+      }
+    },
+    {
+      "file": "File:041A.Moses Breaks the Tables of the Law.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "משה שובר את הלוחות, גוסטב דורה, 1866",
+        "en": "Moses breaks the tablets of the Law, Gustave Doré, 1866"
+      }
+    },
+    {
+      "file": "File:Michelangelo - Moses - San Pietro in Vincoli-2.jpg",
+      "kind": "art",
+      "caption": {
+        "he": "פסל משה של מיכלאנג׳לו, בערך 1513–1515, כנסיית סן פייטרו אין וינקולי ברומא",
+        "en": "Michelangelo's Moses, c. 1513–1515, San Pietro in Vincoli, Rome"
+      }
+    },
+    {
+      "file": "File:Mount Nebo, Jordan. A view looking into the Promised or Holy Land.jpg",
+      "kind": "site",
+      "caption": {
+        "he": "המבט מהר נבו מערבה, אל הארץ שמשה ראה ולא נכנס אליה",
+        "en": "The view west from Mount Nebo, toward the land Moses saw but did not enter"
+      }
+    }
+  ],
+  "wiki": {
+    "he": "משה",
+    "en": "Moses"
+  },
+  "related": [
+    "aaron",
+    "miriam",
+    "joshua",
+    "joseph",
+    "elijah"
+  ],
+  "sources": [
+    {
+      "title": "Moses (Wikipedia, with its references)",
+      "url": "https://en.wikipedia.org/wiki/Moses"
+    },
+    {
+      "title": "Moses in Islam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moses_in_Islam"
+    },
+    {
+      "title": "The Exodus: historicity and scholarly views (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Exodus"
+    },
+    {
+      "title": "Horns of Moses (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Horns_of_Moses"
+    },
+    {
+      "title": "Jewish principles of faith: Maimonides on the prophecy of Moses (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jewish_principles_of_faith"
+    },
+    {
+      "title": "Pirkei Avot 1:1 (Sefaria)",
+      "url": "https://www.sefaria.org/Pirkei_Avot.1.1"
+    },
+    {
+      "title": "Kiddushin 38a: Moses born and died on 7 Adar (Sefaria)",
+      "url": "https://www.sefaria.org/Kiddushin.38a"
+    },
+    {
+      "title": "Seventh of Adar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seventh_of_Adar"
+    }
+  ]
+}

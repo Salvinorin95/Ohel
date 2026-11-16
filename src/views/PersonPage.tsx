@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { parseRef, refLabel } from "../../shared/books.ts";
+import { parseRef, refLabel, spanLabel } from "../../shared/books.ts";
 import { findJourney } from "../../shared/journeys.ts";
 import { ERAS, findPerson, PEOPLE } from "../../shared/people.ts";
 import type { PersonInfo } from "../../shared/personInfo.ts";
@@ -55,7 +55,7 @@ export function PersonPage({ id }: { id: string }) {
   const tx = info?.[lang];
   const cover = info?.images[0];
   const read = (ref: string) => {
-    const r = parseRef(ref);
+    const r = parseRef(ref.replace(/-.*$/, ""));
     if (r) go({ name: "read", book: r.book, chapter: r.chapter });
   };
   const journey = findJourney(info?.journey);
@@ -73,9 +73,14 @@ export function PersonPage({ id }: { id: string }) {
         <div className="ps-hero-text">
           <span className="pill ps-era">{ERAS[person.era][lang]}</span>
           <h1>{person[lang]}</h1>
-          <p className="ps-other" dir="auto">
-            {lang === "he" ? person.en : person.he}
-            {tx?.aka.length ? ` · ${tx.aka.join(" · ")}` : ""}
+          <p className="ps-other">
+            {/* Each name isolated, so Hebrew and English side by side don't scramble the separators. */}
+            {[lang === "he" ? person.en : person.he, ...(tx?.aka ?? [])].map((x, i) => (
+              <span key={i}>
+                {i > 0 && " · "}
+                <bdi>{x}</bdi>
+              </span>
+            ))}
           </p>
           {info && <p className="ps-when">{info.era[lang]}</p>}
         </div>
@@ -107,7 +112,7 @@ export function PersonPage({ id }: { id: string }) {
                 <div className="ref-chips">
                   {s.refs.map((r) => (
                     <button key={r} className="chip" onClick={() => read(r)}>
-                      📖 {refLabel(r, lang)}
+                      📖 {r.includes("-") ? spanLabel(r, lang) : refLabel(r, lang)}
                     </button>
                   ))}
                 </div>

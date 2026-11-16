@@ -1,7 +1,7 @@
 import { ORBS } from "../../shared/game.ts";
 
 /** A person's light: a glowing two-color orb with their initial. */
-export function Orb({ avatar, name, size = 32, ring = false }: { avatar: number; name?: string; size?: number; ring?: boolean }) {
+export function Orb({ avatar, name, size = 32, ring = false, photo }: { avatar: number; name?: string; size?: number; ring?: boolean; photo?: string | null }) {
   const [a, b] = ORBS[((avatar % ORBS.length) + ORBS.length) % ORBS.length];
   const initial = name ? [...name.trim()][0]?.toUpperCase() ?? "" : "";
   return (
@@ -17,7 +17,7 @@ export function Orb({ avatar, name, size = 32, ring = false }: { avatar: number;
       aria-hidden={!name}
       title={name}
     >
-      {initial}
+      {photo ? <img className="orb-photo" src={photo} alt="" loading="lazy" decoding="async" /> : initial}
     </span>
   );
 }

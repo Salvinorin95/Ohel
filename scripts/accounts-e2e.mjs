@@ -1,0 +1,52 @@
+// Accounts and profiles (API), end to end. LOCAL server only (it signs people up). Usage: node --experimental-strip-types scripts/accounts-e2e.mjs http://localhost:5173
+import { stretch } from "../shared/stretch.ts";
+const B = process.argv[2];
+if (!/localhost|127\.0\.0\.1/.test(B)) throw new Error("local only");
+let fails = 0;
+const ok = (c, l) => { console.log(`${c ? "✔" : "✘"} ${l}`); if (!c) fails++; };
+const call = async (path, { method, body, token, raw, type } = {}) => {
+  const r = await fetch(B + path, { method: method ?? (body || raw ? "POST" : "GET"), headers: { ...(raw ? { "content-type": type } : { "content-type": "application/json" }), ...(token ? { authorization: `Bearer ${token}` } : {}) }, body: raw ?? (body ? JSON.stringify(body) : undefined) });
+  return { status: r.status, body: await r.json().catch(() => null), headers: r.headers };
+};
+const u = `tester_${Date.now() % 100000}`;
+const pw = await stretch(u, "שלום-עולם 123");
+const reg = await call("/api/register", { body: { username: u, pass: pw, name: "Tester Acc", avatar: 3 } });
+ok(reg.status === 200 && reg.body.token && reg.body.me.registered && reg.body.me.username === u, "register a new person with a username");
+ok((await call("/api/register", { body: { username: u.toUpperCase(), pass: pw } })).status === 409, "usernames are unique, whatever the case");
+ok((await call("/api/register", { body: { username: "a b", pass: pw } })).body?.error === "username_chars", "no spaces in usernames");
+ok((await call("/api/register", { body: { username: "admin", pass: pw } })).body?.error === "username_reserved", "reserved usernames are refused");
+ok((await call("/api/login", { body: { username: u, pass: await stretch(u, "wrong") } })).status === 401, "a wrong password is refused");
+const login = await call("/api/login", { body: { username: u.toUpperCase(), pass: await stretch(u.toUpperCase(), "שלום-עולם 123") } });
+ok(login.status === 200 && login.body.token && login.body.token !== reg.body.token && login.body.me.id === reg.body.me.id, "sign in from another device gets its own session");
+ok((await call("/api/me", { token: reg.body.token })).status === 200 && (await call("/api/me", { token: login.body.token })).status === 200, "both devices stay signed in");
+const prof = await call("/api/profile", { token: login.body.token, body: { name: "Tester Two", bio: "אוהב את ספר שמואל", avatar: 5 } });
+ok(prof.status === 200 && prof.body.me.name === "Tester Two" && prof.body.me.bio === "אוהב את ספר שמואל" && prof.body.me.avatar === 5, "profile: name, about me, colour");
+ok((await call("/api/profile", { token: login.body.token, body: { bio: "x".repeat(300) } })).status === 400, "about me is at most 280 characters");
+// a tiny valid webp (1x1)
+const webp = Buffer.from("UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=", "base64");
+const big = Buffer.alloc(300_000, 1);
+ok((await call("/api/photo", { token: login.body.token, raw: big, type: "image/webp" })).status === 413, "a photo over 200 KB is refused");
+ok((await call("/api/photo", { token: login.body.token, raw: Buffer.from("hello world, not an image at all, but long enough to pass the size floor.................................."), type: "text/plain" })).status === 415, "only images");
+const ph = await call("/api/photo", { token: login.body.token, raw: Buffer.concat([webp, Buffer.alloc(200)]), type: "image/webp" });
+ok(ph.status === 200 && /^\/api\/photo\/\d+$/.test(ph.body.me.photo ?? ""), "upload a profile photo");
+const img = await fetch(B + ph.body.me.photo);
+ok(img.ok && img.headers.get("content-type") === "image/webp" && /immutable/.test(img.headers.get("cache-control") ?? ""), "the photo is served, cached for good");
+const pub = await call(`/api/users/${reg.body.me.id}`);
+ok(pub.status === 200 && pub.body.name === "Tester Two" && pub.body.photo === ph.body.me.photo && pub.body.registered && pub.body.bio, "anyone can see the profile");
+ok(!("username" in pub.body) && !("token" in pub.body), "the profile doesn't show the username or anything secret");
+ok((await call("/api/password", { token: login.body.token, body: { pass: await stretch(u, "new pass 1"), old: await stretch(u, "nope") } })).status === 401, "changing the password needs the old one");
+ok((await call("/api/password", { token: login.body.token, body: { pass: await stretch(u, "new pass 1"), old: pw } })).status === 200, "change the password with the old one");
+ok((await call("/api/password", { token: reg.body.token, body: { pass: await stretch(u, "new pass 2") } })).status === 200, "or with the account's own key, if it was forgotten");
+ok((await call("/api/login", { body: { username: u, pass: await stretch(u, "new pass 2") } })).status === 200, "the new password works");
+// a guest becomes registered and keeps their points
+const g = (await call("/api/join", { body: { name: "Guest Conv", avatar: 1 } })).body;
+const gu = `guest_${Date.now() % 100000}`;
+const conv = await call("/api/register", { token: g.token, body: { username: gu, pass: await stretch(gu, "pass guest 9") } });
+ok(conv.status === 200 && conv.body.me.id === g.me.id && conv.body.me.registered && !conv.body.token, "a guest registers and stays the same person");
+ok((await call("/api/photo", { token: login.body.token, raw: Buffer.concat([Buffer.from("<html><script>x</script>"), Buffer.alloc(200)]), type: "image/webp" })).status === 415, "bytes that aren't really an image are refused");
+ok((await call("/api/photo", { method: "DELETE", token: login.body.token })).body?.me?.photo === null, "remove the photo");
+for (const t of [login.body.token, g.token]) await call("/api/me", { method: "DELETE", token: t });
+ok((await call("/api/login", { body: { username: u, pass: await stretch(u, "new pass 2") } })).status === 401, "after leaving, the username and sessions are gone");
+ok((await call(`/api/users/${reg.body.me.id}`)).status === 404, "and so is the profile");
+console.log(fails ? `\n${fails} failed` : "\nall good");
+process.exit(fails ? 1 : 0);

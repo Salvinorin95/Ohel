@@ -9,7 +9,7 @@
   <img src="docs/screenshots/en/room.jpg" width="250" alt="A room talking about Saul on Gilboa">
 </p>
 
-The name comes from Abraham's tent at Mamre, which was open on all four sides so anyone could walk in from any direction. No ads, no religious symbols, no email or password. Jews, Christians, Muslims and people of no faith are all welcome.
+The name comes from Abraham's tent at Mamre, which was open on all four sides so anyone could walk in from any direction. No ads, no religious symbols, no email needed. Jews, Christians, Muslims and people of no faith are all welcome.
 
 ## What's inside
 
@@ -29,6 +29,15 @@ Every place has its own deep page: the setting today, the peoples who lived ther
 **Who ruled here:** a ruler on a place page draws that kingdom's borders on the map, from Egypt and Assyria to Persia (borders from the Seshat databank's Cliopatria).
 
 <img src="docs/screenshots/en/realm.jpg" alt="The Neo-Assyrian Empire's borders on the map">
+
+### 👥 People of the Bible
+
+31 people have their own page, from Noah and Abraham to Esther and Nehemiah: their story chapter by chapter with the verses, the places of their life on the map (and their journey, where there is one), family, who they were, how Jews, Christians and Muslims remember them, and what history and archaeology can and can't say. Every place page lists the people whose story passes through it.
+
+<p align="center">
+  <img src="docs/screenshots/en/people.jpg" width="560" alt="People of the Bible">
+  <img src="docs/screenshots/en/person.jpg" width="220" alt="David's page">
+</p>
 
 ### 🧭 Journeys
 
@@ -51,13 +60,18 @@ Live group chat about a story, a question or a place. Attach a verse, a place, o
 
 The home page shows this week's Torah portion and haftarah (Israel calendar, from Hebcal) with every place on the map that those verses mention, and `/week` is a page made to be sent around on WhatsApp every week. Next to it is the question of the day: the same question for everyone, points for answering, and a badge for seven days in a row.
 
+### 🚪 Sign up, or come in as a guest
+
+Sign up with a username and password (no email) to come in from any phone or computer, with a profile: a photo, the name others see, a colour and a few words about yourself. Or come in as a guest with just a name, kept on that device; a guest can sign up later and keep everything. The password is stretched in the browser (PBKDF2) before it is sent, and the server keeps only a salted hash of that; the account's own key is the way back if the password is forgotten. Admins can remove a photo or words that don't belong.
+
+<p align="center">
+  <img src="docs/screenshots/en/join.jpg" width="250" alt="Sign up, sign in, or come in as a guest">
+  <img src="docs/screenshots/en/settings.jpg" width="250" alt="Settings: photo, name, colour, a few words">
+</p>
+
 ### 🌱 Points, levels and badges
 
 Seed → Sprout → Root → Branch → Tree → Forest → Light. 17 badges and a weekly board, for reading, exploring the map, talking, quizzes, helpful answers and lights.
-
-### 🚪 Easy in, easy out
-
-Join with a name and a colour. A key brings you back on another device. Leave or delete yourself anytime.
 
 ## Keeping it kind
 
@@ -87,9 +101,13 @@ npm test           # moderation tests (72)
 node scripts/e2e.mjs http://localhost:5173   # two people chat, ask, light, report, quiz (26 checks)
 OHEL_ADMIN_TOKEN=<an admin's key> node scripts/admin-e2e.mjs http://localhost:5173   # admin tools (23 checks)
 node scripts/og.mjs   # re-render the link-preview picture public/og.jpg from scripts/og.html
+npm run people     # check content/people/*.json and build public/data/people (same image checks)
 npm run places     # check content/places/*.json and build public/data/places (image credits from Commons; --offline reuses the last lookup)
 node --max-old-space-size=4096 scripts/build-realms.mjs <cliopatria.geojson>   # realm borders → public/data/realms.json
 node scripts/daily-e2e.mjs http://localhost:5173   # question of the day (11 checks)
+node --experimental-strip-types scripts/accounts-e2e.mjs http://localhost:5173   # accounts and profiles API (25 checks)
+node scripts/accounts-ui-e2e.mjs http://localhost:5173   # sign up, photo, profile, sign in, in headless Chrome (9)
+node scripts/session-e2e.mjs http://localhost:5173   # staying signed in: cookie, personal link, sign-out (9)
 node scripts/shots.mjs http://localhost:5300   # README screenshots (local server only: it posts a demo conversation)
 ```
 
@@ -107,6 +125,7 @@ worker/   index.ts (routes + Sefaria proxy with edge cache), hub.ts (the Durable
           seo.ts (place pages for search engines, sitemap), moderation.ts, quiz.ts
 src/      React app: views/Home, Room, Reader, MapView, PlacePage, Profile; components; i18n.ts
 content/  places/<id>.json: the place pages (how to write one: content/places/README.md)
+          people/<id>.json: the people pages (content/people/README.md)
 docs/     screenshots/he, screenshots/en (made by scripts/shots.mjs)
 ```
 

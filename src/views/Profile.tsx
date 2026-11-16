@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { SaveUser } from "../components/SaveUser.tsx";
 import { BADGES, LEVELS, POINTS, levelFor } from "../../shared/game.ts";
 import { api, type Profile as P } from "../api.ts";
 import { Orb } from "../components/Orb.tsx";
@@ -46,7 +45,7 @@ export function Profile() {
   return (
     <div className="profile">
       <section className="glass card me-card">
-        <Orb avatar={me.avatar} name={me.name} size={84} ring />
+        <Orb avatar={me.avatar} name={me.name} size={84} ring photo={me.photo} />
         <h1 dir="auto">{me.name}</h1>
         <div className="level">
           <span className="level-name grad">
@@ -127,9 +126,16 @@ export function Profile() {
       </section>
 
       <section className="glass card">
-        <h2>🔐 {t("saveUserTitle")}</h2>
-        <p className="muted">{t("saveUserHint")}</p>
-        <SaveUser />
+        <h2>⚙️ {t("settings")}</h2>
+        <p className="muted">{me.registered ? `${t("accountRegistered")} ${me.username}` : t("accountGuest")}</p>
+        <div className="place-actions">
+          <button className="btn btn-glow small" onClick={() => go({ name: "settings" })}>
+            ⚙️ {t("settings")}
+          </button>
+          <button className="btn small glass" onClick={() => go({ name: "user", id: me.id })}>
+            👤 {t("settingsProfile")}
+          </button>
+        </div>
       </section>
 
       {me.admin && (

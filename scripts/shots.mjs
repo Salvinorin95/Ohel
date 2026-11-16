@@ -115,6 +115,9 @@ const SHOTS = (demo) => [
   { name: "person", size: PHONE, path: "/person/david", wait: 5000 },
   { name: "people", size: DESK, path: "/people", wait: 5000 },
   { name: "room", size: PHONE, path: `/room/${demo.room}`, wait: 5000, signedIn: true },
+  { name: "join", size: PHONE, path: "/", wait: 3000, then: `[...document.querySelectorAll(".topbar button")].find((b) => /בואו פנימה|Come in/.test(b.textContent))?.click()`, after: 1200 },
+  { name: "settings", size: PHONE, path: "/settings", wait: 3000, signedIn: true },
+  { name: "profile", size: PHONE, path: `/u/${demo.me.id}`, wait: 3000 },
   { name: "me", size: PHONE, path: "/me", wait: 4000, signedIn: true },
 ];
 

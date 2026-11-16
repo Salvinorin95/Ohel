@@ -213,7 +213,7 @@ interface ItemProps {
 }
 
 function Item(p: ItemProps) {
-  const { t, lang } = useApp();
+  const { t, lang, go } = useApp();
   const { m } = p;
   const [menu, setMenu] = useState(false);
   const [sureBan, setSureBan] = useState(false);
@@ -239,7 +239,18 @@ function Item(p: ItemProps) {
   const place = findPlace(m.place);
   return (
     <div className={`msg-row${own ? " own" : ""}${p.compact ? " compact" : ""}`} id={`m-${m.id}`}>
-      {!own && <div className="msg-orb">{!p.compact && <Orb avatar={m.avatar} name={name} size={34} />}</div>}
+      {!own && (
+        <div className="msg-orb">
+          {!p.compact &&
+            (m.uid ? (
+              <button className="orb-btn" onClick={() => go({ name: "user", id: m.uid! })} aria-label={name}>
+                <Orb avatar={m.avatar} name={name} size={34} photo={m.photo} />
+              </button>
+            ) : (
+              <Orb avatar={m.avatar} name={name} size={34} photo={m.photo} />
+            ))}
+        </div>
+      )}
       <div
         className={`bubble${m.kind === "question" ? " question" : ""}${m.helpful ? " helpful" : ""}${hidden ? " hidden" : ""}`}
         onClick={() => (setMenu(!menu), setSureBan(false))}
@@ -662,7 +673,9 @@ export function Room({ id }: { id: string }) {
         <div className="people" title={people.map((p) => p.name).join(", ")}>
           <div className="people-orbs">
             {people.slice(0, 4).map((p) => (
-              <Orb key={p.uid} avatar={p.avatar} name={p.name} size={26} />
+              <button key={p.uid} className="orb-btn" onClick={() => go({ name: "user", id: p.uid })} aria-label={p.name}>
+                <Orb avatar={p.avatar} name={p.name} size={26} photo={p.photo} />
+              </button>
             ))}
           </div>
           <span className="people-count">

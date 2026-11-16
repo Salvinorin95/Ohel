@@ -14,6 +14,8 @@ export type Route =
   | { name: "about" }
   | { name: "week" }
   | { name: "people" }
+  | { name: "settings" }
+  | { name: "user"; id: string }
   | { name: "person"; id: string }
   | { name: "admin" };
 
@@ -29,6 +31,8 @@ export function parseRoute(path: string): Route {
   if (p[0] === "about") return { name: "about" };
   if (p[0] === "week") return { name: "week" };
   if (p[0] === "people") return { name: "people" };
+  if (p[0] === "settings") return { name: "settings" };
+  if (p[0] === "u" && p[1]) return { name: "user", id: p[1] };
   if (p[0] === "person" && p[1]) return { name: "person", id: p[1] };
   if (p[0] === "admin") return { name: "admin" };
   return { name: "home" };
@@ -51,6 +55,10 @@ export function routePath(r: Route): string {
       return "/week";
     case "people":
       return "/people";
+    case "settings":
+      return "/settings";
+    case "user":
+      return `/u/${encodeURIComponent(r.id)}`;
     case "person":
       return `/person/${encodeURIComponent(r.id)}`;
     case "admin":

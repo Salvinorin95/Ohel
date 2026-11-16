@@ -34,6 +34,7 @@ export interface Msg {
   uid: string | null;
   name: string;
   avatar: number;
+  photo?: string | null; // the author's profile photo, if they uploaded one
   kind: MsgKind;
   body: string;
   ref?: string | null;
@@ -56,12 +57,31 @@ export interface Me {
   streak: number;
   mutedUntil: number;
   admin?: boolean; // one of the people who look after the tent
+  registered?: boolean; // has a username and password (otherwise a guest with a key)
+  username?: string;
+  photo?: string | null;
+  bio?: string;
+}
+
+/** What anyone can see on a person's profile. */
+export interface PublicProfile {
+  id: string;
+  name: string;
+  avatar: number;
+  photo: string | null;
+  bio: string;
+  points: number;
+  badges: string[];
+  joined: number;
+  registered: boolean;
+  admin?: boolean;
 }
 
 export interface Person {
   uid: string;
   name: string;
   avatar: number;
+  photo?: string | null;
 }
 
 export interface RoomInfo {
@@ -184,5 +204,5 @@ export interface AdminData {
 
 export type AdminAction =
   | { on: "msg"; id: number; action: "hide" | "restore" }
-  | { on: "user"; id: string; action: "mute_hour" | "mute_day" | "unmute" | "ban" | "unban" }
+  | { on: "user"; id: string; action: "mute_hour" | "mute_day" | "unmute" | "ban" | "unban" | "clear_photo" | "clear_bio" }
   | { on: "room"; id: string; action: "delete" };

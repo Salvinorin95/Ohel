@@ -40,13 +40,15 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         h: "מה נשמר עליך",
         items: [
           "השם והצבע שבחרת, הנקודות והתגים, הפרקים שקראת והמקומות שגילית, וההודעות שכתבת.",
+          "אם נרשמת: שם המשתמש. הסיסמה עצמה לא מגיעה אלינו: הדפדפן הופך אותה קודם לטביעת אצבע, ואצלנו נשמר רק גיבוב מעורבל שלה.",
+          "תמונת הפרופיל וכמה המילים עליך, אם הוספת. הן גלויות לכל מי שפותח את הפרופיל, ואפשר להסיר אותן בכל רגע בהגדרות.",
           "המפתח שלך נשמר רק כטביעת אצבע מעורבלת: אפשר לבדוק אותו, אבל אי אפשר לקרוא אותו.",
           "כדי שמי שנחסם לא יחזור מיד, נשמרת טביעת אצבע מעורבלת של החיבור שלך לאינטרנט, לא הכתובת עצמה.",
         ],
       },
       {
         h: "מה לא נשמר",
-        items: ["אין מייל, אין טלפון ואין סיסמה.", "אין פרסומות ואין עוגיות מעקב (יש רק עוגיית כניסה אחת, ראו למטה).", "שום דבר לא נמכר ולא מועבר לאף אחד."],
+        items: ["אין מייל ואין טלפון. סיסמה רק אם בוחרים להירשם, ואפשר גם להיכנס כאורח בלי כלום.", "אין פרסומות ואין עוגיות מעקב (יש רק עוגיית כניסה אחת, ראו למטה).", "שום דבר לא נמכר ולא מועבר לאף אחד."],
       },
       {
         h: "מי עוד מעורב",
@@ -104,13 +106,15 @@ const PAGE: Record<"he" | "en", { title: string; intro: string; sections: Sectio
         h: "What we keep",
         items: [
           "The name and color you chose, your points and badges, the chapters you read and places you explored, and your messages.",
+          "If you signed up: your username. Your password itself never reaches us: your browser turns it into a fingerprint first, and we keep only a scrambled hash of that.",
+          "Your profile photo and the few words about you, if you added them. Anyone who opens your profile can see them, and you can remove them anytime in Settings.",
           "Your key is kept only as a scrambled fingerprint: we can check it, but we can't read it.",
           "So that people who were blocked can't come straight back, we keep a scrambled fingerprint of your internet connection, not the address itself.",
         ],
       },
       {
         h: "What we don't",
-        items: ["No email, no phone number, no password.", "No ads and no tracking cookies (just one sign-in cookie, see below).", "Nothing is sold or handed to anyone."],
+        items: ["No email and no phone number. A password only if you choose to sign up; you can also come in as a guest with nothing at all.", "No ads and no tracking cookies (just one sign-in cookie, see below).", "Nothing is sold or handed to anyone."],
       },
       {
         h: "Who else is involved",
