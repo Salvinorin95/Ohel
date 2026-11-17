@@ -162,10 +162,9 @@ Text: [Sefaria](https://www.sefaria.org). Hebrew: Miqra according to the Masorah
 `npm test` now includes real Hub logic with in-memory SQLite, a small Cloudflare
 host substitute, account isolation/session revocation, bounded study updates,
 and text-cache failure tests. `npm run build` type-checks client and Worker and
-builds both. `docs/ci.yml.template` runs these commands on Node 24. The current
-GitHub OAuth credential cannot publish workflow files (it lacks `workflow`
-scope), so CI is prepared but not enabled. Copy it to `.github/workflows/ci.yml`
-using an appropriately authorized credential. For isolated browser fixtures:
+builds both. GitHub Actions runs these commands on Node 24 via
+`.github/workflows/ci.yml` (a matching template remains under `docs/`).
+For isolated browser fixtures:
 
 ```sh
 npm run build
