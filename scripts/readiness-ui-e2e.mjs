@@ -35,10 +35,14 @@ try {
   const me={id:"fixture",name:"Study Tester",avatar:2,points:0,streak:1,mutedUntil:0,registered:true,username:"tester",bio:""};
   let study={resume:"I Samuel 17",bookmarks:[{ref:"I Samuel 17:1",note:"A saved private note",updated:1}]};
   let textFails=false;
+  let createdPrivate=false;
+  const privateRoom={id:"privatefixture",title:"Private fixture",private:true,host:"fixture",starter:false,online:1,msgs:0,last:1};
+  let members=[{id:"fixture",name:"Study Tester"},{id:"visitor",name:"Invited visitor"}];
   socket.onmessage=async e=> {
     const m=JSON.parse(e.data);
     if (pending.has(m.id)) { const p=pending.get(m.id); pending.delete(m.id); m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result); }
     if(m.method==="Runtime.exceptionThrown") exceptions.push(m.params.exceptionDetails.text);
+    if(m.method==="Page.javascriptDialogOpening") await send("Page.handleJavaScriptDialog", {accept:true});
     if(m.method!=="Fetch.requestPaused") return;
     const {requestId,request}=m.params, url=new URL(request.url);
     let status=200, data;
@@ -48,21 +52,30 @@ try {
     else if(url.pathname==="/api/study") {
       if(request.method==="POST") {const b=JSON.parse(request.postData); if(b.action==="resume") study.resume=b.ref; if(b.action==="bookmark") study.bookmarks=[...study.bookmarks.filter(x=>x.ref!==b.ref),{ref:b.ref,note:b.note,updated:2}]; if(b.action==="remove") study.bookmarks=study.bookmarks.filter(x=>x.ref!==b.ref);}
       data=study;
-    } else if(url.pathname==="/api/text") {status=textFails?503:200;data=textFails?{error:"offline"}:{ref:"I Samuel 17",heRef:"שמואל א יז",he:["פסוק ראשון","פסוק שני"],en:["First verse","Second verse"],sources:{he:"Fixture Hebrew",en:"Fixture English",enLicense:"test"}};}
+    } else if(url.pathname==="/api/recovery-key") data={token:JSON.parse(request.postData).nextKey,me};
+    else if(url.pathname==="/api/rooms" && request.method==="POST") {createdPrivate=JSON.parse(request.postData).private;data={room:privateRoom,award:{delta:0,total:0,badges:[]}};}
+    else if(url.pathname==="/api/rooms/privatefixture") data=privateRoom;
+    else if(url.pathname==="/api/rooms/privatefixture/invite") data={invite:"I".repeat(32)};
+    else if(url.pathname==="/api/rooms/privatefixture/members") data={members};
+    else if(url.pathname==="/api/rooms/privatefixture/members/visitor") {members=members.filter(m=>m.id!=="visitor");data={ok:true};}
+    else if(url.pathname==="/api/text") {status=textFails?503:200;data=textFails?{error:"offline"}:{ref:"I Samuel 17",heRef:"שמואל א יז",he:["פסוק ראשון","פסוק שני"],en:["First verse","Second verse"],sources:{he:"Fixture Hebrew",en:"Fixture English",enLicense:"test"}};}
     else if(url.pathname.startsWith("/api/")) {status=503;data={error:"fixture_unavailable"};}
     else {await send("Fetch.continueRequest",{requestId});return;}
     await send("Fetch.fulfillRequest",{requestId,responseCode:status,responseHeaders:[{name:"content-type",value:"application/json"}],body:Buffer.from(JSON.stringify(data)).toString("base64")});
   };
   await send("Runtime.enable"); await send("Page.enable"); await send("Fetch.enable",{patterns:[{urlPattern:"*"}]});
   await send("Emulation.setDeviceMetricsOverride",{width:1100,height:900,deviceScaleFactor:1,mobile:false});
-  await send("Page.addScriptToEvaluateOnNewDocument",{source:`localStorage.setItem('ohel.lang','en');localStorage.setItem('ohel.token','fixture');localStorage.setItem('ohel.me',${JSON.stringify(JSON.stringify(me))});`});
-  const ev=async expression=> {const r=await send("Runtime.evaluate",{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+  await send("Page.addScriptToEvaluateOnNewDocument",{source:`localStorage.setItem('ohel.lang','en');localStorage.setItem('ohel.token','fixture');localStorage.setItem('ohel.me',${JSON.stringify(JSON.stringify(me))});window.WebSocket=class {static OPEN=1;readyState=1;constructor(){setTimeout(()=>this.onopen?.(),0)}send(s){const m=JSON.parse(s);if(m.t==='hello')setTimeout(()=>this.onmessage?.({data:JSON.stringify({t:'welcome',room:${JSON.stringify(privateRoom)},history:[],online:[],guests:0,staff:[],me:${JSON.stringify(me)}})}),0)}close(){this.readyState=3;this.onclose?.({code:1000})}};`});
+  const ev=async expression=> {const r=await send("Runtime.evaluate",{expression,returnByValue:true,awaitPromise:true,userGesture:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const wait=async expression=> {for(let i=0;i<80;i++){if(await ev(expression))return;await sleep(100);}throw new Error("Wait failed: "+expression);};
   const shot=async name=> {const r=await send("Page.captureScreenshot",{format:"png"});fs.writeFileSync(path.join(review,name),Buffer.from(r.data,"base64"));};
   await send("Page.navigate",{url:B+"/"});
   await wait(`document.body.innerText.includes('A saved private note') && document.body.innerText.includes('Community updates are unavailable')`);
   assert.equal(await ev(`document.querySelectorAll('.guided-study button').length`),3); console.log("PASS guided session, saved library and home failure message");
   await shot("home-saved-study.png");
+  await ev(`(()=>{const input=document.querySelector('.discovery input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'1 Samuel 17');input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  await wait(`document.querySelector('.discovery-results')?.innerText.includes('Valley of Elah')`);
+  console.log("PASS unified reference discovery connects reading and places");
   await ev(`document.querySelector('.saved-study .link').click()`);
   await wait(`!!document.querySelector('#v-1.on')`);
   await ev(`document.querySelector('.verse-actions input').value='';document.querySelector('.verse-actions button').click()`);
@@ -84,6 +97,26 @@ try {
   await wait(`document.body.innerText.includes('Could not sign out other devices')`);
   assert.equal(await ev(`document.body.innerText.includes('Signed out everywhere else')`), false);
   console.log("PASS failed revocation displays failure without a false success message");
+  await ev(`[...document.querySelectorAll('button')].find(b=>b.textContent.includes('Replace personal recovery key')).click()`);
+  await wait(`localStorage.getItem('ohel.token').startsWith('ohel_') && !localStorage.getItem('ohel.pendingRecoveryKey')`);
+  console.log("PASS recovery-key confirmation replaces browser credential and clears pending key");
+  await ev(`history.pushState(null,'','/');dispatchEvent(new PopStateEvent('popstate'))`);
+  await wait(`!!document.querySelector('.new-room')`);
+  await ev(`document.querySelector('.new-room').click()`);
+  await wait(`!!document.querySelector('.sheet input[type=checkbox]')`);
+  await ev(`(()=>{const input=document.querySelector('.sheet input:not([type=checkbox])');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Private fixture');input.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('.sheet input[type=checkbox]').click();})()`);
+  await wait(`!document.querySelector('.sheet button[type=submit],.sheet .btn-glow').disabled`);
+  await ev(`document.querySelector('.sheet form').requestSubmit()`);
+  await wait(`!!document.querySelector('.private-tools')`);
+  assert.equal(createdPrivate,true);
+  await ev(`document.querySelector('.private-tools').open=true`);
+  await wait(`document.querySelector('.private-tools').innerText.includes('Invited visitor')`);
+  await ev(`document.querySelector('.private-tools button').click()`);
+  await wait(`document.querySelector('.private-tools input')?.value.includes('#invite=')`);
+  await ev(`[...document.querySelectorAll('.private-tools button')].find(b=>b.textContent==='Remove member').click()`);
+  await wait(`!document.querySelector('.private-tools').innerText.includes('Invited visitor')`);
+  console.log("PASS private room creation, invitation generation and host member removal controls");
+  await shot("private-room-host.png");
   await send("Emulation.setDeviceMetricsOverride",{width:390,height:844,deviceScaleFactor:1,mobile:true});
   await ev(`document.querySelector('.lang-btn').click();history.pushState(null,'','/read/I_Samuel/17/1');dispatchEvent(new PopStateEvent('popstate'))`);
   await wait(`document.documentElement.dir==='rtl' && !!document.querySelector('#v-1.on')`);

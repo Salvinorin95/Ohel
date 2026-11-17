@@ -111,8 +111,8 @@ function MapPage({ place, open, journey }: { place?: string; open?: boolean; jou
   const [rooms, setRooms] = useState<RoomInfo[]>([]);
   const [newFor, setNewFor] = useState<string | null>(null);
   useEffect(() => {
-    getRooms().then((r) => setRooms(r.rooms)).catch(() => {});
-  }, []);
+    getRooms(token).then((r) => setRooms(r.rooms)).catch(() => {});
+  }, [token]);
   return (
     <div className="page-map">
       <Suspense fallback={<div className="loading-shimmer">{t("loading")}</div>}>

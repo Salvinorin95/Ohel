@@ -40,8 +40,8 @@ export interface ChapterText {
   sources: { he: string; en: string; enLicense: string };
 }
 
-export const getRooms = () => api<{ rooms: RoomInfo[] }>("/api/rooms");
-export const getRoom = (id: string) => api<RoomInfo>(`/api/rooms/${encodeURIComponent(id)}`);
+export const getRooms = (token?: string | null) => api<{ rooms: RoomInfo[] }>("/api/rooms", { token });
+export const getRoom = (id: string, token?: string | null) => api<RoomInfo>(`/api/rooms/${encodeURIComponent(id)}`, { token });
 export const getBoard = () =>
   api<{ week: { name: string; avatar: number; points: number }[]; all: { name: string; avatar: number; points: number }[] }>("/api/leaderboard");
 export async function getText(ref: string): Promise<ChapterText> {

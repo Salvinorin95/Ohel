@@ -141,6 +141,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const setSession = useCallback((tok: string | null, m: Me | null) => {
     setToken(tok);
     setMe(m);
+    if (tok && tok !== localStorage.getItem("ohel.pendingRecoveryKey")) localStorage.removeItem("ohel.pendingRecoveryKey");
     if (tok) localStorage.setItem("ohel.token", tok);
     else localStorage.removeItem("ohel.token");
     if (m) localStorage.setItem("ohel.me", JSON.stringify(m));
@@ -158,7 +159,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("ohel.me", JSON.stringify(p.me));
       return p;
     } catch (e) {
-      if ((e as { status?: number }).status === 401) setSession(null, null);
+      if ((e as { status?: number }).status === 401 && localStorage.getItem("ohel.token") === token) setSession(null, null);
       return null;
     }
   }, [token, setSession]);
@@ -185,6 +186,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
           toast({ kind: "info", text: `${translate(lang, "welcomeBack")}, ${p.me.name}`, glyph: "🔑" });
         })
         .catch(() => toast({ kind: "info", text: translate(lang, "keyErr") }));
+      return;
+    }
+    const pendingKey = localStorage.getItem("ohel.pendingRecoveryKey");
+    if (pendingKey) {
+      // Recover a completed rotation whose response was lost. A rejected candidate leaves the old key alone.
+      api<Profile>("/api/me", { token: pendingKey }).then(p => {
+        setSession(pendingKey, p.me); localStorage.removeItem("ohel.pendingRecoveryKey");
+      }).catch(e => { if (e?.status === 401) localStorage.removeItem("ohel.pendingRecoveryKey"); });
       return;
     }
     if (token) return;

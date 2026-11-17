@@ -717,3 +717,11 @@ a.chip-person { text-decoration: none; color: inherit; }
 .saved-study li { border-block-start: 1px solid currentColor; padding-block-start: .8rem; }
 .verse-actions input { max-width: 100%; min-width: 0; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--glass-strong); }
 .map-fallback { position: relative; }
+
+.discovery { display: grid; gap: 12px; }
+.discovery-results { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.discovery-results li { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+
+.private-tools { padding: 10px 16px; max-height: 35vh; overflow: auto; display: block; }
+.private-tools[open] > * { margin-block-end: 10px; }
+.private-tools input { max-width: 100%; min-width: 0; }

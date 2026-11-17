@@ -130,6 +130,20 @@ export function Settings() {
       setAccErr(errOf(e, "err_"));
     }
   };
+  const rotateKey = async () => {
+    if (!confirm(t("rotateKeyConfirm"))) return;
+    setBusy(true); setAccErr("");
+    try {
+      const bytes = crypto.getRandomValues(new Uint8Array(24));
+      const nextKey = "ohel_" + btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      // Persist before rotating, so a lost response cannot strand a guest without their new key.
+      localStorage.setItem("ohel.pendingRecoveryKey", nextKey);
+      const r = await api<{ token: string; me: Me }>("/api/recovery-key", { token, body: { nextKey, pass: old ? await stretch(me.username ?? "", old) : "" } });
+      setSession(r.token, r.me); localStorage.removeItem("ohel.pendingRecoveryKey"); setOld("");
+      toast({ kind: "info", text: t("rotateKeyDone") });
+    } catch (e) { setAccErr(errOf(e, "err_")); }
+    finally { setBusy(false); }
+  };
   const signOutOthers = async () => {
     setBusy(true);
     setAccErr("");
@@ -240,6 +254,8 @@ export function Settings() {
           </div>
         )}
         {me.registered && <p className="fine">{t("sessionPolicy")}</p>}
+        <p className="fine">{t("rotateKeyWarning")}</p>
+        <button className="btn small" disabled={busy} onClick={() => void rotateKey()}>{t("rotateKey")}</button>
         {me.registered && (
           <button className="btn small glass" disabled={busy} onClick={() => void signOutOthers()}>
             🚪 {t("signOutAll")}

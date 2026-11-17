@@ -139,7 +139,13 @@ Text: [Sefaria](https://www.sefaria.org). Hebrew: Miqra according to the Masorah
   **Sign out on all other devices** revokes other password sessions and their
   already-open chats, preserving the current session. Legacy chat attachments
   must authenticate again. Personal recovery keys are separate long-lived
-  credentials: these actions do **not** rotate a copied recovery key. Keep it private.
+  credentials: these actions do **not** rotate a copied recovery key. Use the separate
+  **Replace personal recovery key** control to invalidate the old key and all
+  password sessions/chats, including this device's existing chat. This browser
+  receives the new key; save a new personal link afterward. Password-session
+  holders must supply their current password; a recovery-key holder can rotate
+  directly. A pending candidate is saved locally before rotation to recover a
+  lost response. Keep recovery keys private.
 - Signed-in readers can select a verse, save it with an optional private note,
   and retrieve it under **Your saved study** on the home page. The most recently
   opened chapter also follows the account to other devices. Up to 100 bookmarks
@@ -175,6 +181,22 @@ prove Cloudflare's network/storage behavior. Screenshots go under `review/`.
 Before a public launch, run a provider-supported backup/restore drill in an
 isolated staging environment. Verify accounts, sessions, messages and the new
 `study` table after recovery, and document the verified recovery point. Local
-unit tests are not evidence that a production cloud backup exists. Global
-cross-content search, invite-only hosted sessions, recovery-key rotation and a
-production restore drill remain follow-up work.
+unit tests are not evidence that a production cloud backup exists. A production
+restore drill and real hosted pilot remain external validation work.
+
+The home-page search covers bundled people, places, journeys and references in
+Hebrew and English (for example, `David`, `דוד`, `1 Samuel 17`, `שמואל א 17:4`).
+It does not search chat messages, private notes, or the full verse corpus.
+
+When creating a room, choose **Private invitation room** to hide it from public
+listings. The host can create or replace a capability link, view members and
+remove a member. Invitations require an Ohel identity (a guest key is enough).
+The link fragment is removed from the address bar after capture and kept only
+in tab session storage until acceptance. Replacing a link blocks future use of
+the old link; existing members remain. Removing a member closes their current
+room sockets. A removed member holding a still-valid link can rejoin, so replace
+the link as well when necessary. Members, moderators and the service operator
+can read these rooms; they are not end-to-end encrypted. Private room metadata,
+history, presence and broadcasts are protected before socket authentication.
+The new access tables are additive and require no changes to existing public
+rooms. No production schema or deployment was changed during development.

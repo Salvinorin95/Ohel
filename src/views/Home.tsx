@@ -1,3 +1,4 @@
+import { Discovery } from "../components/Discovery.tsx";
 import { StudyCard } from "../components/StudyCard.tsx";
 import { useEffect, useState } from "react";
 import { refLabel } from "../../shared/books.ts";
@@ -23,6 +24,7 @@ function RoomCard({ r }: { r: RoomInfo }) {
   return (
     <button className="room-card glass" onClick={() => go({ name: "room", id: r.id })}>
       <span className="room-card-title" dir="auto">{title}</span>
+      {r.private && <span className="pill">{t("privateRoom")}</span>}
       <span className="room-card-tags">
         {r.ref && <span className="tag">📖 {refLabel(r.ref, lang)}</span>}
         {place && <span className="tag">📍 {place[lang]}</span>}
@@ -58,7 +60,7 @@ export function Home() {
     document.title = "Ohel · אוהל";
     let live = true;
     const load = () => {
-      Promise.all([getRooms(), getBoard()]).then(([r, b]) => {
+      Promise.all([getRooms(token), getBoard()]).then(([r, b]) => {
         if (live) { setRooms(r.rooms); setBoard(b); setLoadError(false); }
       }).catch(() => { if (live) setLoadError(true); });
     };
@@ -68,7 +70,7 @@ export function Home() {
       live = false;
       clearInterval(i);
     };
-  }, [attempt]);
+  }, [attempt, token]);
 
   const starters = rooms?.filter((r) => r.starter) ?? [];
   const community = rooms?.filter((r) => !r.starter) ?? [];
@@ -98,6 +100,7 @@ export function Home() {
       </section>
 
       {loadError && <section className="glass card" role="status"><p>{t("communityUnavailable")}</p><button className="btn small" onClick={() => setAttempt(a => a + 1)}>{t("retry")}</button></section>}
+      <Discovery />
       <section className="glass card guided-study">
         <h2>{t("guidedTitle")}</h2><p>{t("guidedHint")}</p>
         <div className="place-actions">

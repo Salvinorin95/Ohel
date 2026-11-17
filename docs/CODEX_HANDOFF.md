@@ -1,9 +1,9 @@
 - updated: 2026-11-17
 - last_writer: codex
-- status: idle
-- next_owner: matthew
+- status: active
+- next_owner: codex
 - project_path: /Users/matthewklanfer/Developer/Ohel
-- goal: Implement account/session, dependency-failure and saved-study readiness improvements.
+- goal: Add unified discovery, recovery-key rotation and private invitation rooms on the same readiness branch.
 
 ## Done
 - Initial checkout clean; changes isolated on codex/ohel-readiness-20261117.

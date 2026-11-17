@@ -113,3 +113,64 @@ test("study bookmarks and reading position sync across sessions, remain private 
     assert.equal(f.db.prepare("SELECT COUNT(*) AS n FROM study WHERE uid = ?").get(root.me.id)!.n, 0);
   } finally { f.db.close(); }
 });
+
+test("recovery-key replacement invalidates old keys, all sessions and existing chats", async () => {
+  const f = fixture();
+  try {
+    const root = await f.register(); const a = await f.login(), b = await f.login();
+    const R = await f.connect(root.token), A = await f.connect(a), B = await f.connect(b);
+    const rejected = await f.call("/api/recovery-key", a, { pass: "wrong" });
+    assert.equal(rejected.status, 401); assert.equal((await f.call("/api/me", root.token)).status, 200);
+    assert.equal((await f.call("/api/recovery-key", root.token, { nextKey: root.token })).status, 400);
+    assert.equal((await f.call("/api/recovery-key", root.token, { nextKey: "weak" })).status, 400);
+    const candidate = "ohel_" + "Q".repeat(32);
+    const rotated = await f.call("/api/recovery-key", a, { pass: "a".repeat(64), nextKey: candidate });
+    assert.equal(rotated.body.token, candidate);
+    assert.equal(rotated.status, 200); assert.notEqual(rotated.body.token, root.token);
+    for (const token of [root.token, a, b]) assert.equal((await f.call("/api/me", token)).status, 401);
+    assert.equal((await f.call("/api/me", rotated.body.token)).status, 200);
+    assert.ok([R, A, B].every(ws => ws.closed === 4001));
+    assert.equal(typeof await f.login(), "string"); // Password recovery remains possible.
+  } finally { f.db.close(); }
+});
+
+test("private room access blocks listings, metadata, histories and pre-hello broadcasts", async () => {
+  const f = fixture();
+  try {
+    const host = await f.register(), member = await f.register("visitor"), outsider = await f.register("outsider");
+    const created = await f.call("/api/rooms", host.token, { title: "Private study group", private: true });
+    assert.equal(created.status, 200); const id = created.body.room.id;
+    assert.equal(created.body.room.private, true);
+    assert.ok(!(await f.call("/api/rooms")).body.rooms.some((r: any) => r.id === id));
+    assert.ok((await f.call("/api/rooms", host.token)).body.rooms.some((r: any) => r.id === id));
+    assert.equal((await f.call(`/api/rooms/${id}`, outsider.token)).status, 404);
+    assert.equal((await f.call(`/api/rooms/${id}`)).status, 404);
+    const blocked = new FakeSocket(); blocked.at.room = id; f.sockets.push(blocked);
+    await f.hub.webSocketMessage(blocked as never, JSON.stringify({ t: "hello", token: outsider.token }));
+    assert.equal(blocked.closed, 4004); assert.ok(!blocked.sent.some(m => m.t === "welcome"));
+    const preHello = new FakeSocket(); preHello.at.room = id; f.sockets.push(preHello);
+    const H = new FakeSocket(); H.at.room = id; f.sockets.push(H);
+    await f.hub.webSocketMessage(H as never, JSON.stringify({ t: "hello", token: host.token }));
+    await f.hub.webSocketMessage(H as never, JSON.stringify({ t: "say", body: "Private message" }));
+    assert.equal(preHello.sent.length, 0);
+    assert.equal((await f.call(`/api/rooms/${id}/invite`, outsider.token, {}, "POST")).status, 403);
+    const invite = (await f.call(`/api/rooms/${id}/invite`, host.token, {}, "POST")).body.invite;
+    assert.equal((await f.call(`/api/rooms/${id}/join`, member.token, { invite: "wrong" })).status, 404);
+    assert.equal((await f.call(`/api/rooms/${id}/join`, member.token, { invite })).status, 200);
+    assert.equal((await f.call(`/api/rooms/${id}`, member.token)).status, 200);
+    const M = new FakeSocket(); M.at.room = id; f.sockets.push(M);
+    await f.hub.webSocketMessage(M as never, JSON.stringify({ t: "hello", token: member.token }));
+    assert.ok(M.sent.find(m => m.t === "welcome").history.some((m: any) => m.body === "Private message"));
+    const members = (await f.call(`/api/rooms/${id}/members`, host.token)).body.members;
+    assert.equal(members.length, 2);
+    assert.equal((await f.call(`/api/rooms/${id}/members`, outsider.token)).status, 403);
+    const next = (await f.call(`/api/rooms/${id}/invite`, host.token, {}, "POST")).body.invite;
+    assert.notEqual(next, invite);
+    assert.equal((await f.call(`/api/rooms/${id}/join`, outsider.token, { invite })).status, 404);
+    assert.equal((await f.call(`/api/rooms/${id}`, member.token)).status, 200); // Replacing a link doesn't remove members.
+    assert.equal((await f.call(`/api/rooms/${id}/members/${member.me.id}`, host.token, undefined, "DELETE")).status, 200);
+    assert.equal(M.closed, 4004);
+    assert.equal((await f.call(`/api/rooms/${id}`, member.token)).status, 404);
+    assert.ok(!(await f.call("/api/rooms", member.token)).body.rooms.some((r: any) => r.id === id));
+  } finally { f.db.close(); }
+});
