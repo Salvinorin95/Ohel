@@ -1,3 +1,4 @@
+import { PrivateRoomTools } from "../components/PrivateRoomTools.tsx";
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { parseRef, refLabel } from "../../shared/books.ts";
 import { findPlace } from "../../shared/places.ts";
@@ -5,7 +6,7 @@ import type { AdminAction, ClientMsg, MapView as View, Me, Msg, Person, RoomInfo
 import { Orb } from "../components/Orb.tsx";
 import { timeOf, type Key } from "../i18n.ts";
 import { useApp } from "../state.tsx";
-import { adminAct, getRoom } from "../api.ts";
+import { adminAct, api, getRoom } from "../api.ts";
 const MapView = lazy(() => import("./MapView.tsx").then((m) => ({ default: m.MapView })));
 import { Reader } from "./Reader.tsx";
 
@@ -373,6 +374,18 @@ function Item(p: ItemProps) {
 // ── the room ───────────────────────────────────────────────────────────
 export function Room({ id }: { id: string }) {
   const { t, lang, token, me, go, toast, askJoin, celebrate, setSession } = useApp();
+  const [invite] = useState(() => {
+    const value = new URLSearchParams(location.hash.slice(1)).get("invite");
+    if (value && /^[A-Za-z0-9_-]{20,100}$/.test(value)) {
+      try { sessionStorage.setItem(`ohel.invite.${id}`, value); } catch { /* Keep in component memory. */ }
+      history.replaceState(null, "", location.pathname + location.search);
+      return value;
+    }
+    try { return sessionStorage.getItem(`ohel.invite.${id}`); } catch { return null; }
+  });
+  const [accessReady, setAccessReady] = useState(false);
+  const [accessError, setAccessError] = useState(false);
+  const [accessAttempt, setAccessAttempt] = useState(0);
   const [tab, setTab] = useState<Tab>("chat");
   const [study, setStudy] = useState<"text" | "map">("text");
   const [loc, setLoc] = useState<{ book: string; chapter: number; highlight?: number } | null>(null);
@@ -416,9 +429,25 @@ export function Room({ id }: { id: string }) {
     if (study === "map") setMapUsed(true);
   }, [study]);
   useEffect(() => {
-    getRoom(id).catch((e) => e?.status === 404 && setMissing(true));
-  }, [id]);
-  const r = useRoom(missing ? "" : id, token, onError, onPoints, onMe, onGone);
+    let live = true;
+    setAccessReady(false); setAccessError(false); setMissing(false);
+    if (invite && !token) return;
+    const enter = async () => {
+      try { await getRoom(id, token); }
+      catch (error) {
+        if (!(error instanceof Error) || !invite || !token || !("status" in error) || error.status !== 404) throw error;
+        await api(`/api/rooms/${id}/join`, { token, body: { invite } });
+        await getRoom(id, token);
+      }
+    };
+    void enter().then(() => {
+      if (!live) return;
+      try { sessionStorage.removeItem(`ohel.invite.${id}`); } catch { /* Optional temporary storage. */ }
+      setAccessReady(true);
+    }, () => { if (live) setAccessError(true); });
+    return () => { live = false; };
+  }, [id, token, invite, accessAttempt]);
+  const r = useRoom(missing || !accessReady ? "" : id, token, onError, onPoints, onMe, onGone);
   const staff = useMemo(() => new Set(r.staff), [r.staff]);
   const mod = (a: AdminAction) => {
     if (!token) return;
@@ -636,6 +665,8 @@ export function Room({ id }: { id: string }) {
     </section>
   );
 
+  if (invite && !token) return <div className="profile"><section className="glass card"><p>{t("inviteSignIn")}</p><button className="btn" onClick={() => askJoin()}>{t("joinTitle")}</button></section></div>;
+  if (accessError) return <div className="profile"><section className="glass card" role="status"><p>{t("inviteError")}</p><button className="btn" onClick={() => setAccessAttempt(a => a + 1)}>{t("retry")}</button></section></div>;
   if (missing) {
     return (
       <div className="profile">
@@ -692,6 +723,8 @@ export function Room({ id }: { id: string }) {
         </button>
       </header>
 
+      {room?.private && room.host === me?.id && <PrivateRoomTools id={id} />}
+      {room?.private && room.host !== me?.id && <p className="fine">{t("privateRoomHint")}</p>}
       <nav className="room-tabs glass" role="tablist">
         {(["chat", "text", "map"] as Tab[]).map((x) => (
           <button key={x} role="tab" aria-selected={tab === x} className={tab === x ? "on" : ""} onClick={() => (x === "chat" ? toChat() : (setTab(x), setStudy(x)))}>

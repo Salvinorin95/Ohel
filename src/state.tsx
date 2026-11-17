@@ -8,7 +8,7 @@ import { findBadge } from "../shared/game.ts";
 export type Route =
   | { name: "home" }
   | { name: "room"; id: string }
-  | { name: "read"; book: string; chapter: number }
+  | { name: "read"; book: string; chapter: number; verse?: number }
   | { name: "map"; place?: string; open?: boolean; journey?: string }
   | { name: "me" }
   | { name: "about" }
@@ -22,7 +22,7 @@ export type Route =
 export function parseRoute(path: string): Route {
   const p = path.split("/").filter(Boolean).map(decodeURIComponent);
   if (p[0] === "room" && p[1]) return { name: "room", id: p[1] };
-  if (p[0] === "read") return { name: "read", book: (p[1] ?? "I_Samuel").replace(/_/g, " "), chapter: Number(p[2]) || 1 };
+  if (p[0] === "read") return { name: "read", book: (p[1] ?? "I_Samuel").replace(/_/g, " "), chapter: Number(p[2]) || 1, ...(Number(p[3]) >= 1 && Number(p[3]) <= 200 ? { verse: Number(p[3]) } : {}) };
   if (p[0] === "map") return { name: "map", place: p[1] };
   // A place's own page: the map with that place's page open (this is the address search engines list).
   if (p[0] === "place" && p[1]) return { name: "map", place: p[1], open: true };
@@ -43,7 +43,7 @@ export function routePath(r: Route): string {
     case "room":
       return `/room/${encodeURIComponent(r.id)}`;
     case "read":
-      return `/read/${r.book.replace(/ /g, "_")}/${r.chapter}`;
+      return `/read/${r.book.replace(/ /g, "_")}/${r.chapter}${r.verse ? `/${r.verse}` : ""}`;
     case "map":
       if (r.journey) return `/journey/${r.journey}`;
       return r.place ? `/${r.open ? "place" : "map"}/${r.place}` : "/map";
@@ -141,6 +141,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const setSession = useCallback((tok: string | null, m: Me | null) => {
     setToken(tok);
     setMe(m);
+    if (tok && tok !== localStorage.getItem("ohel.pendingRecoveryKey")) localStorage.removeItem("ohel.pendingRecoveryKey");
     if (tok) localStorage.setItem("ohel.token", tok);
     else localStorage.removeItem("ohel.token");
     if (m) localStorage.setItem("ohel.me", JSON.stringify(m));
@@ -158,7 +159,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("ohel.me", JSON.stringify(p.me));
       return p;
     } catch (e) {
-      if ((e as { status?: number }).status === 401) setSession(null, null);
+      if ((e as { status?: number }).status === 401 && localStorage.getItem("ohel.token") === token) setSession(null, null);
       return null;
     }
   }, [token, setSession]);
@@ -185,6 +186,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
           toast({ kind: "info", text: `${translate(lang, "welcomeBack")}, ${p.me.name}`, glyph: "🔑" });
         })
         .catch(() => toast({ kind: "info", text: translate(lang, "keyErr") }));
+      return;
+    }
+    const pendingKey = localStorage.getItem("ohel.pendingRecoveryKey");
+    if (pendingKey) {
+      // Recover a completed rotation whose response was lost. A rejected candidate leaves the old key alone.
+      api<Profile>("/api/me", { token: pendingKey }).then(p => {
+        setSession(pendingKey, p.me); localStorage.removeItem("ohel.pendingRecoveryKey");
+      }).catch(e => { if (e?.status === 401) localStorage.removeItem("ohel.pendingRecoveryKey"); });
       return;
     }
     if (token) return;

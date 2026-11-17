@@ -1,3 +1,4 @@
+import { emptyStudy, updateStudy, type Study } from "../shared/study.ts";
 import { DurableObject } from "cloudflare:workers";
 import { BADGES, DAILY_CAPS, POINTS, type BadgeStats, type Stats } from "../shared/game.ts";
 import { findBook, parseRef, refString } from "../shared/books.ts";
@@ -12,6 +13,8 @@ import { dailyQuestion, findQuestion, pickQuestion } from "./quiz.ts";
 const HOUR = 3600_000;
 const DAY = 24 * HOUR;
 const HISTORY = 80;
+// Password-login sessions expire after 30 days. Personal recovery keys remain valid until rotated or account removal.
+const SESSION_TTL = 30 * DAY;
 const QUIZ_MS = 25_000;
 const MAX_BODY = 800;
 
@@ -19,6 +22,7 @@ type PointKind = keyof typeof POINTS;
 
 interface Attachment {
   room: string;
+  authHash?: string;
   uid: string | null;
   name: string;
   avatar: number;
@@ -180,6 +184,9 @@ export class Hub extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS accounts (uid TEXT PRIMARY KEY, username TEXT NOT NULL UNIQUE COLLATE NOCASE, pass TEXT NOT NULL, salt TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, uid TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE INDEX IF NOT EXISTS sessions_uid ON sessions (uid);
+      CREATE TABLE IF NOT EXISTS private_rooms (room TEXT PRIMARY KEY, invite_hash TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS room_members (room TEXT, uid TEXT, PRIMARY KEY (room, uid));
+      CREATE TABLE IF NOT EXISTS study (uid TEXT PRIMARY KEY, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS profiles (uid TEXT PRIMARY KEY, bio TEXT NOT NULL DEFAULT '', photo INTEGER, updated INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS photos (id INTEGER PRIMARY KEY AUTOINCREMENT, uid TEXT NOT NULL, data BLOB NOT NULL, mime TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS logins (k TEXT, day TEXT, n INTEGER, PRIMARY KEY (k, day));
@@ -211,10 +218,32 @@ export class Hub extends DurableObject<Env> {
   private async userByToken(token: string | null | undefined) {
     if (!token || token.length > 200) return undefined;
     const h = await sha256(token);
+    return this.userByHash(h);
+  }
+
+  private userByHash(h: string | undefined) {
+    if (!h) return undefined; // Old hibernated sockets must authenticate again.
     let u = this.one<UserRow>("SELECT * FROM users WHERE token_hash = ?", h);
-    if (u) u.main_key = 1; // the account's own key (it can also reset the password)
-    else u = this.one<UserRow>("SELECT u.* FROM sessions s JOIN users u ON u.id = s.uid WHERE s.token_hash = ?", h);
+    if (u) u.main_key = 1;
+    else u = this.one<UserRow>("SELECT u.* FROM sessions s JOIN users u ON u.id = s.uid WHERE s.token_hash = ? AND s.created > ?", h, Date.now() - SESSION_TTL);
+    if (u) u.auth_hash = h;
     return u && !u.banned ? u : undefined;
+  }
+
+  private revokeSessions(uid: string, keepHash: string) {
+    this.sql.exec("DELETE FROM sessions WHERE uid = ? AND token_hash != ?", uid, keepHash);
+    for (const ws of this.ctx.getWebSockets()) {
+      const at = ws.deserializeAttachment() as Attachment | null;
+      if (at?.uid === uid && at.authHash !== keepHash) {
+        ws.serializeAttachment({ ...at, uid: null, authHash: undefined });
+        ws.close(4001, "session_revoked");
+      }
+    }
+  }
+
+  private studyOf(uid: string): Study {
+    const row = this.one<{ data: string }>("SELECT data FROM study WHERE uid = ?", uid);
+    return row ? JSON.parse(row.data) as Study : emptyStudy();
   }
 
   private photoOf(uid: string | null): string | null {
@@ -354,10 +383,19 @@ export class Hub extends DurableObject<Env> {
     return this.one<RoomRow>("SELECT * FROM rooms WHERE id = ?", id);
   }
 
+  private privateRoom(id: string) {
+    return this.one<{ invite_hash: string }>("SELECT invite_hash FROM private_rooms WHERE room = ?", id);
+  }
+
+  private canEnter(room: string, uid: string | null | undefined) {
+    return !this.privateRoom(room) || (!!uid && (this.isAdmin(uid) || !!this.one("SELECT uid FROM room_members WHERE room = ? AND uid = ?", room, uid)));
+  }
+
   private roomInfo(r: RoomRow): RoomInfo {
     return {
       id: r.id, title: r.title, title_he: r.title_he, title_en: r.title_en, ref: r.ref, place: r.place,
-      starter: !!r.starter, online: this.ctx.getWebSockets(r.id).length, msgs: r.msgs, last: r.last_at,
+      starter: !!r.starter, online: this.presence(r.id).online.length + this.presence(r.id).guests, msgs: r.msgs, last: r.last_at,
+      ...(this.privateRoom(r.id) ? { private: true, host: r.created_by ?? undefined } : {}),
     };
   }
 
@@ -397,6 +435,12 @@ export class Hub extends DurableObject<Env> {
     const s = JSON.stringify(m);
     for (const ws of this.ctx.getWebSockets(room)) {
       try {
+        const at = ws.deserializeAttachment() as Attachment | null;
+        if (!this.canEnter(room, at?.uid)) continue;
+        if (at?.uid && this.userByHash(at.authHash)?.id !== at.uid) {
+          ws.close(4001, "session_expired_or_revoked");
+          continue;
+        }
         ws.send(s);
       } catch {
         /* closed */
@@ -410,6 +454,7 @@ export class Hub extends DurableObject<Env> {
     for (const ws of this.ctx.getWebSockets(room)) {
       if (ws === except || ws.readyState !== WebSocket.OPEN) continue;
       const at = ws.deserializeAttachment() as Attachment | null;
+      if (!this.canEnter(room, at?.uid) || (at?.uid && this.userByHash(at.authHash)?.id !== at.uid)) continue;
       if (at?.uid) people.set(at.uid, { uid: at.uid, name: at.name, avatar: at.avatar, photo: at.photo ?? null });
       else guests++;
     }
@@ -452,17 +497,29 @@ export class Hub extends DurableObject<Env> {
     if (photoMatch && method === "GET") return this.photo(Number(photoMatch[1]));
     const profMatch = /^\/api\/users\/([\w-]{1,20})$/.exec(path);
     if (profMatch && method === "GET") return this.publicProfile(profMatch[1]);
-    if (path === "/api/rooms" && method === "GET") return this.listRooms();
+    if (path === "/api/rooms" && method === "GET") return this.listRooms((await this.userByToken(auth))?.id);
     if (path === "/api/leaderboard" && method === "GET") return this.leaderboard();
     if (path === "/api/daily" && method === "GET") return this.daily((await this.userByToken(auth)) ?? null);
     const roomMatch = /^\/api\/rooms\/([\w-]{1,40})$/.exec(path);
     if (roomMatch && method === "GET") {
       const r = this.room(roomMatch[1]);
-      return r ? json(this.roomInfo(r)) : fail("not_found", 404);
+      const uid = (await this.userByToken(auth))?.id;
+      return r && this.canEnter(r.id, uid) ? json(this.roomInfo(r)) : fail("not_found", 404);
     }
 
     const me = await this.userByToken(auth);
     if (!me) return fail("auth", 401);
+    if (path === "/api/recovery-key" && method === "POST") return this.rotateRecoveryKey(me, req);
+    const accessMatch = /^\/api\/rooms\/([\w-]{1,40})\/(join|invite|members)(?:\/([\w-]{1,20}))?$/.exec(path);
+    if (accessMatch) return this.roomAccess(me, req, accessMatch[1], accessMatch[2], accessMatch[3]);
+    if (path === "/api/study" && method === "GET") return json(this.studyOf(me.id));
+    if (path === "/api/study" && method === "POST") {
+      const action = await this.body(req);
+      const next = updateStudy(this.studyOf(me.id), action);
+      if (!next) return fail("bad_request");
+      this.sql.exec("INSERT INTO study (uid, data) VALUES (?, ?) ON CONFLICT DO UPDATE SET data = excluded.data", me.id, JSON.stringify(next));
+      return json(next);
+    }
     if (path === "/api/me" && method === "GET") return this.profile(me);
     if (path === "/api/me" && method === "DELETE") return this.deleteMe(me);
     if (path === "/api/rooms" && method === "POST") return this.createRoom(me, req);
@@ -473,7 +530,7 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/profile" && method === "POST") return this.saveProfile(me, req);
     if (path === "/api/photo" && method === "POST") return this.savePhoto(me, req);
     if (path === "/api/photo" && method === "DELETE") return (this.clearPhoto(me.id), json({ me: this.meOf(this.user(me.id)!) }));
-    if (path === "/api/sessions" && method === "DELETE") return (this.sql.exec("DELETE FROM sessions WHERE uid = ?", me.id), json({ ok: true }));
+    if (path === "/api/sessions" && method === "DELETE") return (this.revokeSessions(me.id, String(me.auth_hash)), json({ ok: true }));
     if (path.startsWith("/api/admin")) {
       if (!this.isAdmin(me.id)) return fail("forbidden", 403);
       if (path === "/api/admin" && method === "GET") return json(this.adminData());
@@ -599,6 +656,7 @@ export class Hub extends DurableObject<Env> {
     if (!u.main_key && (await this.passHash(acc.salt, String(b.old ?? ""))) !== acc.pass) return fail("login_wrong", 401);
     const salt = randomId(16);
     this.sql.exec("UPDATE accounts SET pass = ?, salt = ? WHERE uid = ?", await this.passHash(salt, pass), salt, u.id);
+    this.revokeSessions(u.id, String(u.auth_hash));
     return json({ ok: true });
   }
 
@@ -739,15 +797,18 @@ export class Hub extends DurableObject<Env> {
       if (at?.uid === u.id) ws.close(4000, "left");
     }
     this.sql.exec("UPDATE messages SET uid = NULL, name = '' WHERE uid = ?", u.id);
-    for (const t of ["accounts", "sessions", "profiles", "photos"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
+    for (const t of ["accounts", "sessions", "profiles", "photos", "study"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     for (const t of ["daily", "chapters", "visits", "badges", "dq"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
+    this.sql.exec("DELETE FROM room_members WHERE uid = ?", u.id);
     this.sql.exec("DELETE FROM users WHERE id = ?", u.id);
     return json({ ok: true });
   }
 
-  private listRooms() {
+  private listRooms(uid?: string) {
     const rows = this.sql
-      .exec<RoomRow>("SELECT * FROM rooms ORDER BY starter DESC, last_at DESC LIMIT 80")
+      .exec<RoomRow>(`SELECT r.* FROM rooms r WHERE NOT EXISTS (SELECT 1 FROM private_rooms p WHERE p.room = r.id)
+        OR EXISTS (SELECT 1 FROM room_members m WHERE m.room = r.id AND m.uid = ?)
+        OR ? = 1 ORDER BY starter DESC, last_at DESC LIMIT 80`, uid ?? "", uid && this.isAdmin(uid) ? 1 : 0)
       .toArray()
       .map((r) => this.roomInfo(r));
     const starters = rows.filter((r) => r.starter);
@@ -771,6 +832,52 @@ export class Hub extends DurableObject<Env> {
     return json({ week, all });
   }
 
+  private async roomAccess(u: UserRow, req: Request, id: string, action: string, member?: string) {
+    const room = this.room(id), secret = this.privateRoom(id);
+    if (!room || !secret) return fail("not_found", 404);
+    if (action === "join" && req.method === "POST" && !member) {
+      const b = await this.body(req);
+      if (typeof b.invite !== "string" || b.invite.length > 100 || !secret.invite_hash || await sha256(b.invite) !== secret.invite_hash) return fail("not_found", 404);
+      if (u.muted_until > Date.now()) return fail("muted", 403);
+      this.sql.exec("INSERT OR IGNORE INTO room_members (room, uid) VALUES (?, ?)", id, u.id);
+      return json({ room: this.roomInfo(room) });
+    }
+    if (room.created_by !== u.id) return fail("forbidden", 403);
+    if (action === "invite" && req.method === "POST" && !member) {
+      const invite = randomId(24);
+      this.sql.exec("UPDATE private_rooms SET invite_hash = ? WHERE room = ?", await sha256(invite), id);
+      return json({ invite });
+    }
+    if (action === "members" && req.method === "GET" && !member) {
+      return json({ members: this.sql.exec<{ id: string; name: string }>("SELECT u.id, u.name FROM room_members m JOIN users u ON u.id = m.uid WHERE m.room = ?", id).toArray() });
+    }
+    if (action === "members" && req.method === "DELETE" && member && member !== u.id) {
+      this.sql.exec("DELETE FROM room_members WHERE room = ? AND uid = ?", id, member);
+      for (const ws of this.ctx.getWebSockets(id)) {
+        const at = ws.deserializeAttachment() as Attachment | null;
+        if (at?.uid === member) { ws.serializeAttachment({ ...at, uid: null, authHash: undefined }); ws.close(4004, "room_access_revoked"); }
+      }
+      this.broadcast(id, { t: "presence", ...this.presence(id) });
+      return json({ ok: true });
+    }
+    return fail("bad_request");
+  }
+
+  private async rotateRecoveryKey(u: UserRow, req: Request) {
+    const b = await this.body(req);
+    if (b.nextKey !== undefined && (typeof b.nextKey !== "string" || !/^ohel_[A-Za-z0-9_-]{32}$/.test(b.nextKey))) return fail("bad_request");
+    if (!u.main_key) {
+      const acc = this.one<{ pass: string; salt: string }>("SELECT pass, salt FROM accounts WHERE uid = ?", u.id);
+      if (!acc || await this.passHash(acc.salt, String(b.pass ?? "")) !== acc.pass) return fail("login_wrong", 401);
+    }
+    const token = typeof b.nextKey === "string" ? b.nextKey : `ohel_${randomId(24)}`;
+    const hash = await sha256(token);
+    if (hash === u.token_hash) return fail("bad_request");
+    this.sql.exec("UPDATE users SET token_hash = ? WHERE id = ?", hash, u.id);
+    this.revokeSessions(u.id, hash); // Nothing holds the new key yet: every existing socket/session is revoked.
+    return json({ token, me: this.meOf(this.user(u.id)!) });
+  }
+
   private async createRoom(u: UserRow, req: Request) {
     if (u.muted_until > Date.now()) return fail("muted", 403, { until: u.muted_until });
     const b = await this.body(req);
@@ -789,6 +896,11 @@ export class Hub extends DurableObject<Env> {
       "INSERT INTO rooms (id, title, ref, place, created_by, created_at, last_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
       id, title, ref ? refString({ ...ref, verse: undefined }) : null, place?.id ?? null, u.id, now, now,
     );
+    if (b.private === true) {
+      // No public interval: statements run synchronously in the same Durable Object turn.
+      this.sql.exec("INSERT INTO private_rooms (room, invite_hash) VALUES (?, '')", id);
+      this.sql.exec("INSERT INTO room_members (room, uid) VALUES (?, ?)", id, u.id);
+    }
     this.bump(u.id, "rooms");
     const a = this.award(u.id, "room");
     return json({ room: this.roomInfo(this.room(id)!), award: a });
@@ -843,10 +955,13 @@ export class Hub extends DurableObject<Env> {
 
     if (m.t === "hello") {
       const u = await this.userByToken(m.token);
-      const next: Attachment = u ? { room: at.room, uid: u.id, name: u.name, avatar: u.avatar, photo: this.photoOf(u.id) } : { ...at, uid: null };
+      const next: Attachment = u ? { room: at.room, uid: u.id, authHash: String(u.auth_hash), name: u.name, avatar: u.avatar, photo: this.photoOf(u.id) } : { ...at, uid: null, authHash: undefined };
       ws.serializeAttachment(next);
       const room = this.room(at.room);
-      if (!room) return ws.close(4004, "not_found");
+      if (!room || !this.canEnter(at.room, u?.id)) {
+        ws.serializeAttachment({ ...at, uid: null, authHash: undefined });
+        return ws.close(4004, "not_found");
+      }
       const rows = this.sql
         .exec<MsgRow>("SELECT * FROM (SELECT * FROM messages WHERE room = ? ORDER BY id DESC LIMIT ?) ORDER BY id", at.room, HISTORY)
         .toArray();
@@ -864,8 +979,12 @@ export class Hub extends DurableObject<Env> {
     }
 
     if (!at.uid) return err("auth");
-    const u = this.user(at.uid);
-    if (!u || u.banned) return err("banned");
+    const u = this.userByHash(at.authHash);
+    if (!u || u.id !== at.uid || !this.canEnter(at.room, u.id)) {
+      ws.serializeAttachment({ ...at, uid: null, authHash: undefined });
+      err("auth");
+      return ws.close(4001, "session_expired_or_revoked");
+    }
 
     switch (m.t) {
       case "say": {
@@ -1083,6 +1202,8 @@ export class Hub extends DurableObject<Env> {
       const ids = "SELECT id FROM messages WHERE room = ?";
       for (const t of ["lights", "reports", "answers"]) this.sql.exec(`DELETE FROM ${t} WHERE msg IN (${ids})`, r.id);
       this.sql.exec("DELETE FROM messages WHERE room = ?", r.id);
+      this.sql.exec("DELETE FROM private_rooms WHERE room = ?", r.id);
+      this.sql.exec("DELETE FROM room_members WHERE room = ?", r.id);
       this.sql.exec("DELETE FROM rooms WHERE id = ?", r.id);
       for (const ws of this.ctx.getWebSockets(r.id)) {
         this.send(ws, { t: "error", code: "not_found" });

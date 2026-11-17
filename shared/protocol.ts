@@ -85,6 +85,8 @@ export interface Person {
 }
 
 export interface RoomInfo {
+  private?: boolean;
+  host?: string;
   id: string;
   title: string;
   title_he?: string | null;

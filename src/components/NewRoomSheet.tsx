@@ -13,6 +13,7 @@ export function NewRoomSheet({ onClose, place: initialPlace = "", title: initial
   const [chapter, setChapter] = useState(1);
   const [place, setPlace] = useState(initialPlace);
   const [busy, setBusy] = useState(false);
+  const [privateRoom, setPrivateRoom] = useState(false);
   const [err, setErr] = useState("");
   const b = BOOKS.find((x) => x.key === book);
 
@@ -22,7 +23,7 @@ export function NewRoomSheet({ onClose, place: initialPlace = "", title: initial
     try {
       const r = await api<{ room: RoomInfo; award: Award }>("/api/rooms", {
         token,
-        body: { title, ref: b ? `${b.key} ${chapter}` : undefined, place: place || undefined },
+        body: { title, private: privateRoom, ref: b ? `${b.key} ${chapter}` : undefined, place: place || undefined },
       });
       celebrate(r.award, "room");
       onClose();
@@ -84,6 +85,7 @@ export function NewRoomSheet({ onClose, place: initialPlace = "", title: initial
             ))}
           </select>
         </label>
+        <label className="field"><span><input type="checkbox" checked={privateRoom} onChange={e => setPrivateRoom(e.target.checked)} /> {t("privateRoom")}</span><span className="fine">{t("privateRoomHint")}</span></label>
         {err && <p className="err">{err}</p>}
         <div className="row end">
           <button type="button" className="btn ghost" onClick={onClose}>

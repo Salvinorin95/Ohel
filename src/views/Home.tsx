@@ -1,3 +1,5 @@
+import { Discovery } from "../components/Discovery.tsx";
+import { StudyCard } from "../components/StudyCard.tsx";
 import { useEffect, useState } from "react";
 import { refLabel } from "../../shared/books.ts";
 import { findPlace } from "../../shared/places.ts";
@@ -22,6 +24,7 @@ function RoomCard({ r }: { r: RoomInfo }) {
   return (
     <button className="room-card glass" onClick={() => go({ name: "room", id: r.id })}>
       <span className="room-card-title" dir="auto">{title}</span>
+      {r.private && <span className="pill">{t("privateRoom")}</span>}
       <span className="room-card-tags">
         {r.ref && <span className="tag">📖 {refLabel(r.ref, lang)}</span>}
         {place && <span className="tag">📍 {place[lang]}</span>}
@@ -48,6 +51,8 @@ export function Home() {
   const [board, setBoard] = useState<Board | null>(null);
   const [boardTab, setBoardTab] = useState<"week" | "all">("week");
   const [creating, setCreating] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const peopleIndex = usePeopleIndex();
   const withPages = PEOPLE.filter((p) => peopleIndex[p.id]);
 
@@ -55,8 +60,9 @@ export function Home() {
     document.title = "Ohel · אוהל";
     let live = true;
     const load = () => {
-      getRooms().then((r) => live && setRooms(r.rooms)).catch(() => {});
-      getBoard().then((b) => live && setBoard(b)).catch(() => {});
+      Promise.all([getRooms(token), getBoard()]).then(([r, b]) => {
+        if (live) { setRooms(r.rooms); setBoard(b); setLoadError(false); }
+      }).catch(() => { if (live) setLoadError(true); });
     };
     load();
     const i = setInterval(load, 20_000);
@@ -64,7 +70,7 @@ export function Home() {
       live = false;
       clearInterval(i);
     };
-  }, []);
+  }, [attempt, token]);
 
   const starters = rooms?.filter((r) => r.starter) ?? [];
   const community = rooms?.filter((r) => !r.starter) ?? [];
@@ -93,6 +99,17 @@ export function Home() {
         </div>
       </section>
 
+      {loadError && <section className="glass card" role="status"><p>{t("communityUnavailable")}</p><button className="btn small" onClick={() => setAttempt(a => a + 1)}>{t("retry")}</button></section>}
+      <Discovery />
+      <section className="glass card guided-study">
+        <h2>{t("guidedTitle")}</h2><p>{t("guidedHint")}</p>
+        <div className="place-actions">
+          <button className="btn" onClick={() => go({ name: "read", book: "I Samuel", chapter: 17 })}>{t("guidedRead")}</button>
+          <button className="btn" onClick={() => go({ name: "map", place: "elah", open: true })}>{t("guidedMap")}</button>
+          <button className="btn" onClick={() => go({ name: "room", id: "elah" })}>{t("guidedTalk")}</button>
+        </div>
+      </section>
+      <StudyCard />
       <div className="today">
         <WeekCard />
         <DailyCard />
@@ -119,7 +136,7 @@ export function Home() {
           <h2>{t("roomsOpen")}</h2>
         </div>
         <div className="room-grid">
-          {rooms === null && Array.from({ length: 6 }, (_, i) => <div key={i} className="room-card glass skeleton" />)}
+          {rooms === null && !loadError && Array.from({ length: 6 }, (_, i) => <div key={i} className="room-card glass skeleton" />)}
           {starters.map((r) => (
             <RoomCard key={r.id} r={r} />
           ))}

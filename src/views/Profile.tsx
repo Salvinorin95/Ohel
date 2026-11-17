@@ -150,7 +150,7 @@ export function Profile() {
 
       <section className="glass card leave">
         <div>
-          <button className="btn" onClick={() => setSession(null, null)}>
+          <button className="btn" onClick={() => { localStorage.removeItem("ohel.pendingRecoveryKey"); setSession(null, null); }}>
             🚪 {t("signOut")}
           </button>
           <p className="fine">{t("signOutHint")}</p>

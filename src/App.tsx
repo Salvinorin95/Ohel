@@ -86,7 +86,7 @@ function Nav() {
   );
 }
 
-function ReadPage({ book, chapter }: { book: string; chapter: number }) {
+function ReadPage({ book, chapter, verse }: { book: string; chapter: number; verse?: number }) {
   const { go, t } = useApp();
   const ref = parseRef(`${book} ${chapter}`);
   useEffect(() => {
@@ -98,6 +98,7 @@ function ReadPage({ book, chapter }: { book: string; chapter: number }) {
       <Reader
         book={ref?.book ?? "Genesis"}
         chapter={ref?.chapter ?? 1}
+        highlight={verse}
         onNavigate={(b, c) => go({ name: "read", book: b, chapter: c })}
         onOpenPlace={(p) => go({ name: "map", place: p })}
       />
@@ -110,8 +111,8 @@ function MapPage({ place, open, journey }: { place?: string; open?: boolean; jou
   const [rooms, setRooms] = useState<RoomInfo[]>([]);
   const [newFor, setNewFor] = useState<string | null>(null);
   useEffect(() => {
-    getRooms().then((r) => setRooms(r.rooms)).catch(() => {});
-  }, []);
+    getRooms(token).then((r) => setRooms(r.rooms)).catch(() => {});
+  }, [token]);
   return (
     <div className="page-map">
       <Suspense fallback={<div className="loading-shimmer">{t("loading")}</div>}>
@@ -150,7 +151,7 @@ export function App() {
         <main className={`main main-${route.name}`}>
           {route.name === "home" && <Home />}
           {route.name === "room" && <Room key={route.id} id={route.id} />}
-          {route.name === "read" && <ReadPage book={route.book} chapter={route.chapter} />}
+          {route.name === "read" && <ReadPage book={route.book} chapter={route.chapter} verse={route.verse} />}
           {route.name === "map" && <MapPage place={route.place} open={route.open} journey={route.journey} />}
           {route.name === "me" && <Profile />}
           {route.name === "about" && <About />}
