@@ -67,6 +67,8 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
   const box = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
   const markers = useRef(new Map<string, { marker: Marker; el: HTMLButtonElement }>());
+  const [mapError, setMapError] = useState(false);
+  const [mapAttempt, setMapAttempt] = useState(0);
   const [sat, setSat] = useState(true);
   const [three, setThree] = useState(true);
   const [selected, setSelected] = useState<string | null>(place ?? null);
@@ -90,8 +92,11 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
 
   // Create the map once.
   useEffect(() => {
+    if (mapError) return;
     const p = findPlace(place);
-    const map = new MLMap({
+    let map: MLMap;
+    try {
+    map = new MLMap({
       container: box.current!,
       style: STYLE,
       center: p ? [p.lng, p.lat] : [35.25, 31.85],
@@ -102,6 +107,13 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
       attributionControl: false,
       fadeDuration: 0,
     });
+    } catch {
+      setMapError(true);
+      return;
+    }
+    const loadingDeadline = setTimeout(() => { if (!map.loaded()) setMapError(true); }, 15_000);
+    map.on("error", () => setMapError(true));
+    map.once("load", () => clearTimeout(loadingDeadline));
     map.addControl(new NavigationControl({ visualizePitch: true, showCompass: true }), lang === "he" ? "top-left" : "top-right");
     map.addControl(new AttributionControl({ compact: true }), "bottom-right");
     const labelZoom = () => box.current?.classList.toggle("labels", map.getZoom() >= 8.6);
@@ -114,17 +126,19 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     });
     ro.observe(box.current!);
     return () => {
+      clearTimeout(loadingDeadline);
       ro.disconnect();
       map.remove();
       mapRef.current = null;
       markers.current.clear();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [mapAttempt, mapError]);
 
   // Place markers, rebuilt when the language changes.
   useEffect(() => {
-    const map = mapRef.current!;
+    const map = mapRef.current;
+    if (!map) return;
     for (const { marker } of markers.current.values()) marker.remove();
     markers.current.clear();
     for (const p of PLACES) {
@@ -143,7 +157,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     for (const [id, { el }] of markers.current) el.classList.toggle("on", id === selected);
     declutterRef.current();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang]);
+  }, [lang, mapAttempt, mapError]);
 
   // Keep a crowded map readable: where dots or labels would sit on top of each other, the selected place wins,
   // then the bigger places (minor ones give way), then the list order. Zooming in brings the rest back.
@@ -197,7 +211,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
       map.off("load", run);
       map.off("resize", run);
     };
-  }, []);
+  }, [mapAttempt, mapError]);
   useEffect(() => declutterRef.current(), [selected]);
 
   const flyTo = (p: Place) => {
@@ -253,7 +267,7 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     };
     if (map.isStyleLoaded()) apply();
     else map.once("load", apply);
-  }, [sat]);
+  }, [sat, mapAttempt, mapError]);
 
   // ── journeys: a route drawn stop by stop, the camera travelling with it ──
   const panelPad = () => {
@@ -438,6 +452,23 @@ export function MapView({ place, view, embedded, onShareView, onSharePlace, onOp
     const s = q.trim().toLowerCase();
     return PLACES.filter((p) => !s || p.en.toLowerCase().includes(s) || p.he.includes(s));
   }, [q]);
+
+  if (mapError) return (
+    <div className="map-fallback glass" role="region" aria-label={t("places")}>
+      <p role="status">{t("mapUnavailable")}</p>
+      <button className="btn small" onClick={() => { setMapError(false); setMapAttempt(a => a + 1); }}>{t("retry")}</button>
+      <label className="field"><span>{t("searchPlaces")}</span><input value={q} onChange={e => setQ(e.target.value)} dir="auto" /></label>
+      <div className="room-grid">
+        {filtered.map(p => <article className="glass card" key={p.id}>
+          <h3>{p[lang]}</h3><span className={`pill pill-${p.certainty}`}>{t(`certainty_${p.certainty}` as Key)}</span>
+          <p>{p.story[lang]}</p>
+          <div className="place-actions">{p.refs.map(r => <button key={r} className="chip" onClick={() => onOpenRef?.(r)}>{refLabel(r, lang)}</button>)}
+          <button className="btn small" onClick={() => setPage(p.id)}>{t("moreAbout")}</button></div>
+        </article>)}
+      </div>
+      {page && <PlacePage id={page} onClose={() => setPage(null)} onShowRealm={() => {}} onOpenRef={onOpenRef} onSelectPlace={setPage} />}
+    </div>
+  );
 
   return (
     <div className={`mapwrap${embedded ? " embedded" : ""}${realm ? " has-realm" : ""}${jour ? " journey-on" : ""}`}>

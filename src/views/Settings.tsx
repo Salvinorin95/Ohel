@@ -131,8 +131,16 @@ export function Settings() {
     }
   };
   const signOutOthers = async () => {
-    await api("/api/sessions", { method: "DELETE", token }).catch(() => {});
-    toast({ kind: "info", text: t("signedOutAll"), glyph: "✓" });
+    setBusy(true);
+    setAccErr("");
+    try {
+      await api("/api/sessions", { method: "DELETE", token });
+      toast({ kind: "info", text: t("signedOutAll"), glyph: "✓" });
+    } catch {
+      setAccErr(t("sessionRevokeFailed"));
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -231,8 +239,9 @@ export function Settings() {
             <SaveUser />
           </div>
         )}
+        {me.registered && <p className="fine">{t("sessionPolicy")}</p>}
         {me.registered && (
-          <button className="btn small glass" onClick={() => void signOutOthers()}>
+          <button className="btn small glass" disabled={busy} onClick={() => void signOutOthers()}>
             🚪 {t("signOutAll")}
           </button>
         )}

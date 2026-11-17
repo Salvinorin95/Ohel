@@ -1,3 +1,4 @@
+import { emptyStudy, updateStudy, type Study } from "../shared/study.ts";
 import { DurableObject } from "cloudflare:workers";
 import { BADGES, DAILY_CAPS, POINTS, type BadgeStats, type Stats } from "../shared/game.ts";
 import { findBook, parseRef, refString } from "../shared/books.ts";
@@ -12,6 +13,8 @@ import { dailyQuestion, findQuestion, pickQuestion } from "./quiz.ts";
 const HOUR = 3600_000;
 const DAY = 24 * HOUR;
 const HISTORY = 80;
+// Password-login sessions expire after 30 days. Personal recovery keys remain valid until account removal.
+const SESSION_TTL = 30 * DAY;
 const QUIZ_MS = 25_000;
 const MAX_BODY = 800;
 
@@ -19,6 +22,7 @@ type PointKind = keyof typeof POINTS;
 
 interface Attachment {
   room: string;
+  authHash?: string;
   uid: string | null;
   name: string;
   avatar: number;
@@ -180,6 +184,7 @@ export class Hub extends DurableObject<Env> {
       CREATE TABLE IF NOT EXISTS accounts (uid TEXT PRIMARY KEY, username TEXT NOT NULL UNIQUE COLLATE NOCASE, pass TEXT NOT NULL, salt TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, uid TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE INDEX IF NOT EXISTS sessions_uid ON sessions (uid);
+      CREATE TABLE IF NOT EXISTS study (uid TEXT PRIMARY KEY, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS profiles (uid TEXT PRIMARY KEY, bio TEXT NOT NULL DEFAULT '', photo INTEGER, updated INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS photos (id INTEGER PRIMARY KEY AUTOINCREMENT, uid TEXT NOT NULL, data BLOB NOT NULL, mime TEXT NOT NULL, created INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS logins (k TEXT, day TEXT, n INTEGER, PRIMARY KEY (k, day));
@@ -211,10 +216,32 @@ export class Hub extends DurableObject<Env> {
   private async userByToken(token: string | null | undefined) {
     if (!token || token.length > 200) return undefined;
     const h = await sha256(token);
+    return this.userByHash(h);
+  }
+
+  private userByHash(h: string | undefined) {
+    if (!h) return undefined; // Old hibernated sockets must authenticate again.
     let u = this.one<UserRow>("SELECT * FROM users WHERE token_hash = ?", h);
-    if (u) u.main_key = 1; // the account's own key (it can also reset the password)
-    else u = this.one<UserRow>("SELECT u.* FROM sessions s JOIN users u ON u.id = s.uid WHERE s.token_hash = ?", h);
+    if (u) u.main_key = 1;
+    else u = this.one<UserRow>("SELECT u.* FROM sessions s JOIN users u ON u.id = s.uid WHERE s.token_hash = ? AND s.created > ?", h, Date.now() - SESSION_TTL);
+    if (u) u.auth_hash = h;
     return u && !u.banned ? u : undefined;
+  }
+
+  private revokeSessions(uid: string, keepHash: string) {
+    this.sql.exec("DELETE FROM sessions WHERE uid = ? AND token_hash != ?", uid, keepHash);
+    for (const ws of this.ctx.getWebSockets()) {
+      const at = ws.deserializeAttachment() as Attachment | null;
+      if (at?.uid === uid && at.authHash !== keepHash) {
+        ws.serializeAttachment({ ...at, uid: null, authHash: undefined });
+        ws.close(4001, "session_revoked");
+      }
+    }
+  }
+
+  private studyOf(uid: string): Study {
+    const row = this.one<{ data: string }>("SELECT data FROM study WHERE uid = ?", uid);
+    return row ? JSON.parse(row.data) as Study : emptyStudy();
   }
 
   private photoOf(uid: string | null): string | null {
@@ -397,6 +424,11 @@ export class Hub extends DurableObject<Env> {
     const s = JSON.stringify(m);
     for (const ws of this.ctx.getWebSockets(room)) {
       try {
+        const at = ws.deserializeAttachment() as Attachment | null;
+        if (at?.uid && this.userByHash(at.authHash)?.id !== at.uid) {
+          ws.close(4001, "session_expired_or_revoked");
+          continue;
+        }
         ws.send(s);
       } catch {
         /* closed */
@@ -463,6 +495,14 @@ export class Hub extends DurableObject<Env> {
 
     const me = await this.userByToken(auth);
     if (!me) return fail("auth", 401);
+    if (path === "/api/study" && method === "GET") return json(this.studyOf(me.id));
+    if (path === "/api/study" && method === "POST") {
+      const action = await this.body(req);
+      const next = updateStudy(this.studyOf(me.id), action);
+      if (!next) return fail("bad_request");
+      this.sql.exec("INSERT INTO study (uid, data) VALUES (?, ?) ON CONFLICT DO UPDATE SET data = excluded.data", me.id, JSON.stringify(next));
+      return json(next);
+    }
     if (path === "/api/me" && method === "GET") return this.profile(me);
     if (path === "/api/me" && method === "DELETE") return this.deleteMe(me);
     if (path === "/api/rooms" && method === "POST") return this.createRoom(me, req);
@@ -473,7 +513,7 @@ export class Hub extends DurableObject<Env> {
     if (path === "/api/profile" && method === "POST") return this.saveProfile(me, req);
     if (path === "/api/photo" && method === "POST") return this.savePhoto(me, req);
     if (path === "/api/photo" && method === "DELETE") return (this.clearPhoto(me.id), json({ me: this.meOf(this.user(me.id)!) }));
-    if (path === "/api/sessions" && method === "DELETE") return (this.sql.exec("DELETE FROM sessions WHERE uid = ?", me.id), json({ ok: true }));
+    if (path === "/api/sessions" && method === "DELETE") return (this.revokeSessions(me.id, String(me.auth_hash)), json({ ok: true }));
     if (path.startsWith("/api/admin")) {
       if (!this.isAdmin(me.id)) return fail("forbidden", 403);
       if (path === "/api/admin" && method === "GET") return json(this.adminData());
@@ -599,6 +639,7 @@ export class Hub extends DurableObject<Env> {
     if (!u.main_key && (await this.passHash(acc.salt, String(b.old ?? ""))) !== acc.pass) return fail("login_wrong", 401);
     const salt = randomId(16);
     this.sql.exec("UPDATE accounts SET pass = ?, salt = ? WHERE uid = ?", await this.passHash(salt, pass), salt, u.id);
+    this.revokeSessions(u.id, String(u.auth_hash));
     return json({ ok: true });
   }
 
@@ -739,7 +780,7 @@ export class Hub extends DurableObject<Env> {
       if (at?.uid === u.id) ws.close(4000, "left");
     }
     this.sql.exec("UPDATE messages SET uid = NULL, name = '' WHERE uid = ?", u.id);
-    for (const t of ["accounts", "sessions", "profiles", "photos"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
+    for (const t of ["accounts", "sessions", "profiles", "photos", "study"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     for (const t of ["daily", "chapters", "visits", "badges", "dq"]) this.sql.exec(`DELETE FROM ${t} WHERE uid = ?`, u.id);
     this.sql.exec("DELETE FROM users WHERE id = ?", u.id);
     return json({ ok: true });
@@ -843,7 +884,7 @@ export class Hub extends DurableObject<Env> {
 
     if (m.t === "hello") {
       const u = await this.userByToken(m.token);
-      const next: Attachment = u ? { room: at.room, uid: u.id, name: u.name, avatar: u.avatar, photo: this.photoOf(u.id) } : { ...at, uid: null };
+      const next: Attachment = u ? { room: at.room, uid: u.id, authHash: String(u.auth_hash), name: u.name, avatar: u.avatar, photo: this.photoOf(u.id) } : { ...at, uid: null, authHash: undefined };
       ws.serializeAttachment(next);
       const room = this.room(at.room);
       if (!room) return ws.close(4004, "not_found");
@@ -864,8 +905,12 @@ export class Hub extends DurableObject<Env> {
     }
 
     if (!at.uid) return err("auth");
-    const u = this.user(at.uid);
-    if (!u || u.banned) return err("banned");
+    const u = this.userByHash(at.authHash);
+    if (!u || u.id !== at.uid) {
+      ws.serializeAttachment({ ...at, uid: null, authHash: undefined });
+      err("auth");
+      return ws.close(4001, "session_expired_or_revoked");
+    }
 
     switch (m.t) {
       case "say": {

@@ -16,7 +16,7 @@ ok((await call("/api/register", { body: { username: u.toUpperCase(), pass: pw } 
 ok((await call("/api/register", { body: { username: "a b", pass: pw } })).body?.error === "username_chars", "no spaces in usernames");
 ok((await call("/api/register", { body: { username: "admin", pass: pw } })).body?.error === "username_reserved", "reserved usernames are refused");
 ok((await call("/api/login", { body: { username: u, pass: await stretch(u, "wrong") } })).status === 401, "a wrong password is refused");
-const login = await call("/api/login", { body: { username: u.toUpperCase(), pass: await stretch(u.toUpperCase(), "שלום-עולם 123") } });
+let login = await call("/api/login", { body: { username: u.toUpperCase(), pass: await stretch(u.toUpperCase(), "שלום-עולם 123") } });
 ok(login.status === 200 && login.body.token && login.body.token !== reg.body.token && login.body.me.id === reg.body.me.id, "sign in from another device gets its own session");
 ok((await call("/api/me", { token: reg.body.token })).status === 200 && (await call("/api/me", { token: login.body.token })).status === 200, "both devices stay signed in");
 const prof = await call("/api/profile", { token: login.body.token, body: { name: "Tester Two", bio: "אוהב את ספר שמואל", avatar: 5 } });
@@ -37,7 +37,9 @@ ok(!("username" in pub.body) && !("token" in pub.body), "the profile doesn't sho
 ok((await call("/api/password", { token: login.body.token, body: { pass: await stretch(u, "new pass 1"), old: await stretch(u, "nope") } })).status === 401, "changing the password needs the old one");
 ok((await call("/api/password", { token: login.body.token, body: { pass: await stretch(u, "new pass 1"), old: pw } })).status === 200, "change the password with the old one");
 ok((await call("/api/password", { token: reg.body.token, body: { pass: await stretch(u, "new pass 2") } })).status === 200, "or with the account's own key, if it was forgotten");
-ok((await call("/api/login", { body: { username: u, pass: await stretch(u, "new pass 2") } })).status === 200, "the new password works");
+ok((await call("/api/me", { token: login.body.token })).status === 401, "recovery-key password reset revokes the old password session");
+login = await call("/api/login", { body: { username: u, pass: await stretch(u, "new pass 2") } });
+ok(login.status === 200, "the new password works");
 // a guest becomes registered and keeps their points
 const g = (await call("/api/join", { body: { name: "Guest Conv", avatar: 1 } })).body;
 const gu = `guest_${Date.now() % 100000}`;

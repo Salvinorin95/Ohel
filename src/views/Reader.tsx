@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { BOOKS, SECTION_NAMES, findBook, hebNum, type Section } from "../../shared/books.ts";
 import { placesForChapter } from "../../shared/places.ts";
-import { getText, postRead, type ChapterText } from "../api.ts";
+import { getText, postRead, saveStudy, type ChapterText } from "../api.ts";
 import { Sheet } from "../components/Sheet.tsx";
 import { useApp } from "../state.tsx";
 
@@ -72,6 +72,8 @@ export function Reader({ book, chapter, onNavigate, highlight, embedded, onShare
   const [pickBook, setPickBook] = useState<string | null>(null);
   const [selected, setSelected] = useState<number | null>(highlight ?? null);
   const [attempt, setAttempt] = useState(0);
+  const [note, setNote] = useState("");
+  const [savingBookmark, setSavingBookmark] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const b = findBook(book) ?? BOOKS[0];
@@ -89,7 +91,20 @@ export function Reader({ book, chapter, onNavigate, highlight, embedded, onShare
     };
   }, [ref, attempt]);
 
-  useEffect(() => setSelected(highlight ?? null), [ref, highlight]);
+  useEffect(() => { setSelected(highlight ?? null); setNote(""); }, [ref, highlight]);
+  useEffect(() => {
+    if (token && data) void saveStudy(token, "resume", ref).catch(() => {});
+  }, [token, ref, data]);
+  const bookmark = async (verse: number) => {
+    if (!token) return;
+    setSavingBookmark(true);
+    try {
+      await saveStudy(token, "bookmark", `${ref}:${verse}`, note);
+      toast({ kind: "info", text: t("studySaved") });
+      setNote("");
+    } catch { toast({ kind: "warn", text: t("studySaveFailed") }); }
+    finally { setSavingBookmark(false); }
+  };
 
   // Scroll to a highlighted verse, or back to the top on a new chapter.
   useEffect(() => {
@@ -189,6 +204,7 @@ export function Reader({ book, chapter, onNavigate, highlight, embedded, onShare
           </div>
         )}
 
+        {data?.cached && <p className="notice" role="status">{t("cachedText")} <button className="link" onClick={() => setAttempt(a => a + 1)}>{t("retry")}</button></p>}
         {error && (
           <div className="empty">
             <p>{t("loadErr")}</p>
@@ -217,6 +233,7 @@ export function Reader({ book, chapter, onNavigate, highlight, embedded, onShare
                 )}
                 {selected === v && (
                   <div className="verse-actions" onClick={(e) => e.stopPropagation()}>
+                    {token && <><input aria-label={t("studyNote")} placeholder={t("studyNote")} value={note} maxLength={1000} onChange={e => setNote(e.target.value)} /><button className="btn small" disabled={savingBookmark} onClick={() => void bookmark(v)}>{t("studyBookmark")}</button></>}
                     {onShareVerse && (
                       <button className="btn btn-glow small" onClick={() => onShareVerse(`${b.key} ${chapter}:${v}`, data.he[v - 1] ?? "")}>
                         💬 {t("shareVerse")}

@@ -132,3 +132,49 @@ docs/     screenshots/he, screenshots/en (made by scripts/shots.mjs)
 ## Credits
 
 Text: [Sefaria](https://www.sefaria.org). Hebrew: Miqra according to the Masorah (CC BY-SA). English: JPS (CC BY-NC). Imagery © Esri, Maxar, Earthstar Geographics. Terrain: Mapzen / AWS Open Data. Fonts: Rubik and Frank Ruhl Libre. Place photos: Wikimedia Commons (author and license on each). Realm borders: [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) from the Seshat databank (CC BY 4.0), simplified.
+
+## Readiness improvements (November 2026)
+
+- Password-login sessions expire after 30 days. Changing a password or choosing
+  **Sign out on all other devices** revokes other password sessions and their
+  already-open chats, preserving the current session. Legacy chat attachments
+  must authenticate again. Personal recovery keys are separate long-lived
+  credentials: these actions do **not** rotate a copied recovery key. Keep it private.
+- Signed-in readers can select a verse, save it with an optional private note,
+  and retrieve it under **Your saved study** on the home page. The most recently
+  opened chapter also follows the account to other devices. Up to 100 bookmarks
+  are stored per account; account deletion removes them. Notes are private to
+  that account, not end-to-end encrypted from the service operator.
+- The home page offers a short read → place → discussion activity. Saved verse
+  links include a highlighted verse, e.g. `/read/I_Samuel/17/4`.
+- The text proxy has an eight-second deadline and a labeled older-copy fallback.
+  The browser keeps the 12 most recent public chapters for connection failures.
+  This makes previously opened text available during an outage; it does not
+  install the full app for offline first launch. Map/WebGL failures expose a
+  searchable text directory with stories, references and detailed place pages.
+
+`npm test` now includes real Hub logic with in-memory SQLite, a small Cloudflare
+host substitute, account isolation/session revocation, bounded study updates,
+and text-cache failure tests. `npm run build` type-checks client and Worker and
+builds both. `docs/ci.yml.template` runs these commands on Node 24. The current
+GitHub OAuth credential cannot publish workflow files (it lacks `workflow`
+scope), so CI is prepared but not enabled. Copy it to `.github/workflows/ci.yml`
+using an appropriately authorized credential. For isolated browser fixtures:
+
+```sh
+npm run build
+CHROME="/path/to/chrome" node scripts/readiness-ui-e2e.mjs
+```
+
+The browser test starts its own static server and temporary marked profile,
+uses fixture responses, disables WebGL and blocks external requests. It checks
+saved verses, unavailable text/community services, the map fallback, truthful
+session errors and Hebrew mobile layout. It does not contact production or
+prove Cloudflare's network/storage behavior. Screenshots go under `review/`.
+
+Before a public launch, run a provider-supported backup/restore drill in an
+isolated staging environment. Verify accounts, sessions, messages and the new
+`study` table after recovery, and document the verified recovery point. Local
+unit tests are not evidence that a production cloud backup exists. Global
+cross-content search, invite-only hosted sessions, recovery-key rotation and a
+production restore drill remain follow-up work.

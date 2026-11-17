@@ -707,3 +707,13 @@ a.chip-person { text-decoration: none; color: inherit; }
 .join-under { margin: -6px 0 2px; }
 .user-pills { justify-content: center; }
 .user-bio { max-width: 520px; margin: 10px auto 4px; line-height: 1.6; white-space: pre-wrap; }
+
+/* A map failure must leave a scrollable, useful place directory. */
+.map-fallback { width: 100%; height: 100%; overflow: auto; padding: 1.5rem; }
+.map-fallback .field { max-width: 34rem; margin-block: 1rem; }
+.notice { padding: .8rem; border: 1px solid currentColor; border-radius: .6rem; }
+
+.saved-study { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.saved-study li { border-block-start: 1px solid currentColor; padding-block-start: .8rem; }
+.verse-actions input { max-width: 100%; min-width: 0; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--glass-strong); }
+.map-fallback { position: relative; }
